@@ -24,6 +24,32 @@ string nero[16] = {"https://cdn.discordapp.com/attachments/968693698206519356/10
                   "https://cdn.discordapp.com/attachments/968693698206519356/1093095677170565150/67090381_p0_master1200.png" ,
                   "https://cdn.discordapp.com/attachments/968693698206519356/1093095720455782441/91937298_p0_master1200.png" };
 
+string exusiai[23] = {
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093364786424721458/74871383_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093364800966369371/79067802_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093364833891663892/79640496_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093364858835173466/101872504_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093364890313437184/105525478_p0.png",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093364936853422231/103486827_p0.png",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093364960098275459/105829323_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093364993694638110/101933810_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365024522772491/104753423_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365055019548744/99347539_p0_1.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365087139536916/83439562_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365103606374502/93266233_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365117548236910/91879173_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365135009132585/103866984_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365150003757056/101028272_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365164444745768/102634213_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365189212119152/79405727_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365203921543270/105116769_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365220786851901/101872743_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365235647258734/104348996_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365266253086770/91809487_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365280455000164/97693106_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365918169575494/105844530_p0.jpg"
+};
+
 string truee[4] = {"https://cdn.discordapp.com/attachments/967070448149991434/1092781118702497872/J4RQDMD.png", 
                   "https://cdn.discordapp.com/attachments/968693698206519356/1092781449641463859/1648880999715.png", 
                   "https://cdn.discordapp.com/attachments/968693698206519356/1092781578129772664/1652857835934.png", 
@@ -31,9 +57,11 @@ string truee[4] = {"https://cdn.discordapp.com/attachments/967070448149991434/10
 
 int main() {
 
-    dpp::cluster bot("MTA5MjQ5NzAwMDk0NTE2MDMyNA.G61SNj.JQCJvy5sz_n2VsEziY2PSukzHM6oxBQrpsyRIs", dpp::i_default_intents | dpp::i_message_content);
+    dpp::cluster bot("MTA5MjQ5NzAwMDk0NTE2MDMyNA.GL40Uc.3ZLf7UNW1YZ7DFzU1z2Hx0OWjOvUZ-fZmml7G8", dpp::i_default_intents | dpp::i_message_content);
 
     bot.on_log(dpp::utility::cout_logger());
+
+    int length = 0;
 
     bot.on_slashcommand([](const dpp::slashcommand_t& event) {
         if (event.command.get_command_name() == "ping") {
@@ -47,7 +75,7 @@ int main() {
 
         }else if (event.command.get_command_name() == "nero") {
             mt19937 mt(time(nullptr));
-            string ne = nero[ mt() % 16 - 1];
+            string ne = nero[ mt() % 16];
             event.reply(ne);
 
         }else if (event.command.get_command_name() == "bruh") {
@@ -55,12 +83,17 @@ int main() {
 
         }else if (event.command.get_command_name() == "true") {
             mt19937 mt(time(nullptr));
-            string tr = truee[ mt() % 4 - 1];
+            string tr = truee[ mt() % 4];
             event.reply(tr);
 
         }else if (event.command.get_command_name() == "help") {
             event.reply("NOTE: \nI can only read your texts and reply in English!!! \n\nslash command:\nping \nnew waifu \ncattie \nnero \nbruh \ntrue \n\n! command: \nhelp \ncreator \nhttps://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png");
-           
+        
+        }else if (event.command.get_command_name() == "exusiai") {
+            mt19937 mt(time(nullptr));
+            string ex = exusiai[mt() % 23];
+            event.reply(ex);
+
         }
         });
 
@@ -86,6 +119,9 @@ int main() {
             );
             bot.global_command_create(
                 dpp::slashcommand("help", "function", bot.me.id)
+            );
+            bot.global_command_create(
+                dpp::slashcommand("exusiai", "it'll send pics", bot.me.id)
             );
         }
         });
@@ -116,13 +152,13 @@ int main() {
 
             // send the message
             bot.message_create(msg);
-        }else if (event.msg.content == "!rs" || event.msg.content == "!r") {
+        }/*else if (event.msg.content == "!rs" || event.msg.content == "!r") {
             // create a message
             dpp::message msg(event.msg.channel_id, "https://cdn.discordapp.com/attachments/933710044917288963/1092771938272805024/IMG_8429.jpg");
 
             // send the message
             bot.message_create(msg);
-        }else if (event.msg.content == "true") {
+        }*/else if (event.msg.content == "true") {
             mt19937 mt(time(nullptr));
             string tr = truee[mt() % 4];
             // create a message
@@ -171,11 +207,11 @@ int main() {
                 set_thumbnail("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                 add_field(
                     "NOTE :", 
-                    "I can only read your texts and reply in English!!! "
+                    "I can only read your texts and reply IN ENGLISH!!! "
                 ).
                 add_field(
                     "slash command",
-                    "ping \nnew waifu \ncattie \nnero \nbruh \ntrue"
+                    "ping \nnew waifu \ncattie \nnero \nbruh \ntrue \nexusiai"
                 ).
                 add_field(
                     "! command",
