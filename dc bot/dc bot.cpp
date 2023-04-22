@@ -24,7 +24,7 @@ string nero[16] = {"https://cdn.discordapp.com/attachments/968693698206519356/10
                   "https://cdn.discordapp.com/attachments/968693698206519356/1093095677170565150/67090381_p0_master1200.png" ,
                   "https://cdn.discordapp.com/attachments/968693698206519356/1093095720455782441/91937298_p0_master1200.png" };
 
-string exusiai[23] = {
+string exusiai[27] = {
     "https://cdn.discordapp.com/attachments/970373508209201262/1093364786424721458/74871383_p0.jpg",
     "https://cdn.discordapp.com/attachments/970373508209201262/1093364800966369371/79067802_p0.jpg",
     "https://cdn.discordapp.com/attachments/970373508209201262/1093364833891663892/79640496_p0.jpg",
@@ -47,7 +47,11 @@ string exusiai[23] = {
     "https://cdn.discordapp.com/attachments/970373508209201262/1093365235647258734/104348996_p0.jpg",
     "https://cdn.discordapp.com/attachments/970373508209201262/1093365266253086770/91809487_p0.jpg",
     "https://cdn.discordapp.com/attachments/970373508209201262/1093365280455000164/97693106_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365918169575494/105844530_p0.jpg"
+    "https://cdn.discordapp.com/attachments/970373508209201262/1097845294772789298/87451043_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1093365918169575494/105844530_p0.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1097845025695604797/75387374_p1.jpg",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1097845286216413294/82169692_p0.png",
+    "https://cdn.discordapp.com/attachments/970373508209201262/1097845033400545320/106220663_p0.jpg",
 };
 
 string truee[4] = {"https://cdn.discordapp.com/attachments/967070448149991434/1092781118702497872/J4RQDMD.png", 
@@ -91,7 +95,7 @@ int main() {
         
         }else if (event.command.get_command_name() == "exusiai") {
             mt19937 mt(time(nullptr));
-            string ex = exusiai[mt() % 23];
+            string ex = exusiai[mt() % 27];
             event.reply(ex);
 
         }
