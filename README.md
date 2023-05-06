@@ -1,5 +1,9 @@
 # dc-bot
 
-This is a c++ discord bot created by student. I would like to share my code with everyone who finds this page.
+This is a c++ discord bot created by student.
 
-Thanks to the D++ project which offer their libraries. 
+## 功能介紹
+這隻機器人可以：
+* 比對特定文字並傳送回應
+* 使用斜線指令（slash command）
+* 傳送回復方塊
