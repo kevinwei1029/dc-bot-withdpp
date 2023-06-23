@@ -19,4 +19,7 @@
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="token.txt" />
+  </ItemGroup>
 </Project>
