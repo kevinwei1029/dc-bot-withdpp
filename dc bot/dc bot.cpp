@@ -153,7 +153,7 @@ string wat[16]{"https://cdn.discordapp.com/attachments/966727921467260938/110767
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672350268334171/Screenshot_20230501_103044.jpg",  //15
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672365162307704/FB_IMG_1670764145912.jpg"
 };
-string mat[51]{
+string fgomat[51]{
     "1-3 海盜船 (同時缺虛影之塵就去 1-5 夏洛特)",
     "冬木 X-G (X-C也行，單件期望AP較低但要打較多場，X-D也是同理)",
     "1-5 德明 (1-7 埃里都也行，關卡消耗AP較高導致雖然掉率較高但單件期望理智也較高)",
@@ -213,6 +213,10 @@ string numazutotokyo = "https://cdn.discordapp.com/attachments/10639689364644823
 string jrtime = "https://www.eki-net.com/Personal/Top/Index\nhttps://www.jreast.co.jp/tickets/\nhttps://ekitan.com/timetable/railway/line/5000";
 
 string pcrgacha(string times) {
+
+    if (times.size() > 4)
+        return "你想炸我機器人嗎";
+
     int integer = std::stoi(times);
     int pcrga[3] = {0};
     mt19937 mt(time(nullptr));
@@ -238,10 +242,13 @@ string pcrgacha(string times) {
     string silver = to_string(pcrga[2]);
     string golden = to_string(pcrga[1]);
     string rainbow = to_string(pcrga[0]);
-    gacha = "一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n" + golden + "張金卡<:pcr2:1117798436427804754>\n" + rainbow + "張彩卡<:pcr3:1117798715957194923>\n";
-    return gacha;
+    return ("一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n" + golden + "張金卡<:pcr2:1117798436427804754>\n" + rainbow + "張彩卡<:pcr3:1117798715957194923>\n");
 }
 string fgogacha(string times) {
+
+    if (times.size() > 4)
+        return "你想炸我機器人嗎";
+
     int integer = std::stoi(times);
     int fgoga[3] = {0};
     mt19937 mt(time(nullptr));
@@ -266,10 +273,13 @@ string fgogacha(string times) {
     string silver = to_string(fgoga[2]);
     string golden = to_string(fgoga[1]);
     string rainbow = to_string(fgoga[0]);
-    gacha = "先說，我沒有保底\n\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n" + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n";
-    return gacha;
+    return ("先說，我沒有保底\n\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n" + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
 }
 string arkgacha(string times) {
+
+    if (times.size() > 4)
+        return "你想炸我機器人嗎";
+
     int integer = std::stoi(times);
     mt19937 mt(time(nullptr));
     int arkga[4] = { 0 };
@@ -299,8 +309,7 @@ string arkgacha(string times) {
     string silver = to_string(arkga[2]);
     string golden = to_string(arkga[1]);
     string rainbow = to_string(arkga[0]);
-    gacha = "先說，我沒有保底\n\n一共抽到了：\n" + bronze + "張三星<:ark3:1107953947353808947>\n" + silver + "張四星<:ark4:1107953907377901579>\n" + golden + "張五星<:ark5:1107953865602637824>\n" + rainbow + "張六星<:ark6:1107953803057188905>\n";
-    return gacha;
+    return ("先說，我沒有保底\n\n一共抽到了：\n" + bronze + "張三星<:ark3:1107953947353808947>\n" + silver + "張四星<:ark4:1107953907377901579>\n" + golden + "張五星<:ark5:1107953865602637824>\n" + rainbow + "張六星<:ark6:1107953803057188905>\n");
 }
 string pcrget() {
     int pcrga[3] = { 0 };
@@ -331,11 +340,9 @@ string pcrget() {
     string rainbow = to_string(pcrga[0]);
 
     if (k < 199)
-        gacha = "一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n" + golden + "張金卡<:pcr2:1117798436427804754>\n1張彩卡<:pcr3:1117798715957194923>\n";
+        return ("一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n" + golden + "張金卡<:pcr2:1117798436427804754>\n1張彩卡<:pcr3:1117798715957194923>\n");
     else
-        gacha = "一共抽了200抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n" + golden + "張金卡<:pcr2:1117798436427804754>\n" + rainbow + "張彩卡<:pcr3:1117798715957194923>\n";
-    
-    return gacha;
+        return ("一共抽了200抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n" + golden + "張金卡<:pcr2:1117798436427804754>\n" + rainbow + "張彩卡<:pcr3:1117798715957194923>\n");
 }
 string fgoget() {
     int fgoga[3] = {0};
@@ -365,18 +372,17 @@ string fgoget() {
     string rainbow = to_string(fgoga[0]);
 
     if (k < 329)
-        gacha = "一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n" + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n";
+        return ("一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n" + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
     else
-        gacha = "一共抽了330抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n" + golden + "張金卡<:fgo_K2:1107145363795746977>\n1張彩卡<:fgo_K1:1107145268681519114>\n";
-    return gacha;
+        return ("一共抽了330抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n" + golden + "張金卡<:fgo_K2:1107145363795746977>\n1張彩卡<:fgo_K1:1107145268681519114>\n");
 }
 
 int main() {
     ifstream in;
-    string token = "";
+    string token[2] = { "" };
     in.open("token.txt");
-    in >> token;
-    dpp::cluster bot(token, dpp::i_default_intents | dpp::i_message_content);
+    in >> token[0] >> token[1]; //[0]為洗歷程機器人 [1]為女僕凱爾希
+    dpp::cluster bot(token[1], dpp::i_default_intents | dpp::i_message_content);
 
     bot.on_log(dpp::utility::cout_logger());
 
@@ -387,7 +393,10 @@ int main() {
         if (event.command.get_command_name() == "new_waifu") {
             event.reply("https://cdn.discordapp.com/attachments/966729542800658442/1092428172705931355/FB_IMG_1625811644856.jpg");
 
-        }else if (event.command.get_command_name() == "cattie") {
+        }else if (event.command.get_command_name() == "cuttie") {
+            event.reply("https://cdn.discordapp.com/attachments/1091776372168474665/1121819763593711777/SPOILER_1565.jpg");
+        }
+        else if (event.command.get_command_name() == "cattie") {
             event.reply("https://cdn.discordapp.com/attachments/973282252186349588/1083963031077265528/IMG_6734.jpg");
 
         }else if (event.command.get_command_name() == "nero") {
@@ -408,9 +417,13 @@ int main() {
         }); //註冊斜線指令
 
     bot.on_ready([&bot](const dpp::ready_t& event) {
+
         if (dpp::run_once<struct register_bot_commands>()) {
             bot.global_command_create(
                 dpp::slashcommand("ping", "Ping pong!", bot.me.id)
+            );
+            bot.global_command_create(
+                dpp::slashcommand("cuttie", "it'll send pics", bot.me.id)
             );
             bot.global_command_create(
                 dpp::slashcommand("new_waifu", "doge", bot.me.id)
@@ -454,8 +467,7 @@ int main() {
         //拆訊息
 
         if (v[0] == "test") {
-            fgogacha("32");
-            dpp::message msg(event.msg.channel_id, gacha);
+            dpp::message msg(event.msg.channel_id, "<@605659746246328350>");
             bot.message_create(msg);
         }
         else if (v[0] == "^n") {
@@ -466,6 +478,11 @@ int main() {
         else if (v[0] == "^p") {
             string pixweb = "https://www.pixiv.net/artworks/" + v[1];
             dpp::message msg(event.msg.channel_id, pixweb);
+            bot.message_create(msg);
+        }
+        else if (v[0] == "^jm") {
+            string jmweb = "https://18comic.vip/album/" + v[1];
+            dpp::message msg(event.msg.channel_id, jmweb);
             bot.message_create(msg);
         }
         else if (v[0] == "europe"
@@ -479,7 +496,7 @@ int main() {
             bot.message_create(msg);
         }
         else if (v[0] == "fga") {
-            dpp::message msg(event.msg.channel_id, "https://github.com/Fate-Grand-Automata/FGA");
+            dpp::message msg(event.msg.channel_id, "這是git本來的網站 https://github.com/Fate-Grand-Automata/FGA\n現在已經上架play商店了 https://play.google.com/store/apps/details?id=io.github.fate_grand_automata");
             bot.message_create(msg);
         }
         else if (v[0] == "婆"
@@ -604,14 +621,8 @@ int main() {
             bot.message_create(msg);
         }
         else if (v[0] == "<:Setsuna:1074672084132827237>"
-            || v[0] == "<:Setsuna:1074672084132827237> <:Setsuna:1074672084132827237>"
-            || v[0] == "<:Setsuna:1074672084132827237> <:Setsuna:1074672084132827237> <:Setsuna:1074672084132827237>"
             || v[0] == "<:Kyaru_confused:966726451636355112> "
-            || v[0] == "<:Kyaru_confused:966726451636355112> <:Kyaru_confused:966726451636355112>"
-            || v[0] == "<:Kyaru_confused:966726451636355112> <:Kyaru_confused:966726451636355112> <:Kyaru_confused:966726451636355112>"
             || v[0] == "<:pte_lemon:986265384992772166>"
-            || v[0] == "<:pte_lemon:986265384992772166> <:pte_lemon:986265384992772166>"
-            || v[0] == "<:pte_lemon:986265384992772166> <:pte_lemon:986265384992772166> <:pte_lemon:986265384992772166>"
             || v[0] == "三小"
             || v[0] == "公三小"
             || v[0] == "工三小"
@@ -623,42 +634,56 @@ int main() {
             dpp::message msg(event.msg.channel_id, what);
             bot.message_create(msg);
         }
-        else if ((v[0] == "抽" || v[0] == "gacha") && (v[1] == "pcr" || v[1] == "公連")) {
-            pcrgacha(v[2]);
-            dpp::message msg(event.msg.channel_id, gacha);
-            bot.message_create(msg);
+        //以下是抽卡程式碼
+        else if (v[0] == "抽" || v[0] == "gacha") {
+            if (v[1] == "pcr" || v[1] == "公連") {
+                dpp::message msg(event.msg.channel_id, pcrgacha(v[2]));
+                bot.message_create(msg);
+            }
+            else if (v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO") {
+                dpp::message msg(event.msg.channel_id, fgogacha(v[2]));
+                bot.message_create(msg);
+            }
+            else if (v[1] == "ark" || v[1] == "方舟") {
+                dpp::message msg(event.msg.channel_id, arkgacha(v[2]));
+                bot.message_create(msg);
+            }
+            else {
+                dpp::message msg(event.msg.channel_id, "我看不懂你要幹嘛");
+                bot.message_create(msg);
+            }
         }
-        else if ((v[0] == "抽" || v[0] == "gacha") && (v[1] == "fgo" || v[1] == "居歐")){
-            fgogacha(v[2]);
-            dpp::message msg(event.msg.channel_id, gacha);
-            bot.message_create(msg);
+        else if (v[0] == "抽到有") {
+            if (v[1] == "pcr" || v[1] == "公連") {
+                dpp::message msg(event.msg.channel_id, pcrget());
+                bot.message_create(msg);
+            }
+            else if (v[1] == "fgo" || v[1] == "居歐") {
+                dpp::message msg(event.msg.channel_id, fgoget());
+                bot.message_create(msg);
+            }
+            else {
+                dpp::message msg(event.msg.channel_id, "我看不懂你要幹嘛");
+                bot.message_create(msg);
+            }
         }
-        else if ((v[0] == "抽" || v[0] == "gacha") && (v[1] == "ark" || v[1] == "方舟")) {
-            arkgacha(v[2]);
-            dpp::message msg(event.msg.channel_id, gacha);
-            bot.message_create(msg);
-        }
-        else if ((v[0] == "抽到有") && (v[1] == "pcr" || v[1] == "公連")) {
-            pcrget();
-            dpp::message msg(event.msg.channel_id, gacha);
-            bot.message_create(msg);
-        }
-        else if ((v[0] == "抽到有") && (v[1] == "fgo" || v[1] == "居歐")) {
-            fgoget();
-            dpp::message msg(event.msg.channel_id, gacha);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "fgo機率" || v[0] == "fgo抽卡機率") {
-            dpp::message msg(event.msg.channel_id, "銀卡<:fgo_K3:1107145411724054532> 96%\n金卡<:fgo_K2:1107145363795746977> 3%\n彩卡<:fgo_K1:1107145268681519114> 1%");
-            bot.message_create(msg);
-        }
-        else if (v[0] == "方舟機率" || v[0] == "方舟抽卡機率") {
-            dpp::message msg(event.msg.channel_id, "六星<:ark6:1107953803057188905> 2%\n五星<:ark5:1107953865602637824> 8%\n四星<:ark4:1107953907377901579> 30%\n三星<:ark3:1107953947353808947> 60%\n\n不要問我為什麼用狙信物，我絕對沒有對某隻六星狙有特別的偏好");
-            bot.message_create(msg);
-        }
-        else if (v[0] == "pcr機率" || v[0] == "pcr抽卡機率" || v[0] == "公連機率" || v[0] == "公連抽卡機率") {
-            dpp::message msg(event.msg.channel_id, "★★★角色　3%\n★★角色　  18%\n★角色　　 79%\n\n十抽功能中、第十抽有保底★★角色");
-            bot.message_create(msg);
+        else if (v[0] == "機率" || v[0] == "抽卡機率") {
+            if (v[1] == "pcr" || v[1] == "公連") {
+                dpp::message msg(event.msg.channel_id, "★★★角色　3%\n★★角色　  18%\n★角色　　 79%\n\n十抽功能中、第十抽有保底★★角色");
+                bot.message_create(msg);
+            }
+            else if (v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO") {
+                dpp::message msg(event.msg.channel_id, "銀卡<:fgo_K3:1107145411724054532> 96%\n金卡<:fgo_K2:1107145363795746977> 3%\n彩卡<:fgo_K1:1107145268681519114> 1%");
+                bot.message_create(msg);
+            }
+            else if (v[1] == "ark" || v[1] == "方舟") {
+                dpp::message msg(event.msg.channel_id, "六星<:ark6:1107953803057188905> 2%\n五星<:ark5:1107953865602637824> 8%\n四星<:ark4:1107953907377901579> 30%\n三星<:ark3:1107953947353808947> 60%\n\n不要問我為什麼用狙信物，我絕對沒有對某隻六星狙有特別的偏好");
+                bot.message_create(msg);
+            }
+            else {
+                dpp::message msg(event.msg.channel_id, "我看不懂你要幹嘛");
+                bot.message_create(msg);
+            }
         }
         else if (v[0] == "亂數測試") {
             mt19937 mt(time(nullptr));
@@ -667,216 +692,217 @@ int main() {
             bot.message_create(msg);
         }
         else if (v[0] == "抽卡說明") {
-            gacha = "抽卡\n目前支援fgo、明日方舟與公主連結\nfgo與公主連結支援抽到有功能（有保底）\n\n抽卡功能使用公式\n抽 (這裡用中文或半形英文打遊戲名稱) (這裡用半形數字打抽數)\n\n抽卡公式說明\n抽字為觸發功能必要、也可輸入gacha一詞代替\n三個區段間請用半形空格隔開\n遊戲名稱可打pcr、fgo、ark、公連、方舟、居歐\n最後請打抽數，拜託不要用太大數字炸我機器人";
+            gacha = "抽卡\n目前支援fgo、明日方舟與公主連結\nfgo與公主連結支援抽到有功能（有保底）\n\n抽卡功能使用公式\n抽(這裡用中文或半形英文打遊戲名稱) (這裡用半形數字打抽數)\n\n抽卡公式說明\n抽字為觸發功能必要、也可輸入gacha一詞代替\n三個區段間請用半形空格隔開\n遊戲名稱可打pcr、fgo、ark、公連、方舟、居歐\n最後請打抽數";
             dpp::message msg(event.msg.channel_id, gacha);
             bot.message_create(msg);
         }
-        //以下是fgo素材查詢功能程式碼，結束有另一行告知
-        else if (v[0] == "黨證" || v[0] == "英雄之證") {
-            dpp::message msg(event.msg.channel_id, mat[0]);
-            bot.message_create(msg);
+        //以下是fgo素材查詢功能程式碼
+        else if (v[0] == "素材" || v[0] == "fgo素材") {
+            if (v[1] == "黨證" || v[1] == "英雄之證") {
+                dpp::message msg(event.msg.channel_id, fgomat[0]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "兇骨" || v[1] == "凶骨") {
+                dpp::message msg(event.msg.channel_id, fgomat[1]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "龍牙" || v[1] == "龍之牙") {
+                dpp::message msg(event.msg.channel_id, fgomat[2]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "塵" || v[1] == "虛影之塵" || v[1] == "灰塵" || v[1] == "塵土") {
+                dpp::message msg(event.msg.channel_id, fgomat[3]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "鎖" || v[1] == "愚者之鎖") {
+                dpp::message msg(event.msg.channel_id, fgomat[4]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "毒針" || v[1] == "萬死的毒針") {
+                dpp::message msg(event.msg.channel_id, fgomat[5]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "髓液" || v[1] == "魔術髓液") {
+                dpp::message msg(event.msg.channel_id, fgomat[6]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "鐵樁" || v[1] == "宵泣之鐵樁" || v[1] == "釘子") {
+                dpp::message msg(event.msg.channel_id, fgomat[7]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "火藥" || v[1] == "振盪火藥") {
+                dpp::message msg(event.msg.channel_id, fgomat[8]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "小鐘" || v[1] == "赦免的小鐘") {
+                dpp::message msg(event.msg.channel_id, fgomat[9]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "儀式劍" || v[1] == "黃昏の儀式劍") {
+                dpp::message msg(event.msg.channel_id, fgomat[10]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "忘れじの灰") {
+                dpp::message msg(event.msg.channel_id, fgomat[11]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "樹種" || v[1] == "世界樹之種") {
+                dpp::message msg(event.msg.channel_id, fgomat[12]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "提燈" || v[1] == "鬼魂提燈") {
+                dpp::message msg(event.msg.channel_id, fgomat[13]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "八連晶" || v[1] == "八連雙晶" || v[1] == "雙晶") {
+                dpp::message msg(event.msg.channel_id, fgomat[14]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "寶玉" || v[1] == "蛇之寶玉" || v[1] == "蛇玉") {
+                dpp::message msg(event.msg.channel_id, fgomat[15]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "羽毛" || v[1] == "鳳凰羽毛") {
+                dpp::message msg(event.msg.channel_id, fgomat[16]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "齒輪" || v[1] == "無間齒輪") {
+                dpp::message msg(event.msg.channel_id, fgomat[17]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "書頁" || v[1] == "禁斷書頁") {
+                dpp::message msg(event.msg.channel_id, fgomat[18]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "藥瓶" || v[1] == "人工生命體幼體") {
+                dpp::message msg(event.msg.channel_id, fgomat[19]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "馬蹄鐵" || v[1] == "隕蹄鐵") {
+                dpp::message msg(event.msg.channel_id, fgomat[20]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "勳章" || v[1] == "大騎士勳章") {
+                dpp::message msg(event.msg.channel_id, fgomat[21]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "貝殼" || v[1] == "追憶的貝殼") {
+                dpp::message msg(event.msg.channel_id, fgomat[22]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "玉" || v[1] == "枯淡勾玉") {
+                dpp::message msg(event.msg.channel_id, fgomat[23]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "冰" || v[1] == "永遠結冰") {
+                dpp::message msg(event.msg.channel_id, fgomat[24]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "指輪" || v[1] == "巨人的指輪") {
+                dpp::message msg(event.msg.channel_id, fgomat[25]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "極光鋼" || v[1] == "極光之鋼") {
+                dpp::message msg(event.msg.channel_id, fgomat[26]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "閑古鈴") {
+                dpp::message msg(event.msg.channel_id, fgomat[27]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "箭頭" || v[1] == "禍罪之箭頭") {
+                dpp::message msg(event.msg.channel_id, fgomat[28]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "光銀之冠") {
+                dpp::message msg(event.msg.channel_id, fgomat[29]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "神脈靈子") {
+                dpp::message msg(event.msg.channel_id, fgomat[30]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "線球" || v[1] == "虹色線球") {
+                dpp::message msg(event.msg.channel_id, fgomat[31]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "鱗粉" || v[1] == "夢幻的鱗粉") {
+                dpp::message msg(event.msg.channel_id, fgomat[32]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "爪" || v[1] == "爪子" || v[1] == "混沌之爪") {
+                dpp::message msg(event.msg.channel_id, fgomat[33]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "心臟" || v[1] == "蠻神心臟") {
+                dpp::message msg(event.msg.channel_id, fgomat[34]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "龍麟" || v[1] == "逆麟" || v[1] == "龍之逆麟") {
+                dpp::message msg(event.msg.channel_id, fgomat[35]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "精靈根") {
+                dpp::message msg(event.msg.channel_id, fgomat[36]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "角" || v[1] == "戰馬的幼角") {
+                dpp::message msg(event.msg.channel_id, fgomat[37]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "血石" || v[1] == "淚石" || v[1] == "血之淚石") {
+                dpp::message msg(event.msg.channel_id, fgomat[38]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "獸脂" || v[1] == "黑獸脂") {
+                dpp::message msg(event.msg.channel_id, fgomat[39]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "封魔之燈") {
+                dpp::message msg(event.msg.channel_id, fgomat[40]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "甲蟲" || v[1] == "智慧之聖甲蟲像") {
+                dpp::message msg(event.msg.channel_id, fgomat[41]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "胎毛" || v[1] == "獸毛" || v[1] == "起源的胎毛") {
+                dpp::message msg(event.msg.channel_id, fgomat[42]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "咒獸膽石") {
+                dpp::message msg(event.msg.channel_id, fgomat[43]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "神酒" || v[1] == "奇奇神酒") {
+                dpp::message msg(event.msg.channel_id, fgomat[44]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "爐心" || v[1] == "曉光爐心") {
+                dpp::message msg(event.msg.channel_id, fgomat[45]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "九十九鏡") {
+                dpp::message msg(event.msg.channel_id, fgomat[46]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "金蛋" || v[1] == "真理之卵") {
+                dpp::message msg(event.msg.channel_id, fgomat[47]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "煌星碎片") {
+                dpp::message msg(event.msg.channel_id, fgomat[48]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "悠久果實") {
+                dpp::message msg(event.msg.channel_id, fgomat[49]);
+                bot.message_create(msg);
+            }
+            else if (v[1] == "鬼炎鬼燈") {
+                dpp::message msg(event.msg.channel_id, fgomat[50]);
+                bot.message_create(msg);
+            }
         }
-        else if (v[0] == "兇骨" || v[0] == "凶骨") {
-            dpp::message msg(event.msg.channel_id, mat[1]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "龍牙" || v[0] == "龍之牙") {
-            dpp::message msg(event.msg.channel_id, mat[2]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "塵" || v[0] == "虛影之塵" || v[0] == "灰塵" || v[0] == "塵土") {
-            dpp::message msg(event.msg.channel_id, mat[3]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "鎖" || v[0] == "愚者之鎖") {
-            dpp::message msg(event.msg.channel_id, mat[4]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "毒針" || v[0] == "萬死的毒針") {
-        dpp::message msg(event.msg.channel_id, mat[5]);
-        bot.message_create(msg);
-        }
-        else if (v[0] == "髓液" || v[0] == "魔術髓液") {
-            dpp::message msg(event.msg.channel_id, mat[6]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "鐵樁" || v[0] == "宵泣之鐵樁" || v[0] == "釘子") {
-            dpp::message msg(event.msg.channel_id, mat[7]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "火藥" || v[0] == "振盪火藥") {
-            dpp::message msg(event.msg.channel_id, mat[8]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "小鐘" || v[0] == "赦免的小鐘") {
-            dpp::message msg(event.msg.channel_id, mat[9]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "儀式劍" || v[0] == "黃昏の儀式劍") {
-            dpp::message msg(event.msg.channel_id, mat[10]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "忘れじの灰") {
-            dpp::message msg(event.msg.channel_id, mat[11]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "樹種" || v[0] == "世界樹之種") {
-            dpp::message msg(event.msg.channel_id, mat[12]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "提燈" || v[0] == "鬼魂提燈") {
-            dpp::message msg(event.msg.channel_id, mat[13]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "八連晶" || v[0] == "八連雙晶" || v[0] == "雙晶") {
-            dpp::message msg(event.msg.channel_id, mat[14]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "寶玉" || v[0] == "蛇之寶玉" || v[0] == "蛇玉") {
-            dpp::message msg(event.msg.channel_id, mat[15]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "羽毛" || v[0] == "鳳凰羽毛") {
-            dpp::message msg(event.msg.channel_id, mat[16]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "齒輪" || v[0] == "無間齒輪") {
-            dpp::message msg(event.msg.channel_id, mat[17]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "書頁" || v[0] == "禁斷書頁") {
-            dpp::message msg(event.msg.channel_id, mat[18]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "藥瓶" || v[0] == "人工生命體幼體") {
-            dpp::message msg(event.msg.channel_id, mat[19]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "馬蹄鐵" || v[0] == "隕蹄鐵") {
-            dpp::message msg(event.msg.channel_id, mat[20]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "勳章" || v[0] == "大騎士勳章") {
-            dpp::message msg(event.msg.channel_id, mat[21]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "貝殼" || v[0] == "追憶的貝殼") {
-            dpp::message msg(event.msg.channel_id, mat[22]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "玉" || v[0] == "枯淡勾玉") {
-            dpp::message msg(event.msg.channel_id, mat[23]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "冰" || v[0] == "永遠結冰") {
-            dpp::message msg(event.msg.channel_id, mat[24]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "指輪" || v[0] == "巨人的指輪") {
-            dpp::message msg(event.msg.channel_id, mat[25]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "極光鋼" || v[0] == "極光之鋼") {
-            dpp::message msg(event.msg.channel_id, mat[26]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "閑古鈴") {
-            dpp::message msg(event.msg.channel_id, mat[27]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "箭頭" || v[0] == "禍罪之箭頭") {
-            dpp::message msg(event.msg.channel_id, mat[28]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "光銀之冠") {
-            dpp::message msg(event.msg.channel_id, mat[29]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "神脈靈子") {
-            dpp::message msg(event.msg.channel_id, mat[30]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "線球" || v[0] == "虹色線球") {
-            dpp::message msg(event.msg.channel_id, mat[31]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "鱗粉" || v[0] == "夢幻的鱗粉") {
-            dpp::message msg(event.msg.channel_id, mat[32]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "爪" || v[0] == "爪子" || v[0] == "混沌之爪") {
-            dpp::message msg(event.msg.channel_id, mat[33]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "心臟" || v[0] == "蠻神心臟") {
-            dpp::message msg(event.msg.channel_id, mat[34]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "龍麟" || v[0] == "逆麟" || v[0] == "龍之逆麟") {
-            dpp::message msg(event.msg.channel_id, mat[35]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "精靈根") {
-            dpp::message msg(event.msg.channel_id, mat[36]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "角" || v[0] == "戰馬的幼角") {
-            dpp::message msg(event.msg.channel_id, mat[37]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "血石" || v[0] == "淚石" || v[0] == "血之淚石") {
-            dpp::message msg(event.msg.channel_id, mat[38]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "獸脂" || v[0] == "黑獸脂") {
-            dpp::message msg(event.msg.channel_id, mat[39]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "封魔之燈") {
-            dpp::message msg(event.msg.channel_id, mat[40]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "甲蟲" || v[0] == "智慧之聖甲蟲像") {
-            dpp::message msg(event.msg.channel_id, mat[41]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "胎毛" || v[0] == "獸毛" || v[0] == "起源的胎毛") {
-            dpp::message msg(event.msg.channel_id, mat[42]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "咒獸膽石") {
-            dpp::message msg(event.msg.channel_id, mat[43]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "神酒" || v[0] == "奇奇神酒") {
-            dpp::message msg(event.msg.channel_id, mat[44]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "爐心" || v[0] == "曉光爐心") {
-            dpp::message msg(event.msg.channel_id, mat[45]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "九十九鏡") {
-            dpp::message msg(event.msg.channel_id, mat[46]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "金蛋" || v[0] == "真理之卵") {
-            dpp::message msg(event.msg.channel_id, mat[47]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "煌星碎片") {
-            dpp::message msg(event.msg.channel_id, mat[48]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "悠久果實") {
-            dpp::message msg(event.msg.channel_id, mat[49]);
-            bot.message_create(msg);
-        }
-        else if (v[0] == "鬼炎鬼燈") {
-            dpp::message msg(event.msg.channel_id, mat[50]);
-            bot.message_create(msg);
-        }
-        //fgo素材查詢功能程式碼結束
     });
 
     /*
@@ -1471,207 +1497,207 @@ int main() {
         //以下是fgo素材查詢功能程式碼，結束有另一行告知
 
         else if (v[0] == "黨證" || v[0] == "英雄之證") {
-            dpp::message msg(event.msg.channel_id, mat[0]);
+            dpp::message msg(event.msg.channel_id, fgomat[0]);
             bot.message_create(msg);
         }
         else if (v[0] == "兇骨" || v[0] == "凶骨") {
-            dpp::message msg(event.msg.channel_id, mat[1]);
+            dpp::message msg(event.msg.channel_id, fgomat[1]);
             bot.message_create(msg);
         }
         else if (v[0] == "龍牙" || v[0] == "龍之牙") {
-            dpp::message msg(event.msg.channel_id, mat[2]);
+            dpp::message msg(event.msg.channel_id, fgomat[2]);
             bot.message_create(msg);
         }
         else if (v[0] == "塵" || v[0] == "虛影之塵" || v[0] == "灰塵" || v[0] == "塵土") {
-            dpp::message msg(event.msg.channel_id, mat[3]);
+            dpp::message msg(event.msg.channel_id, fgomat[3]);
             bot.message_create(msg);
         }
         else if (v[0] == "鎖" || v[0] == "愚者之鎖") {
-            dpp::message msg(event.msg.channel_id, mat[4]);
+            dpp::message msg(event.msg.channel_id, fgomat[4]);
             bot.message_create(msg);
         }
         else if (v[0] == "毒針" || v[0] == "萬死的毒針") {
-        dpp::message msg(event.msg.channel_id, mat[5]);
+        dpp::message msg(event.msg.channel_id, fgomat[5]);
         bot.message_create(msg);
         }
         else if (v[0] == "髓液" || v[0] == "魔術髓液") {
-            dpp::message msg(event.msg.channel_id, mat[6]);
+            dpp::message msg(event.msg.channel_id, fgomat[6]);
             bot.message_create(msg);
         }
         else if (v[0] == "鐵樁" || v[0] == "宵泣之鐵樁" || v[0] == "釘子") {
-            dpp::message msg(event.msg.channel_id, mat[7]);
+            dpp::message msg(event.msg.channel_id, fgomat[7]);
             bot.message_create(msg);
         }
         else if (v[0] == "火藥" || v[0] == "振盪火藥") {
-            dpp::message msg(event.msg.channel_id, mat[8]);
+            dpp::message msg(event.msg.channel_id, fgomat[8]);
             bot.message_create(msg);
         }
         else if (v[0] == "小鐘" || v[0] == "赦免的小鐘") {
-            dpp::message msg(event.msg.channel_id, mat[9]);
+            dpp::message msg(event.msg.channel_id, fgomat[9]);
             bot.message_create(msg);
         }
         else if (v[0] == "儀式劍" || v[0] == "黃昏の儀式劍") {
-            dpp::message msg(event.msg.channel_id, mat[10]);
+            dpp::message msg(event.msg.channel_id, fgomat[10]);
             bot.message_create(msg);
         }
         else if (v[0] == "忘れじの灰") {
-            dpp::message msg(event.msg.channel_id, mat[11]);
+            dpp::message msg(event.msg.channel_id, fgomat[11]);
             bot.message_create(msg);
         }
         else if (v[0] == "樹種" || v[0] == "世界樹之種") {
-            dpp::message msg(event.msg.channel_id, mat[12]);
+            dpp::message msg(event.msg.channel_id, fgomat[12]);
             bot.message_create(msg);
         }
         else if (v[0] == "提燈" || v[0] == "鬼魂提燈") {
-            dpp::message msg(event.msg.channel_id, mat[13]);
+            dpp::message msg(event.msg.channel_id, fgomat[13]);
             bot.message_create(msg);
         }
         else if (v[0] == "八連晶" || v[0] == "八連雙晶" || v[0] == "雙晶") {
-            dpp::message msg(event.msg.channel_id, mat[14]);
+            dpp::message msg(event.msg.channel_id, fgomat[14]);
             bot.message_create(msg);
         }
         else if (v[0] == "寶玉" || v[0] == "蛇之寶玉" || v[0] == "蛇玉") {
-            dpp::message msg(event.msg.channel_id, mat[15]);
+            dpp::message msg(event.msg.channel_id, fgomat[15]);
             bot.message_create(msg);
         }
         else if (v[0] == "羽毛" || v[0] == "鳳凰羽毛") {
-            dpp::message msg(event.msg.channel_id, mat[16]);
+            dpp::message msg(event.msg.channel_id, fgomat[16]);
             bot.message_create(msg);
         }
         else if (v[0] == "齒輪" || v[0] == "無間齒輪") {
-            dpp::message msg(event.msg.channel_id, mat[17]);
+            dpp::message msg(event.msg.channel_id, fgomat[17]);
             bot.message_create(msg);
         }
         else if (v[0] == "書頁" || v[0] == "禁斷書頁") {
-            dpp::message msg(event.msg.channel_id, mat[18]);
+            dpp::message msg(event.msg.channel_id, fgomat[18]);
             bot.message_create(msg);
         }
         else if (v[0] == "藥瓶" || v[0] == "人工生命體幼體") {
-            dpp::message msg(event.msg.channel_id, mat[19]);
+            dpp::message msg(event.msg.channel_id, fgomat[19]);
             bot.message_create(msg);
         }
         else if (v[0] == "馬蹄鐵" || v[0] == "隕蹄鐵") {
-            dpp::message msg(event.msg.channel_id, mat[20]);
+            dpp::message msg(event.msg.channel_id, fgomat[20]);
             bot.message_create(msg);
         }
         else if (v[0] == "勳章" || v[0] == "大騎士勳章") {
-            dpp::message msg(event.msg.channel_id, mat[21]);
+            dpp::message msg(event.msg.channel_id, fgomat[21]);
             bot.message_create(msg);
         }
         else if (v[0] == "貝殼" || v[0] == "追憶的貝殼") {
-            dpp::message msg(event.msg.channel_id, mat[22]);
+            dpp::message msg(event.msg.channel_id, fgomat[22]);
             bot.message_create(msg);
         }
         else if (v[0] == "玉" || v[0] == "枯淡勾玉") {
-            dpp::message msg(event.msg.channel_id, mat[23]);
+            dpp::message msg(event.msg.channel_id, fgomat[23]);
             bot.message_create(msg);
         }
         else if (v[0] == "冰" || v[0] == "永遠結冰") {
-            dpp::message msg(event.msg.channel_id, mat[24]);
+            dpp::message msg(event.msg.channel_id, fgomat[24]);
             bot.message_create(msg);
         }
         else if (v[0] == "指輪" || v[0] == "巨人的指輪") {
-            dpp::message msg(event.msg.channel_id, mat[25]);
+            dpp::message msg(event.msg.channel_id, fgomat[25]);
             bot.message_create(msg);
         }
         else if (v[0] == "極光鋼" || v[0] == "極光之鋼") {
-            dpp::message msg(event.msg.channel_id, mat[26]);
+            dpp::message msg(event.msg.channel_id, fgomat[26]);
             bot.message_create(msg);
         }
         else if (v[0] == "閑古鈴") {
-            dpp::message msg(event.msg.channel_id, mat[27]);
+            dpp::message msg(event.msg.channel_id, fgomat[27]);
             bot.message_create(msg);
         }
         else if (v[0] == "箭頭" || v[0] == "禍罪之箭頭") {
-            dpp::message msg(event.msg.channel_id, mat[28]);
+            dpp::message msg(event.msg.channel_id, fgomat[28]);
             bot.message_create(msg);
         }
         else if (v[0] == "光銀之冠") {
-            dpp::message msg(event.msg.channel_id, mat[29]);
+            dpp::message msg(event.msg.channel_id, fgomat[29]);
             bot.message_create(msg);
         }
         else if (v[0] == "神脈靈子") {
-            dpp::message msg(event.msg.channel_id, mat[30]);
+            dpp::message msg(event.msg.channel_id, fgomat[30]);
             bot.message_create(msg);
         }
         else if (v[0] == "線球" || v[0] == "虹色線球") {
-            dpp::message msg(event.msg.channel_id, mat[31]);
+            dpp::message msg(event.msg.channel_id, fgomat[31]);
             bot.message_create(msg);
         }
         else if (v[0] == "鱗粉" || v[0] == "夢幻的鱗粉") {
-            dpp::message msg(event.msg.channel_id, mat[32]);
+            dpp::message msg(event.msg.channel_id, fgomat[32]);
             bot.message_create(msg);
         }
         else if (v[0] == "爪" || v[0] == "爪子" || v[0] == "混沌之爪") {
-            dpp::message msg(event.msg.channel_id, mat[33]);
+            dpp::message msg(event.msg.channel_id, fgomat[33]);
             bot.message_create(msg);
         }
         else if (v[0] == "心臟" || v[0] == "蠻神心臟") {
-            dpp::message msg(event.msg.channel_id, mat[34]);
+            dpp::message msg(event.msg.channel_id, fgomat[34]);
             bot.message_create(msg);
         }
         else if (v[0] == "龍麟" || v[0] == "逆麟" || v[0] == "龍之逆麟") {
-            dpp::message msg(event.msg.channel_id, mat[35]);
+            dpp::message msg(event.msg.channel_id, fgomat[35]);
             bot.message_create(msg);
         }
         else if (v[0] == "精靈根") {
-            dpp::message msg(event.msg.channel_id, mat[36]);
+            dpp::message msg(event.msg.channel_id, fgomat[36]);
             bot.message_create(msg);
         }
         else if (v[0] == "角" || v[0] == "戰馬的幼角") {
-            dpp::message msg(event.msg.channel_id, mat[37]);
+            dpp::message msg(event.msg.channel_id, fgomat[37]);
             bot.message_create(msg);
         }
         else if (v[0] == "血石" || v[0] == "淚石" || v[0] == "血之淚石") {
-            dpp::message msg(event.msg.channel_id, mat[38]);
+            dpp::message msg(event.msg.channel_id, fgomat[38]);
             bot.message_create(msg);
         }
         else if (v[0] == "獸脂" || v[0] == "黑獸脂") {
-            dpp::message msg(event.msg.channel_id, mat[39]);
+            dpp::message msg(event.msg.channel_id, fgomat[39]);
             bot.message_create(msg);
         }
         else if (v[0] == "封魔之燈") {
-            dpp::message msg(event.msg.channel_id, mat[40]);
+            dpp::message msg(event.msg.channel_id, fgomat[40]);
             bot.message_create(msg);
         }
         else if (v[0] == "甲蟲" || v[0] == "智慧之聖甲蟲像") {
-            dpp::message msg(event.msg.channel_id, mat[41]);
+            dpp::message msg(event.msg.channel_id, fgomat[41]);
             bot.message_create(msg);
         }
         else if (v[0] == "胎毛" || v[0] == "獸毛" || v[0] == "起源的胎毛") {
-            dpp::message msg(event.msg.channel_id, mat[42]);
+            dpp::message msg(event.msg.channel_id, fgomat[42]);
             bot.message_create(msg);
         }
         else if (v[0] == "咒獸膽石") {
-            dpp::message msg(event.msg.channel_id, mat[43]);
+            dpp::message msg(event.msg.channel_id, fgomat[43]);
             bot.message_create(msg);
         }
         else if (v[0] == "神酒" || v[0] == "奇奇神酒") {
-            dpp::message msg(event.msg.channel_id, mat[44]);
+            dpp::message msg(event.msg.channel_id, fgomat[44]);
             bot.message_create(msg);
         }
         else if (v[0] == "爐心" || v[0] == "曉光爐心") {
-            dpp::message msg(event.msg.channel_id, mat[45]);
+            dpp::message msg(event.msg.channel_id, fgomat[45]);
             bot.message_create(msg);
         }
         else if (v[0] == "九十九鏡") {
-            dpp::message msg(event.msg.channel_id, mat[46]);
+            dpp::message msg(event.msg.channel_id, fgomat[46]);
             bot.message_create(msg);
         }
         else if (v[0] == "金蛋" || v[0] == "真理之卵") {
-            dpp::message msg(event.msg.channel_id, mat[47]);
+            dpp::message msg(event.msg.channel_id, fgomat[47]);
             bot.message_create(msg);
         }
         else if (v[0] == "煌星碎片") {
-            dpp::message msg(event.msg.channel_id, mat[48]);
+            dpp::message msg(event.msg.channel_id, fgomat[48]);
             bot.message_create(msg);
         }
         else if (v[0] == "悠久果實") {
-            dpp::message msg(event.msg.channel_id, mat[49]);
+            dpp::message msg(event.msg.channel_id, fgomat[49]);
             bot.message_create(msg);
         }
         else if (v[0] == "鬼炎鬼燈") {
-            dpp::message msg(event.msg.channel_id, mat[50]);
+            dpp::message msg(event.msg.channel_id, fgomat[50]);
             bot.message_create(msg);
         }
         //fgo素材查詢功能程式碼結束
