@@ -14,13 +14,13 @@ https://discord.com/api/oauth2/authorize?client_id=1092497000945160324&permissio
 
 身為機器人作者的我所擁有的帳號是不會因此這一授權獲得管理員權限的，請放心
 
-## 功能介紹
+# 功能介紹
 這隻機器人可以：
 * 偵測特定文字並傳送回應
 * 使用斜線指令（slash command）
 * 傳送回復方塊
 * ~~測歐非驗血統~~ 抽卡模擬 
 
-### 協助人士與參考資源
+## 協助人士與參考資源
 * @H1de_on_bruH : https://www.youtube.com/watch?v=qjJ92yM-2QY （感謝許多coding支援
 * D++ lib : https://dpp.dev/
