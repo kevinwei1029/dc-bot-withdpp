@@ -177,7 +177,9 @@ string wat[16]{"https://cdn.discordapp.com/attachments/966727921467260938/110767
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672350268334171/Screenshot_20230501_103044.jpg",  //15
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672365162307704/FB_IMG_1670764145912.jpg"
 };
-string mat[130][2] = {
+string mat[132][2] = {
+{"連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
+{"表單連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
 {"功能", "輸入「素材 素材名稱」(暱稱及全名都可以)"},
 {"功能介紹", "輸入「素材 素材名稱」(暱稱及全名都可以)"},
 {"英雄之證", "1-3 海盜船 (同時缺虛影之塵就去 1-5 夏洛特)"},
@@ -311,9 +313,9 @@ string mat[130][2] = {
 };
 
 string gacha, tkuse, token[2] = { "" };
-string tokyotonumazu = "https://cdn.discordapp.com/attachments/1063968936464482324/1119267625869004840/image.png\nhttps://cdn.discordapp.com/attachments/1063968936464482324/1119267744622317628/image.png\nhttps://cdn.discordapp.com/attachments/1063968936464482324/1119267874641563648/image.png";
-string numazutotokyo = "https://cdn.discordapp.com/attachments/1063968936464482324/1119270096225972286/image.png\nhttps://cdn.discordapp.com/attachments/1063968936464482324/1119272284448890940/image.png\nhttps://cdn.discordapp.com/attachments/1063968936464482324/1119273118150692975/image.png";
-string jrtime = "https://www.eki-net.com/Personal/Top/Index\nhttps://www.jreast.co.jp/tickets/\nhttps://ekitan.com/timetable/railway/line/5000";
+string tokyotonumazu = "https://cdn.discordapp.com/attachments/1063968936464482324/1119267625869004840/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119267744622317628/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119267874641563648/image.png";
+string numazutotokyo = "https://cdn.discordapp.com/attachments/1063968936464482324/1119270096225972286/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119272284448890940/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119273118150692975/image.png";
+string jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
 
 string pcrgacha(string times) {
     int integer = std::stoi(times);
@@ -487,7 +489,7 @@ int main() {
 
     srand(time(NULL));
 
-    //dpp::message msg(1091776372168474665, "都感謝無能的機器人創作者以及沒有資安意識的H主播，現在這隻機器人已經被我駭啦\nhttps://cdn.discordapp.com/attachments/981585424017420378/1123557273747329084/Character_Silver_Wolf_Splash_Art.webp");
+    //dpp::message msg(968693698206519356, "已開機");
     //bot.message_create(msg);
 
     bot.on_slashcommand([](const dpp::slashcommand_t& event) {
@@ -740,9 +742,9 @@ int main() {
             dpp::embed embed = dpp::embed().
                 set_color(dpp::colors::sti_blue).
                 set_title("CREATOR").
-                set_url("https://www.youtube.com/channel/UC04oBjEp3AKCMVMJAumw0oA").
-                set_author("anime.photos.tw", "https://idol.st/allstars/cards", "https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
-                set_description("Yuuki Sutsuna is my waifu").
+                set_url("https://github.com/kevinwei1029").
+                set_author("anime.photos.tw", "https://www.instagram.com/anime.photos.tw/", "https://cdn.discordapp.com/attachments/968693698206519356/1126715809511768176/1eaeade800d23f2c.png").
+                set_description("優木雪菜我婆！").
                 set_thumbnail("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                 add_field(
                     "感謝交大資工仔 @H1de_on_bruH 提供技術指導",
@@ -752,11 +754,15 @@ int main() {
                     "這隻機器人他老杯很難過",
                     "燈燈退役了"
                 ).
+                add_field(
+                    "歡迎逛逛這隻機器人的專案程式碼順便點個讚",
+                    "https://github.com/kevinwei1029/dc-bot-withdpp"
+                ).
                 set_image("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
-                set_footer(dpp::embed_footer().set_text("Some footer text here").set_icon("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png")).
+                set_footer(dpp::embed_footer().set_text("我好喜歡小浠").set_icon("https://cdn.discordapp.com/attachments/981585424017420378/1126716388157964338/Mizuki_.png")).
                 set_timestamp(time(0));
 
-            /* reply with the created embed */
+            //reply with the created embed
             bot.message_create(dpp::message(event.msg.channel_id, embed).set_reference(event.msg.id));
         }
         else if (event.msg.content == "!help" || event.msg.content == "!function" || event.msg.content == "!functions") {
@@ -764,9 +770,9 @@ int main() {
             /* create the embed */
             dpp::embed embed = dpp::embed().
                 set_color(dpp::colors::sti_blue).
-                set_title("function").
-                set_url("https://www.youtube.com/channel/UC04oBjEp3AKCMVMJAumw0oA").
-                set_author("anime.photos.tw", "https://idol.st/allstars/cards", "https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
+                set_title("FUNCTIONS").
+                set_url("https://github.com/kevinwei1029").
+                set_author("anime.photos.tw", "https://www.instagram.com/anime.photos.tw/", "https://cdn.discordapp.com/attachments/968693698206519356/1126715809511768176/1eaeade800d23f2c.png").
                 set_description("優木雪菜我婆！").
                 set_thumbnail("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                 add_field(
@@ -806,7 +812,7 @@ int main() {
                     "2023/6/24"
                 ).
                 set_image("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
-                set_footer(dpp::embed_footer().set_text("Some footer text here").set_icon("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png")).
+                set_footer(dpp::embed_footer().set_text("我好喜歡小浠").set_icon("https://cdn.discordapp.com/attachments/981585424017420378/1126716388157964338/Mizuki_.png")).
                 set_timestamp(time(0));
 
             /* reply with the created embed */
