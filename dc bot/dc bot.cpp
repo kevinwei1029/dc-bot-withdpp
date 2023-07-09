@@ -86,7 +86,7 @@ string irene[22] = {
     "https://www.pixiv.net/artworks/106968058",
     "https://www.pixiv.net/artworks/106179650"
 };
-string dalao[11] = {
+string dalao[12] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1103600372762808330/65bbfd846d3437b0dd9ed947dcc4816f.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1103600521085976576/1586869262198.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1103600614879010827/1619758952948.png",
@@ -96,8 +96,9 @@ string dalao[11] = {
     "https://cdn.discordapp.com/attachments/966719485438476318/1103622392288399390/IMG_6535.GIF",
     "https://cdn.discordapp.com/attachments/968693698206519356/1108599188410880030/FB_IMG_1667864424847.jpg",
     "https://cdn.discordapp.com/attachments/968693698206519356/1108599543236399144/FB_IMG_1664012145347.jpg",
-    "https://cdn.discordapp.com/attachments/988843667479470130/1109721623147331604/kitten-cat.gif",
-    "https://media.discordapp.net/attachments/727443536085254186/883883935141101589/image0.gif?width=87&height=87"
+    "https://cdn.discordapp.com/attachments/988843667479470130/1109721623147331604/kitten-cat.gif", //  10
+    "https://media.discordapp.net/attachments/727443536085254186/883883935141101589/image0.gif?width=87&height=87",
+    "https://cdn.discordapp.com/attachments/968693698206519356/1126812896425431110/4qBl31563R.gif"
 };
 string europe[5] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601634916966471/64819726415fa4d795ccc6269f6e560b.png",
@@ -135,7 +136,7 @@ string truee[5] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809663716503613/51.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105823436883902484/Mvd47Q7.png"  // 5
 };
-string gay[23] = {
+string gay[25] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832383690854420/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832408504344647/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832434081214484/image.png",
@@ -158,7 +159,9 @@ string gay[23] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105833092284960869/rsLmsEx.png",  // 20
     "https://cdn.discordapp.com/attachments/968693698206519356/1105834957118644224/584E45F3-4090-4C2F-ABF7-D38D4B2E7DA2.jpg",
     "https://cdn.discordapp.com/attachments/981585424017420378/1105834260557996102/ZomboMeme_02052023151522.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1110106858477326376/348551627_234395815863993_2485886371128395134_n.png"
+    "https://cdn.discordapp.com/attachments/968693698206519356/1110106858477326376/348551627_234395815863993_2485886371128395134_n.png",
+    "https://cdn.discordapp.com/attachments/968693698206519356/1127498944948219914/FB_IMG_1688620417978.jpg",
+    "https://cdn.discordapp.com/attachments/966729542800658442/1127515998514323476/image.png"  //  25
 };
 string wat[16]{"https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671945065025657/FB_IMG_1683964567949.jpg",
@@ -176,6 +179,18 @@ string wat[16]{"https://cdn.discordapp.com/attachments/966727921467260938/110767
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672305133428836/Screenshot_20230209-080633.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672350268334171/Screenshot_20230501_103044.jpg",  //15
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672365162307704/FB_IMG_1670764145912.jpg"
+};
+string ksexre[10] = {
+    "我能理解你的疲憊。\n這段時間裡持久的戰鬥累積的壓力，令你躁動的生理需求超出了你所能忍耐的水平。",
+    "奇怪，我理應不會被源石技藝帶來的任何錯覺干擾。",
+    "......\n看來你的生命跡象與意識狀態尚不穩定。經過稍早的理學檢查，我已大致推斷出導致現狀的原因。",
+    "看來你發作的時間比我預期的要早一些 -- 一如你在戰場上的決策那樣，總是出乎所有人的預料。",
+    "Mo3ter，來幫個忙。",  //  5
+    "這裡離最近的辦公室還有一段距離。\n希望你在此之前能保持清醒，羅德島戰術頭腦的醜態有我一個人看到就夠了。",
+    "在為這片大地上的人們戰鬥之前，我們首先是活生生的人，而不是被符號化的意象。\n只有真正無血無淚的生物才沒有一己私慾、才不需要來自他人的幫助。",
+    "感謝你一直以來的沉默，博士。\n但是沉默並不意味著要壓抑自己，不要忘記身後也有一齊為此努力的同伴。",
+    "群星會衰老，這片大地則會一路向前不停不息。\n我，作為你漫長旅途的半個過客，你無須記住我也勿要了解我。\n你的思維是一片有限度的內存，有限度的思維理應思考更深刻艮古的問題。",
+    "你將思考的情緒衝動加之於我，沒有必要，亦無意義。\n你有更重要的事情去做，而我微不足道。",  //  10
 };
 string mat[132][2] = {
 {"連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
@@ -312,7 +327,7 @@ string mat[132][2] = {
 {"鬼炎鬼燈", "2-5.5 三條三坊(同時缺虹色線球)、大江山(同時缺凶骨)、朱雀門(同時缺勾玉)"},
 };
 
-string gacha, tkuse, token[2] = { "" };
+string tkuse, txt, token[2] = { "" };
 string tokyotonumazu = "https://cdn.discordapp.com/attachments/1063968936464482324/1119267625869004840/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119267744622317628/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119267874641563648/image.png";
 string numazutotokyo = "https://cdn.discordapp.com/attachments/1063968936464482324/1119270096225972286/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119272284448890940/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119273118150692975/image.png";
 string jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
@@ -482,7 +497,7 @@ int main() {
     ifstream in;
     in.open("token.txt");
     in >> token[0] >> token[1]; //[0]為銀狼 [1]為女僕凱爾希
-    tkuse = token[0];
+    tkuse = token[1];
     dpp::cluster bot(tkuse, dpp::i_default_intents | dpp::i_message_content);
 
     bot.on_log(dpp::utility::cout_logger());
@@ -573,6 +588,9 @@ int main() {
         if (v[0] == "test") {
             bot.message_create(dpp::message(event.msg.channel_id, event.msg.author.get_mention(to_string(event.msg.author.id))));
         }
+        else if (v[0] == "連結" || s.find("邀請連結") != -1) {
+            bot.message_create(dpp::message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
+        }
         else if (v[0] == "^n") {
             bot.message_create(dpp::message(event.msg.channel_id, "https://nhentai.net/g/" + v[1]).set_reference(event.msg.id));
         }
@@ -582,54 +600,44 @@ int main() {
         else if (v[0] == "^jm") {
             bot.message_create(dpp::message(event.msg.channel_id, "https://18comic.vip/album/" + v[1]).set_reference(event.msg.id));
         }
-        else if (v[0] == "europe" || v[0] == "歐"
-            || v[0] == "歐皇" || v[0] == "歐洲" || v[0] == "歐洲人") {
+        else if (s.find("歐") != -1) {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, europe[mt() % size(europe)]));
         }
         else if (v[0] == "fga") {
             bot.message_create(dpp::message(event.msg.channel_id, "這是git本來的網站 https://github.com/Fate-Grand-Automata/FGA\n現在已經上架play商店了 https://play.google.com/store/apps/details?id=io.github.fate_grand_automata"));
         }
-        else if (v[0] == "婆" || v[0] == "我婆"
-            || v[0] == "這我婆" || v[0] == "這是我婆" || v[0] == "又你婆") {
+        else if (s.find("婆") != -1) {
             bot.message_create(dpp::message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/966729542800658442/1092428172705931355/FB_IMG_1625811644856.jpg"));
         }
-        else if (v[0] == "確實" || v[0] == "雀食") {
+        else if (s.find("確實") != -1 || v[0] == "雀食") {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, truee[mt() % size(truee)]));
         }
-        else if (v[0] == "<:lao:1012343248095821914>" || v[0] == "<:lao:1089079085327732738>"
-            || v[0] == "佬" || v[0] == "大佬") {
+        else if (s.find("lao") != -1 || v[0] == "佬" || v[0] == "大佬") {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, dalao[mt() % size(dalao)]));
         }
-        else if (v[0] == "<:kusa:1043444810259910748>" || v[0] == "<:kusa:1080709220451745853>"
-            || v[0] == "草" || v[0] == "笑死"
-            || v[0] == "笑" || v[0] == "kusa"
+        else if (s.find("kusa") != -1 || v[0] == "草" || s.find("笑") != -1 
             || v[0] == "w" || v[0] == "ww" || v[0] == "www") {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, kusa[mt() % size(kusa)]));
         }
-        else if (v[0] == u8"🏳️‍🌈" || v[0] == u8"🏳️‍🌈❓"
-            || v[0] == "gay" || v[0] == "甲"
-            || v[0] == "給" || v[0] == "你是甲"
-            || v[0] == "你是給" || v[0] == u8"🈸"
+        else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1
+            || v[0] == "gay" || s.find("甲") != -1
+            || v[0] == "給" || s.find("是給") != -1
             || v[0] == "鈔給" || v[0] == "超給") {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, gay[mt() % size(gay)]));
         }
-        else if (v[0] == u8"🚔" || v[0] == u8"🚓"
-            || v[0] == "fbi" || v[0] == "ㄌㄌㄎ" || v[0] == "你是ㄌㄌㄎ") {
+        else if (s.find("fbi") != -1 || s.find("ㄌㄌㄎ") != -1) {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, fbi[mt() % size(fbi)]));
         }
-        else if (v[0] == "雀" || v[0] == "雀嗎" 
-            || v[0] == "有人要雀嗎" || v[0] == "現在有人要雀嗎"
-            || v[0] == "誰要雀" || v[0] == "雀！") {
+        else if (s.find("雀") != -1) {
             bot.message_create(dpp::message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
         }
-        else if (v[0] == "能" || v[0] == "能天"
-            || v[0] == "阿能" || v[0] == "能天使") {
+        else if (v[0] == "能" || s.find("能天") != -1) {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, exusiai[mt() % size(exusiai)]));
         }
@@ -659,14 +667,11 @@ int main() {
             || v[0] == "JR時刻查詢" || v[0] == "jr時刻查詢") {
             bot.message_create(dpp::message(event.msg.channel_id, jrtime));
         }
-        else if (v[0] == "<:Setsuna:1074672084132827237>" || v[0] == "<:Kyaru_confused:966726451636355112> "
-            || v[0] == "<:pte_lemon:986265384992772166>" || v[0] == "三小"
-            || v[0] == "公三小" || v[0] == "工三小"
-            || v[0] == "這三小" || v[0] == "這到底三小" || v[0] == "我看了三小") {
+        else if (v[0] == "<:Setsuna:1074672084132827237>" || v[0] == "<:pte_lemon:986265384992772166>" || s.find("三小") != -1) {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, wat[mt() % size(wat)]));
         }
-        //以下是抽卡程式碼
+        //以下是抽卡相關程式碼
         else if (v[0] == "抽" || v[0] == "gacha" || v[0] == "抽卡") {
             while (tkuse == token[0]) {
                 bot.message_create(dpp::message(event.msg.channel_id, "為什麼要叫一個駭客做這種事呢？").set_reference(event.msg.id));
@@ -696,8 +701,6 @@ int main() {
                 bot.message_create(dpp::message(event.msg.channel_id, qreply()));
         }
         else if (v[0] == "機率" || v[0] == "抽卡機率") {
-            string txt;
-
             if (v[1] == "pcr" || v[1] == "公連") 
                 txt = "★★★角色　3%\n★★角色　  18%\n★角色　　 79%\n\n十抽功能中、第十抽有保底★★角色";
             else if (v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO") 
@@ -712,26 +715,41 @@ int main() {
         else if (v[0] == "亂數測試") {
             mt19937 mt(time(nullptr));
             dpp::message msg(event.msg.channel_id, to_string(mt()));
-            bot.message_create(msg);
+            bot.message_create(msg.set_reference(event.msg.id));
         }
         else if (v[0] == "抽卡說明") {
-            gacha = "抽卡\n目前支援fgo、明日方舟與公主連結\nfgo與公主連結支援抽到有功能（有保底）\n\n抽卡功能使用公式\n抽(這裡用中文或半形英文打遊戲名稱) (這裡用半形數字打抽數)\n\n抽卡公式說明\n抽字為觸發功能必要、也可輸入gacha一詞代替\n三個區段間請用半形空格隔開\n遊戲名稱可打pcr、fgo、ark、公連、方舟、居歐\n最後請打抽數";
-            dpp::message msg(event.msg.channel_id, gacha);
-            bot.message_create(msg);
+            txt = "抽卡\n目前支援fgo、明日方舟與公主連結\nfgo與公主連結支援抽到有功能（有保底）\n\n抽卡功能使用公式\n抽(這裡用中文或半形英文打遊戲名稱) (這裡用半形數字打抽數)\n\n抽卡公式說明\n抽字為觸發功能必要、也可輸入gacha一詞代替\n三個區段間請用半形空格隔開\n遊戲名稱可打pcr、fgo、ark、公連、方舟、居歐\n最後請打抽數";
+            dpp::message msg(event.msg.channel_id, txt);
+            bot.message_create(msg.set_reference(event.msg.id));
         }
+        //以下是素材查詢程式碼
         else if (v[0] == "素材" || v[0] == "fgo素材") {
             bool find = FALSE;
             for (int i = 0; i < size(mat); i++) {
                 while (v[1] == mat[i][0]) {
                     dpp::message msg(event.msg.channel_id, mat[i][1]);
-                    bot.message_create(msg);
+                    bot.message_create(msg.set_reference(event.msg.id));
                     find = TRUE;
                     break;
                 }
             }
             if (find == FALSE) {
                 dpp::message msg(event.msg.channel_id, qreply());
-                bot.message_create(msg);
+                bot.message_create(msg.set_reference(event.msg.id));
+            }
+        }
+        //以下是想跟老女人瑟瑟程式碼
+        else if (tkuse == token[1]) {
+            if (s.find("老女人") != -1 && s != "你說誰是老女人啊？"){
+                if (s.find("屁") != -1 || s.find("趴") != -1 || s.find("口") != -1 ||
+                    s.find("脫") != -1 || s.find("露") != -1 || s.find("奶") != -1 ||
+                    s.find("胸") != -1){
+                    mt19937 mt(time(nullptr));
+                    txt = ksexre[(mt() % size(ksexre))];
+                }
+                else
+                    txt = "你說誰是老女人啊？";
+                bot.message_create(dpp::message(event.msg.channel_id, txt));
             }
         }
     });
