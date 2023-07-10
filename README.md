@@ -15,7 +15,12 @@ bot1（主要用這隻登入） : https://discord.com/api/oauth2/authorize?clien
 * 偵測特定文字並傳送回應
 * 使用斜線指令（slash command）
 * 傳送回復方塊
-* ~~測歐非驗血統~~ 抽卡模擬 
+* ~~測歐非驗血統~~ 抽卡模擬
+
+# bot上線時間
+它現在要我在我的編譯器按下compile才會上線  
+因此上線時間要看我的作息呢w  
+基本上起床就會把機器人打開了
 
 ## 協助人士與參考資源
 * @H1de_on_bruH : https://www.youtube.com/watch?v=qjJ92yM-2QY （感謝許多coding支援
