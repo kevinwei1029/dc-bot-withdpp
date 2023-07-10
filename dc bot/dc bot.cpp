@@ -779,7 +779,7 @@ int main() {
                 //reply with the created embed
                 bot.message_create(dpp::message(event.msg.channel_id, embed).set_reference(event.msg.id));
             }
-            else if (s == "!help" || s == "!function" || s == "!functions") {
+            else if (s == "!help" || s.find("!function") != -1) {
 
                 /* create the embed */
                 dpp::embed embed = dpp::embed().
