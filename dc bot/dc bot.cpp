@@ -585,10 +585,12 @@ int main() {
         }
         //拆訊息
 
+        //https://cdn.discordapp.com/attachments/972681769704898591/1124121049001381895/image.png
+
         if (v[0] == "test") {
             bot.message_create(dpp::message(event.msg.channel_id, event.msg.author.get_mention(to_string(event.msg.author.id))));
         }
-        else if (v[0] == "連結" || s.find("邀請連結") != -1) {
+        else if ((s.find("機") != -1 || s.find("bot") != -1) && (s.find("連結") != -1)) {
             bot.message_create(dpp::message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
         }
         else if (v[0] == "^n") {
@@ -614,11 +616,11 @@ int main() {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, truee[mt() % size(truee)]));
         }
-        else if (s.find("lao") != -1 || v[0] == "佬" || v[0] == "大佬") {
+        else if (s.find("lao") != -1 || s.find("佬") != -1) {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, dalao[mt() % size(dalao)]));
         }
-        else if (s.find("kusa") != -1 || v[0] == "草" || s.find("笑") != -1 
+        else if (s.find("kusa") != -1 || v[0] == "草" || s.find("笑死") != -1 
             || v[0] == "w" || v[0] == "ww" || v[0] == "www") {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, kusa[mt() % size(kusa)]));
@@ -667,7 +669,7 @@ int main() {
             || v[0] == "JR時刻查詢" || v[0] == "jr時刻查詢") {
             bot.message_create(dpp::message(event.msg.channel_id, jrtime));
         }
-        else if (v[0] == "<:Setsuna:1074672084132827237>" || v[0] == "<:pte_lemon:986265384992772166>" || s.find("三小") != -1) {
+        else if (s.find("tsuna") != -1 || v[0] == "<:pte_lemon:986265384992772166>" || s.find("三小") != -1) {
             mt19937 mt(time(nullptr));
             bot.message_create(dpp::message(event.msg.channel_id, wat[mt() % size(wat)]));
         }
@@ -743,7 +745,7 @@ int main() {
             if (s.find("老女人") != -1 && s != "你說誰是老女人啊？"){
                 if (s.find("屁") != -1 || s.find("趴") != -1 || s.find("口") != -1 ||
                     s.find("脫") != -1 || s.find("露") != -1 || s.find("奶") != -1 ||
-                    s.find("胸") != -1){
+                    s.find("胸") != -1 || s.find("幹") != -1){
                     mt19937 mt(time(nullptr));
                     txt = ksexre[(mt() % size(ksexre))];
                 }
