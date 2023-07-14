@@ -1,9 +1,11 @@
-﻿#include <iostream>
+﻿//#define _CRT_SECURE_NO_DEPRECATE
+#include <iostream>
 #include <string>
 #include <vector>
 #include <dpp/dpp.h>
 #include <random>
 #include <fstream>
+#include <ctime>
 
 using namespace std;
 using json = nlohmann::json;
@@ -327,13 +329,13 @@ string mat[132][2] = {
 {"鬼炎鬼燈", "2-5.5 三條三坊(同時缺虹色線球)、大江山(同時缺凶骨)、朱雀門(同時缺勾玉)"},
 };
 
-string tkuse, txt, token[2] = { "" };
+string tkuse, txt, nowt, au, token[2] = { "" };
 string tokyotonumazu = "https://cdn.discordapp.com/attachments/1063968936464482324/1119267625869004840/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119267744622317628/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119267874641563648/image.png";
 string numazutotokyo = "https://cdn.discordapp.com/attachments/1063968936464482324/1119270096225972286/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119272284448890940/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119273118150692975/image.png";
 string jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
 
 string pcrgacha(string times) {
-    int integer = std::stoi(times);
+    int integer = stoi(times);
     int pcrga[3] = {0};
     mt19937 mt(time(nullptr));
 
@@ -361,7 +363,7 @@ string pcrgacha(string times) {
     return ("一共抽到了：\n" + silver + "張銀卡 <:pcr1:1117798654548377641>\n" + golden + "張金卡 <:pcr2:1117798436427804754>\n" + rainbow + "張彩卡 <:pcr3:1117798715957194923>\n");
 }
 string fgogacha(string times) {
-    int integer = std::stoi(times);
+    int integer = stoi(times);
     int fgoga[3] = {0};
     mt19937 mt(time(nullptr));
 
@@ -388,7 +390,7 @@ string fgogacha(string times) {
     return ("先說，我沒有保底\n\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n" + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
 }
 string arkgacha(string times) {
-    int integer = std::stoi(times);
+    int integer = stoi(times);
     mt19937 mt(time(nullptr));
     int arkga[4] = { 0 };
 
@@ -573,7 +575,7 @@ int main() {
     
     bot.on_message_create([&bot](const dpp::message_create_t& event) {
         string s = event.msg.content;
-
+        au = to_string(event.msg.author.id);
         vector<string> v;
         while (v.size() < 10) {
             v.push_back(s.substr(0, s.find(" ")));
@@ -586,14 +588,22 @@ int main() {
         }
         //拆訊息
 
-        if (event.msg.author.id != 1121384376991752234 && event.msg.author.id != 1092497000945160324 && size(event.msg.content) < 150){  //判斷是否進行比對
-
+        if (au != "1121384376991752234" && au != "1092497000945160324" && size(event.msg.content) < 150) {  //判斷是否進行比對
             mt19937 mt(time(nullptr));
-            s = event.msg.content;
-            //bot.message_create(dpp::message(968693698206519356, "我讀到的你的訊息字串長為 " + to_string(size(event.msg.content))));
 
-            if (v[0] == "test") {
-                bot.message_create(dpp::message(event.msg.channel_id, event.msg.author.get_mention(to_string(event.msg.author.id))));
+            clock_t starttm = clock();
+            time_t now = time(0);
+            tm lctm{};
+            localtime_s(&lctm, &now);
+
+            s = event.msg.content;
+            //bot.message_create(dpp::message(968693698206519356, "我讀到的你的訊息字串長為 " + to_string(size(s))));
+
+            if (v[0] == "test" && au == "681076728465981450") {
+                bot.message_create(dpp::message(event.msg.channel_id, event.msg.author.get_mention(au)));
+            }
+            else if (v[0] == "test1" && au == "681076728465981450") {
+                bot.message_create(dpp::message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了非洲人還不睡喔"));
             }
             else if (s.find("番") != -1 || s.find("表") != -1) {
                 bot.message_create(dpp::message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/972681769704898591/1124121049001381895/image.png").set_reference(event.msg.id));
@@ -631,7 +641,7 @@ int main() {
             }
             else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1
                 || v[0] == "gay" || s.find("甲") != -1
-                || v[0] == "給" || s.find("是給") != -1
+                || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1)
                 || v[0] == "鈔給" || v[0] == "超給") {
                 bot.message_create(dpp::message(event.msg.channel_id, gay[mt() % size(gay)]));
             }

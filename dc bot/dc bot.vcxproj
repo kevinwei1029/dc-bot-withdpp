@@ -139,6 +139,9 @@
   <ItemGroup>
     <Text Include="token.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dc bot.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
