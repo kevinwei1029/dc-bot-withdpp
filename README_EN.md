@@ -1,5 +1,5 @@
 # Introduction  
-This is a Discord bot created by student.  
+This is a c++ Discord bot created by student.  
 Hope you enjoy it!
 
 # Invite Links
