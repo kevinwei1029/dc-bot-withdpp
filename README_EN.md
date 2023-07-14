@@ -4,10 +4,10 @@ Hope you enjoy it!
 
 # Invite Links
 bot1 : https://discord.com/api/oauth2/authorize?client_id=1092497000945160324&permissions=0&scope=bot   
-After opening the link above with your discord account, you can invite it to your servers.  
+After opening the link above with your discord account, you can invite it into your servers.  
 The creater won't be authorized as an administrator.  
-> bot2 : https://discord.com/api/oauth2/authorize?client_id=1121384376991752234&permissions=8&scope=bot
-> Sometimes I use the other bot so I suggest you to invite both of them to your servers.
+> bot2 : https://discord.com/api/oauth2/authorize?client_id=1121384376991752234&permissions=8&scope=bot  
+> Sometimes I use the other bot so I suggest you to invite both of them into your servers.
 
 # What It Can Do :
 * Detect messages and respond
