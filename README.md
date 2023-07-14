@@ -1,6 +1,5 @@
 # dc-bot
 這是一隻學生自己做的discord機器人  
-This is a c++ discord bot created by student.  
 希望大家都可以玩得開心
 
 # bot邀請連結
