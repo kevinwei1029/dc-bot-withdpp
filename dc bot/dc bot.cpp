@@ -8,6 +8,7 @@
 #include <ctime>
 
 using namespace std;
+using namespace dpp;
 using json = nlohmann::json;
 
 string nero[18] = {
@@ -330,8 +331,6 @@ string mat[132][2] = {
 };
 
 string tkuse, txt, nowt, au, token[2] = { "" };
-string tokyotonumazu = "https://cdn.discordapp.com/attachments/1063968936464482324/1119267625869004840/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119267744622317628/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119267874641563648/image.png";
-string numazutotokyo = "https://cdn.discordapp.com/attachments/1063968936464482324/1119270096225972286/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119272284448890940/image.png\n https://cdn.discordapp.com/attachments/1063968936464482324/1119273118150692975/image.png";
 string jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
 
 string pcrgacha(string times) {
@@ -500,80 +499,51 @@ int main() {
     in.open("token.txt");
     in >> token[0] >> token[1]; //[0]為銀狼 [1]為女僕凱爾希
     tkuse = token[0];
-    dpp::cluster bot(tkuse, dpp::i_default_intents | dpp::i_message_content);
+    cluster bot(tkuse, i_default_intents | i_message_content);
 
-    bot.on_log(dpp::utility::cout_logger());
+    bot.on_log(utility::cout_logger());
 
     srand(time(NULL));
 
-    //dpp::message msg(968693698206519356, "已開機");
+    //message msg(968693698206519356, "已開機");
     //bot.message_create(msg);
 
-    bot.on_slashcommand([](const dpp::slashcommand_t& event) {
+    bot.on_slashcommand([](const slashcommand_t& event) {
+        mt19937 mt(time(nullptr));
 
-        if (event.command.get_command_name() == "new_waifu") {
-            event.reply("https://cdn.discordapp.com/attachments/966729542800658442/1092428172705931355/FB_IMG_1625811644856.jpg");
-
-        }else if (event.command.get_command_name() == "cuttie") {
+        if (event.command.get_command_name() == "cuttie") 
             event.reply("https://cdn.discordapp.com/attachments/1091776372168474665/1121819763593711777/SPOILER_1565.jpg");
-        }
-        else if (event.command.get_command_name() == "cattie") {
+        else if (event.command.get_command_name() == "cattie") 
             event.reply("https://cdn.discordapp.com/attachments/973282252186349588/1083963031077265528/IMG_6734.jpg");
-
-        }else if (event.command.get_command_name() == "nero") {
-            mt19937 mt(time(nullptr));
+        else if (event.command.get_command_name() == "nero") 
             event.reply(nero[mt() % size(nero)]);
-
-        }else if (event.command.get_command_name() == "bruh") {
+        else if (event.command.get_command_name() == "bruh") 
             event.reply("https://cdn.discordapp.com/attachments/933710044917288963/1092725740195295252/9k.png");
-
-        }else if (event.command.get_command_name() == "exusiai") {
-            mt19937 mt(time(nullptr));
+        else if (event.command.get_command_name() == "exusiai") 
             event.reply(exusiai[mt() % size(exusiai)]);
-
-        }else if (event.command.get_command_name() == "mahjong") {
-            event.reply("https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg");
-
-        }
         }); //註冊斜線指令
-
-    bot.on_ready([&bot](const dpp::ready_t& event) {
+    bot.on_ready([&bot](const ready_t& event) {
 
         if (dpp::run_once<struct register_bot_commands>()) {
             bot.global_command_create(
-                dpp::slashcommand("ping", "Ping pong!", bot.me.id)
+                slashcommand("cuttie", "it'll send pics", bot.me.id)
             );
             bot.global_command_create(
-                dpp::slashcommand("cuttie", "it'll send pics", bot.me.id)
+                slashcommand("cattie", "cute", bot.me.id)
             );
             bot.global_command_create(
-                dpp::slashcommand("new_waifu", "doge", bot.me.id)
+                slashcommand("nero", "it'll send pics", bot.me.id)
             );
             bot.global_command_create(
-                dpp::slashcommand("cattie", "cute", bot.me.id)
+                slashcommand("bruh", "bro", bot.me.id)
             );
             bot.global_command_create(
-                dpp::slashcommand("nero", "it'll send pics", bot.me.id)
-            );
-            bot.global_command_create(
-                dpp::slashcommand("bruh", "bro", bot.me.id)
-            );
-            bot.global_command_create(
-                dpp::slashcommand("true", "true", bot.me.id)
-            );
-            bot.global_command_create(
-                dpp::slashcommand("help", "function", bot.me.id)
-            );
-            bot.global_command_create(
-                dpp::slashcommand("exusiai", "it'll send pics", bot.me.id)
-            );
-            bot.global_command_create(
-                dpp::slashcommand("mahjong", "let's play", bot.me.id)
+                slashcommand("exusiai", "it'll send pics", bot.me.id)
             );
         }
         }); //使用斜線指令
     
-    bot.on_message_create([&bot](const dpp::message_create_t& event) {
+    bot.on_message_create([&bot](const message_create_t& event) {
         string s = event.msg.content;
         au = to_string(event.msg.author.id);
         vector<string> v;
@@ -597,118 +567,109 @@ int main() {
             localtime_s(&lctm, &now);
 
             s = event.msg.content;
-            //bot.message_create(dpp::message(968693698206519356, "我讀到的你的訊息字串長為 " + to_string(size(s))));
+            //bot.message_create(message(968693698206519356, "我讀到的你的訊息字串長為 " + to_string(size(s))));
 
             if (v[0] == "test" && au == "681076728465981450") {
-                bot.message_create(dpp::message(event.msg.channel_id, event.msg.author.get_mention(au)));
+                bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
             }
             else if (v[0] == "test1" && au == "681076728465981450") {
-                bot.message_create(dpp::message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了非洲人還不睡喔"));
+                bot.message_create(message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了非洲人還不睡喔"));
             }
             else if (s.find("番") != -1 || s.find("表") != -1) {
-                bot.message_create(dpp::message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/972681769704898591/1124121049001381895/image.png").set_reference(event.msg.id));
+                bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/972681769704898591/1124121049001381895/image.png").set_reference(event.msg.id));
             }
             else if ((s.find("機") != -1 || s.find("bot") != -1) && (s.find("連結") != -1)) {
-                bot.message_create(dpp::message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
+                bot.message_create(message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
             }
             else if (v[0] == "^n") {
-                bot.message_create(dpp::message(event.msg.channel_id, "https://nhentai.net/g/" + v[1]).set_reference(event.msg.id));
+                bot.message_create(message(event.msg.channel_id, "https://nhentai.net/g/" + v[1]).set_reference(event.msg.id));
             }
             else if (v[0] == "^p") {
-                bot.message_create(dpp::message(event.msg.channel_id, "https://www.pixiv.net/artworks/" + v[1]).set_reference(event.msg.id));
+                bot.message_create(message(event.msg.channel_id, "https://www.pixiv.net/artworks/" + v[1]).set_reference(event.msg.id));
             }
             else if (v[0] == "^jm") {
-                bot.message_create(dpp::message(event.msg.channel_id, "https://18comic.vip/album/" + v[1]).set_reference(event.msg.id));
+                bot.message_create(message(event.msg.channel_id, "https://18comic.vip/album/" + v[1]).set_reference(event.msg.id));
             }
             else if (s.find("歐") != -1) {
-                bot.message_create(dpp::message(event.msg.channel_id, europe[mt() % size(europe)]));
+                bot.message_create(message(event.msg.channel_id, europe[mt() % size(europe)]));
             }
             else if (v[0] == "fga") {
-                bot.message_create(dpp::message(event.msg.channel_id, "這是git本來的網站 https://github.com/Fate-Grand-Automata/FGA\n現在已經上架play商店了 https://play.google.com/store/apps/details?id=io.github.fate_grand_automata"));
+                bot.message_create(message(event.msg.channel_id, "這是git本來的網站 https://github.com/Fate-Grand-Automata/FGA\n現在已經上架play商店了 https://play.google.com/store/apps/details?id=io.github.fate_grand_automata"));
             }
             else if (s.find("婆") != -1) {
-                bot.message_create(dpp::message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/966729542800658442/1092428172705931355/FB_IMG_1625811644856.jpg"));
+                bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/966729542800658442/1092428172705931355/FB_IMG_1625811644856.jpg"));
             }
             else if (s.find("確實") != -1 || v[0] == "雀食") {
-                bot.message_create(dpp::message(event.msg.channel_id, truee[mt() % size(truee)]));
+                bot.message_create(message(event.msg.channel_id, truee[mt() % size(truee)]));
             }
             else if (s.find("lao") != -1 || s.find("佬") != -1) {
-                bot.message_create(dpp::message(event.msg.channel_id, dalao[mt() % size(dalao)]));
+                bot.message_create(message(event.msg.channel_id, dalao[mt() % size(dalao)]));
             }
             else if (s.find("kusa") != -1 || v[0] == "草" || s.find("笑死") != -1
                 || v[0] == "w" || v[0] == "ww" || v[0] == "www") {
-                bot.message_create(dpp::message(event.msg.channel_id, kusa[mt() % size(kusa)]));
+                bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
             }
             else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1
                 || v[0] == "gay" || s.find("甲") != -1
                 || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1)
                 || v[0] == "鈔給" || v[0] == "超給") {
-                bot.message_create(dpp::message(event.msg.channel_id, gay[mt() % size(gay)]));
+                bot.message_create(message(event.msg.channel_id, gay[mt() % size(gay)]));
             }
             else if (s.find("fbi") != -1 || s.find("ㄌㄌㄎ") != -1) {
-                bot.message_create(dpp::message(event.msg.channel_id, fbi[mt() % size(fbi)]));
+                bot.message_create(message(event.msg.channel_id, fbi[mt() % size(fbi)]));
             }
             else if (s.find("雀") != -1) {
-                bot.message_create(dpp::message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
+                bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
             }
             else if (v[0] == "能" || s.find("能天") != -1) {
-                bot.message_create(dpp::message(event.msg.channel_id, exusiai[mt() % size(exusiai)]));
+                bot.message_create(message(event.msg.channel_id, exusiai[mt() % size(exusiai)]));
             }
             else if (v[0] == "小鳥" || v[0] == "艾麗妮" || v[0] == "irene") {
-                bot.message_create(dpp::message(event.msg.channel_id, irene[mt() % size(irene)]));
+                bot.message_create(message(event.msg.channel_id, irene[mt() % size(irene)]));
             }
             else if (v[0] == "尼祿" || v[0] == "nero") {
-                bot.message_create(dpp::message(event.msg.channel_id, nero[mt() % size(nero)]));
+                bot.message_create(message(event.msg.channel_id, nero[mt() % size(nero)]));
             }
             else if (v[0] == "瓜" || v[0] == "吃瓜") {
-                bot.message_create(dpp::message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/503219154413682713/1107119476333350923/gcj_star230505.gif"));
+                bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/503219154413682713/1107119476333350923/gcj_star230505.gif"));
             }
             else if (v[0] == "bonk" || v[0] == "不可以瑟瑟" || v[0] == "不可以色色") {
-                bot.message_create(dpp::message(event.msg.channel_id, "<a:emoji_23:1008963509431840838>"));
+                bot.message_create(message(event.msg.channel_id, "<a:emoji_23:1008963509431840838>"));
             }
-            else if (v[0] == "JR去程" || v[0] == "jr去程"
-                || v[0] == "去程" || v[0] == "沼津去程") {
-                bot.message_create(dpp::message(event.msg.channel_id, tokyotonumazu));
-            }
-            else if (v[0] == "JR回程" || v[0] == "jr回程"
-                || v[0] == "回程" || v[0] == "沼津回程") {
-                bot.message_create(dpp::message(event.msg.channel_id, numazutotokyo));
-            }
-            else if (v[0] == "JR時刻" || v[0] == "jr時刻"
-                || v[0] == "JR時刻查詢" || v[0] == "jr時刻查詢") {
-                bot.message_create(dpp::message(event.msg.channel_id, jrtime));
+            else if ((s.find("JR") != -1 || s.find("jr") != -1) && s.find("時刻") != -1) {
+                bot.message_create(message(event.msg.channel_id, jrtime));
             }
             else if (s.find("tsuna") != -1 || v[0] == "<:pte_lemon:986265384992772166>" || s.find("三小") != -1) {
-                bot.message_create(dpp::message(event.msg.channel_id, wat[mt() % size(wat)]));
+                bot.message_create(message(event.msg.channel_id, wat[mt() % size(wat)]));
             }
             //以下是抽卡相關程式碼
             else if (v[0] == "抽" || v[0] == "gacha" || v[0] == "抽卡") {
                 while (tkuse == token[0]) {
-                    bot.message_create(dpp::message(event.msg.channel_id, "為什麼要叫一個駭客做這種事呢？").set_reference(event.msg.id));
+                    bot.message_create(message(event.msg.channel_id, "為什麼要叫一個駭客做這種事呢？").set_reference(event.msg.id));
                     break;
                 }
                 if ((v[1] == "pcr" || v[1] == "公連") && (v[2].size() < 4))
-                    bot.message_create(dpp::message(event.msg.channel_id, pcrgacha(v[2])));
+                    bot.message_create(message(event.msg.channel_id, pcrgacha(v[2])));
                 else if ((v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO") && (v[2].size() < 4))
-                    bot.message_create(dpp::message(event.msg.channel_id, fgogacha(v[2])));
+                    bot.message_create(message(event.msg.channel_id, fgogacha(v[2])));
                 else if ((v[1] == "ark" || v[1] == "方舟") && (v[2].size() < 4))
-                    bot.message_create(dpp::message(event.msg.channel_id, arkgacha(v[2])));
+                    bot.message_create(message(event.msg.channel_id, arkgacha(v[2])));
                 else
-                    bot.message_create(dpp::message(event.msg.channel_id, qreply()));
+                    bot.message_create(message(event.msg.channel_id, qreply()));
             }
             else if (v[0] == "抽到有") {
 
                 while (tkuse == token[0]) {
-                    bot.message_create(dpp::message(event.msg.channel_id, "為什麼要叫一個駭客做這種事呢？").set_reference(event.msg.id));
+                    bot.message_create(message(event.msg.channel_id, "為什麼要叫一個駭客做這種事呢？").set_reference(event.msg.id));
                     break;
                 }
 
                 if (v[1] == "pcr" || v[1] == "公連")
-                    bot.message_create(dpp::message(event.msg.channel_id, pcrget()));
+                    bot.message_create(message(event.msg.channel_id, pcrget()));
                 else if (v[1] == "fgo" || v[1] == "居歐")
-                    bot.message_create(dpp::message(event.msg.channel_id, fgoget()));
+                    bot.message_create(message(event.msg.channel_id, fgoget()));
                 else
-                    bot.message_create(dpp::message(event.msg.channel_id, qreply()));
+                    bot.message_create(message(event.msg.channel_id, qreply()));
             }
             else if (v[0] == "機率" || v[0] == "抽卡機率") {
                 if (v[1] == "pcr" || v[1] == "公連")
@@ -718,17 +679,17 @@ int main() {
                 else if (v[1] == "ark" || v[1] == "方舟")
                     txt = "六星<:ark6:1107953803057188905> 2%\n五星<:ark5:1107953865602637824> 8%\n四星<:ark4:1107953907377901579> 30%\n三星<:ark3:1107953947353808947> 60%\n\n不要問我為什麼用狙信物，我絕對沒有對某隻六星狙有特別的偏好";
                 else
-                    bot.message_create(dpp::message(event.msg.channel_id, qreply()).set_reference(event.msg.id));
+                    bot.message_create(message(event.msg.channel_id, qreply()).set_reference(event.msg.id));
 
-                bot.message_create(dpp::message(event.msg.channel_id, txt).set_reference(event.msg.id));
+                bot.message_create(message(event.msg.channel_id, txt).set_reference(event.msg.id));
             }
             else if (v[0] == "亂數測試") {
-                dpp::message msg(event.msg.channel_id, to_string(mt()));
+                message msg(event.msg.channel_id, to_string(mt()));
                 bot.message_create(msg.set_reference(event.msg.id));
             }
             else if (v[0] == "抽卡說明") {
                 txt = "抽卡\n目前支援fgo、明日方舟與公主連結\nfgo與公主連結支援抽到有功能（有保底）\n\n抽卡功能使用公式\n抽(這裡用中文或半形英文打遊戲名稱) (這裡用半形數字打抽數)\n\n抽卡公式說明\n抽字為觸發功能必要、也可輸入gacha一詞代替\n三個區段間請用半形空格隔開\n遊戲名稱可打pcr、fgo、ark、公連、方舟、居歐\n最後請打抽數";
-                dpp::message msg(event.msg.channel_id, txt);
+                message msg(event.msg.channel_id, txt);
                 bot.message_create(msg.set_reference(event.msg.id));
             }
             //以下是素材查詢程式碼
@@ -736,14 +697,14 @@ int main() {
                 bool find = FALSE;
                 for (int i = 0; i < size(mat); i++) {
                     while (v[1] == mat[i][0]) {
-                        dpp::message msg(event.msg.channel_id, mat[i][1]);
+                        message msg(event.msg.channel_id, mat[i][1]);
                         bot.message_create(msg.set_reference(event.msg.id));
                         find = TRUE;
                         break;
                     }
                 }
                 if (find == FALSE) {
-                    dpp::message msg(event.msg.channel_id, qreply());
+                    message msg(event.msg.channel_id, qreply());
                     bot.message_create(msg.set_reference(event.msg.id));
                 }
             }
@@ -757,14 +718,14 @@ int main() {
                     }
                     else
                         txt = "你說誰是老女人啊？";
-                    bot.message_create(dpp::message(event.msg.channel_id, txt));
+                    bot.message_create(message(event.msg.channel_id, txt));
                 }
             }
             //以下是embed程式碼
             else if (s == "!creator") {
                 /* create the embed */
                 dpp::embed embed = dpp::embed().
-                    set_color(dpp::colors::sti_blue).
+                    set_color(colors::sti_blue).
                     set_title("CREATOR").
                     set_url("https://github.com/kevinwei1029").
                     set_author("anime.photos.tw", "https://www.instagram.com/anime.photos.tw/", "https://cdn.discordapp.com/attachments/968693698206519356/1126715809511768176/1eaeade800d23f2c.png").
@@ -787,13 +748,12 @@ int main() {
                     set_timestamp(time(0));
 
                 //reply with the created embed
-                bot.message_create(dpp::message(event.msg.channel_id, embed).set_reference(event.msg.id));
+                bot.message_create(message(event.msg.channel_id, embed).set_reference(event.msg.id));
             }
             else if (s == "!help" || s.find("!function") != -1) {
-
                 /* create the embed */
                 dpp::embed embed = dpp::embed().
-                    set_color(dpp::colors::sti_blue).
+                    set_color(colors::sti_blue).
                     set_title("FUNCTIONS").
                     set_url("https://github.com/kevinwei1029").
                     set_author("anime.photos.tw", "https://www.instagram.com/anime.photos.tw/", "https://cdn.discordapp.com/attachments/968693698206519356/1126715809511768176/1eaeade800d23f2c.png").
@@ -840,17 +800,17 @@ int main() {
                     set_timestamp(time(0));
 
                 /* reply with the created embed */
-                bot.message_create(dpp::message(event.msg.channel_id, embed).set_reference(event.msg.id));
+                bot.message_create(message(event.msg.channel_id, embed).set_reference(event.msg.id));
             }
             else if (s == "!button") {
                 /* Create a message containing an action row, and a button within the action row. */
                 bot.message_create(
-                    dpp::message(event.msg.channel_id, "this text has buttons").add_component(
-                        dpp::component().add_component(
-                            dpp::component().set_label("Click me!").
-                            set_type(dpp::cot_button).
+                    message(event.msg.channel_id, "this text has buttons").add_component(
+                        component().add_component(
+                            component().set_label("Click me!").
+                            set_type(cot_button).
                             set_emoji(u8"😄").
-                            set_style(dpp::cos_danger).
+                            set_style(cos_danger).
                             set_id("測試中")
                         )
                     )
@@ -858,13 +818,13 @@ int main() {
             }
             else if (s == "!select") {
                 /* Create a message containing an action row, and a select menu within the action row. */
-                dpp::message m(event.msg.channel_id, "this text has a select menu");
+                message m(event.msg.channel_id, "this text has a select menu");
                 m.add_component(
-                    dpp::component().add_component(
-                        dpp::component().set_type(dpp::cot_selectmenu).
+                    component().add_component(
+                        component().set_type(cot_selectmenu).
                         set_placeholder("Pick something").
-                        add_select_option(dpp::select_option("label1", "value1", "description1").set_emoji(u8"😄")).
-                        add_select_option(dpp::select_option("label2", "value2", "description2").set_emoji(u8"🙂")).
+                        add_select_option(select_option("label1", "value1", "description1").set_emoji(u8"😄")).
+                        add_select_option(select_option("label2", "value2", "description2").set_emoji(u8"🙂")).
                         set_id("myselid")
                     )
                 );
@@ -874,12 +834,12 @@ int main() {
     });
 
     //When a user clicks your button, the on_button_click event will fire, containing the custom_id you defined in your button.
-    bot.on_button_click([&bot](const dpp::button_click_t & event) {
+    bot.on_button_click([&bot](const button_click_t & event) {
         // Button clicks are still interactions, and must be replied to in some form to prevent the "this interaction has failed" message from Discord to the user.
         event.reply("You clicked " + event.custom_id);
         });
 
-    bot.start(dpp::st_wait);
+    bot.start(st_wait);
     return 0;
 }
 
