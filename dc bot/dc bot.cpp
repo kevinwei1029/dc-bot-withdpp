@@ -802,6 +802,7 @@ int main() {
                 /* reply with the created embed */
                 bot.message_create(message(event.msg.channel_id, embed).set_reference(event.msg.id));
             }
+            //以下是做不好的按鈕程式碼
             else if (s == "!button") {
                 /* Create a message containing an action row, and a button within the action row. */
                 bot.message_create(
