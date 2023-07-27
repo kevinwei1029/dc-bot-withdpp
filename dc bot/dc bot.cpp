@@ -139,7 +139,7 @@ string truee[5] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809663716503613/51.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105823436883902484/Mvd47Q7.png"  // 5
 };
-string gay[25] = {
+string gay[26] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832383690854420/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832408504344647/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832434081214484/image.png",
@@ -164,7 +164,8 @@ string gay[25] = {
     "https://cdn.discordapp.com/attachments/981585424017420378/1105834260557996102/ZomboMeme_02052023151522.jpg",
     "https://cdn.discordapp.com/attachments/968693698206519356/1110106858477326376/348551627_234395815863993_2485886371128395134_n.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1127498944948219914/FB_IMG_1688620417978.jpg",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1127515998514323476/image.png"  //  25
+    "https://cdn.discordapp.com/attachments/966729542800658442/1127515998514323476/image.png",  //  25
+    "https://media.discordapp.net/attachments/966729542800658442/1133091772856275157/FB_IMG_1690024293263.jpg?width=449&height=892"
 };
 string wat[16]{"https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671945065025657/FB_IMG_1683964567949.jpg",
@@ -492,6 +493,8 @@ string qreply() {
     else if (tkuse == token[1])
         return "再鬧\n我就叫M3捅爆你屁眼";
         //return "現在登入的是凱爾希";
+    else
+        return "哇程式竟然抓不到是哪一隻機器人登入\n可以趕快回報給開發者這個bug";
 }
 
 int main() {
@@ -569,11 +572,17 @@ int main() {
             s = event.msg.content;
             //bot.message_create(message(968693698206519356, "我讀到的你的訊息字串長為 " + to_string(size(s))));
 
-            if (v[0] == "test" && au == "681076728465981450") {
-                bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
+            if (v[0] == "test") {
+                if (au == "681076728465981450")
+                    bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
+                else
+                    bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
-            else if (v[0] == "test1" && au == "681076728465981450") {
-                bot.message_create(message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了非洲人還不睡喔"));
+            else if (v[0] == "test1") {
+                if (au == "681076728465981450")
+                    bot.message_create(message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了非洲人還不睡喔"));
+                else
+                    bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
             else if (s.find("番") != -1 || s.find("表") != -1) {
                 bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/972681769704898591/1124121049001381895/image.png").set_reference(event.msg.id));
