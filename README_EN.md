@@ -14,8 +14,7 @@ The creater (yeah it's me) won't be authorized as an administrator.
 * Using slash command
 * Send embds
 * Gacha simulation (support Arknights, Fate/Grand Order, Princess connect)
-
-It'll never ganna:
+# It'll never ganna :
 * give you up
 * let you down
 * run around and desert you
