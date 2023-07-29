@@ -139,7 +139,7 @@ string truee[5] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809663716503613/51.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105823436883902484/Mvd47Q7.png"  // 5
 };
-string gay[26] = {
+string gay[28] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832383690854420/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832408504344647/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832434081214484/image.png",
@@ -165,7 +165,9 @@ string gay[26] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1110106858477326376/348551627_234395815863993_2485886371128395134_n.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1127498944948219914/FB_IMG_1688620417978.jpg",
     "https://cdn.discordapp.com/attachments/966729542800658442/1127515998514323476/image.png",  //  25
-    "https://media.discordapp.net/attachments/966729542800658442/1133091772856275157/FB_IMG_1690024293263.jpg?width=449&height=892"
+    "https://media.discordapp.net/attachments/966729542800658442/1133091772856275157/FB_IMG_1690024293263.jpg?width=449&height=892",
+    "https://cdn.discordapp.com/attachments/966729542800658442/1134105277424218212/image.png",
+    "https://cdn.discordapp.com/attachments/966729542800658442/1134105544458764330/image.png"
 };
 string wat[16]{"https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671945065025657/FB_IMG_1683964567949.jpg",
@@ -333,6 +335,7 @@ string mat[132][2] = {
 
 string tkuse, txt, nowt, au, token[2] = { "" };
 string jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
+int status = 1;
 
 string pcrgacha(string times) {
     int integer = stoi(times);
@@ -506,10 +509,10 @@ int main() {
 
     bot.on_log(utility::cout_logger());
 
-    srand(time(NULL));
+    //srand(time(NULL));
 
-    //message msg(968693698206519356, "已開機");
-    //bot.message_create(msg);
+    //message msg;
+    //bot.message_create(msg(968693698206519356, "已開機"));
 
     bot.on_slashcommand([](const slashcommand_t& event) {
         mt19937 mt(time(nullptr));
@@ -561,7 +564,7 @@ int main() {
         }
         //拆訊息
 
-        if (au != "1121384376991752234" && au != "1092497000945160324" && size(event.msg.content) < 150) {  //判斷是否進行比對
+        if (au != "1121384376991752234" && au != "1092497000945160324" && size(event.msg.content) < 150 && status == 1){  //判斷是否進行比對
             mt19937 mt(time(nullptr));
 
             clock_t starttm = clock();
@@ -584,7 +587,11 @@ int main() {
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
-            else if (s.find("番") != -1 || s.find("表") != -1) {
+            else if (s.find("可以") != -1 && s.find("休息") != -1 && au == "681076728465981450") {
+                bot.message_create(message(event.msg.channel_id, "好我先去休息了").set_reference(event.msg.id));
+                status = 0;
+            }
+            else if (s.find("番") != -1 && s.find("表") != -1) {
                 bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/972681769704898591/1124121049001381895/image.png").set_reference(event.msg.id));
             }
             else if ((s.find("機") != -1 || s.find("bot") != -1) && (s.find("連結") != -1)) {
@@ -839,6 +846,15 @@ int main() {
                     )
                 );
                 bot.message_create(m);
+            }
+        }
+        else if (au != "1121384376991752234" && au != "1092497000945160324" && size(event.msg.content) < 150 && status == 0) {
+            if (au == "681076728465981450" && s.find("起來") != -1) {
+                status = 1;
+                bot.message_create(message(event.msg.channel_id, "好的，我回來了"));
+            }
+            else if (au == "681076728465981450" && s.find("狀態") != -1) {
+                bot.message_create(message(event.msg.channel_id, "status = " + to_string(status)));
             }
         }
     });
