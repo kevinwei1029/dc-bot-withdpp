@@ -848,12 +848,12 @@ int main() {
                 bot.message_create(m);
             }
         }
-        else if (au != "1121384376991752234" && au != "1092497000945160324" && size(event.msg.content) < 150 && status == 0) {
-            if (au == "681076728465981450" && s.find("起來") != -1) {
+        else if (au == "681076728465981450" && status == 0) {
+            if (s.find("起來") != -1) {
                 status = 1;
                 bot.message_create(message(event.msg.channel_id, "好的，我回來了"));
             }
-            else if (au == "681076728465981450" && s.find("狀態") != -1) {
+            else if (s.find("狀態") != -1) {
                 bot.message_create(message(event.msg.channel_id, "status = " + to_string(status)));
             }
         }
