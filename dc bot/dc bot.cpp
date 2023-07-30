@@ -186,7 +186,7 @@ string wat[16]{"https://cdn.discordapp.com/attachments/966727921467260938/110767
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672350268334171/Screenshot_20230501_103044.jpg",  //15
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672365162307704/FB_IMG_1670764145912.jpg"
 };
-string ksexre[10] = {
+string ksexre[11] = {
     "我能理解你的疲憊。\n這段時間裡持久的戰鬥累積的壓力，令你躁動的生理需求超出了你所能忍耐的水平。",
     "奇怪，我理應不會被源石技藝帶來的任何錯覺干擾。",
     "......\n看來你的生命跡象與意識狀態尚不穩定。經過稍早的理學檢查，我已大致推斷出導致現狀的原因。",
@@ -197,6 +197,7 @@ string ksexre[10] = {
     "感謝你一直以來的沉默，博士。\n但是沉默並不意味著要壓抑自己，不要忘記身後也有一齊為此努力的同伴。",
     "群星會衰老，這片大地則會一路向前不停不息。\n我，作為你漫長旅途的半個過客，你無須記住我也勿要了解我。\n你的思維是一片有限度的內存，有限度的思維理應思考更深刻艮古的問題。",
     "你將思考的情緒衝動加之於我，沒有必要，亦無意義。\n你有更重要的事情去做，而我微不足道。",  //  10
+    "https://cdn.discordapp.com/attachments/966729542800658442/1134840733002629160/received_1043911593721873.jpg"
 };
 string mat[132][2] = {
 {"連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
@@ -504,7 +505,7 @@ int main() {
     ifstream in;
     in.open("token.txt");
     in >> token[0] >> token[1]; //[0]為銀狼 [1]為女僕凱爾希
-    tkuse = token[0];
+    tkuse = token[1];
     cluster bot(tkuse, i_default_intents | i_message_content);
 
     bot.on_log(utility::cout_logger());
@@ -606,7 +607,7 @@ int main() {
             else if (v[0] == "^jm") {
                 bot.message_create(message(event.msg.channel_id, "https://18comic.vip/album/" + v[1]).set_reference(event.msg.id));
             }
-            else if (s.find("歐") != -1) {
+            else if (s.find("歐") != -1 && s.find("歐貝爾") == -1) {
                 bot.message_create(message(event.msg.channel_id, europe[mt() % size(europe)]));
             }
             else if (v[0] == "fga") {
@@ -725,17 +726,15 @@ int main() {
                 }
             }
             //以下是想跟老女人瑟瑟程式碼
-            else if (tkuse == token[1]) {
-                if (s.find("老女人") != -1 || s.find("老奶奶") != -1) {
-                    if (s.find("屁") != -1 || s.find("趴") != -1 || s.find("口") != -1 ||
-                        s.find("脫") != -1 || s.find("露") != -1 || s.find("奶") != -1 ||
-                        s.find("胸") != -1 || s.find("幹") != -1) {
-                        txt = ksexre[(mt() % size(ksexre))];
-                    }
-                    else
-                        txt = "你說誰是老女人啊？";
-                    bot.message_create(message(event.msg.channel_id, txt));
+            else if ((tkuse == token[1]) && s.find("老女人") != -1 || s.find("老奶奶") != -1) {
+                if (s.find("屁") != -1 || s.find("趴") != -1 || s.find("口") != -1 ||
+                    s.find("脫") != -1 || s.find("露") != -1 || s.find("奶") != -1 ||
+                    s.find("胸") != -1 || s.find("幹") != -1) {
+                    txt = ksexre[(mt() % size(ksexre))];
                 }
+                else
+                    txt = "你說誰是老女人啊？";
+                bot.message_create(message(event.msg.channel_id, txt));
             }
             //以下是embed程式碼
             else if (s == "!creator") {
@@ -851,10 +850,10 @@ int main() {
         else if (au == "681076728465981450" && status == 0) {
             if (s.find("起來") != -1) {
                 status = 1;
-                bot.message_create(message(event.msg.channel_id, "好的，我回來了"));
+                bot.message_create(message(event.msg.channel_id, "好的，我回來了").set_reference(event.msg.id));
             }
             else if (s.find("狀態") != -1) {
-                bot.message_create(message(event.msg.channel_id, "status = " + to_string(status)));
+                bot.message_create(message(event.msg.channel_id, "status = " + to_string(status)).set_reference(event.msg.id));
             }
         }
     });
