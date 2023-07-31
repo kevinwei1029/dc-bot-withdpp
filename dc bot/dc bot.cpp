@@ -139,7 +139,7 @@ string truee[5] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809663716503613/51.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105823436883902484/Mvd47Q7.png"  // 5
 };
-string gay[28] = {
+string gay[32] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832383690854420/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832408504344647/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832434081214484/image.png",
@@ -167,7 +167,11 @@ string gay[28] = {
     "https://cdn.discordapp.com/attachments/966729542800658442/1127515998514323476/image.png",  //  25
     "https://media.discordapp.net/attachments/966729542800658442/1133091772856275157/FB_IMG_1690024293263.jpg?width=449&height=892",
     "https://cdn.discordapp.com/attachments/966729542800658442/1134105277424218212/image.png",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1134105544458764330/image.png"
+    "https://cdn.discordapp.com/attachments/966729542800658442/1134105544458764330/image.png",
+    "https://imgur.com/33maruM",
+    "https://cdn.discordapp.com/attachments/966729542800658442/1135474002090016839/image.png",  //  30
+    "https://cdn.discordapp.com/attachments/966729542800658442/1135474025552957501/image.png",
+    "https://cdn.discordapp.com/attachments/966729542800658442/1135474045425557544/image.png"
 };
 string wat[16]{"https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671945065025657/FB_IMG_1683964567949.jpg",
@@ -198,6 +202,26 @@ string ksexre[11] = {
     "群星會衰老，這片大地則會一路向前不停不息。\n我，作為你漫長旅途的半個過客，你無須記住我也勿要了解我。\n你的思維是一片有限度的內存，有限度的思維理應思考更深刻艮古的問題。",
     "你將思考的情緒衝動加之於我，沒有必要，亦無意義。\n你有更重要的事情去做，而我微不足道。",  //  10
     "https://cdn.discordapp.com/attachments/966729542800658442/1134840733002629160/received_1043911593721873.jpg"
+};
+string cstre[11] = {
+    "你看，チョコラ的下面都已經濕一片了喔？",
+    "好的主人，就在這裡吧？",
+    "チョコラ...只要一想到主人...身體都躁動了起來....",
+    "好想要主人的大Ｏ棒...哈嘶哈嘶",
+    "能跟主人做愛的チョコラ好幸福～",  //  5
+    "啊......哈、呀！主人的手、好下流......嗯嗯......",
+    "主人......看見了嗎？這就是チョコラ發情的模樣喔？",
+    "喵......！不可以這麼突然啊、主人～",
+    "主人會看到我發情的樣子......\n只...只能給主人你看到喔？",
+    "主人，光看是不行的喔？",  //  10
+    "才剛看了我淫蕩的臉就發情成這樣嗎？"
+};
+string cspre[5] = {
+    "https://cdn.discordapp.com/attachments/1135513819565797457/1135513859474595951/image.png",
+    "https://cdn.discordapp.com/attachments/1135513819565797457/1135514219597537301/image.png",
+    "https://cdn.discordapp.com/attachments/1135513819565797457/1135514457477501018/image.png",
+    "https://cdn.discordapp.com/attachments/1135513819565797457/1135515139743948861/image.png",
+    "https://cdn.discordapp.com/attachments/1135513819565797457/1135515227094519928/image.png",  //  5
 };
 string mat[132][2] = {
 {"連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
@@ -492,8 +516,9 @@ string fgoget() {
 }
 string qreply() {
     if (tkuse == token[0])
-        return "再鬧\n下一個被駭的就是你";
-        //return "現在登入的是銀狼";
+        return "チョコラ不知道主人在說什麼欸";
+        //return "再鬧\n下一個被駭的就是你";
+        //return "現在登入的是チョコラ";
     else if (tkuse == token[1])
         return "再鬧\n我就叫M3捅爆你屁眼";
         //return "現在登入的是凱爾希";
@@ -504,16 +529,11 @@ string qreply() {
 int main() {
     ifstream in;
     in.open("token.txt");
-    in >> token[0] >> token[1]; //[0]為銀狼 [1]為女僕凱爾希
-    tkuse = token[1];
+    in >> token[0] >> token[1]; //[0]為チョコラ [1]為女僕凱爾希
+    tkuse = token[0];
     cluster bot(tkuse, i_default_intents | i_message_content);
 
     bot.on_log(utility::cout_logger());
-
-    //srand(time(NULL));
-
-    //message msg;
-    //bot.message_create(msg(968693698206519356, "已開機"));
 
     bot.on_slashcommand([](const slashcommand_t& event) {
         mt19937 mt(time(nullptr));
@@ -577,8 +597,10 @@ int main() {
             //bot.message_create(message(968693698206519356, "我讀到的你的訊息字串長為 " + to_string(size(s))));
 
             if (v[0] == "test") {
-                if (au == "681076728465981450")
+                if (au == "681076728465981450"){
+                    //bot.message_create(message(event.msg.channel_id, "日文輸出測試 チョコラ"));
                     bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
+                }
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
@@ -607,7 +629,7 @@ int main() {
             else if (v[0] == "^jm") {
                 bot.message_create(message(event.msg.channel_id, "https://18comic.vip/album/" + v[1]).set_reference(event.msg.id));
             }
-            else if (s.find("歐") != -1 && s.find("歐貝爾") == -1) {
+            else if (s.find("歐") != -1 && s.find("歐貝爾") == -1 && s.find("歐虧") == -1) {
                 bot.message_create(message(event.msg.channel_id, europe[mt() % size(europe)]));
             }
             else if (v[0] == "fga") {
@@ -662,7 +684,7 @@ int main() {
             //以下是抽卡相關程式碼
             else if (v[0] == "抽" || v[0] == "gacha" || v[0] == "抽卡") {
                 while (tkuse == token[0]) {
-                    bot.message_create(message(event.msg.channel_id, "為什麼要叫一個駭客做這種事呢？").set_reference(event.msg.id));
+                    bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡").set_reference(event.msg.id));
                     break;
                 }
                 if ((v[1] == "pcr" || v[1] == "公連") && (v[2].size() < 4))
@@ -677,7 +699,7 @@ int main() {
             else if (v[0] == "抽到有") {
 
                 while (tkuse == token[0]) {
-                    bot.message_create(message(event.msg.channel_id, "為什麼要叫一個駭客做這種事呢？").set_reference(event.msg.id));
+                    bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡").set_reference(event.msg.id));
                     break;
                 }
 
@@ -725,16 +747,24 @@ int main() {
                     bot.message_create(msg.set_reference(event.msg.id));
                 }
             }
-            //以下是想跟老女人瑟瑟程式碼
-            else if ((tkuse == token[1]) && s.find("老女人") != -1 || s.find("老奶奶") != -1) {
+            //以下是想瑟瑟程式碼
+            else if (tkuse == token[1] && s.find("老女人") != -1) {
                 if (s.find("屁") != -1 || s.find("趴") != -1 || s.find("口") != -1 ||
                     s.find("脫") != -1 || s.find("露") != -1 || s.find("奶") != -1 ||
-                    s.find("胸") != -1 || s.find("幹") != -1) {
+                    s.find("胸") != -1 || s.find("幹") != -1 || s.find("%") != -1) {
                     txt = ksexre[(mt() % size(ksexre))];
                 }
                 else
                     txt = "你說誰是老女人啊？";
                 bot.message_create(message(event.msg.channel_id, txt));
+            }
+            else if (tkuse == token[0] && (s.find("貓") != -1 || s.find("チョコラ") != -1 || s.find("chocola") != -1)) {
+                if (s.find("屁") != -1 || s.find("趴") != -1 || s.find("口") != -1 ||
+                    s.find("脫") != -1 || s.find("露") != -1 || s.find("奶") != -1 ||
+                    s.find("胸") != -1 || s.find("幹") != -1 || s.find("%") != -1) {
+                    bot.message_create(message(event.msg.channel_id, cstre[(mt() % size(cstre))]));
+                    bot.message_create(message(event.msg.channel_id, cspre[(mt() % size(cspre))]));
+                }
             }
             //以下是embed程式碼
             else if (s == "!creator") {
