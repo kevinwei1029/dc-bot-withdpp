@@ -139,7 +139,7 @@ string truee[5] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809663716503613/51.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105823436883902484/Mvd47Q7.png"  // 5
 };
-string gay[32] = {
+string gay[33] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832383690854420/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832408504344647/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832434081214484/image.png",
@@ -171,9 +171,11 @@ string gay[32] = {
     "https://imgur.com/33maruM",
     "https://cdn.discordapp.com/attachments/966729542800658442/1135474002090016839/image.png",  //  30
     "https://cdn.discordapp.com/attachments/966729542800658442/1135474025552957501/image.png",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1135474045425557544/image.png"
+    "https://cdn.discordapp.com/attachments/966729542800658442/1135474045425557544/image.png",
+    "https://cdn.discordapp.com/attachments/966729542800658442/1135862352017887382/t0Z4horHE73AXH6k0jerhpOo4QjfruuBnURcsfVtGsYPXgkWmSlaf.jpg"
 };
-string wat[16]{"https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
+string wat[16]{
+    "https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671945065025657/FB_IMG_1683964567949.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671953411686503/FB_IMG_1641285775513.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672007996346368/IMG_20211218_120954_767.jpg",
@@ -645,7 +647,7 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, dalao[mt() % size(dalao)]));
             }
             else if (s.find("kusa") != -1 || v[0] == "草" || s.find("笑死") != -1
-                || v[0] == "w" || v[0] == "ww" || v[0] == "www") {
+                || (s.find("w") != -1 && s.find("ww") == -1 && s.find("ht") == -1)) {
                 bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
             }
             else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1
