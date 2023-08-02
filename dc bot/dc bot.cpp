@@ -139,7 +139,7 @@ string truee[5] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809663716503613/51.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105823436883902484/Mvd47Q7.png"  // 5
 };
-string gay[33] = {
+string gay[34] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832383690854420/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832408504344647/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832434081214484/image.png",
@@ -172,7 +172,8 @@ string gay[33] = {
     "https://cdn.discordapp.com/attachments/966729542800658442/1135474002090016839/image.png",  //  30
     "https://cdn.discordapp.com/attachments/966729542800658442/1135474025552957501/image.png",
     "https://cdn.discordapp.com/attachments/966729542800658442/1135474045425557544/image.png",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1135862352017887382/t0Z4horHE73AXH6k0jerhpOo4QjfruuBnURcsfVtGsYPXgkWmSlaf.jpg"
+    "https://cdn.discordapp.com/attachments/966729542800658442/1135862352017887382/t0Z4horHE73AXH6k0jerhpOo4QjfruuBnURcsfVtGsYPXgkWmSlaf.jpg",
+    "https://cdn.discordapp.com/attachments/966729542800658442/1136262065481330738/FB_IMG_1690976373803.jpg"
 };
 string wat[16]{
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
