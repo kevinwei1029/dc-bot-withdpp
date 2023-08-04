@@ -103,12 +103,18 @@ string dalao[12] = {
     "https://media.discordapp.net/attachments/727443536085254186/883883935141101589/image0.gif?width=87&height=87",
     "https://cdn.discordapp.com/attachments/968693698206519356/1126812896425431110/4qBl31563R.gif"
 };
-string europe[5] = {
+string europe[6] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601634916966471/64819726415fa4d795ccc6269f6e560b.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601681616347206/1604671763242.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601790546620416/Z.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601842497273947/2Q.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105809939575865344/gif21.gif"  // 5
+    "https://cdn.discordapp.com/attachments/968693698206519356/1105809939575865344/gif21.gif",  // 5
+    "我沒差啊\n你們都這樣\n我習慣了阿\n\n\
+你們在曬的時候有考慮過我的感受嗎？\n沒有阿\n從以前到現在一直以來都沒有阿\n\n\
+阿我就是非洲阿\n什麼幾抽寶幾\n我現在都不在意了\n就連那個未持有\n我現在都已經懶得理他了\n\n\
+什麼歐洲小王子\n什麼寶五120\n沒關係嘛\n都你們玩就好了嘛\n\n\
+一直以來你們都嘛登GM帳\n我一個小小玩家\n非的怎麼幹得過歐的\n撒了幾百石丟水溝\n換來的只有綠方\n跟更多的綠方\n\n\
+什麼彩光\n那種東西能吃嗎？\n什麼五星\n那種東西很強嗎？\n我就是一個小小沒見過世面的非洲人阿\n那種東西\n我稀罕嗎？"
 };
 string fbi[10] = {
     "https://media.discordapp.net/attachments/968693698206519356/1108597185219678229/IMG_7547.jpg?width=525&height=290",
