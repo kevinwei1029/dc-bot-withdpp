@@ -702,7 +702,7 @@ int main() {
             else if (s.find("tsuna") != -1 || v[0] == "<:pte_lemon:986265384992772166>" || s.find("三小") != -1) {
                 bot.message_create(message(event.msg.channel_id, wat[mt() % size(wat)]));
             }
-            //以下是抽卡相關程式碼
+            //抽卡相關程式碼
             else if (v[0] == "抽" || v[0] == "gacha" || v[0] == "抽卡") {
                 while (tkuse == token[0]) {
                     bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡").set_reference(event.msg.id));
@@ -752,7 +752,7 @@ int main() {
                 message msg(event.msg.channel_id, txt);
                 bot.message_create(msg.set_reference(event.msg.id));
             }
-            //以下是素材查詢程式碼
+            //素材查詢程式碼
             else if (v[0] == "素材" || v[0] == "fgo素材") {
                 bool find = FALSE;
                 for (int i = 0; i < size(mat); i++) {
@@ -768,7 +768,7 @@ int main() {
                     bot.message_create(msg.set_reference(event.msg.id));
                 }
             }
-            //以下是想瑟瑟程式碼
+            //想瑟瑟程式碼
             else if (tkuse == token[1] && s.find("老女人") != -1) {
                 if (s.find("屁") != -1 || s.find("趴") != -1 || s.find("口") != -1 ||
                     s.find("脫") != -1 || s.find("露") != -1 || s.find("奶") != -1 ||
@@ -779,7 +779,8 @@ int main() {
                     txt = "你說誰是老女人啊？";
                 bot.message_create(message(event.msg.channel_id, txt));
             }
-            else if (tkuse == token[0] && (s.find("貓") != -1 || s.find("チョコラ") != -1 || s.find("chocola") != -1)) {
+            else if (tkuse == token[0] && (s.find("貓") != -1 || s.find("チョコラ") != -1
+                || s.find("chocola") != -1 || s.find("巧克力") != -1)) {
                 if (s.find("屁") != -1 || s.find("趴") != -1 || s.find("口") != -1 ||
                     s.find("脫") != -1 || s.find("露") != -1 || s.find("奶") != -1 ||
                     s.find("胸") != -1 || s.find("幹") != -1 || s.find("%") != -1) {
@@ -787,7 +788,7 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, cspre[(mt() % size(cspre))]));
                 }
             }
-            //以下是embed程式碼
+            //embed程式碼
             else if (s == "!creator") {
                 /* create the embed */
                 dpp::embed embed = dpp::embed().
@@ -868,7 +869,7 @@ int main() {
                 /* reply with the created embed */
                 bot.message_create(message(event.msg.channel_id, embed).set_reference(event.msg.id));
             }
-            //以下是做不好的按鈕程式碼
+            //做不好的按鈕程式碼
             else if (s == "!button") {
                 /* Create a message containing an action row, and a button within the action row. */
                 bot.message_create(
