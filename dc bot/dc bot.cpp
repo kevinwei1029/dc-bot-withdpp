@@ -15,53 +15,53 @@ string nero[18] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1092538926687858828/1680551962912.jpg",
     "https://media.discordapp.net/attachments/968693698206519356/1092538926914359466/1680551964443.jpg?width=1050&height=735",
     "https://cdn.discordapp.com/attachments/968693698206519356/1092709412789030972/16051910383634.png",
-    "https://cdn.discordapp.com/attachments/933710044917288963/1092728926054400030/70027330_p0_master1200.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093091882638254110/90495379_p0.png",  // 5
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093092021884956702/106295232_p0_master1200.png" ,
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093092114721689620/100877791_p0_master1200.png" ,
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093092323023392818/106192093_p0.png" ,
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093092538400903188/106416803_p0_master1200.png" ,
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093092623398477824/100508530_p0.png" ,  // 10
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093092717183119381/98878276_p0_master1200.png" ,
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093092779489505360/71238969_p0_master1200.png" ,
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093092836917919814/90495379_p0_master1200.png" ,
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093092898981036053/89517369_p0_master1200.png" ,
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093095677170565150/67090381_p0_master1200.png" ,  // 15
-    "https://cdn.discordapp.com/attachments/968693698206519356/1093095720455782441/91937298_p0_master1200.png",
+    "https://www.pixiv.net/artworks/70027330",
+    "https://www.pixiv.net/artworks/90495379",  // 5
+    "https://www.pixiv.net/artworks/106295232" ,
+    "https://www.pixiv.net/artworks/100877791" ,
+    "https://www.pixiv.net/artworks/106192093" ,
+    "https://www.pixiv.net/artworks/106416803" ,
+    "https://www.pixiv.net/artworks/100508530" ,  // 10
+    "https://www.pixiv.net/artworks/98878276" ,
+    "https://www.pixiv.net/artworks/71238969" ,
+    "https://www.pixiv.net/artworks/90495379" ,
+    "https://www.pixiv.net/artworks/89517369" ,
+    "https://www.pixiv.net/artworks/67090381" ,  // 15
+    "https://www.pixiv.net/artworks/91937298",
     "媽的怎麼有個智障又在刷圖了",
     "媽的怎麼有個智障又在刷圖了"
 };
 string exusiai[32] = {
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093364786424721458/74871383_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093364800966369371/79067802_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093364833891663892/79640496_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093364858835173466/101872504_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093364890313437184/105525478_p0.png",  // 5
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093364936853422231/103486827_p0.png",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093364960098275459/105829323_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093364993694638110/101933810_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365024522772491/104753423_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365055019548744/99347539_p0_1.jpg",  // 10
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365087139536916/83439562_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365103606374502/93266233_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365117548236910/91879173_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365135009132585/103866984_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365150003757056/101028272_p0.jpg",  // 15
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365164444745768/102634213_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365189212119152/79405727_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365203921543270/105116769_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365220786851901/101872743_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365235647258734/104348996_p0.jpg",  // 20
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365266253086770/91809487_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365280455000164/97693106_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1097845294772789298/87451043_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1093365918169575494/105844530_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1097845025695604797/75387374_p1.jpg",  // 25
-    "https://cdn.discordapp.com/attachments/970373508209201262/1097845286216413294/82169692_p0.png",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1097845033400545320/106220663_p0.jpg",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1107562685312290847/101931248_p0.png",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1107562558308753488/93447113_p0.png",
-    "https://cdn.discordapp.com/attachments/970373508209201262/1107562536116691034/107951126_p0.jpg",  // 30
+    "https://www.pixiv.net/artworks/74871383",
+    "https://www.pixiv.net/artworks/79067802",
+    "https://www.pixiv.net/artworks/79640496",
+    "https://www.pixiv.net/artworks/101872504",
+    "https://www.pixiv.net/artworks/105525478",  // 5
+    "https://www.pixiv.net/artworks/103486827",
+    "https://www.pixiv.net/artworks/105829323",
+    "https://www.pixiv.net/artworks/101933810",
+    "https://www.pixiv.net/artworks/104753423",
+    "https://www.pixiv.net/artworks/99347539",  // 10
+    "https://www.pixiv.net/artworks/83439562",
+    "https://www.pixiv.net/artworks/93266233",
+    "https://www.pixiv.net/artworks/91879173",
+    "https://www.pixiv.net/artworks/103866984",
+    "https://www.pixiv.net/artworks/101028272",  // 15
+    "https://www.pixiv.net/artworks/102634213",
+    "https://www.pixiv.net/artworks/79405727",
+    "https://www.pixiv.net/artworks/105116769",
+    "https://www.pixiv.net/artworks/101872743",
+    "https://www.pixiv.net/artworks/104348996",  // 20
+    "https://www.pixiv.net/artworks/91809487",
+    "https://www.pixiv.net/artworks/97693106",
+    "https://www.pixiv.net/artworks/87451043",
+    "https://www.pixiv.net/artworks/105844530",
+    "https://www.pixiv.net/artworks/75387374",  // 25
+    "https://www.pixiv.net/artworks/82169692",
+    "https://www.pixiv.net/artworks/106220663",
+    "https://www.pixiv.net/artworks/101931248",
+    "https://www.pixiv.net/artworks/93447113",
+    "https://www.pixiv.net/artworks/107951126",  // 30
     "媽的怎麼有個智障又在刷圖了",
     "媽的怎麼有個智障又在刷圖了"
 };
@@ -616,6 +616,9 @@ int main() {
 
             if (v[0] == "test") {
                 if (au == "681076728465981450"){
+                    /*for (int i = 0; i < 18; i++) {
+                        bot.message_create(message(event.msg.channel_id, nero[i]));
+                    }*/
                     //bot.message_create(message(event.msg.channel_id, "日文輸出測試 チョコラ"));
                     bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
                 }
