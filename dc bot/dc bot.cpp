@@ -368,7 +368,9 @@ string mat[132][2] = {
 };
 
 string tkuse, txt, nowt, au, token[2] = { "" };
-string jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
+string jrtime = "https://www.eki-net.com/Personal/Top/Index\n\
+https://www.jreast.co.jp/tickets/\n\
+https://ekitan.com/timetable/railway/line/5000";
 int status = 1;
 
 string pcrgacha(string times) {
@@ -397,7 +399,8 @@ string pcrgacha(string times) {
     string silver = to_string(pcrga[2]);
     string golden = to_string(pcrga[1]);
     string rainbow = to_string(pcrga[0]);
-    return ("一共抽到了：\n" + silver + "張銀卡 <:pcr1:1117798654548377641>\n" + golden + "張金卡 <:pcr2:1117798436427804754>\n" + rainbow + "張彩卡 <:pcr3:1117798715957194923>\n");
+    return ("一共抽到了：\n" + silver + "張銀卡 <:pcr1:1117798654548377641>\n"
+        + golden + "張金卡 <:pcr2:1117798436427804754>\n" + rainbow + "張彩卡 <:pcr3:1117798715957194923>\n");
 }
 string fgogacha(string times) {
     int integer = stoi(times);
@@ -424,7 +427,8 @@ string fgogacha(string times) {
     string silver = to_string(fgoga[2]);
     string golden = to_string(fgoga[1]);
     string rainbow = to_string(fgoga[0]);
-    return ("先說，我沒有保底\n\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n" + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
+    return ("先說，我沒有保底\n\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n"
+        + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
 }
 string arkgacha(string times) {
     int integer = stoi(times);
@@ -456,7 +460,9 @@ string arkgacha(string times) {
     string silver = to_string(arkga[2]);
     string golden = to_string(arkga[1]);
     string rainbow = to_string(arkga[0]);
-    return ("先說，我沒有保底\n\n一共抽到了：\n" + bronze + "張三星<:ark3:1107953947353808947>\n" + silver + "張四星<:ark4:1107953907377901579>\n" + golden + "張五星<:ark5:1107953865602637824>\n" + rainbow + "張六星<:ark6:1107953803057188905>\n");
+    return ("先說，我沒有保底\n\n一共抽到了：\n" + bronze + "張三星<:ark3:1107953947353808947>\n"
+        + silver + "張四星<:ark4:1107953907377901579>\n" + golden + "張五星<:ark5:1107953865602637824>\n"
+        + rainbow + "張六星<:ark6:1107953803057188905>\n");
 }
 string pcrget() {
     int pcrga[3] = { 0 };
@@ -487,9 +493,11 @@ string pcrget() {
     string rainbow = to_string(pcrga[0]);
 
     if (k < 199)
-        return ("一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n" + golden + "張金卡<:pcr2:1117798436427804754>\n1張彩卡<:pcr3:1117798715957194923>\n");
+        return ("一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n"
+            + golden + "張金卡<:pcr2:1117798436427804754>\n1張彩卡<:pcr3:1117798715957194923>\n");
     else
-        return ("so sad你保底了\n\n一共抽了200抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n" + golden + "張金卡<:pcr2:1117798436427804754>\n" + rainbow + "張彩卡<:pcr3:1117798715957194923>\n");
+        return ("so sad你保底了\n\n一共抽了200抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n"
+            + golden + "張金卡<:pcr2:1117798436427804754>\n" + rainbow + "張彩卡<:pcr3:1117798715957194923>\n");
 }
 string fgoget() {
     int fgoga[3] = {0};
@@ -519,14 +527,15 @@ string fgoget() {
     string rainbow = to_string(fgoga[0]);
 
     if (k < 329)
-        return ("一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n" + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
+        return ("一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n"
+            + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
     else
-        return ("so sad你保底了\n\n一共抽了330抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n" + golden + "張金卡<:fgo_K2:1107145363795746977>\n1張彩卡<:fgo_K1:1107145268681519114>\n");
+        return ("so sad你保底了\n\n一共抽了330抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n"
+            + golden + "張金卡<:fgo_K2:1107145363795746977>\n1張彩卡<:fgo_K1:1107145268681519114>\n");
 }
 string qreply() {
     if (tkuse == token[0])
         return "チョコラ不知道主人在說什麼欸";
-        //return "再鬧\n下一個被駭的就是你";
         //return "現在登入的是チョコラ";
     else if (tkuse == token[1])
         return "再鬧\n我就叫M3捅爆你屁眼";
@@ -906,4 +915,3 @@ int main() {
     bot.start(st_wait);
     return 0;
 }
-
