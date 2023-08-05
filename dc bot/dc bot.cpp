@@ -31,7 +31,7 @@ string nero[18] = {
     "媽的怎麼有個智障又在刷圖了",
     "媽的怎麼有個智障又在刷圖了"
 };
-string exusiai[32] = {
+string exusiai[45] = {
     "https://www.pixiv.net/artworks/74871383",
     "https://www.pixiv.net/artworks/79067802",
     "https://www.pixiv.net/artworks/79640496",
@@ -63,7 +63,20 @@ string exusiai[32] = {
     "https://www.pixiv.net/artworks/93447113",
     "https://www.pixiv.net/artworks/107951126",  // 30
     "媽的怎麼有個智障又在刷圖了",
-    "媽的怎麼有個智障又在刷圖了"
+    "媽的怎麼有個智障又在刷圖了",
+    "https://www.pixiv.net/artworks/106803939",
+    "https://www.pixiv.net/artworks/79779657",
+    "https://www.pixiv.net/artworks/74751807",  // 35
+    "https://www.pixiv.net/artworks/101923676",
+    "https://www.pixiv.net/artworks/87692502",
+    "https://www.pixiv.net/artworks/84329196",
+    "https://www.pixiv.net/artworks/77323551",
+    "https://www.pixiv.net/artworks/77208163",  //  40
+    "https://www.pixiv.net/artworks/85353549",
+    "https://www.pixiv.net/artworks/86053423",
+    "https://www.pixiv.net/artworks/86037415",
+    "https://www.pixiv.net/artworks/79258674",
+    "https://www.pixiv.net/artworks/82160090"  //  45
 };
 string irene[22] = {
     "https://www.pixiv.net/artworks/108413770",
@@ -103,7 +116,7 @@ string dalao[12] = {
     "https://media.discordapp.net/attachments/727443536085254186/883883935141101589/image0.gif?width=87&height=87",
     "https://cdn.discordapp.com/attachments/968693698206519356/1126812896425431110/4qBl31563R.gif"
 };
-string europe[6] = {
+string europe[7] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601634916966471/64819726415fa4d795ccc6269f6e560b.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601681616347206/1604671763242.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601790546620416/Z.png",
@@ -114,7 +127,8 @@ string europe[6] = {
 阿我就是非洲阿\n什麼幾抽寶幾\n我現在都不在意了\n就連那個未持有\n我現在都已經懶得理他了\n\n\
 什麼歐洲小王子\n什麼寶五120\n沒關係嘛\n都你們玩就好了嘛\n\n\
 一直以來你們都嘛登GM帳\n我一個小小玩家\n非的怎麼幹得過歐的\n撒了幾百石丟水溝\n換來的只有綠方\n跟更多的綠方\n\n\
-什麼彩光\n那種東西能吃嗎？\n什麼五星\n那種東西很強嗎？\n我就是一個小小沒見過世面的非洲人阿\n那種東西\n我稀罕嗎？"
+什麼彩光\n那種東西能吃嗎？\n什麼五星\n那種東西很強嗎？\n我就是一個小小沒見過世面的非洲人阿\n那種東西\n我稀罕嗎？",
+    "https://media.discordapp.net/attachments/569812081965268992/1137384287428157521/11C3930E47E6DD1F0D5EC4D77F68B8DC.gif"
 };
 string fbi[10] = {
     "https://media.discordapp.net/attachments/968693698206519356/1108597185219678229/IMG_7547.jpg?width=525&height=290",
@@ -369,8 +383,7 @@ string mat[132][2] = {
 
 string tkuse, txt, nowt, au, token[2] = { "" };
 string jrtime = "https://www.eki-net.com/Personal/Top/Index\n\
-https://www.jreast.co.jp/tickets/\n\
-https://ekitan.com/timetable/railway/line/5000";
+https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
 int status = 1;
 
 string pcrgacha(string times) {
@@ -619,7 +632,6 @@ int main() {
                     /*for (int i = 0; i < 18; i++) {
                         bot.message_create(message(event.msg.channel_id, nero[i]));
                     }*/
-                    //bot.message_create(message(event.msg.channel_id, "日文輸出測試 チョコラ"));
                     bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
                 }
                 else
