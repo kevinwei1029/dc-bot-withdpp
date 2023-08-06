@@ -696,10 +696,10 @@ int main() {
             else if (v[0] == "能" || s.find("能天") != -1) {
                 bot.message_create(message(event.msg.channel_id, exusiai[mt() % size(exusiai)]));
             }
-            else if (v[0] == "小鳥" || v[0] == "艾麗妮" || v[0] == "irene") {
+            else if (v[0] == "小鳥" || v[0] == "艾麗妮") {
                 bot.message_create(message(event.msg.channel_id, irene[mt() % size(irene)]));
             }
-            else if (v[0] == "尼祿" || v[0] == "nero") {
+            else if (v[0] == "尼祿") {
                 bot.message_create(message(event.msg.channel_id, nero[mt() % size(nero)]));
             }
             else if (v[0] == "瓜" || v[0] == "吃瓜") {
