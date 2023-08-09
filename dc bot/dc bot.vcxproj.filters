@@ -20,11 +20,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="token.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="dc bot.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="token.txt" />
   </ItemGroup>
 </Project>

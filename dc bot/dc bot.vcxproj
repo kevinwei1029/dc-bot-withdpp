@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\hkwei\OneDrive\桌面\apps\少用\dc bot\dependencies\include\dpp-10.0;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\hkwei\OneDrive\桌面\apps\少用\dc bot\dependencies\lib\dpp-10.0;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Kevin\Desktop\code\dpp\dependencies\include\dpp-10.0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Kevin\Desktop\code\dpp\dependencies\lib\dpp-10.0;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -137,10 +137,10 @@
     <ClCompile Include="dc bot.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="token.txt" />
+    <ClInclude Include="dc bot.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dc bot.h" />
+    <Text Include="token.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
