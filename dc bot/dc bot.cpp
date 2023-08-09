@@ -632,8 +632,7 @@ int main() {
                     /*for (int i = 0; i < 18; i++) {
                         bot.message_create(message(event.msg.channel_id, nero[i]));
                     }*/
-                    //bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
-                    bot.message_create(message(event.msg.channel_id, "主人把我轉移到筆電啦"));
+                    bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
                 }
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
