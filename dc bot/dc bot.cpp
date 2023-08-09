@@ -643,7 +643,7 @@ int main() {
             else if (v[0] == "test1") {
                 if (au == "681076728465981450")
                     //bot.message_create(message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了非洲人還不睡喔"));
-                    bot.message_create(message(event.msg.channel_id, "git提交測試"));
+                    bot.message_create(message(event.msg.channel_id, "git add .測試"));
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
