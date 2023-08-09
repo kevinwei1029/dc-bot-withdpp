@@ -159,7 +159,7 @@ string truee[5] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809663716503613/51.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105823436883902484/Mvd47Q7.png"  // 5
 };
-string gay[34] = {
+string gay[37] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832383690854420/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832408504344647/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832434081214484/image.png",
@@ -193,7 +193,10 @@ string gay[34] = {
     "https://cdn.discordapp.com/attachments/966729542800658442/1135474025552957501/image.png",
     "https://cdn.discordapp.com/attachments/966729542800658442/1135474045425557544/image.png",
     "https://cdn.discordapp.com/attachments/966729542800658442/1135862352017887382/t0Z4horHE73AXH6k0jerhpOo4QjfruuBnURcsfVtGsYPXgkWmSlaf.jpg",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1136262065481330738/FB_IMG_1690976373803.jpg"
+    "https://cdn.discordapp.com/attachments/966729542800658442/1136262065481330738/FB_IMG_1690976373803.jpg",
+    "https://media.discordapp.net/attachments/966729542800658442/1138700764995403856/FB_IMG_1691557734693.jpg?width=605&height=547",  //  35
+    "https://media.discordapp.net/attachments/966729542800658442/1138700765234475088/FB_IMG_1691557741111.jpg?width=875&height=875",
+    "https://media.discordapp.net/attachments/966729542800658442/1138700765473554432/FB_IMG_1691557737218.jpg?width=1580&height=890"
 };
 string wat[16]{
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
@@ -696,10 +699,10 @@ int main() {
             else if (v[0] == "能" || s.find("能天") != -1) {
                 bot.message_create(message(event.msg.channel_id, exusiai[mt() % size(exusiai)]));
             }
-            else if (v[0] == "小鳥" || v[0] == "艾麗妮" || v[0] == "irene") {
+            else if (v[0] == "小鳥" || v[0] == "艾麗妮") {
                 bot.message_create(message(event.msg.channel_id, irene[mt() % size(irene)]));
             }
-            else if (v[0] == "尼祿" || v[0] == "nero") {
+            else if (v[0] == "尼祿") {
                 bot.message_create(message(event.msg.channel_id, nero[mt() % size(nero)]));
             }
             else if (v[0] == "瓜" || v[0] == "吃瓜") {
