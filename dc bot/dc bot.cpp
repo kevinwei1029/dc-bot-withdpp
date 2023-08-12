@@ -11,7 +11,7 @@ using namespace std;
 using namespace dpp;
 using json = nlohmann::json;
 
-string nero[18] = {
+string arkcr[86] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1092538926687858828/1680551962912.jpg",
     "https://media.discordapp.net/attachments/968693698206519356/1092538926914359466/1680551964443.jpg?width=1050&height=735",
     "https://cdn.discordapp.com/attachments/968693698206519356/1092709412789030972/16051910383634.png",
@@ -28,78 +28,75 @@ string nero[18] = {
     "https://www.pixiv.net/artworks/89517369" ,
     "https://www.pixiv.net/artworks/67090381" ,  // 15
     "https://www.pixiv.net/artworks/91937298",
-    "媽的怎麼有個智障又在刷圖了",
-    "媽的怎麼有個智障又在刷圖了"
-};
-string exusiai[45] = {
+    "",
+    "",
+    "",
+    "",  //  20
     "https://www.pixiv.net/artworks/74871383",
     "https://www.pixiv.net/artworks/79067802",
     "https://www.pixiv.net/artworks/79640496",
     "https://www.pixiv.net/artworks/101872504",
-    "https://www.pixiv.net/artworks/105525478",  // 5
+    "https://www.pixiv.net/artworks/105525478",  // 25
     "https://www.pixiv.net/artworks/103486827",
     "https://www.pixiv.net/artworks/105829323",
     "https://www.pixiv.net/artworks/101933810",
     "https://www.pixiv.net/artworks/104753423",
-    "https://www.pixiv.net/artworks/99347539",  // 10
+    "https://www.pixiv.net/artworks/99347539",  // 30
     "https://www.pixiv.net/artworks/83439562",
     "https://www.pixiv.net/artworks/93266233",
     "https://www.pixiv.net/artworks/91879173",
     "https://www.pixiv.net/artworks/103866984",
-    "https://www.pixiv.net/artworks/101028272",  // 15
+    "https://www.pixiv.net/artworks/101028272",  // 35
     "https://www.pixiv.net/artworks/102634213",
     "https://www.pixiv.net/artworks/79405727",
     "https://www.pixiv.net/artworks/105116769",
     "https://www.pixiv.net/artworks/101872743",
-    "https://www.pixiv.net/artworks/104348996",  // 20
+    "https://www.pixiv.net/artworks/104348996",  // 40
     "https://www.pixiv.net/artworks/91809487",
     "https://www.pixiv.net/artworks/97693106",
     "https://www.pixiv.net/artworks/87451043",
     "https://www.pixiv.net/artworks/105844530",
-    "https://www.pixiv.net/artworks/75387374",  // 25
+    "https://www.pixiv.net/artworks/75387374",  // 45
     "https://www.pixiv.net/artworks/82169692",
     "https://www.pixiv.net/artworks/106220663",
     "https://www.pixiv.net/artworks/101931248",
     "https://www.pixiv.net/artworks/93447113",
-    "https://www.pixiv.net/artworks/107951126",  // 30
+    "https://www.pixiv.net/artworks/107951126",  // 50
     "媽的怎麼有個智障又在刷圖了",
     "媽的怎麼有個智障又在刷圖了",
     "https://www.pixiv.net/artworks/106803939",
     "https://www.pixiv.net/artworks/79779657",
-    "https://www.pixiv.net/artworks/74751807",  // 35
+    "https://www.pixiv.net/artworks/74751807",  // 55
     "https://www.pixiv.net/artworks/101923676",
     "https://www.pixiv.net/artworks/87692502",
     "https://www.pixiv.net/artworks/84329196",
     "https://www.pixiv.net/artworks/77323551",
-    "https://www.pixiv.net/artworks/77208163",  //  40
+    "https://www.pixiv.net/artworks/77208163",  //  60
     "https://www.pixiv.net/artworks/85353549",
     "https://www.pixiv.net/artworks/86053423",
     "https://www.pixiv.net/artworks/86037415",
     "https://www.pixiv.net/artworks/79258674",
-    "https://www.pixiv.net/artworks/82160090"  //  45
-};
-string irene[22] = {
+    "https://www.pixiv.net/artworks/82160090"  //  65
     "https://www.pixiv.net/artworks/108413770",
     "https://www.pixiv.net/artworks/108018284",
     "https://www.pixiv.net/artworks/109092104",
     "https://www.pixiv.net/artworks/107234037",
-    "https://www.pixiv.net/artworks/105353416",  //  5
+    "https://www.pixiv.net/artworks/105353416",  //  70
     "https://www.pixiv.net/artworks/105353416",
     "https://www.pixiv.net/artworks/102890589",
     "https://www.pixiv.net/artworks/98795930",
     "https://www.pixiv.net/artworks/98849187",
-    "https://www.pixiv.net/artworks/98650893",  //  10
+    "https://www.pixiv.net/artworks/98650893",  //  75
     "https://www.pixiv.net/artworks/108372225",
     "https://www.pixiv.net/artworks/107330774",
     "https://www.pixiv.net/artworks/108345276",
     "https://www.pixiv.net/artworks/109181283",
-    "https://www.pixiv.net/artworks/98898181",  //  15
+    "https://www.pixiv.net/artworks/98898181",  //  80
     "https://www.pixiv.net/artworks/109192813",
     "https://www.pixiv.net/artworks/109157386",
     "https://www.pixiv.net/artworks/101702064",
     "https://www.pixiv.net/artworks/107121238",
-    "媽的怎麼有個智障又在刷圖了",  //  20
-    "https://www.pixiv.net/artworks/106968058",
+    "https://www.pixiv.net/artworks/106968058",  //  85
     "https://www.pixiv.net/artworks/106179650"
 };
 string dalao[12] = {
@@ -572,16 +569,14 @@ int main() {
     bot.on_slashcommand([](const slashcommand_t& event) {
         mt19937 mt(time(nullptr));
 
-        if (event.command.get_command_name() == "cuttie") 
+        if (event.command.get_command_name() == "cuttie")
             event.reply("https://cdn.discordapp.com/attachments/1091776372168474665/1121819763593711777/SPOILER_1565.jpg");
-        else if (event.command.get_command_name() == "cattie") 
+        else if (event.command.get_command_name() == "cattie")
             event.reply("https://cdn.discordapp.com/attachments/973282252186349588/1083963031077265528/IMG_6734.jpg");
-        else if (event.command.get_command_name() == "nero") 
-            event.reply(nero[mt() % size(nero)]);
-        else if (event.command.get_command_name() == "bruh") 
+        else if (event.command.get_command_name() == "bruh")
             event.reply("https://cdn.discordapp.com/attachments/933710044917288963/1092725740195295252/9k.png");
-        else if (event.command.get_command_name() == "exusiai") 
-            event.reply(exusiai[mt() % size(exusiai)]);
+        else if (event.command.get_command_name() == "ark charaters")
+            event.reply(arkcr[mt() % size(arkcr)]);
         }); //註冊斜線指令
     bot.on_ready([&bot](const ready_t& event) {
 
@@ -593,13 +588,10 @@ int main() {
                 slashcommand("cattie", "cute", bot.me.id)
             );
             bot.global_command_create(
-                slashcommand("nero", "it'll send pics", bot.me.id)
-            );
-            bot.global_command_create(
                 slashcommand("bruh", "bro", bot.me.id)
             );
             bot.global_command_create(
-                slashcommand("exusiai", "it'll send pics", bot.me.id)
+                slashcommand("ark charaters", "it'll send pics", bot.me.id)
             );
         }
         }); //使用斜線指令
@@ -632,8 +624,8 @@ int main() {
 
             if (v[0] == "test") {
                 if (au == "681076728465981450"){
-                    /*for (int i = 0; i < 18; i++) {
-                        bot.message_create(message(event.msg.channel_id, nero[i]));
+                    /*for (int i = 0; i < size(arkcr); i++) {
+                        bot.message_create(message(event.msg.channel_id, arkcr[i]));
                     }*/
                     bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
                 }
@@ -642,8 +634,7 @@ int main() {
             }
             else if (v[0] == "test1") {
                 if (au == "681076728465981450")
-                    //bot.message_create(message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了非洲人還不睡喔"));
-                    bot.message_create(message(event.msg.channel_id, "git add .測試"));
+                    bot.message_create(message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了非洲人還不睡喔"));
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
@@ -697,14 +688,8 @@ int main() {
             else if (s.find("雀") != -1) {
                 bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
             }
-            else if (v[0] == "能" || s.find("能天") != -1) {
-                bot.message_create(message(event.msg.channel_id, exusiai[mt() % size(exusiai)]));
-            }
-            else if (v[0] == "小鳥" || v[0] == "艾麗妮") {
-                bot.message_create(message(event.msg.channel_id, irene[mt() % size(irene)]));
-            }
-            else if (v[0] == "尼祿") {
-                bot.message_create(message(event.msg.channel_id, nero[mt() % size(nero)]));
+            else if (v[0] == "圖") {
+                bot.message_create(message(event.msg.channel_id, arkcr[mt() % size(arkcr)]));
             }
             else if (v[0] == "瓜" || v[0] == "吃瓜") {
                 bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/503219154413682713/1107119476333350923/gcj_star230505.gif"));
