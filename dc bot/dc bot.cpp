@@ -11,12 +11,12 @@ using namespace std;
 using namespace dpp;
 using json = nlohmann::json;
 
-string arkcr[86] = {
+string arkcr[124] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1092538926687858828/1680551962912.jpg",
     "https://media.discordapp.net/attachments/968693698206519356/1092538926914359466/1680551964443.jpg?width=1050&height=735",
     "https://cdn.discordapp.com/attachments/968693698206519356/1092709412789030972/16051910383634.png",
     "https://www.pixiv.net/artworks/70027330",
-    "https://www.pixiv.net/artworks/90495379",  // 5
+    "https://www.pixiv.net/artworks/96878578",  // 5
     "https://www.pixiv.net/artworks/106295232" ,
     "https://www.pixiv.net/artworks/100877791" ,
     "https://www.pixiv.net/artworks/106192093" ,
@@ -28,10 +28,10 @@ string arkcr[86] = {
     "https://www.pixiv.net/artworks/89517369" ,
     "https://www.pixiv.net/artworks/67090381" ,  // 15
     "https://www.pixiv.net/artworks/91937298",
-    "",
-    "",
-    "",
-    "",  //  20
+    "https://www.pixiv.net/artworks/74751807",
+    "https://www.pixiv.net/artworks/81213258",
+    "https://www.pixiv.net/artworks/85062679",
+    "https://www.pixiv.net/artworks/110582149",  //  20
     "https://www.pixiv.net/artworks/74871383",
     "https://www.pixiv.net/artworks/79067802",
     "https://www.pixiv.net/artworks/79640496",
@@ -62,8 +62,8 @@ string arkcr[86] = {
     "https://www.pixiv.net/artworks/101931248",
     "https://www.pixiv.net/artworks/93447113",
     "https://www.pixiv.net/artworks/107951126",  // 50
-    "媽的怎麼有個智障又在刷圖了",
-    "媽的怎麼有個智障又在刷圖了",
+    "https://www.pixiv.net/artworks/86343437",
+    "https://www.pixiv.net/artworks/89266819",
     "https://www.pixiv.net/artworks/106803939",
     "https://www.pixiv.net/artworks/79779657",
     "https://www.pixiv.net/artworks/74751807",  // 55
@@ -97,7 +97,46 @@ string arkcr[86] = {
     "https://www.pixiv.net/artworks/101702064",
     "https://www.pixiv.net/artworks/107121238",
     "https://www.pixiv.net/artworks/106968058",  //  85
-    "https://www.pixiv.net/artworks/106179650"
+    "https://www.pixiv.net/artworks/106179650",
+    "https://www.pixiv.net/artworks/91342692",
+    "https://www.pixiv.net/artworks/110712914",
+    "https://www.pixiv.net/artworks/100535122",
+    "https://www.pixiv.net/artworks/98475526",  //  90
+    "https://www.pixiv.net/artworks/110664627",
+    "https://www.pixiv.net/artworks/102913001",
+    "https://www.pixiv.net/artworks/109607317",
+    "https://www.pixiv.net/artworks/95699940",
+    "https://www.pixiv.net/artworks/110582149",  //  95
+    "https://www.pixiv.net/artworks/110597319",
+    "https://www.pixiv.net/artworks/107439143",
+    "https://www.pixiv.net/artworks/95534968",
+    "https://www.pixiv.net/artworks/110008745",
+    "https://www.pixiv.net/artworks/109898769",  //  100
+    "https://www.pixiv.net/artworks/110597319",
+    "https://www.pixiv.net/artworks/109740570",
+    "https://www.pixiv.net/artworks/110161097",
+    "https://www.pixiv.net/artworks/101262774",
+    "https://www.pixiv.net/artworks/105168923",  //  105
+    "https://www.pixiv.net/artworks/109607317",
+    "https://www.pixiv.net/artworks/99638814",
+    "https://www.pixiv.net/artworks/109826719",
+    "https://www.pixiv.net/artworks/110484344",
+    "https://www.pixiv.net/artworks/106334195",  //  110
+    "https://www.pixiv.net/artworks/106884972",
+    "https://www.pixiv.net/artworks/90436390",
+    "https://www.pixiv.net/artworks/103936727",
+    "https://www.pixiv.net/artworks/105257460",
+    "https://www.pixiv.net/artworks/102117373",  //  115
+    "https://www.pixiv.net/artworks/89401257",
+    "https://www.pixiv.net/artworks/101416704",
+    "https://www.pixiv.net/artworks/109104100",
+    "https://www.pixiv.net/artworks/108492583",
+    "https://www.pixiv.net/artworks/98738304",  //  120
+    "https://www.pixiv.net/artworks/110710689",
+    "https://www.pixiv.net/artworks/106907485",
+    "https://www.pixiv.net/artworks/81170525",
+    "https://www.pixiv.net/artworks/80293330",
+    "https://www.pixiv.net/artworks/95993983"  //  125
 };
 string dalao[12] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1103600372762808330/65bbfd846d3437b0dd9ed947dcc4816f.png",
