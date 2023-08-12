@@ -677,6 +677,15 @@ int main() {
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
+            else if (s.find("t") && s.find("圖")) {
+                if (au == "681076728465981450") {
+                    for (int i = 0; i < size(arkcr); i++) {
+                        bot.message_create(message(event.msg.channel_id, arkcr[i]));
+                    }
+                }
+                else
+                    bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
+            }
             else if (s.find("可以") != -1 && s.find("休息") != -1 && au == "681076728465981450") {
                 bot.message_create(message(event.msg.channel_id, "好我先去休息了").set_reference(event.msg.id));
                 status = 0;
@@ -868,7 +877,7 @@ int main() {
                     set_thumbnail("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                     add_field(
                         "可用斜線指令",
-                        "new waifu \ncattie \nnero \nbruh \nexusiai \n"
+                        "new waifu \ncattie \nark charactors \nbruh \n"
                     ).
                     add_field(
                         "! 指令",
@@ -876,7 +885,7 @@ int main() {
                     ).
                     add_field(
                         "^ 指令",
-                        "支援n站、jm車號，以及pixiv圖片編號"
+                        "支援n站、jm車號，以及pixiv圖片編號（8~9碼）"
                     ).
                     add_field(
                         "抽卡",
@@ -900,7 +909,7 @@ int main() {
                     ).
                     add_field(
                         "最後更新日期",
-                        "2023/6/24"
+                        "2023/8/12"
                     ).
                     set_image("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                     set_footer(dpp::embed_footer().set_text("我好喜歡小浠").set_icon("https://cdn.discordapp.com/attachments/981585424017420378/1126716388157964338/Mizuki_.png")).
