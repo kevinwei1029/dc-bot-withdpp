@@ -687,8 +687,8 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, "好我先去休息了").set_reference(event.msg.id));
                 status = 0;
             }
-            else if (s.find("番") != -1 && s.find("表") != -1) {
-                bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/972681769704898591/1124121049001381895/image.png").set_reference(event.msg.id));
+            else if (s.find("椰子") != -1) {
+                bot.message_create(message(event.msg.channel_id, "自己寫啊\n又不是不會打扣").set_reference(event.msg.id));
             }
             else if ((s.find("機") != -1 || s.find("bot") != -1) && (s.find("連結") != -1)) {
                 bot.message_create(message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
