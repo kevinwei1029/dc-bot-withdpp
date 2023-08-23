@@ -1,8 +1,8 @@
 # Introduction  
-This is a c++ Discord bot created by student.  
+This is a Discord bot created by student.  
 Hope you enjoy it!
 
-# Invite Links
+# Invitation Links
 bot1 : https://discord.com/api/oauth2/authorize?client_id=1092497000945160324&permissions=0&scope=bot   
 After opening the link above with your discord account, you can invite it into your servers.  
 The creater (yeah it's me) won't be authorized as an administrator.  
@@ -10,10 +10,10 @@ The creater (yeah it's me) won't be authorized as an administrator.
 > Sometimes I use the other bot so I suggest you to invite both of them into your servers.
 
 # What It Can Do :
-* Detect messages and respond
+* Detecting messages and responding
 * Using slash command
-* Send embds
-* Gacha simulation (support Arknights, Fate/Grand Order, Princess connect)
+* Sending embds
+* Gacha simulation (support: Arknights, Fate/Grand Order, Princess connect)
 # It'll never ganna :
 * give you up
 * let you down
@@ -23,9 +23,9 @@ The creater (yeah it's me) won't be authorized as an administrator.
 * tell a lie and hurt you
 
 # Bot Available Time
-Depend on me.  
-I usually turn on the bot as soon as I wake up.  
+Depend on me.
+I usually turn on this bot as soon as I wake up.  
 
 ## Sourses
-* @H1de_on_bruH : https://www.youtube.com/watch?v=qjJ92yM-2QY （Thank for your coding support
+* @H1de_on_bruH : https://github.com/chengyin30069 （Thank for your coding support
 * D++ lib : https://dpp.dev/
