@@ -700,7 +700,7 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, "https://www.pixiv.net/artworks/" + v[1]).set_reference(event.msg.id));
             }
             else if (v[0] == "^jm") {
-                bot.message_create(message(event.msg.channel_id, "https://18comic.vip/album/" + v[1]).set_reference(event.msg.id));
+                bot.message_create(message(event.msg.channel_id, "https://jmcomic.me/photo/" + v[1]).set_reference(event.msg.id));
             }
             else if (s.find("歐") != -1 && s.find("歐貝爾") == -1 && s.find("歐虧") == -1) {
                 bot.message_create(message(event.msg.channel_id, europe[mt() % size(europe)]));
