@@ -152,7 +152,7 @@ string dalao[12] = {
     "https://media.discordapp.net/attachments/727443536085254186/883883935141101589/image0.gif?width=87&height=87",
     "https://cdn.discordapp.com/attachments/968693698206519356/1126812896425431110/4qBl31563R.gif"
 };
-string europe[7] = {
+string europe[9] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601634916966471/64819726415fa4d795ccc6269f6e560b.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601681616347206/1604671763242.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601790546620416/Z.png",
@@ -164,7 +164,9 @@ string europe[7] = {
 什麼歐洲小王子\n什麼寶五120\n沒關係嘛\n都你們玩就好了嘛\n\n\
 一直以來你們都嘛登GM帳\n我一個小小玩家\n非的怎麼幹得過歐的\n撒了幾百石丟水溝\n換來的只有綠方\n跟更多的綠方\n\n\
 什麼彩光\n那種東西能吃嗎？\n什麼五星\n那種東西很強嗎？\n我就是一個小小沒見過世面的非洲人阿\n那種東西\n我稀罕嗎？",
-    "https://media.discordapp.net/attachments/569812081965268992/1137384287428157521/11C3930E47E6DD1F0D5EC4D77F68B8DC.gif"
+    "https://media.discordapp.net/attachments/569812081965268992/1137384287428157521/11C3930E47E6DD1F0D5EC4D77F68B8DC.gif",
+    "https://media.discordapp.net/attachments/968693698206519356/1143789019528974357/FB_IMG_1692752916136.jpg?width=375&height=375",
+    "https://media.discordapp.net/attachments/968693698206519356/1143789019340210307/ZomboMeme_3116.jpg?width=576&height=662"
 };
 string fbi[10] = {
     "https://media.discordapp.net/attachments/968693698206519356/1108597185219678229/IMG_7547.jpg?width=525&height=290",
@@ -195,7 +197,7 @@ string truee[5] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809663716503613/51.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105823436883902484/Mvd47Q7.png"  // 5
 };
-string gay[37] = {
+string gay[41] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832383690854420/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832408504344647/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832434081214484/image.png",
@@ -232,7 +234,11 @@ string gay[37] = {
     "https://cdn.discordapp.com/attachments/966729542800658442/1136262065481330738/FB_IMG_1690976373803.jpg",
     "https://media.discordapp.net/attachments/966729542800658442/1138700764995403856/FB_IMG_1691557734693.jpg?width=605&height=547",  //  35
     "https://media.discordapp.net/attachments/966729542800658442/1138700765234475088/FB_IMG_1691557741111.jpg?width=875&height=875",
-    "https://media.discordapp.net/attachments/966729542800658442/1138700765473554432/FB_IMG_1691557737218.jpg?width=1580&height=890"
+    "https://media.discordapp.net/attachments/966729542800658442/1138700765473554432/FB_IMG_1691557737218.jpg?width=1580&height=890",
+    "https://media.discordapp.net/attachments/968693698206519356/1141940199845277776/FB_IMG_1692330118679.jpg?width=1176&height=662",
+    "https://media.discordapp.net/attachments/968693698206519356/1141940200361173013/FB_IMG_1692330125590.jpg?width=400&height=400",
+    "https://media.discordapp.net/attachments/968693698206519356/1141940200075952218/FB_IMG_1692330123098.jpg?width=863&height=662",  //  40
+    "https://media.discordapp.net/attachments/968693698206519356/1141952623327592508/FB_IMG_1691732479628.jpg?width=617&height=662"
 };
 string wat[16]{
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
@@ -674,15 +680,6 @@ int main() {
             else if (v[0] == "test1") {
                 if (au == "681076728465981450")
                     bot.message_create(message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了非洲人還不睡喔"));
-                else
-                    bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
-            }
-            else if (s.find("t") && s.find("圖")) {
-                if (au == "681076728465981450") {
-                    for (int i = 0; i < size(arkcr); i++) {
-                        bot.message_create(message(event.msg.channel_id, arkcr[i]));
-                    }
-                }
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
