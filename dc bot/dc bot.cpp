@@ -426,10 +426,11 @@ string mat[132][2] = {
 {"鬼炎鬼燈", "2-5.5 三條三坊(同時缺虹色線球)、大江山(同時缺凶骨)、朱雀門(同時缺勾玉)"},
 };
 
-string tkuse, txt, nowt, au, token[2] = { "" };
+string tkuse, txt, au, token[2], temp = { "" };
 string jrtime = "https://www.eki-net.com/Personal/Top/Index\n\
 https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
-int status = 1;
+int sta[2] = { 1 };
+vector<string> mwl;  //  mwl = majhong wating list
 
 string pcrgacha(string times) {
     int integer = stoi(times);
@@ -656,7 +657,8 @@ int main() {
         }
         //拆訊息
 
-        if (au != "1121384376991752234" && au != "1092497000945160324" && size(event.msg.content) < 50 && status == 1){  //判斷是否進行比對
+        if (au != "1121384376991752234" && au != "1092497000945160324" && size(event.msg.content) < 50 && sta[0] == 1){  //判斷是否進行比對
+            cout << "enter reading loop" << endl;
             mt19937 mt(time(nullptr));
 
             clock_t starttm = clock();
@@ -683,9 +685,46 @@ int main() {
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
+
+            else if (s == "雀魂等待") {
+                for (auto it = mwl.begin(); it != mwl.end(); ++it) {
+                    if (*it == au) {
+                        bot.message_create(message(event.msg.channel_id, "你已在等待開局序列中"));
+                        sta[1] = 0;
+                        break;
+                    }
+                }
+                if (sta[1] == 1) {
+                    mwl.push_back(au);
+                    bot.message_create(message(event.msg.channel_id, "等待區人數+1"));
+                }
+                sta[1] = 1;
+                //bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
+            }
+            else if (s == "等待人數") {
+                bot.message_create(message(event.msg.channel_id, "目前有" + to_string(mwl.size()) + "人在等待開局"));
+                for (auto it = mwl.begin(); it != mwl.end(); ++it) {
+                    bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(*it)));
+                }
+            }
+            else if (s == "退出等待") {
+                for (int i = 0; i < mwl.size(); ++i) {
+                    if (mwl[i] == au) {
+                        mwl.erase(mwl.begin() + i);
+                        bot.message_create(message(event.msg.channel_id, "已從等待區移除"));
+                        sta[1] = 0;
+                        break;
+                    }
+                }
+                if (sta[1] == 1) {
+                    bot.message_create(message(event.msg.channel_id, "你不在等待區"));
+                }
+                sta[1] = 1;
+            }
+
             else if (s.find("休息") != -1 && au == "681076728465981450") {
                 bot.message_create(message(event.msg.channel_id, "好我先去休息了").set_reference(event.msg.id));
-                status = 0;
+                sta[0] = 0;
             }
             else if (s.find("椰子") != -1) {
                 bot.message_create(message(event.msg.channel_id, "自己寫啊\n又不是不會打扣").set_reference(event.msg.id));
@@ -945,13 +984,13 @@ int main() {
                 bot.message_create(m);
             }
         }
-        else if (au == "681076728465981450" && status == 0) {
+        else if (au == "681076728465981450" && sta[0] == 0) {
             if (s.find("起來") != -1) {
-                status = 1;
+                sta[0] = 1;
                 bot.message_create(message(event.msg.channel_id, "好的，我回來了").set_reference(event.msg.id));
             }
             else if (s.find("狀態") != -1) {
-                bot.message_create(message(event.msg.channel_id, "status = " + to_string(status)).set_reference(event.msg.id));
+                bot.message_create(message(event.msg.channel_id, "sta[0] = " + to_string(sta[0])).set_reference(event.msg.id));
             }
         }
     });
