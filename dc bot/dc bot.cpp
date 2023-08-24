@@ -656,7 +656,7 @@ int main() {
         }
         //拆訊息
 
-        if (au != "1121384376991752234" && au != "1092497000945160324" && size(event.msg.content) < 150 && status == 1){  //判斷是否進行比對
+        if (au != "1121384376991752234" && au != "1092497000945160324" && size(event.msg.content) < 50 && status == 1){  //判斷是否進行比對
             mt19937 mt(time(nullptr));
 
             clock_t starttm = clock();
@@ -683,7 +683,7 @@ int main() {
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
-            else if (s.find("可以") != -1 && s.find("休息") != -1 && au == "681076728465981450") {
+            else if (s.find("休息") != -1 && au == "681076728465981450") {
                 bot.message_create(message(event.msg.channel_id, "好我先去休息了").set_reference(event.msg.id));
                 status = 0;
             }
