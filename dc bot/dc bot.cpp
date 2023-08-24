@@ -695,19 +695,19 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
                 for (auto it = mwl.begin(); it != mwl.end(); ++it) {
                     if (*it == au) {
-                        bot.message_create(message(event.msg.channel_id, "你已在等待開局序列中"));
+                        bot.message_create(message(event.msg.channel_id, "你已在等待開局序列中").set_reference(event.msg.id));
                         sta[1] = 0;
                         break;
                     }
                 }
                 if (sta[1] == 1) {
                     mwl.push_back(au);
-                    bot.message_create(message(event.msg.channel_id, "等待區人數+1"));
+                    bot.message_create(message(event.msg.channel_id, "等待區人數+1").set_reference(event.msg.id));
                 }
                 sta[1] = 1;
             }
             else if (s.find("人") != -1 && s.find("待") == -1) {
-                bot.message_create(message(event.msg.channel_id, "目前有" + to_string(mwl.size()) + "人在等待開局"));
+                bot.message_create(message(event.msg.channel_id, "目前有" + to_string(mwl.size()) + "人在等待開局").set_reference(event.msg.id));
                 for (auto it = mwl.begin(); it != mwl.end(); ++it) {
                     bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(*it)));
                 }
@@ -716,19 +716,19 @@ int main() {
                 for (int i = 0; i < mwl.size(); ++i) {
                     if (mwl[i] == au) {
                         mwl.erase(mwl.begin() + i);
-                        bot.message_create(message(event.msg.channel_id, "已從等待區移除"));
+                        bot.message_create(message(event.msg.channel_id, "已從等待區移除").set_reference(event.msg.id));
                         sta[1] = 0;
                         break;
                     }
                 }
                 if (sta[1] == 1) {
-                    bot.message_create(message(event.msg.channel_id, "你不在等待區"));
+                    bot.message_create(message(event.msg.channel_id, "你不在等待區").set_reference(event.msg.id));
                 }
                 sta[1] = 1;
             }
             else if (s.find("空") != -1 && s.find("待") == -1) {
                 mwl.clear();
-                bot.message_create(message(event.msg.channel_id, "等待序列已清空"));
+                bot.message_create(message(event.msg.channel_id, "等待序列已清空").set_reference(event.msg.id));
             }
 
             else if (s.find("休息") != -1 && au == "681076728465981450") {
