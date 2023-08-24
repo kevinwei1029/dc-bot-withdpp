@@ -658,7 +658,7 @@ int main() {
         //拆訊息
 
         if (au != "1121384376991752234" && au != "1092497000945160324" && size(event.msg.content) < 50 && sta[0] == 1){  //判斷是否進行比對
-            cout << "enter reading loop" << endl;
+            //cout << "enter reading loop" << endl;
             mt19937 mt(time(nullptr));
 
             clock_t starttm = clock();
@@ -687,6 +687,7 @@ int main() {
             }
 
             else if (s == "雀魂等待") {
+                bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
                 for (auto it = mwl.begin(); it != mwl.end(); ++it) {
                     if (*it == au) {
                         bot.message_create(message(event.msg.channel_id, "你已在等待開局序列中"));
@@ -699,7 +700,6 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, "等待區人數+1"));
                 }
                 sta[1] = 1;
-                //bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
             }
             else if (s == "等待人數") {
                 bot.message_create(message(event.msg.channel_id, "目前有" + to_string(mwl.size()) + "人在等待開局"));
