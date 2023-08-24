@@ -159,11 +159,11 @@ string europe[9] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601842497273947/2Q.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809939575865344/gif21.gif",  // 5
     "我沒差啊\n你們都這樣\n我習慣了阿\n\n\
-你們在曬的時候有考慮過我的感受嗎？\n沒有阿\n從以前到現在一直以來都沒有阿\n\n\
-阿我就是非洲阿\n什麼幾抽寶幾\n我現在都不在意了\n就連那個未持有\n我現在都已經懶得理他了\n\n\
-什麼歐洲小王子\n什麼寶五120\n沒關係嘛\n都你們玩就好了嘛\n\n\
-一直以來你們都嘛登GM帳\n我一個小小玩家\n非的怎麼幹得過歐的\n撒了幾百石丟水溝\n換來的只有綠方\n跟更多的綠方\n\n\
-什麼彩光\n那種東西能吃嗎？\n什麼五星\n那種東西很強嗎？\n我就是一個小小沒見過世面的非洲人阿\n那種東西\n我稀罕嗎？",
+     你們在曬的時候有考慮過我的感受嗎？\n沒有阿\n從以前到現在一直以來都沒有阿\n\n\
+     阿我就是非洲阿\n什麼幾抽寶幾\n我現在都不在意了\n就連那個未持有\n我現在都已經懶得理他了\n\n\
+     什麼歐洲小王子\n什麼寶五120\n沒關係嘛\n都你們玩就好了嘛\n\n\
+     一直以來你們都嘛登GM帳\n我一個小小玩家\n非的怎麼幹得過歐的\n撒了幾百石丟水溝\n換來的只有綠方\n跟更多的綠方\n\n\
+     什麼彩光\n那種東西能吃嗎？\n什麼五星\n那種東西很強嗎？\n我就是一個小小沒見過世面的非洲人阿\n那種東西\n我稀罕嗎？",
     "https://media.discordapp.net/attachments/569812081965268992/1137384287428157521/11C3930E47E6DD1F0D5EC4D77F68B8DC.gif",
     "https://media.discordapp.net/attachments/968693698206519356/1143789019528974357/FB_IMG_1692752916136.jpg?width=375&height=375",
     "https://media.discordapp.net/attachments/968693698206519356/1143789019340210307/ZomboMeme_3116.jpg?width=576&height=662"
@@ -185,7 +185,6 @@ string kusa[7] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809322727981167/8033ffd8b66053cc9ab07c53d7652654.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105821584322727936/th.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105821215249137834/20210920000704.png",
-    //"h ttps://cdn.discordapp.com/attachments/968693698206519356/1105821914963902525/4Bgi4BnYfKrlUBUnXRJT5E.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105821317627916329/ddb0503a3043e33f88225cf9b7b42a93.png",  // 5
     "https://cdn.discordapp.com/attachments/968693698206519356/1105822361757941830/ddhBcLX.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105822741296332940/HeP1P5a.png"
@@ -264,11 +263,16 @@ string ksexre[11] = {
     "......\n看來你的生命跡象與意識狀態尚不穩定。經過稍早的理學檢查，我已大致推斷出導致現狀的原因。",
     "看來你發作的時間比我預期的要早一些 -- 一如你在戰場上的決策那樣，總是出乎所有人的預料。",
     "Mo3ter，來幫個忙。",  //  5
-    "這裡離最近的辦公室還有一段距離。\n希望你在此之前能保持清醒，羅德島戰術頭腦的醜態有我一個人看到就夠了。",
-    "在為這片大地上的人們戰鬥之前，我們首先是活生生的人，而不是被符號化的意象。\n只有真正無血無淚的生物才沒有一己私慾、才不需要來自他人的幫助。",
+    "這裡離最近的辦公室還有一段距離。\n\
+     希望你在此之前能保持清醒，羅德島戰術頭腦的醜態有我一個人看到就夠了。",
+    "在為這片大地上的人們戰鬥之前，我們首先是活生生的人，而不是被符號化的意象。\n\
+     只有真正無血無淚的生物才沒有一己私慾、才不需要來自他人的幫助。",
     "感謝你一直以來的沉默，博士。\n但是沉默並不意味著要壓抑自己，不要忘記身後也有一齊為此努力的同伴。",
-    "群星會衰老，這片大地則會一路向前不停不息。\n我，作為你漫長旅途的半個過客，你無須記住我也勿要了解我。\n你的思維是一片有限度的內存，有限度的思維理應思考更深刻艮古的問題。",
-    "你將思考的情緒衝動加之於我，沒有必要，亦無意義。\n你有更重要的事情去做，而我微不足道。",  //  10
+    "群星會衰老，這片大地則會一路向前不停不息。\n\
+     我，作為你漫長旅途的半個過客，你無須記住我也勿要了解我。\n\
+     你的思維是一片有限度的內存，有限度的思維理應思考更深刻艮古的問題。",
+    "你將思考的情緒衝動加之於我，沒有必要，亦無意義。\n\
+     你有更重要的事情去做，而我微不足道。",  //  10
     "https://cdn.discordapp.com/attachments/966729542800658442/1134840733002629160/received_1043911593721873.jpg"
 };
 string cstre[11] = {
@@ -428,7 +432,8 @@ string mat[132][2] = {
 
 string tkuse, txt, au, token[2], temp = { "" };
 string jrtime = "https://www.eki-net.com/Personal/Top/Index\n\
-https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
+                 https://www.jreast.co.jp/tickets/\n\
+                 https://ekitan.com/timetable/railway/line/5000";
 int sta[2] = { 1 };
 vector<string> mwl;  //  mwl = majhong wating list
 
@@ -686,7 +691,7 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
 
-            else if (s == "雀魂等待") {
+            else if (s.find("雀") != -1 && s.find("待") == -1) {
                 bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
                 for (auto it = mwl.begin(); it != mwl.end(); ++it) {
                     if (*it == au) {
@@ -701,13 +706,13 @@ int main() {
                 }
                 sta[1] = 1;
             }
-            else if (s == "等待人數") {
+            else if (s.find("人") != -1 && s.find("待") == -1) {
                 bot.message_create(message(event.msg.channel_id, "目前有" + to_string(mwl.size()) + "人在等待開局"));
                 for (auto it = mwl.begin(); it != mwl.end(); ++it) {
                     bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(*it)));
                 }
             }
-            else if (s == "退出等待") {
+            else if (s.find("退") != -1 && s.find("待") == -1) {
                 for (int i = 0; i < mwl.size(); ++i) {
                     if (mwl[i] == au) {
                         mwl.erase(mwl.begin() + i);
@@ -720,6 +725,10 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, "你不在等待區"));
                 }
                 sta[1] = 1;
+            }
+            else if (s.find("空") != -1 && s.find("待") == -1) {
+                mwl.clear();
+                bot.message_create(message(event.msg.channel_id, "等待序列已清空"));
             }
 
             else if (s.find("休息") != -1 && au == "681076728465981450") {
@@ -768,9 +777,6 @@ int main() {
             }
             else if (s.find("fbi") != -1 || s.find("ㄌㄌㄎ") != -1) {
                 bot.message_create(message(event.msg.channel_id, fbi[mt() % size(fbi)]));
-            }
-            else if (s.find("雀") != -1) {
-                bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
             }
             else if (v[0] == "圖") {
                 bot.message_create(message(event.msg.channel_id, arkcr[mt() % size(arkcr)]));
@@ -933,7 +939,10 @@ int main() {
                     ).
                     add_field(
                         "抽卡公式說明",
-                        "抽字為觸發功能必要、也可輸入gacha一詞代替\n三個區段間請用半形空格隔開\n遊戲名稱可打pcr、fgo、ark、公連、方舟、居歐\n最後請打抽數，拜託不要用太大數字炸我機器人"
+                        "抽字為觸發功能必要、也可輸入gacha一詞代替\n\
+                         三個區段間請用半形空格隔開\n\
+                         遊戲名稱可打pcr、fgo、ark、公連、方舟、居歐\n\
+                         最後請打抽數，拜託不要用太大數字炸我機器人"
                     ).
                     add_field(
                         "fgo素材掉落關卡查詢",
@@ -942,6 +951,12 @@ int main() {
                     add_field(
                         "回應",
                         "對特定文字及表情符號\n"
+                    ).
+                    add_field(
+                        "雀魂待機序列",
+                        "單獨發「雀魂等待」\n機器人會把你各位加到一個序列中\n\
+                         單獨發「等待人數」\n機器人會告訴你現在有多少人在等待開局\n\
+                         單獨發「退出等待」\n機器人會把你移出等待序列"
                     ).
                     add_field(
                         "最後更新日期",
