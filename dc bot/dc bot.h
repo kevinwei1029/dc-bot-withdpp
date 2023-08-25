@@ -2,6 +2,168 @@
 #include <string>
 
 using namespace std;
+string tkuse, txt, au, token[2], jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
+
+string pcrgacha(string times) {
+    int integer = stoi(times);
+    int pcrga[3] = { 0 };
+    mt19937 mt(time(nullptr));
+
+    for (int k = 0; k < integer; k++) {
+        int r = mt() % 33;
+
+        switch (r) {
+        case 27:
+            pcrga[0]++;
+            break;
+
+        case 15: case 9: case 31:
+            pcrga[1]++;
+            break;
+
+        default:
+            pcrga[2]++;
+            break;
+        }
+    }
+
+    string silver = to_string(pcrga[2]);
+    string golden = to_string(pcrga[1]);
+    string rainbow = to_string(pcrga[0]);
+    return ("一共抽到了：\n" + silver + "張銀卡 <:pcr1:1117798654548377641>\n"
+        + golden + "張金卡 <:pcr2:1117798436427804754>\n" + rainbow + "張彩卡 <:pcr3:1117798715957194923>\n");
+}
+string fgogacha(string times) {
+    int integer = stoi(times);
+    int fgoga[3] = { 0 };
+    mt19937 mt(time(nullptr));
+
+    for (int k = 0; k < integer; k++) {
+        int r = mt() % 100;
+
+        switch (r) {
+        case 47:
+            fgoga[0]++;
+            break;
+
+        case 85: case 98: case 6:
+            fgoga[1]++;
+            break;
+
+        default:
+            fgoga[2]++;
+            break;
+        }
+    }
+    string silver = to_string(fgoga[2]);
+    string golden = to_string(fgoga[1]);
+    string rainbow = to_string(fgoga[0]);
+    return ("先說，我沒有保底\n\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n"
+        + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
+}
+string arkgacha(string times) {
+    int integer = stoi(times);
+    mt19937 mt(time(nullptr));
+    int arkga[4] = { 0 };
+
+    for (int i = 0; i < integer; i++) {
+        int r = mt() % 50;
+
+        switch (r) {
+        case 27:  //六星
+            arkga[0]++;
+            break;
+
+        case 35: case 43: case 15: case 1:  //五星
+            arkga[1]++;
+            break;
+
+        case 5: case 29: case 45: case 18: case 20: case 3: case 26: case 48: case 32: case 40: case 39: case 16: case 8: case 21: case 4:  //四星
+            arkga[2]++;
+            break;
+
+        default:  //三星
+            arkga[3]++;
+            break;
+        }
+    }
+    string bronze = to_string(arkga[3]);
+    string silver = to_string(arkga[2]);
+    string golden = to_string(arkga[1]);
+    string rainbow = to_string(arkga[0]);
+    return ("先說，我沒有保底\n\n一共抽到了：\n" + bronze + "張三星<:ark3:1107953947353808947>\n"
+        + silver + "張四星<:ark4:1107953907377901579>\n" + golden + "張五星<:ark5:1107953865602637824>\n"
+        + rainbow + "張六星<:ark6:1107953803057188905>\n");
+}
+string pcrget() {
+    int pcrga[3] = { 0 };
+    int k = 0;
+    mt19937 mt(time(nullptr));
+
+    while (pcrga[0] == 0 && k < 199) {
+        int r = mt() % 33;
+
+        switch (r) {
+        case 27:
+            pcrga[0]++;
+            break;
+
+        case 15: case 9: case 31:
+            pcrga[1]++;
+            break;
+
+        default:
+            pcrga[2]++;
+            break;
+        }
+        k++;
+    }
+    string times = to_string(k);
+    string silver = to_string(pcrga[2]);
+    string golden = to_string(pcrga[1]);
+    string rainbow = to_string(pcrga[0]);
+
+    if (k < 199)
+        return ("一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n"
+            + golden + "張金卡<:pcr2:1117798436427804754>\n1張彩卡<:pcr3:1117798715957194923>\n");
+    else
+        return ("so sad你保底了\n\n一共抽了200抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n"
+            + golden + "張金卡<:pcr2:1117798436427804754>\n" + rainbow + "張彩卡<:pcr3:1117798715957194923>\n");
+}
+string fgoget() {
+    int fgoga[3] = { 0 };
+    int k = 0;
+    mt19937 mt(time(nullptr));
+
+    while (fgoga[0] == 0 && k < 329) {
+        int r = mt() % 100;
+        switch (r) {
+        case 47:
+            fgoga[0]++;
+            break;
+
+        case 85: case 98: case 6:
+            fgoga[1]++;
+            break;
+
+        default:
+            fgoga[2]++;
+            break;
+        }
+        k++;
+    }
+    string times = to_string(k);
+    string silver = to_string(fgoga[2]);
+    string golden = to_string(fgoga[1]);
+    string rainbow = to_string(fgoga[0]);
+
+    if (k < 329)
+        return ("一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n"
+            + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
+    else
+        return ("so sad你保底了\n\n一共抽了330抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n"
+            + golden + "張金卡<:fgo_K2:1107145363795746977>\n1張彩卡<:fgo_K1:1107145268681519114>\n");
+}
 
 string arkcr[124] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1092538926687858828/1680551962912.jpg",
@@ -151,11 +313,11 @@ string europe[9] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1103601842497273947/2Q.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809939575865344/gif21.gif",  // 5
     "我沒差啊\n你們都這樣\n我習慣了阿\n\n\
-     你們在曬的時候有考慮過我的感受嗎？\n沒有阿\n從以前到現在一直以來都沒有阿\n\n\
-     阿我就是非洲阿\n什麼幾抽寶幾\n我現在都不在意了\n就連那個未持有\n我現在都已經懶得理他了\n\n\
-     什麼歐洲小王子\n什麼寶五120\n沒關係嘛\n都你們玩就好了嘛\n\n\
-     一直以來你們都嘛登GM帳\n我一個小小玩家\n非的怎麼幹得過歐的\n撒了幾百石丟水溝\n換來的只有綠方\n跟更多的綠方\n\n\
-     什麼彩光\n那種東西能吃嗎？\n什麼五星\n那種東西很強嗎？\n我就是一個小小沒見過世面的非洲人阿\n那種東西\n我稀罕嗎？",
+你們在曬的時候有考慮過我的感受嗎？\n沒有阿\n從以前到現在一直以來都沒有阿\n\n\
+阿我就是非洲阿\n什麼幾抽寶幾\n我現在都不在意了\n就連那個未持有\n我現在都已經懶得理他了\n\n\
+什麼歐洲小王子\n什麼寶五120\n沒關係嘛\n都你們玩就好了嘛\n\n\
+一直以來你們都嘛登GM帳\n我一個小小玩家\n非的怎麼幹得過歐的\n撒了幾百石丟水溝\n換來的只有綠方\n跟更多的綠方\n\n\
+什麼彩光\n那種東西能吃嗎？\n什麼五星\n那種東西很強嗎？\n我就是一個小小沒見過世面的非洲人阿\n那種東西\n我稀罕嗎？",
     "https://media.discordapp.net/attachments/569812081965268992/1137384287428157521/11C3930E47E6DD1F0D5EC4D77F68B8DC.gif",
     "https://media.discordapp.net/attachments/968693698206519356/1143789019528974357/FB_IMG_1692752916136.jpg?width=375&height=375",
     "https://media.discordapp.net/attachments/968693698206519356/1143789019340210307/ZomboMeme_3116.jpg?width=576&height=662"
@@ -256,15 +418,15 @@ string ksexre[11] = {
     "看來你發作的時間比我預期的要早一些 -- 一如你在戰場上的決策那樣，總是出乎所有人的預料。",
     "Mo3ter，來幫個忙。",  //  5
     "這裡離最近的辦公室還有一段距離。\n\
-     希望你在此之前能保持清醒，羅德島戰術頭腦的醜態有我一個人看到就夠了。",
+希望你在此之前能保持清醒，羅德島戰術頭腦的醜態有我一個人看到就夠了。",
     "在為這片大地上的人們戰鬥之前，我們首先是活生生的人，而不是被符號化的意象。\n\
-     只有真正無血無淚的生物才沒有一己私慾、才不需要來自他人的幫助。",
+只有真正無血無淚的生物才沒有一己私慾、才不需要來自他人的幫助。",
     "感謝你一直以來的沉默，博士。\n但是沉默並不意味著要壓抑自己，不要忘記身後也有一齊為此努力的同伴。",
     "群星會衰老，這片大地則會一路向前不停不息。\n\
-     我，作為你漫長旅途的半個過客，你無須記住我也勿要了解我。\n\
-     你的思維是一片有限度的內存，有限度的思維理應思考更深刻艮古的問題。",
+我，作為你漫長旅途的半個過客，你無須記住我也勿要了解我。\n\
+你的思維是一片有限度的內存，有限度的思維理應思考更深刻艮古的問題。",
     "你將思考的情緒衝動加之於我，沒有必要，亦無意義。\n\
-     你有更重要的事情去做，而我微不足道。",  //  10
+你有更重要的事情去做，而我微不足道。",  //  10
     "https://cdn.discordapp.com/attachments/966729542800658442/1134840733002629160/received_1043911593721873.jpg"
 };
 string cstre[11] = {

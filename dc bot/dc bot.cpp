@@ -12,173 +12,9 @@ using namespace std;
 using namespace dpp;
 using json = nlohmann::json;
 
-string tkuse, txt, au, token[2] = { "" };
-string jrtime = "https://www.eki-net.com/Personal/Top/Index\n\
-                 https://www.jreast.co.jp/tickets/\n\
-                 https://ekitan.com/timetable/railway/line/5000";
 int sta[2] = { 1 };
 vector<string> mwl;  //  mwl = majhong wating list
 
-string pcrgacha(string times) {
-    int integer = stoi(times);
-    int pcrga[3] = {0};
-    mt19937 mt(time(nullptr));
-
-    for (int k = 0; k < integer; k++) {
-        int r = mt() % 33;
-
-        switch (r) {
-        case 27:
-            pcrga[0]++;
-            break;
-
-        case 15: case 9: case 31:
-            pcrga[1]++;
-            break;
-
-        default:
-            pcrga[2]++;
-            break;
-        }
-    }
-
-    string silver = to_string(pcrga[2]);
-    string golden = to_string(pcrga[1]);
-    string rainbow = to_string(pcrga[0]);
-    return ("一共抽到了：\n" + silver + "張銀卡 <:pcr1:1117798654548377641>\n"
-        + golden + "張金卡 <:pcr2:1117798436427804754>\n" + rainbow + "張彩卡 <:pcr3:1117798715957194923>\n");
-}
-string fgogacha(string times) {
-    int integer = stoi(times);
-    int fgoga[3] = {0};
-    mt19937 mt(time(nullptr));
-
-    for (int k = 0; k < integer; k++) {
-        int r = mt() % 100;
-
-        switch (r) {
-        case 47:
-            fgoga[0]++;
-            break;
-
-        case 85: case 98: case 6:
-            fgoga[1]++;
-            break;
-
-        default:
-            fgoga[2]++;
-            break;
-        }
-    }
-    string silver = to_string(fgoga[2]);
-    string golden = to_string(fgoga[1]);
-    string rainbow = to_string(fgoga[0]);
-    return ("先說，我沒有保底\n\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n"
-        + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
-}
-string arkgacha(string times) {
-    int integer = stoi(times);
-    mt19937 mt(time(nullptr));
-    int arkga[4] = { 0 };
-
-    for (int i = 0; i < integer; i++) {
-        int r = mt() % 50;
-
-        switch (r) {
-        case 27:  //六星
-            arkga[0]++;
-            break;
-
-        case 35: case 43: case 15: case 1:  //五星
-            arkga[1]++;
-            break;
-
-        case 5: case 29: case 45: case 18: case 20: case 3: case 26: case 48: case 32: case 40: case 39: case 16: case 8: case 21: case 4:  //四星
-            arkga[2]++;
-            break;
-
-        default:  //三星
-            arkga[3]++;
-            break;
-        }
-    }
-    string bronze = to_string(arkga[3]);
-    string silver = to_string(arkga[2]);
-    string golden = to_string(arkga[1]);
-    string rainbow = to_string(arkga[0]);
-    return ("先說，我沒有保底\n\n一共抽到了：\n" + bronze + "張三星<:ark3:1107953947353808947>\n"
-        + silver + "張四星<:ark4:1107953907377901579>\n" + golden + "張五星<:ark5:1107953865602637824>\n"
-        + rainbow + "張六星<:ark6:1107953803057188905>\n");
-}
-string pcrget() {
-    int pcrga[3] = { 0 };
-    int k = 0;
-    mt19937 mt(time(nullptr));
-
-    while (pcrga[0] == 0 && k < 199) {
-        int r = mt() % 33;
-
-        switch (r) {
-        case 27:
-            pcrga[0]++;
-            break;
-
-        case 15: case 9: case 31:
-            pcrga[1]++;
-            break;
-
-        default:
-            pcrga[2]++;
-            break;
-        }
-        k++;
-    }
-    string times = to_string(k);
-    string silver = to_string(pcrga[2]);
-    string golden = to_string(pcrga[1]);
-    string rainbow = to_string(pcrga[0]);
-
-    if (k < 199)
-        return ("一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n"
-            + golden + "張金卡<:pcr2:1117798436427804754>\n1張彩卡<:pcr3:1117798715957194923>\n");
-    else
-        return ("so sad你保底了\n\n一共抽了200抽\n一共抽到了：\n" + silver + "張銀卡<:pcr1:1117798654548377641>\n"
-            + golden + "張金卡<:pcr2:1117798436427804754>\n" + rainbow + "張彩卡<:pcr3:1117798715957194923>\n");
-}
-string fgoget() {
-    int fgoga[3] = {0};
-    int k = 0;
-    mt19937 mt(time(nullptr));
-
-    while (fgoga[0] == 0 && k < 329) {
-        int r = mt() % 100;
-        switch (r) {
-        case 47:
-            fgoga[0]++;
-            break;
-
-        case 85: case 98: case 6:
-            fgoga[1]++;
-            break;
-
-        default:
-            fgoga[2]++;
-            break;
-        }
-        k++;
-    }
-    string times = to_string(k);
-    string silver = to_string(fgoga[2]);
-    string golden = to_string(fgoga[1]);
-    string rainbow = to_string(fgoga[0]);
-
-    if (k < 329)
-        return ("一共抽了" + times + "抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n"
-            + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
-    else
-        return ("so sad你保底了\n\n一共抽了330抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n"
-            + golden + "張金卡<:fgo_K2:1107145363795746977>\n1張彩卡<:fgo_K1:1107145268681519114>\n");
-}
 string qreply() {
     if (tkuse == token[0])
         return "チョコラ不知道主人在說什麼欸";
@@ -320,7 +156,7 @@ int main() {
             else if (s.find("椰子") != -1) {
                 bot.message_create(message(event.msg.channel_id, "自己寫啊\n又不是不會打扣").set_reference(event.msg.id));
             }
-            else if ((s.find("機") != -1 || s.find("bot") != -1) && (s.find("連結") != -1)) {
+            else if (s.find("機") != -1 && (s.find("連結") != -1)) {
                 bot.message_create(message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
             }
             else if (v[0] == "^n") {
@@ -336,7 +172,8 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, europe[mt() % size(europe)]));
             }
             else if (v[0] == "fga") {
-                bot.message_create(message(event.msg.channel_id, "這是git本來的網站 https://github.com/Fate-Grand-Automata/FGA\n現在已經上架play商店了 https://play.google.com/store/apps/details?id=io.github.fate_grand_automata"));
+                bot.message_create(message(event.msg.channel_id, "這是git本來的網站 https://github.com/Fate-Grand-Automata/FGA\n\
+                    現在已經上架play商店了 https://play.google.com/store/apps/details?id=io.github.fate_grand_automata"));
             }
             else if (s.find("婆") != -1) {
                 bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/966729542800658442/1092428172705931355/FB_IMG_1625811644856.jpg"));
@@ -476,12 +313,13 @@ int main() {
                         "點擊上面的連結、給辛苦的創作者一點流量跟感謝吧"
                     ).
                     add_field(
-                        "這隻機器人他老杯很難過",
-                        "燈燈退役了"
-                    ).
-                    add_field(
                         "歡迎逛逛這隻機器人的專案程式碼順便點個讚",
                         "https://github.com/kevinwei1029/dc-bot-withdpp"
+                    ).
+                    add_field(
+                        "Bnag Dream It's MyGO!!!!!超好看",
+                        "Bnag Dream It's MyGO!!!!!超好看\n\
+                         Bnag Dream It's MyGO!!!!!超好看"
                     ).
                     set_image("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                     set_footer(dpp::embed_footer().set_text("我好喜歡小浠").set_icon("https://cdn.discordapp.com/attachments/981585424017420378/1126716388157964338/Mizuki_.png")).
@@ -501,11 +339,11 @@ int main() {
                     set_thumbnail("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                     add_field(
                         "可用斜線指令",
-                        "new waifu \ncattie \nark charactors \nbruh \n"
+                        "new waifu \ncattie \nark charactors \nbruh"
                     ).
                     add_field(
                         "! 指令",
-                        "help \ncreator \nbutton \n"
+                        "help \ncreator \nbutton"
                     ).
                     add_field(
                         "^ 指令",
@@ -517,22 +355,22 @@ int main() {
                     ).
                     add_field(
                         "抽卡功能使用公式",
-                        "抽 (這裡用中文或半形英文打遊戲名稱) (這裡用半形數字打抽數)"
+                        "抽 (遊戲名稱、中文或半形英文) (抽數、半形數字)"
                     ).
                     add_field(
                         "抽卡公式說明",
-                        "抽字為觸發功能必要、也可輸入gacha一詞代替\n\
+                        "抽字為觸發功能必要、也可輸入gacha代替\n\
                          三個區段間請用半形空格隔開\n\
-                         遊戲名稱可打pcr、fgo、ark、公連、方舟、居歐\n\
-                         最後請打抽數，拜託不要用太大數字炸我機器人"
+                         遊戲名稱可用pcr、ark、fgo、公連、方舟、居歐\n\
+                         最後打抽數"
                     ).
                     add_field(
                         "fgo素材掉落關卡查詢",
-                        "輸入\n素材 素材名稱(素材暱稱或全名都可以)\n"
+                        "輸入\n素材 素材名稱(素材暱稱或全名都可以)"
                     ).
                     add_field(
                         "回應",
-                        "對特定文字及表情符號\n"
+                        "對特定文字及表情符號"
                     ).
                     add_field(
                         "雀魂待機序列",
@@ -542,7 +380,7 @@ int main() {
                     ).
                     add_field(
                         "最後更新日期",
-                        "2023/8/12"
+                        "2023/8/25"
                     ).
                     set_image("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                     set_footer(dpp::embed_footer().set_text("我好喜歡小浠").set_icon("https://cdn.discordapp.com/attachments/981585424017420378/1126716388157964338/Mizuki_.png")).
