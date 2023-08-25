@@ -6,7 +6,7 @@
 #include <random>
 #include <fstream>
 #include <ctime>
-#include "dc bot.h"  //存放所有陣列字串
+#include "storage.h"  //存放陣列字串及自訂函式
 
 using namespace std;
 using namespace dpp;
@@ -15,6 +15,7 @@ using json = nlohmann::json;
 int sta[2] = { 1 };
 vector<string> mwl;  //  mwl = majhong wating list
 
+//有用到tkuse搬不過去
 string qreply() {
     if (tkuse == token[0])
         return "チョコラ不知道主人在說什麼欸";

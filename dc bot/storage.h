@@ -4,6 +4,7 @@
 using namespace std;
 string tkuse, txt, au, token[2], jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
 
+//所有自定抽卡函式
 string pcrgacha(string times) {
     int integer = stoi(times);
     int pcrga[3] = { 0 };
@@ -165,6 +166,7 @@ string fgoget() {
             + golden + "張金卡<:fgo_K2:1107145363795746977>\n1張彩卡<:fgo_K1:1107145268681519114>\n");
 }
 
+//所有字串陣列
 string arkcr[124] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1092538926687858828/1680551962912.jpg",
     "https://media.discordapp.net/attachments/968693698206519356/1092538926914359466/1680551964443.jpg?width=1050&height=735",
