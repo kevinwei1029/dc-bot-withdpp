@@ -111,7 +111,6 @@ int main() {
             }
 
             else if ((s.find("雀") != -1 && s.find("待") != -1) || s.find("mjw") != -1) {
-                bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
                 for (auto it = mwl.begin(); it != mwl.end(); ++it) {
                     if (*it == au) {
                         bot.message_create(message(event.msg.channel_id, "你已在等待開局序列中").set_reference(event.msg.id));
@@ -122,6 +121,7 @@ int main() {
                 if (sta[1] == 1) {
                     mwl.push_back(au);
                     bot.message_create(message(event.msg.channel_id, "等待區人數+1").set_reference(event.msg.id));
+                    bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
                 }
                 sta[1] = 1;
             }
@@ -132,9 +132,9 @@ int main() {
                 }
             }
             else if ((s.find("退") != -1 && s.find("待") != -1) || s.find("mjq") != -1) {
-                for (int i = 0; i < mwl.size(); ++i) {
-                    if (mwl[i] == au) {
-                        mwl.erase(mwl.begin() + i);
+                for (auto it = mwl.begin(); it != mwl.end(); ++it) {
+                    if (*it == au) {
+                        mwl.erase(it);
                         bot.message_create(message(event.msg.channel_id, "已從等待區移除").set_reference(event.msg.id));
                         sta[1] = 0;
                         break;

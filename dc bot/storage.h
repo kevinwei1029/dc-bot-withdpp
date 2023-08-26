@@ -1,7 +1,6 @@
 ﻿#include <iostream>
-#include <string>
-
 using namespace std;
+
 string tkuse, txt, au, token[2], jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
 
 //所有自定抽卡函式
