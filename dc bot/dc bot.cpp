@@ -191,12 +191,14 @@ int main() {
             }
             else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1
                 || v[0] == "gay" || s.find("甲") != -1
-                || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1)
-                || v[0] == "鈔給" || v[0] == "超給") {
+                || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1) || v[0] == "超給") {
                 bot.message_create(message(event.msg.channel_id, gay[mt() % size(gay)]));
             }
             else if (s.find("fbi") != -1 || s.find("ㄌㄌㄎ") != -1) {
                 bot.message_create(message(event.msg.channel_id, fbi[mt() % size(fbi)]));
+            }
+            else if (s.find("哇草原") != -1) {
+                bot.message_create(message(event.msg.channel_id, genshin[0]));
             }
             else if (v[0] == "圖") {
                 bot.message_create(message(event.msg.channel_id, arkcr[mt() % size(arkcr)]));

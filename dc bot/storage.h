@@ -450,6 +450,13 @@ string cspre[5] = {
     "https://cdn.discordapp.com/attachments/1135513819565797457/1135515139743948861/image.png",
     "https://cdn.discordapp.com/attachments/1135513819565797457/1135515227094519928/image.png",  //  5
 };
+string genshin[5] = {
+    "https://cdn.discordapp.com/attachments/968693698206519356/1144973309633630279/ab8164c0-7a7c-11ec-bfef-21d6e5102eb6.webp.jpg",
+    "",
+    "",
+    "",
+    "",  //  5
+};
 string mat[132][2] = {
 {"連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
 {"表單連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
