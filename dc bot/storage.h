@@ -183,6 +183,9 @@ string mjnre(int size) {
     case 4:
         return "現在有四人在等待開局、可以打四麻或修羅了";
         break;
+
+    default :
+        return "奇怪的vector長度出現了，快叫我老木過來看";
     }
 };
 
