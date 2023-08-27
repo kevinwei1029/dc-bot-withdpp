@@ -3,7 +3,7 @@ using namespace std;
 
 string tkuse, txt, au, token[2], jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
 
-//所有自定抽卡函式
+//自定義抽卡函式
 string pcrgacha(string times) {
     int integer = stoi(times);
     int pcrga[3] = { 0 };
@@ -164,6 +164,27 @@ string fgoget() {
         return ("so sad你保底了\n\n一共抽了330抽\n一共抽到了：\n" + silver + "張銀卡<:fgo_K3:1107145411724054532>\n"
             + golden + "張金卡<:fgo_K2:1107145363795746977>\n1張彩卡<:fgo_K1:1107145268681519114>\n");
 }
+
+//自定義函式
+string mjnre(int size) {
+    switch (size) {
+    case 0:
+        return "現在沒有人在等候";
+        break;
+
+    case 1: case 2:
+        return "還缺" + to_string(3-size) + "人才能夠開局";
+        break;
+
+    case 3:
+        return "現在有三人在等待開局、可以打三麻";
+        break;
+
+    case 4:
+        return "現在有四人在等待開局、可以打四麻或修羅了";
+        break;
+    }
+};
 
 //所有字串陣列
 string arkcr[124] = {
