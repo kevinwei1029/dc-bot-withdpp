@@ -1,7 +1,17 @@
 ﻿#include <iostream>
 using namespace std;
 
-string tkuse, txt, au, token[2], jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
+string tkuse, txt, au, token[2] = { "" };
+string jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
+string mjuse = "功能 => 中文指令 => 英文指令 => 中文辨識字元 => 英文辨識字元\n\n\
+1. 加入等待序列 => 雀魂等待 => mjwaiting => 雀、待 => mjw\n\
+2. 查看等待序列 => 等待人數 => mjlist => 人、待 => mjl\n\
+3. 退出等待序列 => 退出等待 => mjquit => 退、待 => mjq\n\
+4. 清空等待序列 => 清空等待 => mjclear => 空、待 => mjc\n\n\
+辨識字元的意思是，只要有包含這些字詞就可以觸發功能......\n\
+理論上啦\n\n\
+要確認是否已加入等待序列需要看機器人有沒有給你回復\n\
+傳圖不算回復，```等待區人數 + 1```才是有加入等待序列的回覆";
 
 //自定義抽卡函式
 string pcrgacha(string times) {

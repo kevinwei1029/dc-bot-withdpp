@@ -150,6 +150,10 @@ int main() {
                 mwl.clear();
                 bot.message_create(message(event.msg.channel_id, "等待序列已清空").set_reference(event.msg.id));
             }
+            else if ((s.find("功") != -1 && s.find("待") != -1) || s.find("mjf") != -1) {
+                mwl.clear();
+                bot.message_create(message(event.msg.channel_id, mjuse).set_reference(event.msg.id));
+            }
 
             else if (s.find("休息") != -1 && au == "681076728465981450") {
                 bot.message_create(message(event.msg.channel_id, "好我先去休息了").set_reference(event.msg.id));
