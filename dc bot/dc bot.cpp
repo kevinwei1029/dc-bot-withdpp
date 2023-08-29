@@ -187,6 +187,9 @@ int main() {
             else if (s.find("確實") != -1 || v[0] == "雀食") {
                 bot.message_create(message(event.msg.channel_id, truee[mt() % size(truee)]));
             }
+            else if ((s.find("猶") != -1 && s.find("猶豫") == -1) || v[0] == "德意") {
+                bot.message_create(message(event.msg.channel_id, nazi[mt() % size(nazi)]));
+            }
             else if (s.find("lao") != -1 || s.find("佬") != -1) {
                 bot.message_create(message(event.msg.channel_id, dalao[mt() % size(dalao)]));
             }

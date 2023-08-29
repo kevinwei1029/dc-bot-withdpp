@@ -491,6 +491,13 @@ string genshin[5] = {
     "",
     "",  //  5
 };
+string nazi[5]{
+    "https://cdn.discordapp.com/attachments/969635522978910248/1146090245616586853/Screenshot_20230829_223319_Google.jpg",
+    "https://cdn.discordapp.com/attachments/968693698206519356/1146088983047188620/1584883537380.jpg",
+    "https://cdn.discordapp.com/attachments/969635522978910248/1146090413023825920/Screenshot_20230829_223358_Chrome.jpg",
+    "https://cdn.discordapp.com/attachments/969635522978910248/1146090663763513354/1593053777000.jpg",
+    "https://cdn.discordapp.com/attachments/969635522978910248/1146090553939857509/Screenshot_20230829_223434_Chrome.jpg",  //  5
+};
 string mat[132][2] = {
 {"連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
 {"表單連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
