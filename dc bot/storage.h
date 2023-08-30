@@ -2,7 +2,9 @@
 using namespace std;
 
 string tkuse, txt, au, token[2] = { "" };
-string jrtime = "https://www.eki-net.com/Personal/Top/Index\n https://www.jreast.co.jp/tickets/\n https://ekitan.com/timetable/railway/line/5000";
+string jrtime = "https://www.eki-net.com/Personal/Top/Index\n\
+https://www.jreast.co.jp/tickets/\n\
+https://ekitan.com/timetable/railway/line/5000";
 string mjuse = "功能 => 中文指令 => 英文指令 => 中文辨識字元 => 英文辨識字元\n\n\
 1. 加入等待序列 => 雀魂等待 => mjwaiting => 雀、待 => mjw\n\
 2. 查看等待序列 => 等待人數 => mjlist => 人、待 => mjl\n\
