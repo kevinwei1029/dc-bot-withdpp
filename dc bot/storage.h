@@ -359,7 +359,7 @@ string europe[9] = {
     "https://media.discordapp.net/attachments/968693698206519356/1143789019528974357/FB_IMG_1692752916136.jpg?width=375&height=375",
     "https://media.discordapp.net/attachments/968693698206519356/1143789019340210307/ZomboMeme_3116.jpg?width=576&height=662"
 };
-string fbi[10] = {
+string fbi[11] = {
     "https://media.discordapp.net/attachments/968693698206519356/1108597185219678229/IMG_7547.jpg?width=525&height=290",
     "https://media.discordapp.net/attachments/968693698206519356/1108597185471328376/IMG_7554.jpg?width=556&height=535",
     "https://media.discordapp.net/attachments/968693698206519356/1108597186595409930/IMG_7545.jpg?width=486&height=316",
@@ -369,16 +369,18 @@ string fbi[10] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1108599745422819388/FB_IMG_1663562166764.jpg",
     "https://cdn.discordapp.com/attachments/968693698206519356/1108599921914957924/FB_IMG_1671091950520.jpg",
     "https://cdn.discordapp.com/attachments/968693698206519356/1108600042484416522/FB_IMG_1660108222520.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1108600051959353394/FB_IMG_1678977575738.jpg"  // 10
+    "https://cdn.discordapp.com/attachments/968693698206519356/1108600051959353394/FB_IMG_1678977575738.jpg",  // 10
+    "https://cdn.discordapp.com/attachments/968693698206519356/1147154468136296548/received_631998939038361.jpg"
 };
-string kusa[7] = {
+string kusa[8] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809138061152276/1683715825278.jpg",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809322727981167/8033ffd8b66053cc9ab07c53d7652654.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105821584322727936/th.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105821215249137834/20210920000704.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105821317627916329/ddb0503a3043e33f88225cf9b7b42a93.png",  // 5
     "https://cdn.discordapp.com/attachments/968693698206519356/1105822361757941830/ddhBcLX.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105822741296332940/HeP1P5a.png"
+    "https://cdn.discordapp.com/attachments/968693698206519356/1105822741296332940/HeP1P5a.png",
+    "https://cdn.discordapp.com/attachments/966726615965003796/1146472553519525941/FB_IMG_1684069632481.jpg"
 };
 string truee[5] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1092781449641463859/1648880999715.png",
@@ -387,7 +389,7 @@ string truee[5] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105809663716503613/51.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105823436883902484/Mvd47Q7.png"  // 5
 };
-string gay[41] = {
+string gay[42] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832383690854420/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832408504344647/image.png",
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832434081214484/image.png",
@@ -428,9 +430,10 @@ string gay[41] = {
     "https://media.discordapp.net/attachments/968693698206519356/1141940199845277776/FB_IMG_1692330118679.jpg?width=1176&height=662",
     "https://media.discordapp.net/attachments/968693698206519356/1141940200361173013/FB_IMG_1692330125590.jpg?width=400&height=400",
     "https://media.discordapp.net/attachments/968693698206519356/1141940200075952218/FB_IMG_1692330123098.jpg?width=863&height=662",  //  40
-    "https://media.discordapp.net/attachments/968693698206519356/1141952623327592508/FB_IMG_1691732479628.jpg?width=617&height=662"
+    "https://media.discordapp.net/attachments/968693698206519356/1141952623327592508/FB_IMG_1691732479628.jpg?width=617&height=662",
+    "https://cdn.discordapp.com/attachments/968693698206519356/1147210156963278979/FB_IMG_1693586534462.jpg"
 };
-string wat[16]{
+string wat[17]{
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671945065025657/FB_IMG_1683964567949.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671953411686503/FB_IMG_1641285775513.jpg",
@@ -446,7 +449,8 @@ string wat[16]{
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672286321967217/Screenshot_20230126-213009.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672305133428836/Screenshot_20230209-080633.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672350268334171/Screenshot_20230501_103044.jpg",  //15
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672365162307704/FB_IMG_1670764145912.jpg"
+    "https://cdn.discordapp.com/attachments/966727921467260938/1107672365162307704/FB_IMG_1670764145912.jpg",
+    "https://cdn.discordapp.com/attachments/968693698206519356/1147154479205064715/received_1001880751019515.jpg"
 };
 string ksexre[11] = {
     "我能理解你的疲憊。\n這段時間裡持久的戰鬥累積的壓力，令你躁動的生理需求超出了你所能忍耐的水平。",
