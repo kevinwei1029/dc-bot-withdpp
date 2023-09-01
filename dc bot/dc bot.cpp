@@ -6,7 +6,7 @@
 #include <random>
 #include <fstream>
 #include <ctime>
-#include "storage.h"  //存放陣列字串及自訂函式
+#include "functions.h"  //存放陣列字串及自訂函式
 #include "string.h"
 
 using namespace std;
