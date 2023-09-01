@@ -279,8 +279,7 @@ int main() {
                 bool find = FALSE;
                 for (int i = 0; i < size(mat); i++) {
                     while (v[1] == mat[i][0]) {
-                        message msg(event.msg.channel_id, mat[i][1]);
-                        bot.message_create(msg.set_reference(event.msg.id));
+                        bot.message_create(message(event.msg.channel_id, "```" + mat[i][1] + "```").set_reference(event.msg.id));
                         find = TRUE;
                         break;
                     }
