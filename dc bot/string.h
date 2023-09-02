@@ -247,7 +247,7 @@ string gay[42] = {
     "https://media.discordapp.net/attachments/968693698206519356/1141952623327592508/FB_IMG_1691732479628.jpg?width=617&height=662",
     "https://cdn.discordapp.com/attachments/968693698206519356/1147210156963278979/FB_IMG_1693586534462.jpg"
 };
-string wat[17]{
+string wat[18]{
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671945065025657/FB_IMG_1683964567949.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107671953411686503/FB_IMG_1641285775513.jpg",
@@ -264,7 +264,8 @@ string wat[17]{
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672305133428836/Screenshot_20230209-080633.jpg",
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672350268334171/Screenshot_20230501_103044.jpg",  //15
     "https://cdn.discordapp.com/attachments/966727921467260938/1107672365162307704/FB_IMG_1670764145912.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1147154479205064715/received_1001880751019515.jpg"
+    "https://cdn.discordapp.com/attachments/968693698206519356/1147154479205064715/received_1001880751019515.jpg",
+    "https://cdn.discordapp.com/attachments/1067794797244469268/1146387118508228628/Watch_AOS_13.jpg"
 };
 string ksexre[11] = {
     "我能理解你的疲憊。\n這段時間裡持久的戰鬥累積的壓力，令你躁動的生理需求超出了你所能忍耐的水平。",
