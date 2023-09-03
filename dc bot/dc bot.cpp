@@ -110,6 +110,11 @@ int main() {
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
+            else if (v[0] == "ptw" && au == "681076728465981450") {
+                for (int i = 0; i < size(wat); i++) {
+                    bot.message_create(message(event.msg.channel_id, wat[i]));
+                }
+            }
 
             else if ((s.find("雀") != -1 && s.find("待") != -1) || s.find("mjw") != -1) {
                 for (auto it = mwl.begin(); it != mwl.end(); ++it) {
@@ -205,6 +210,9 @@ int main() {
             }
             else if (s.find("fbi") != -1 || s.find("ㄌㄌㄎ") != -1) {
                 bot.message_create(message(event.msg.channel_id, fbi[mt() % size(fbi)]));
+            }
+            else if (s.find("大") != -1 || s.find("奶") != -1) {
+                bot.message_create(message(event.msg.channel_id, boobs[mt() % size(boobs)]));
             }
             else if (s.find("哇草原") != -1) {
                 bot.message_create(message(event.msg.channel_id, genshin[0]));

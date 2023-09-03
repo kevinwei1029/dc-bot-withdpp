@@ -143,35 +143,39 @@ string arkcr[124] = {
     "https://www.pixiv.net/artworks/80293330",
     "https://www.pixiv.net/artworks/95993983"  //  125
 };
-string dalao[12] = {
-    "https://cdn.discordapp.com/attachments/968693698206519356/1103600372762808330/65bbfd846d3437b0dd9ed947dcc4816f.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1103600521085976576/1586869262198.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1103600614879010827/1619758952948.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1103600682138882138/1578841721163.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1103600776976269343/1636001561524.png",  // 5
-    "https://cdn.discordapp.com/attachments/968693698206519356/1103600885793300480/1574742490553.png",
-    "https://cdn.discordapp.com/attachments/966719485438476318/1103622392288399390/IMG_6535.GIF",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1108599188410880030/FB_IMG_1667864424847.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1108599543236399144/FB_IMG_1664012145347.jpg",
-    "https://cdn.discordapp.com/attachments/988843667479470130/1109721623147331604/kitten-cat.gif", //  10
-    "https://media.discordapp.net/attachments/727443536085254186/883883935141101589/image0.gif?width=87&height=87",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1126812896425431110/4qBl31563R.gif"
+string dalao[16] = {
+    "https://imgur.com/hUQibPF",
+    "https://imgur.com/XufO0dC",
+    "https://imgur.com/cQzMQPO",
+    "https://imgur.com/HrIbN5V",
+    "https://imgur.com/4RXJHJX",  //  5
+    "https://imgur.com/VsY7vaX",
+    "https://imgur.com/mVgZiOm",
+    "https://imgur.com/hCVPjxj",
+    "https://imgur.com/lPBlrhY",
+    "https://imgur.com/AnadWlD",  //  10
+    "https://imgur.com/tAXzWU0",
+    "https://imgur.com/LI8F2rz",
+    "https://imgur.com/9zeOJP1",
+    "https://imgur.com/A9V2sfw",
+    "https://imgur.com/xMloJk1",  //  15
+    "https://imgur.com/OGLv1FV",
 };
 string europe[9] = {
-    "https://cdn.discordapp.com/attachments/968693698206519356/1103601634916966471/64819726415fa4d795ccc6269f6e560b.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1103601681616347206/1604671763242.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1103601790546620416/Z.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1103601842497273947/2Q.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105809939575865344/gif21.gif",  // 5
     "我沒差啊\n你們都這樣\n我習慣了阿\n\n\
 你們在曬的時候有考慮過我的感受嗎？\n沒有阿\n從以前到現在一直以來都沒有阿\n\n\
 阿我就是非洲阿\n什麼幾抽寶幾\n我現在都不在意了\n就連那個未持有\n我現在都已經懶得理他了\n\n\
 什麼歐洲小王子\n什麼寶五120\n沒關係嘛\n都你們玩就好了嘛\n\n\
 一直以來你們都嘛登GM帳\n我一個小小玩家\n非的怎麼幹得過歐的\n撒了幾百石丟水溝\n換來的只有綠方\n跟更多的綠方\n\n\
 什麼彩光\n那種東西能吃嗎？\n什麼五星\n那種東西很強嗎？\n我就是一個小小沒見過世面的非洲人阿\n那種東西\n我稀罕嗎？",
-    "https://media.discordapp.net/attachments/569812081965268992/1137384287428157521/11C3930E47E6DD1F0D5EC4D77F68B8DC.gif",
-    "https://media.discordapp.net/attachments/968693698206519356/1143789019528974357/FB_IMG_1692752916136.jpg?width=375&height=375",
-    "https://media.discordapp.net/attachments/968693698206519356/1143789019340210307/ZomboMeme_3116.jpg?width=576&height=662"
+    "https://imgur.com/g0m55zX",
+    "https://imgur.com/zAiXdKx",
+    "https://imgur.com/RIAHybO",
+    "https://imgur.com/DYa9pJG",  //  5
+    "https://imgur.com/kwGyqFY",
+    "https://imgur.com/C3NM0u6",
+    "https://imgur.com/Ab4b6I0",
+    "https://imgur.com/b8R5npH"
 };
 string fbi[11] = {
     "https://media.discordapp.net/attachments/968693698206519356/1108597185219678229/IMG_7547.jpg?width=525&height=290",
@@ -186,22 +190,33 @@ string fbi[11] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1108600051959353394/FB_IMG_1678977575738.jpg",  // 10
     "https://cdn.discordapp.com/attachments/968693698206519356/1147154468136296548/received_631998939038361.jpg"
 };
-string kusa[8] = {
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105809138061152276/1683715825278.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105809322727981167/8033ffd8b66053cc9ab07c53d7652654.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105821584322727936/th.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105821215249137834/20210920000704.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105821317627916329/ddb0503a3043e33f88225cf9b7b42a93.png",  // 5
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105822361757941830/ddhBcLX.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105822741296332940/HeP1P5a.png",
-    "https://cdn.discordapp.com/attachments/966726615965003796/1146472553519525941/FB_IMG_1684069632481.jpg"
+string kusa[16] = {
+    "https://imgur.com/7t35JNT",
+    "https://imgur.com/TxP9fcI",
+    "https://imgur.com/i7r8tKl",
+    "https://imgur.com/DApX2Nu",
+    "https://imgur.com/ThxxMl1",  //  5
+    "https://imgur.com/HamEFgu",
+    "https://imgur.com/uxBRuX6",
+    "https://imgur.com/olT86SJ",
+    "https://imgur.com/c4ZpeHP",
+    "https://imgur.com/WelweuA",  //  10
+    "https://imgur.com/A8Npz1A",
+    "https://imgur.com/rUGDSKW",
+    "https://imgur.com/nAaTS18",
+    "https://imgur.com/mpnIp9x",
+    "https://imgur.com/yP0kmFE",  //  15
+    "https://imgur.com/BHyj0zZ",
 };
-string truee[5] = {
-    "https://cdn.discordapp.com/attachments/968693698206519356/1092781449641463859/1648880999715.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1092781578129772664/1652857835934.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1092781749743931432/1672283745170-ba37455ba44240a293fb5cb3531811f9-500x333.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105809663716503613/51.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105823436883902484/Mvd47Q7.png"  // 5
+string truee[8] = {
+    "https://imgur.com/GGvgJiZ",
+    "https://imgur.com/N6sLTa2",
+    "https://imgur.com/5iGBT7f",
+    "https://imgur.com/QIWd82j",
+    "https://imgur.com/mjRd41N",  //  5
+    "https://imgur.com/0zJZ587",
+    "https://imgur.com/Clv4BdA",
+    "https://imgur.com/IBkAlTX",
 };
 string gay[42] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1105832383690854420/image.png",
@@ -247,25 +262,27 @@ string gay[42] = {
     "https://media.discordapp.net/attachments/968693698206519356/1141952623327592508/FB_IMG_1691732479628.jpg?width=617&height=662",
     "https://cdn.discordapp.com/attachments/968693698206519356/1147210156963278979/FB_IMG_1693586534462.jpg"
 };
-string wat[18]{
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107671890601988196/FB_IMG_1666237078979.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107671945065025657/FB_IMG_1683964567949.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107671953411686503/FB_IMG_1641285775513.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672007996346368/IMG_20211218_120954_767.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672021992734740/received_336306151969779.jpg",  // 5
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672068935397477/FB_IMG_1649072900407.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672137059278959/1647449461391.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672194118586418/FB_IMG_1646054813327.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672218546225173/FB_IMG_1645529431013.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672270853386301/FB_IMG_1681610899807.jpg",  // 10
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672270853386301/FB_IMG_1681610899807.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672277270667324/FB_IMG_1659047938208.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672286321967217/Screenshot_20230126-213009.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672305133428836/Screenshot_20230209-080633.jpg",
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672350268334171/Screenshot_20230501_103044.jpg",  //15
-    "https://cdn.discordapp.com/attachments/966727921467260938/1107672365162307704/FB_IMG_1670764145912.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1147154479205064715/received_1001880751019515.jpg",
-    "https://cdn.discordapp.com/attachments/1067794797244469268/1146387118508228628/Watch_AOS_13.jpg"
+string wat[20]{
+    "https://imgur.com/Uz1ZWqo",
+    "https://imgur.com/OUvENhb",
+    "https://imgur.com/WRdAmE3",
+    "https://imgur.com/Goq7oSm",
+    "https://imgur.com/04p2oat",  //  5
+    "https://imgur.com/SgninOv",
+    "https://imgur.com/j0Am8wF",
+    "https://imgur.com/4yzSiaV",
+    "https://imgur.com/aDUbYds",
+    "https://imgur.com/2qvoo4I",  //  10
+    "https://imgur.com/nGGcyoL",
+    "https://imgur.com/nbFeEGZ",
+    "https://imgur.com/nbFeEGZ",
+    "https://imgur.com/WbC0tOZ",
+    "https://imgur.com/NlhCcKX",  //  15
+    "https://imgur.com/EMuqioj",
+    "https://imgur.com/13bjl4R",
+    "https://imgur.com/fegAxh0",
+    "https://imgur.com/9FzSvH3",
+    "https://imgur.com/vyMNDbT",  //  20
 };
 string ksexre[11] = {
     "我能理解你的疲憊。\n這段時間裡持久的戰鬥累積的壓力，令你躁動的生理需求超出了你所能忍耐的水平。",
@@ -312,12 +329,24 @@ string genshin[5] = {
     "",
     "",  //  5
 };
-string nazi[5]{
+string nazi[5] = {
     "https://cdn.discordapp.com/attachments/969635522978910248/1146090245616586853/Screenshot_20230829_223319_Google.jpg",
     "https://cdn.discordapp.com/attachments/968693698206519356/1146088983047188620/1584883537380.jpg",
     "https://cdn.discordapp.com/attachments/969635522978910248/1146090413023825920/Screenshot_20230829_223358_Chrome.jpg",
     "https://cdn.discordapp.com/attachments/969635522978910248/1146090663763513354/1593053777000.jpg",
     "https://cdn.discordapp.com/attachments/969635522978910248/1146090553939857509/Screenshot_20230829_223434_Chrome.jpg",  //  5
+};
+string boobs[10] = {
+    "https://imgur.com/vZODCIO",
+    "https://imgur.com/98Vakee",
+    "https://imgur.com/Vf5WBPx",
+    "https://imgur.com/Jno0naL",
+    "https://imgur.com/tzSBzSb",  //  5
+    "https://imgur.com/EBhpL7L",
+    "https://imgur.com/NyHljSu",
+    "https://imgur.com/0XzWnRg",
+    "https://imgur.com/O9Lqwkc",
+    "https://imgur.com/igTwwD1",  //  10
 };
 string mat[132][2] = {
 {"連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
