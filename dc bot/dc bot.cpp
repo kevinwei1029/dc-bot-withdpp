@@ -110,11 +110,6 @@ int main() {
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
-            else if (v[0] == "ptg" && au == "681076728465981450") {
-                for (int i = 0; i < size(gay); i++) {
-                    bot.message_create(message(event.msg.channel_id, gay[i]));
-                }
-            }
 
             else if ((s.find("雀") != -1 && s.find("待") != -1) || s.find("mjw") != -1) {
                 for (auto it = mwl.begin(); it != mwl.end(); ++it) {
