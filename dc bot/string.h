@@ -161,7 +161,7 @@ string dalao[16] = {
     "https://imgur.com/xMloJk1",  //  15
     "https://imgur.com/OGLv1FV",
 };
-string europe[9] = {
+string europe[10] = {
     "我沒差啊\n你們都這樣\n我習慣了阿\n\n\
 你們在曬的時候有考慮過我的感受嗎？\n沒有阿\n從以前到現在一直以來都沒有阿\n\n\
 阿我就是非洲阿\n什麼幾抽寶幾\n我現在都不在意了\n就連那個未持有\n我現在都已經懶得理他了\n\n\
@@ -175,7 +175,8 @@ string europe[9] = {
     "https://imgur.com/kwGyqFY",
     "https://imgur.com/C3NM0u6",
     "https://imgur.com/Ab4b6I0",
-    "https://imgur.com/b8R5npH"
+    "https://imgur.com/b8R5npH",
+    "https://imgur.com/Hy3AgYl"
 };
 string fbi[14] = {
     "https://imgur.com/8G9kPNg",
