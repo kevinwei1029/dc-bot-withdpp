@@ -221,7 +221,7 @@ string truee[8] = {
     "https://imgur.com/Clv4BdA",
     "https://imgur.com/IBkAlTX",
 };
-string gay[42] = {
+string gay[44] = {
     "https://imgur.com/33maruM",
     "https://imgur.com/zk5mVtC",
     "https://imgur.com/BhvOl22",
@@ -264,6 +264,8 @@ string gay[42] = {
     "https://imgur.com/CXuYUtR",  //  40
     "https://imgur.com/jjZtKBN",
     "https://imgur.com/Ly8s2YZ",
+    "https://imgur.com/hGVh07H",
+    "https://imgur.com/q8q7pRP"
 };
 string wat[20]{
     "https://imgur.com/Uz1ZWqo",
