@@ -222,48 +222,48 @@ string truee[8] = {
     "https://imgur.com/IBkAlTX",
 };
 string gay[42] = {
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832383690854420/image.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832408504344647/image.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832434081214484/image.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832565614579712/FB_IMG_1682333588762.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832573214662726/FB_IMG_1682333706439.jpg",  // 5
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832631880384562/FB_IMG_1682333716746.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832654428966913/FB_IMG_1683261099671.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832662465269890/FB_IMG_1683261103147.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832670308601876/FB_IMG_1683261108602.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832678147764264/FB_IMG_1683261111120.jpg",  // 10
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832706958442526/FB_IMG_1683261114859.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832714109734932/FB_IMG_1683261118551.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832721873383425/FB_IMG_1683261123186.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832728647188531/FB_IMG_1683261127906.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832945031319632/3XPdxWs.png",  // 15
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105832993718796348/AFNrAvE.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105833014640001034/9RzeBsC.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105833036261625917/okcPVSB.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105833073901305906/mDq8Du2.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105833092284960869/rsLmsEx.png",  // 20
-    "https://cdn.discordapp.com/attachments/968693698206519356/1105834957118644224/584E45F3-4090-4C2F-ABF7-D38D4B2E7DA2.jpg",
-    "https://cdn.discordapp.com/attachments/981585424017420378/1105834260557996102/ZomboMeme_02052023151522.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1110106858477326376/348551627_234395815863993_2485886371128395134_n.png",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1127498944948219914/FB_IMG_1688620417978.jpg",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1127515998514323476/image.png",  //  25
-    "https://media.discordapp.net/attachments/966729542800658442/1133091772856275157/FB_IMG_1690024293263.jpg?width=449&height=892",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1134105277424218212/image.png",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1134105544458764330/image.png",
     "https://imgur.com/33maruM",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1135474002090016839/image.png",  //  30
-    "https://cdn.discordapp.com/attachments/966729542800658442/1135474025552957501/image.png",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1135474045425557544/image.png",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1135862352017887382/t0Z4horHE73AXH6k0jerhpOo4QjfruuBnURcsfVtGsYPXgkWmSlaf.jpg",
-    "https://cdn.discordapp.com/attachments/966729542800658442/1136262065481330738/FB_IMG_1690976373803.jpg",
-    "https://media.discordapp.net/attachments/966729542800658442/1138700764995403856/FB_IMG_1691557734693.jpg?width=605&height=547",  //  35
-    "https://media.discordapp.net/attachments/966729542800658442/1138700765234475088/FB_IMG_1691557741111.jpg?width=875&height=875",
-    "https://media.discordapp.net/attachments/966729542800658442/1138700765473554432/FB_IMG_1691557737218.jpg?width=1580&height=890",
-    "https://media.discordapp.net/attachments/968693698206519356/1141940199845277776/FB_IMG_1692330118679.jpg?width=1176&height=662",
-    "https://media.discordapp.net/attachments/968693698206519356/1141940200361173013/FB_IMG_1692330125590.jpg?width=400&height=400",
-    "https://media.discordapp.net/attachments/968693698206519356/1141940200075952218/FB_IMG_1692330123098.jpg?width=863&height=662",  //  40
-    "https://media.discordapp.net/attachments/968693698206519356/1141952623327592508/FB_IMG_1691732479628.jpg?width=617&height=662",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1147210156963278979/FB_IMG_1693586534462.jpg"
+    "https://imgur.com/zk5mVtC",
+    "https://imgur.com/BhvOl22",
+    "https://imgur.com/eAwtpeP",
+    "https://imgur.com/FtXy0BV",  //  5
+    "https://imgur.com/TNRlai2",
+    "https://imgur.com/d6XWJEb",
+    "https://imgur.com/eMrFNNs",
+    "https://imgur.com/RihzeDj",
+    "https://imgur.com/91Moo77",  //  10
+    "https://imgur.com/IBy5GQS",
+    "https://imgur.com/x5ZbTQu",
+    "https://imgur.com/gAAN5JK",
+    "https://imgur.com/s3P52bM",
+    "https://imgur.com/EELYt3i",  //  15
+    "https://imgur.com/CLo4pS3",
+    "https://imgur.com/S9MxnX0",
+    "https://imgur.com/NDuBaGv",
+    "https://imgur.com/t5nRYnz",
+    "https://imgur.com/UWJp5Bv",  //  20
+    "https://imgur.com/eDZZs2D",
+    "https://imgur.com/PfvvIuD",
+    "https://imgur.com/RYjNT0S",
+    "https://imgur.com/mHelSCB",
+    "https://imgur.com/liMjWdN",  //  25
+    "https://imgur.com/PSr7nat",
+    "https://imgur.com/BVxuAeo",
+    "https://imgur.com/OR1GU8j",
+    "https://imgur.com/ol6jUnn",
+    "https://imgur.com/uExhvdM",  //  30
+    "https://imgur.com/sdgezFu",
+    "https://imgur.com/A3yHbeX",
+    "https://imgur.com/8paik7Y",
+    "https://imgur.com/rX545TH",
+    "https://imgur.com/6YrEQnp",  //  35
+    "https://imgur.com/PAXpiRe",
+    "https://imgur.com/Bwt1ikK",
+    "https://imgur.com/8aZ4vms",
+    "https://imgur.com/ULeOPt9",
+    "https://imgur.com/CXuYUtR",  //  40
+    "https://imgur.com/jjZtKBN",
+    "https://imgur.com/Ly8s2YZ",
 };
 string wat[20]{
     "https://imgur.com/Uz1ZWqo",
