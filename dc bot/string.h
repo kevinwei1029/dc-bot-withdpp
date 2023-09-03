@@ -177,18 +177,21 @@ string europe[9] = {
     "https://imgur.com/Ab4b6I0",
     "https://imgur.com/b8R5npH"
 };
-string fbi[11] = {
-    "https://media.discordapp.net/attachments/968693698206519356/1108597185219678229/IMG_7547.jpg?width=525&height=290",
-    "https://media.discordapp.net/attachments/968693698206519356/1108597185471328376/IMG_7554.jpg?width=556&height=535",
-    "https://media.discordapp.net/attachments/968693698206519356/1108597186595409930/IMG_7545.jpg?width=486&height=316",
-    "https://media.discordapp.net/attachments/968693698206519356/1108597186855448586/F6724091-B209-4DAE-AEC4-C8329355F37C.jpg?width=875&height=784",  //改到這裡
-    "https://cdn.discordapp.com/attachments/968693698206519356/1108599151341608970/FB_IMG_1660108263198.jpg",  // 5
-    "https://cdn.discordapp.com/attachments/968693698206519356/1108599158497103913/FB_IMG_1660108235341.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1108599745422819388/FB_IMG_1663562166764.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1108599921914957924/FB_IMG_1671091950520.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1108600042484416522/FB_IMG_1660108222520.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1108600051959353394/FB_IMG_1678977575738.jpg",  // 10
-    "https://cdn.discordapp.com/attachments/968693698206519356/1147154468136296548/received_631998939038361.jpg"
+string fbi[14] = {
+    "https://imgur.com/8G9kPNg",
+    "https://imgur.com/zUGMmNw",
+    "https://imgur.com/B2jRZjU",
+    "https://imgur.com/2tmILhE",
+    "https://imgur.com/zZVcqhY",  //  5
+    "https://imgur.com/elDMlBV",
+    "https://imgur.com/zWE5qHk",
+    "https://imgur.com/qHjPP3x",
+    "https://imgur.com/bqTAD1D",
+    "https://imgur.com/rI4wsTj",  //  10
+    "https://imgur.com/J9Lxbfn",
+    "https://imgur.com/id0Li6k",
+    "https://imgur.com/UQKmyNe",
+    "https://imgur.com/q8EEITg",
 };
 string kusa[16] = {
     "https://imgur.com/7t35JNT",
@@ -329,12 +332,16 @@ string genshin[5] = {
     "",
     "",  //  5
 };
-string nazi[5] = {
-    "https://cdn.discordapp.com/attachments/969635522978910248/1146090245616586853/Screenshot_20230829_223319_Google.jpg",
-    "https://cdn.discordapp.com/attachments/968693698206519356/1146088983047188620/1584883537380.jpg",
-    "https://cdn.discordapp.com/attachments/969635522978910248/1146090413023825920/Screenshot_20230829_223358_Chrome.jpg",
-    "https://cdn.discordapp.com/attachments/969635522978910248/1146090663763513354/1593053777000.jpg",
-    "https://cdn.discordapp.com/attachments/969635522978910248/1146090553939857509/Screenshot_20230829_223434_Chrome.jpg",  //  5
+string nazi[9] = {
+    "https://imgur.com/11XKQcu",
+    "https://imgur.com/PEbwSv0",
+    "https://imgur.com/R8j3yCx",
+    "https://imgur.com/YE3n1EU",
+    "https://imgur.com/KSnFKDW",  //  5
+    "https://imgur.com/lhVDMZP",
+    "https://imgur.com/gNjMQ21",
+    "https://imgur.com/4jwzdqd",
+    "https://imgur.com/50vT4IU",
 };
 string boobs[10] = {
     "https://imgur.com/vZODCIO",
