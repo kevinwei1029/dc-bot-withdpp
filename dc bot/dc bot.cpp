@@ -6,8 +6,8 @@
 #include <random>
 #include <fstream>
 #include <ctime>
-#include "functions.h"  //存放陣列字串及自訂函式
-#include "string.h"
+#include "functions.h"  //存放自訂函式
+#include "string.h"  //存放陣列字串
 
 using namespace std;
 using namespace dpp;
@@ -120,9 +120,9 @@ int main() {
                     }
                 }
                 if (sta[1] == 1) {
-                    mwl.push_back(au);
                     bot.message_create(message(event.msg.channel_id, "等待區人數+1").set_reference(event.msg.id));
-                    //bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
+                    mwl.push_back(au);
+                    bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
                 }
                 bot.message_create(message(event.msg.channel_id, mjnre(mwl.size())));
                 sta[1] = 1;
