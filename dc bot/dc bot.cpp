@@ -206,7 +206,7 @@ int main() {
             else if (s.find("fbi") != -1 || s.find("ㄌㄌㄎ") != -1) {
                 bot.message_create(message(event.msg.channel_id, fbi[mt() % size(fbi)]));
             }
-            else if (s.find("大") != -1 || s.find("奶") != -1) {
+            else if (s.find("大") != -1 && s.find("奶") != -1) {
                 bot.message_create(message(event.msg.channel_id, boobs[mt() % size(boobs)]));
             }
             else if (s.find("哇草原") != -1) {
