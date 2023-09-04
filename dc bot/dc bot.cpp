@@ -151,6 +151,9 @@ int main() {
             else if (s.find("椰子") != -1) {
                 bot.message_create(message(event.msg.channel_id, "自己寫啊\n又不是不會打扣").set_reference(event.msg.id));
             }
+            else if (v[0] == "董") {
+                bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/969635522978910248/1148283173923459172/FB_IMG_1693742197631.png"));
+            }
             else if (s.find("機") != -1 && (s.find("連結") != -1)) {
                 bot.message_create(message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
             }
