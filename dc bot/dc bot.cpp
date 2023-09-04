@@ -16,18 +16,6 @@ using json = nlohmann::json;
 int sta[2] = { 1, 1 };
 vector<string> mwl;  //  mwl = majhong wating list
 
-//有用到tkuse搬不過去
-string qreply() {
-    if (tkuse == token[0])
-        return "チョコラ不知道主人在說什麼欸";
-        //return "現在登入的是チョコラ";
-    else if (tkuse == token[1])
-        return "再鬧\n我就叫M3捅爆你屁眼";
-        //return "現在登入的是凱爾希";
-    else
-        return "哇程式竟然抓不到是哪一隻機器人登入\n可以趕快回報給開發者這個bug";
-}
-
 int main() {
     ifstream in;
     in.open("token.txt");
@@ -240,7 +228,7 @@ int main() {
                 else if ((v[1] == "ark" || v[1] == "方舟") && (v[2].size() < 4))
                     bot.message_create(message(event.msg.channel_id, arkgacha(v[2])));
                 else
-                    bot.message_create(message(event.msg.channel_id, qreply()));
+                    bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));
             }
             else if (v[0] == "抽到有") {
 
@@ -254,7 +242,7 @@ int main() {
                 else if (v[1] == "fgo" || v[1] == "居歐")
                     bot.message_create(message(event.msg.channel_id, fgoget()));
                 else
-                    bot.message_create(message(event.msg.channel_id, qreply()));
+                    bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));
             }
             else if (v[0] == "機率" || v[0] == "抽卡機率") {
                 if (v[1] == "pcr" || v[1] == "公連")
@@ -264,7 +252,7 @@ int main() {
                 else if (v[1] == "ark" || v[1] == "方舟")
                     txt = "六星<:ark6:1107953803057188905> 2%\n五星<:ark5:1107953865602637824> 8%\n四星<:ark4:1107953907377901579> 30%\n三星<:ark3:1107953947353808947> 60%\n\n不要問我為什麼用狙信物，我絕對沒有對某隻六星狙有特別的偏好";
                 else
-                    bot.message_create(message(event.msg.channel_id, qreply()).set_reference(event.msg.id));
+                    bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])).set_reference(event.msg.id));
 
                 bot.message_create(message(event.msg.channel_id, txt).set_reference(event.msg.id));
             }
@@ -288,7 +276,7 @@ int main() {
                     }
                 }
                 if (find == FALSE) {
-                    message msg(event.msg.channel_id, qreply());
+                    message msg(event.msg.channel_id, qre(tkuse, token[0], token[1]));
                     bot.message_create(msg.set_reference(event.msg.id));
                 }
             }

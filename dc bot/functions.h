@@ -164,6 +164,16 @@ string fgoget() {
 }
 
 //自定義函式
+string qre(string tkusing, string tk0, string tk1) {
+    if (tkusing == tk0)
+        return "但......チョコラ不知道主人在說什麼欸？";
+    //return "現在登入的是チョコラ";
+    else if (tkusing == tk1)
+        return "再鬧\n我就叫M3捅爆你屁眼";
+    //return "現在登入的是凱爾希";
+    else
+        return "哇程式竟然抓不到是哪一隻機器人登入\n可以趕快回報給開發者這個bug";
+}
 string mjnre(int size) {
     switch (size) {
     case 0:
