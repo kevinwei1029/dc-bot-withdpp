@@ -171,7 +171,7 @@ string mjnre(int size) {
         break;
 
     case 1: case 2:
-        return "還缺" + to_string(3-size) + "人才能夠開局";
+        return "還缺 " + to_string(3-size) + " 人才能夠開局";
         break;
 
     case 3:
@@ -180,6 +180,10 @@ string mjnre(int size) {
 
     case 4:
         return "現在有四人在等待開局、可以打四麻或修羅了";
+        break;
+
+    case 5: case 6:
+        return "如果已經開局了，記得要清空序列喔？\n不然就趕緊開始遊戲吧？";
         break;
 
     default :
