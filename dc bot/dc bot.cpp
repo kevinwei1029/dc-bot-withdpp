@@ -13,7 +13,7 @@ using namespace std;
 using namespace dpp;
 using json = nlohmann::json;
 
-int sta[2] = { 1 };
+int sta[2] = { 1, 1 };
 vector<string> mwl;  //  mwl = majhong wating list
 
 //有用到tkuse搬不過去
@@ -124,6 +124,7 @@ int main() {
                     mwl.push_back(au);
                     bot.message_create(message(event.msg.channel_id, "https://media.discordapp.net/attachments/988812288549093478/1099698505704022057/9F7E7973-93C7-4B07-9324-16D4BECC70A5.jpg"));
                 }
+                cout << "sta[1] = " << sta[1] << endl;
                 bot.message_create(message(event.msg.channel_id, mjnre(mwl.size())));
                 sta[1] = 1;
             }
