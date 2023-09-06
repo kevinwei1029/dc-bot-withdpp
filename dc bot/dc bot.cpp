@@ -110,7 +110,7 @@ int main() {
                 if (sta[1] == 1) {
                     bot.message_create(message(event.msg.channel_id, "等待區人數+1").set_reference(event.msg.id));
                     mwl.push_back(au);
-                    bot.message_create(message(event.msg.channel_id, "https://imgur.com/03ipIJy"));
+                    bot.message_create(message(event.msg.channel_id, "https://imgur.com/o2BP09j"));
                 }
                 bot.message_create(message(event.msg.channel_id, mjnre(mwl.size())));
                 sta[1] = 1;
@@ -152,7 +152,10 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, "自己寫啊\n又不是不會打扣").set_reference(event.msg.id));
             }
             else if (v[0] == "董") {
-                bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/969635522978910248/1148283173923459172/FB_IMG_1693742197631.png"));
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
+            }
+            else if (v[0] == "對不起") {
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/VzEccll"));
             }
             else if (s.find("機") != -1 && (s.find("連結") != -1)) {
                 bot.message_create(message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
