@@ -177,7 +177,7 @@ string europe[10] = {
     "https://imgur.com/b8R5npH",
     "https://imgur.com/Hy3AgYl"
 };
-string fbi[16] = {
+string fbi[18] = {
     "https://imgur.com/8G9kPNg",
     "https://imgur.com/zUGMmNw",
     "https://imgur.com/B2jRZjU",
@@ -193,9 +193,11 @@ string fbi[16] = {
     "https://imgur.com/UQKmyNe",
     "https://imgur.com/q8EEITg",
     "https://imgur.com/XnDpKCK",  //  15
-    "https://imgur.com/aaETfdA"
+    "https://imgur.com/aaETfdA",
+    "https://imgur.com/ChEyROB",
+    "https://imgur.com/0tZWcr8"
 };
-string kusa[16] = {
+string kusa[17] = {
     "https://imgur.com/7t35JNT",
     "https://imgur.com/TxP9fcI",
     "https://imgur.com/i7r8tKl",
@@ -212,6 +214,7 @@ string kusa[16] = {
     "https://imgur.com/mpnIp9x",
     "https://imgur.com/yP0kmFE",  //  15
     "https://imgur.com/BHyj0zZ",
+    "https://imgur.com/kkZs7Uv",
 };
 string truee[10] = {
     "https://imgur.com/GGvgJiZ",
@@ -272,7 +275,7 @@ string gay[45] = {
     "https://imgur.com/q8q7pRP",
     "https://imgur.com/LwA7mq9",  //  45
 };
-string wat[23]{
+string wat[24]{
     "https://imgur.com/Uz1ZWqo",
     "https://imgur.com/OUvENhb",
     "https://imgur.com/WRdAmE3",
@@ -295,7 +298,8 @@ string wat[23]{
     "https://imgur.com/vyMNDbT",  //  20
     "https://imgur.com/ZZl7Eyl",
     "https://imgur.com/d4ArtMd",
-    "https://imgur.com/HFPzNla"
+    "https://imgur.com/HFPzNla",
+    "https://imgur.com/92sac2o",
 };
 string ksexre[11] = {
     "我能理解你的疲憊。\n這段時間裡持久的戰鬥累積的壓力，令你躁動的生理需求超出了你所能忍耐的水平。",
