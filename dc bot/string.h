@@ -339,13 +339,6 @@ string cspre[5] = {
     "https://cdn.discordapp.com/attachments/1135513819565797457/1135515139743948861/image.png",
     "https://cdn.discordapp.com/attachments/1135513819565797457/1135515227094519928/image.png",  //  5
 };
-string genshin[5] = {
-    "https://cdn.discordapp.com/attachments/968693698206519356/1144973309633630279/ab8164c0-7a7c-11ec-bfef-21d6e5102eb6.webp.jpg",
-    "",
-    "",
-    "",
-    "",  //  5
-};
 string nazi[9] = {
     "https://imgur.com/11XKQcu",
     "https://imgur.com/PEbwSv0",

@@ -155,7 +155,7 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
             }
             else if (v[0] == "對不起") {
-                bot.message_create(message(event.msg.channel_id, "https://imgur.com/VzEccll"));
+                bot.message_create(message(event.msg.channel_id, "HCN兌Pu玘\nhttps://imgur.com/VzEccll"));
             }
             else if (s.find("機") != -1 && (s.find("連結") != -1)) {
                 bot.message_create(message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
@@ -173,11 +173,10 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, europe[mt() % size(europe)]));
             }
             else if (v[0] == "fga") {
-                bot.message_create(message(event.msg.channel_id, "這是git本來的網站 https://github.com/Fate-Grand-Automata/FGA\n\
-                    現在已經上架play商店了 https://play.google.com/store/apps/details?id=io.github.fate_grand_automata"));
+                bot.message_create(message(event.msg.channel_id, "https://play.google.com/store/apps/details?id=io.github.fate_grand_automata"));
             }
             else if (s.find("婆") != -1) {
-                bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/966729542800658442/1092428172705931355/FB_IMG_1625811644856.jpg"));
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/NzDj4b3"));
             }
             else if (s.find("確實") != -1 || v[0] == "雀食") {
                 bot.message_create(message(event.msg.channel_id, truee[mt() % size(truee)]));
@@ -204,13 +203,13 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, boobs[mt() % size(boobs)]));
             }
             else if (s.find("哇草原") != -1) {
-                bot.message_create(message(event.msg.channel_id, genshin[0]));
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/yyplIYP"));
             }
             else if (v[0] == "圖") {
                 bot.message_create(message(event.msg.channel_id, arkcr[mt() % size(arkcr)]));
             }
             else if (v[0] == "瓜" || v[0] == "吃瓜") {
-                bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/503219154413682713/1107119476333350923/gcj_star230505.gif"));
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/E4EWNsw"));
             }
             else if (v[0] == "bonk" || v[0] == "不可以瑟瑟" || v[0] == "不可以色色") {
                 bot.message_create(message(event.msg.channel_id, "<a:emoji_23:1008963509431840838>"));
