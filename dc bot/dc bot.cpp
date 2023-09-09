@@ -187,8 +187,10 @@ int main() {
             else if (s.find("lao") != -1 || s.find("佬") != -1) {
                 bot.message_create(message(event.msg.channel_id, dalao[mt() % size(dalao)]));
             }
-            else if (s.find("kusa") != -1 || v[0] == "草" || s.find("笑死") != -1
-                || (s.find("w") != -1 && s.find("ww") == -1 && s.find("ht") == -1)) {
+            else if (v[0] == "草" || s.find("笑死") != -1
+                || (s.find("w") != -1 && s.find("a") == -1 && s.find("t") == -1 && s.find("e") == -1 && s.find("s") == -1
+                    && s.find("l") == -1 && s.find("d") == -1 && s.find("i") == -1 && s.find("m") == -1 && s.find("o") == -1
+                    && s.find("p") == -1 && s.find("y") == -1)) {
                 bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
             }
             else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1
