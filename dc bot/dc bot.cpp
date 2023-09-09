@@ -154,6 +154,9 @@ int main() {
             else if (v[0] == "董") {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
             }
+            else if (s.find("月") != -1) {
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/UU6ynBL"));
+            }
             else if (v[0] == "對不起") {
                 bot.message_create(message(event.msg.channel_id, "HCN兌Pu玘\nhttps://imgur.com/VzEccll"));
             }
