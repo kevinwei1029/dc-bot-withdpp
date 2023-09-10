@@ -140,7 +140,7 @@ string arkcr[124] = {
     "https://www.pixiv.net/artworks/80293330",
     "https://www.pixiv.net/artworks/95993983"  //  125
 };
-string dalao[18] = {
+string dalao[20] = {
     "https://imgur.com/hUQibPF",
     "https://imgur.com/XufO0dC",
     "https://imgur.com/cQzMQPO",
@@ -158,7 +158,9 @@ string dalao[18] = {
     "https://imgur.com/xMloJk1",  //  15
     "https://imgur.com/OGLv1FV",
     "https://imgur.com/wSwaQZ7",
-    "https://imgur.com/73Y3M0F"
+    "https://imgur.com/73Y3M0F",
+    "https://imgur.com/wgUZ8HO",
+    "https://imgur.com/3FHXsvL",  //  20
 };
 string europe[10] = {
     "我沒差啊\n你們都這樣\n我習慣了阿\n\n\
