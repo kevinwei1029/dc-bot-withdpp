@@ -13,7 +13,8 @@ The creater (yeah it's me) won't be authorized as an administrator.
 * Detecting messages and responding
 * Using slash command
 * Sending embds
-* Gacha simulation (support: Arknights, Fate/Grand Order, Princess connect)
+* Gacha simulation (support: Arknights, Fate/Grand Order, Princess Connect)
+
 # It'll never ganna :
 * give you up
 * let you down
@@ -23,9 +24,9 @@ The creater (yeah it's me) won't be authorized as an administrator.
 * tell a lie and hurt you
 
 # Bot Available Time
-Depend on me.
+Depend on me.   
 I usually turn on this bot as soon as I wake up.  
 
-## Sourses
+## Credit
 * @H1de_on_bruH : https://github.com/chengyin30069 （Thank for your coding support
 * D++ lib : https://dpp.dev/
