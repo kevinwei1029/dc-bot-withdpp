@@ -196,6 +196,9 @@ int main() {
                     && s.find("p") == -1 && s.find("y") == -1)) {
                 bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
             }
+            else if(s.find("kusa") != -1) {
+                bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
+                }
             else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1
                 || v[0] == "gay" || s.find("甲") != -1
                 || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1) || v[0] == "超給") {
