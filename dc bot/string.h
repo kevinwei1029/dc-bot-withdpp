@@ -179,7 +179,7 @@ string europe[10] = {
     "https://imgur.com/b8R5npH",
     "https://imgur.com/Hy3AgYl"
 };
-string fbi[18] = {
+string fbi[19] = {
     "https://imgur.com/8G9kPNg",
     "https://imgur.com/zUGMmNw",
     "https://imgur.com/B2jRZjU",
@@ -197,7 +197,8 @@ string fbi[18] = {
     "https://imgur.com/XnDpKCK",  //  15
     "https://imgur.com/aaETfdA",
     "https://imgur.com/ChEyROB",
-    "https://imgur.com/0tZWcr8"
+    "https://imgur.com/0tZWcr8",
+    "https://imgur.com/hXrwjtk",
 };
 string kusa[18] = {
     "https://imgur.com/7t35JNT",
