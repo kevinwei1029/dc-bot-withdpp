@@ -411,7 +411,7 @@ int main() {
                             set_type(cot_button).
                             set_emoji(u8"😄").
                             set_style(cos_danger).
-                            set_id("測試中")
+                            set_id("你媽死了")
                         )
                     )
                 );
@@ -445,7 +445,7 @@ int main() {
     //When a user clicks your button, the on_button_click event will fire, containing the custom_id you defined in your button.
     bot.on_button_click([&bot](const button_click_t & event) {
         // Button clicks are still interactions, and must be replied to in some form to prevent the "this interaction has failed" message from Discord to the user.
-        event.reply("You clicked " + event.custom_id);
+        event.reply(/*"You clicked " + */event.custom_id);
         });
 
     bot.start(st_wait);
