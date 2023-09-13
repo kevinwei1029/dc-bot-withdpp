@@ -84,9 +84,6 @@ int main() {
 
             if (v[0] == "test") {
                 if (au == "681076728465981450"){
-                    /*for (int i = 0; i < size(arkcr); i++) {
-                        bot.message_create(message(event.msg.channel_id, arkcr[i]));
-                    }*/
                     bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
                 }
                 else
@@ -94,7 +91,7 @@ int main() {
             }
             else if (v[0] == "test1") {
                 if (au == "681076728465981450")
-                    bot.message_create(message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了非洲人還不睡喔"));
+                    bot.message_create(message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了，主人要早點去睡覺喔！"));
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
