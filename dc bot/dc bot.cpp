@@ -19,7 +19,7 @@ vector<string> mwl;  //  mwl = majhong wating list
 int main() {
     ifstream in;
     in.open("token.txt");
-    in >> token[0] >> token[1]; //[0]為チョコラ [1]為女僕凱爾希
+    in >> token[0] >> token[1]; //[0]為ショコラ [1]為女僕凱爾希
     tkuse = token[0];
     cluster bot(tkuse, i_default_intents | i_message_content);
 
@@ -201,7 +201,7 @@ int main() {
                 || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1) || v[0] == "超給") {
                 bot.message_create(message(event.msg.channel_id, gay[mt() % size(gay)]));
             }
-            else if (s.find("fbi") != -1 || s.find("ㄌㄌㄎ") != -1) {
+            else if (s.find("fbi") != -1 || s.find("ㄌㄌㄎ") != -1 || s.find("FBI") != -1) {
                 bot.message_create(message(event.msg.channel_id, fbi[mt() % size(fbi)]));
             }
             else if (s.find("大") != -1 && s.find("奶") != -1) {
@@ -231,11 +231,11 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡").set_reference(event.msg.id));
                     break;
                 }
-                if ((v[1] == "pcr" || v[1] == "公連") && (v[2].size() < 4))
+                if ((v[1] == "pcr" || v[1] == "公連" || v[1] == "PCR") && (v[2].size() < 4))
                     bot.message_create(message(event.msg.channel_id, pcrgacha(v[2])));
                 else if ((v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO") && (v[2].size() < 4))
                     bot.message_create(message(event.msg.channel_id, fgogacha(v[2])));
-                else if ((v[1] == "ark" || v[1] == "方舟") && (v[2].size() < 4))
+                else if ((v[1] == "ark" || v[1] == "方舟" || v[1] == "ARK") && (v[2].size() < 4))
                     bot.message_create(message(event.msg.channel_id, arkgacha(v[2])));
                 else
                     bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));
@@ -301,7 +301,7 @@ int main() {
                     txt = "你說誰是老女人啊？";
                 bot.message_create(message(event.msg.channel_id, txt));
             }
-            else if (tkuse == token[0] && (s.find("貓") != -1 || s.find("チョコラ") != -1
+            else if (tkuse == token[0] && (s.find("貓") != -1 || s.find("ショコラ") != -1
                 || s.find("chocola") != -1 || s.find("巧克力") != -1)) {
                 if (s.find("屁") != -1 || s.find("趴") != -1 || s.find("口") != -1 ||
                     s.find("脫") != -1 || s.find("露") != -1 || s.find("奶") != -1 ||

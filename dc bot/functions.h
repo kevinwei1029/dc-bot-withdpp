@@ -3,11 +3,10 @@ using namespace std;
 
 //自定義抽卡函式
 string pcrgacha(string times) {
-    int integer = stoi(times);
     int pcrga[3] = { 0 };
     mt19937 mt(time(nullptr));
 
-    for (int k = 0; k < integer; k++) {
+    for (int k = 0; k < stoi(times); k++) {
         int r = mt() % 33;
 
         switch (r) {
@@ -32,11 +31,10 @@ string pcrgacha(string times) {
         + golden + "張金卡 <:pcr2:1117798436427804754>\n" + rainbow + "張彩卡 <:pcr3:1117798715957194923>\n");
 }
 string fgogacha(string times) {
-    int integer = stoi(times);
     int fgoga[3] = { 0 };
     mt19937 mt(time(nullptr));
 
-    for (int k = 0; k < integer; k++) {
+    for (int k = 0; k < stoi(times); k++) {
         int r = mt() % 100;
 
         switch (r) {
@@ -60,11 +58,10 @@ string fgogacha(string times) {
         + golden + "張金卡<:fgo_K2:1107145363795746977>\n" + rainbow + "張彩卡<:fgo_K1:1107145268681519114>\n");
 }
 string arkgacha(string times) {
-    int integer = stoi(times);
     mt19937 mt(time(nullptr));
     int arkga[4] = { 0 };
 
-    for (int i = 0; i < integer; i++) {
+    for (int i = 0; i < stoi(times); i++) {
         int r = mt() % 50;
 
         switch (r) {
