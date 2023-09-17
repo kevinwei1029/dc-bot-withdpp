@@ -247,9 +247,9 @@ int main() {
                     break;
                 }
 
-                if (v[1] == "pcr" || v[1] == "公連")
+                if (v[1] == "pcr" || v[1] == "公連" || v[1] == "PCR")
                     bot.message_create(message(event.msg.channel_id, pcrget()));
-                else if (v[1] == "fgo" || v[1] == "居歐")
+                else if (v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO")
                     bot.message_create(message(event.msg.channel_id, fgoget()));
                 else
                     bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));
