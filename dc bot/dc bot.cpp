@@ -151,9 +151,6 @@ int main() {
             else if (v[0] == "董") {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
             }
-            else if (s.find("月") != -1) {
-                bot.message_create(message(event.msg.channel_id, "https://cdn.discordapp.com/attachments/1129890037010530445/1149744811285434530/Clipchamp_1.mp4"));
-            }
             else if (v[0] == "對不起") {
                 bot.message_create(message(event.msg.channel_id, "HCN兌Pu玘\nhttps://imgur.com/VzEccll"));
             }
@@ -271,7 +268,9 @@ int main() {
                 bot.message_create(msg.set_reference(event.msg.id));
             }
             else if (v[0] == "抽卡說明") {
-                txt = "抽卡\n目前支援fgo、明日方舟與公主連結\nfgo與公主連結支援抽到有功能（有保底）\n\n抽卡功能使用公式\n抽(這裡用中文或半形英文打遊戲名稱) (這裡用半形數字打抽數)\n\n抽卡公式說明\n抽字為觸發功能必要、也可輸入gacha一詞代替\n三個區段間請用半形空格隔開\n遊戲名稱可打pcr、fgo、ark、公連、方舟、居歐\n最後請打抽數";
+                txt = "抽卡\n目前支援fgo、明日方舟與公主連結\nfgo與公主連結支援抽到有功能（有保底）\n\n\
+抽卡功能使用公式\n抽(這裡用中文或半形英文打遊戲名稱) (這裡用半形數字打抽數)\n\n\
+抽卡公式說明\n抽字為觸發功能必要、也可輸入gacha一詞代替\n三個區段間請用半形空格隔開\n遊戲名稱可打pcr、fgo、ark、公連、方舟、居歐\n最後請打抽數";
                 message msg(event.msg.channel_id, txt);
                 bot.message_create(msg.set_reference(event.msg.id));
             }
