@@ -70,7 +70,7 @@ int main() {
         }
         //拆訊息
 
-        if (au != "1121384376991752234" && au != "1092497000945160324" && size(event.msg.content) < 50 && sta[0] == 1){  //判斷是否進行比對
+        if (au != "1121384376991752234" && size(event.msg.content) < 150 && sta[0] == 1 && event.msg.channel_id != 1031559558793007114) {  //判斷是否進行比對
             //cout << "enter reading loop" << endl;
             mt19937 mt(time(nullptr));
 
@@ -86,7 +86,7 @@ int main() {
             if (v[0] == "test") {
                 if (au == "681076728465981450"){
                     //bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
-                    bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
+                    bot.message_create(message(memech[0], "https://cdn.discordapp.com/attachments/897882122772164648/1153276789657960518/image.png"));
                 }
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
@@ -98,10 +98,8 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
             else if (v[0] == "關機") {
-                if (au == "681076728465981450") {
-                    bot.message_create(message(event.msg.channel_id, "好的我先下班了"));
+                if (au == "681076728465981450")
                     exit(0);
-                }
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
@@ -146,6 +144,7 @@ int main() {
                     for (int i = 0; i < size(memech); i++) {
                         while (memech[i] != event.msg.channel_id) {
                             bot.message_create(message(memech[i], v[2]));
+                            break;
                         }
                     }
                     bot.message_create(message(event.msg.channel_id, "已經轉傳到其他頻道了！"));
