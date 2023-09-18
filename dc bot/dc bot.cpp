@@ -82,9 +82,11 @@ int main() {
             s = event.msg.content;
             //bot.message_create(message(968693698206519356, "我讀到的你的訊息字串長為 " + to_string(size(s))));
 
+            //有限本人用的程式碼
             if (v[0] == "test") {
                 if (au == "681076728465981450"){
-                    bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
+                    //bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
+                    bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
                 }
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
@@ -95,7 +97,113 @@ int main() {
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
+            else if (v[0] == "關機") {
+                if (au == "681076728465981450") {
+                    bot.message_create(message(event.msg.channel_id, "好的我先下班了"));
+                    exit(0);
+                }
+                else
+                    bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
+            }
 
+            //其他的程式碼
+            else if (s.find("休息") != -1 && au == "681076728465981450") {
+                bot.message_create(message(event.msg.channel_id, "好我先去休息了").set_reference(event.msg.id));
+                sta[0] = 0;
+            }
+            else if (s.find("椰子") != -1) {
+                bot.message_create(message(event.msg.channel_id, "自己寫啊\n又不是不會打扣").set_reference(event.msg.id));
+            }
+            else if (v[0] == "董") {
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
+            }
+            else if (v[0] == "對不起") {
+                bot.message_create(message(event.msg.channel_id, "HCN兌Pu玘\nhttps://imgur.com/VzEccll"));
+            }
+            else if (s.find("機") != -1 && (s.find("連結") != -1)) {
+                bot.message_create(message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
+            }
+            else if (v[0] == "fga") {
+                bot.message_create(message(event.msg.channel_id, "https://play.google.com/store/apps/details?id=io.github.fate_grand_automata"));
+            }
+            else if (s.find("婆") != -1) {
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/NzDj4b3"));
+            }
+            else if (s.find("哇草原") != -1) {
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/yyplIYP"));
+            }
+            else if (s.find("吃") != -1 || s.find("瓜") != -1) {
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/E4EWNsw"));
+            }
+            else if (v[0] == "bonk" || v[0] == "不可以瑟瑟" || v[0] == "不可以色色") {
+                bot.message_create(message(event.msg.channel_id, "<a:emoji_23:1008963509431840838>"));
+            }
+            else if ((s.find("JR") != -1 || s.find("jr") != -1) && s.find("時刻") != -1) {
+                bot.message_create(message(event.msg.channel_id, jrtime));
+            }
+            else if (v[0].find("巧") != -1 && v[0].find("轉") != -1) {
+                if (v[1] == "梗圖") {
+                    for (int i = 0; i < size(memech); i++) {
+                        while (memech[i] != event.msg.channel_id) {
+                            bot.message_create(message(memech[i], v[2]));
+                        }
+                    }
+                    bot.message_create(message(event.msg.channel_id, "已經轉傳到其他頻道了！"));
+                }
+            }
+
+            //發車的程式碼
+            else if (v[0] == "^n") {
+                bot.message_create(message(event.msg.channel_id, "https://nhentai.net/g/" + v[1]).set_reference(event.msg.id));
+            }
+            else if (v[0] == "^p") {
+                bot.message_create(message(event.msg.channel_id, "https://www.pixiv.net/artworks/" + v[1]).set_reference(event.msg.id));
+            }
+            else if (v[0] == "^jm") {
+                bot.message_create(message(event.msg.channel_id, "https://jmcomic.me/photo/" + v[1]).set_reference(event.msg.id));
+            }
+
+            //用隔壁陣列發圖的程式碼
+            else if (v[0] == "圖") {
+                bot.message_create(message(event.msg.channel_id, arkcr[mt() % size(arkcr)]));
+            }
+            else if (s.find("歐") != -1 && s.find("歐貝爾") == -1 && s.find("歐虧") == -1) {
+                bot.message_create(message(event.msg.channel_id, europe[mt() % size(europe)]));
+            }
+            else if (s.find("確實") != -1 || v[0] == "雀食") {
+                bot.message_create(message(event.msg.channel_id, truee[mt() % size(truee)]));
+            }
+            else if ((s.find("猶") != -1 && s.find("猶豫") == -1) || v[0] == "德意") {
+                bot.message_create(message(event.msg.channel_id, nazi[mt() % size(nazi)]));
+            }
+            else if (s.find("lao") != -1 || s.find("佬") != -1) {
+                bot.message_create(message(event.msg.channel_id, dalao[mt() % size(dalao)]));
+            }
+            else if (v[0] == "草" || s.find("笑死") != -1
+                || (s.find("w") != -1 && s.find("a") == -1 && s.find("t") == -1 && s.find("e") == -1 && s.find("s") == -1
+                    && s.find("l") == -1 && s.find("d") == -1 && s.find("i") == -1 && s.find("m") == -1 && s.find("o") == -1
+                    && s.find("p") == -1 && s.find("y") == -1)) {
+                bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
+            }
+            else if(s.find("kusa") != -1) {
+                bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
+                }
+            else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1
+                || v[0] == "gay" || s.find("甲") != -1
+                || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1) || v[0] == "超給") {
+                bot.message_create(message(event.msg.channel_id, gay[mt() % size(gay)]));
+            }
+            else if (s.find("fbi") != -1 || s.find("ㄌㄌㄎ") != -1 || s.find("FBI") != -1) {
+                bot.message_create(message(event.msg.channel_id, fbi[mt() % size(fbi)]));
+            }
+            else if (s.find("大") != -1 && s.find("奶") != -1) {
+                bot.message_create(message(event.msg.channel_id, boobs[mt() % size(boobs)]));
+            }
+            else if (s.find("tsuna") != -1 || v[0] == "<:pte_lemon:986265384992772166>" || s.find("三小") != -1) {
+                bot.message_create(message(event.msg.channel_id, wat[mt() % size(wat)]));
+            }
+
+            //雀魂等待序列程式碼
             else if ((s.find("雀") != -1 && s.find("待") != -1) || s.find("mjw") != -1) {
                 for (auto it = mwl.begin(); it != mwl.end(); ++it) {
                     if (*it == au) {
@@ -141,87 +249,6 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, mjuse).set_reference(event.msg.id));
             }
 
-            else if (s.find("休息") != -1 && au == "681076728465981450") {
-                bot.message_create(message(event.msg.channel_id, "好我先去休息了").set_reference(event.msg.id));
-                sta[0] = 0;
-            }
-            else if (s.find("椰子") != -1) {
-                bot.message_create(message(event.msg.channel_id, "自己寫啊\n又不是不會打扣").set_reference(event.msg.id));
-            }
-            else if (v[0] == "董") {
-                bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
-            }
-            else if (v[0] == "對不起") {
-                bot.message_create(message(event.msg.channel_id, "HCN兌Pu玘\nhttps://imgur.com/VzEccll"));
-            }
-            else if (s.find("機") != -1 && (s.find("連結") != -1)) {
-                bot.message_create(message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
-            }
-            else if (v[0] == "^n") {
-                bot.message_create(message(event.msg.channel_id, "https://nhentai.net/g/" + v[1]).set_reference(event.msg.id));
-            }
-            else if (v[0] == "^p") {
-                bot.message_create(message(event.msg.channel_id, "https://www.pixiv.net/artworks/" + v[1]).set_reference(event.msg.id));
-            }
-            else if (v[0] == "^jm") {
-                bot.message_create(message(event.msg.channel_id, "https://jmcomic.me/photo/" + v[1]).set_reference(event.msg.id));
-            }
-            else if (s.find("歐") != -1 && s.find("歐貝爾") == -1 && s.find("歐虧") == -1) {
-                bot.message_create(message(event.msg.channel_id, europe[mt() % size(europe)]));
-            }
-            else if (v[0] == "fga") {
-                bot.message_create(message(event.msg.channel_id, "https://play.google.com/store/apps/details?id=io.github.fate_grand_automata"));
-            }
-            else if (s.find("婆") != -1) {
-                bot.message_create(message(event.msg.channel_id, "https://imgur.com/NzDj4b3"));
-            }
-            else if (s.find("確實") != -1 || v[0] == "雀食") {
-                bot.message_create(message(event.msg.channel_id, truee[mt() % size(truee)]));
-            }
-            else if ((s.find("猶") != -1 && s.find("猶豫") == -1) || v[0] == "德意") {
-                bot.message_create(message(event.msg.channel_id, nazi[mt() % size(nazi)]));
-            }
-            else if (s.find("lao") != -1 || s.find("佬") != -1) {
-                bot.message_create(message(event.msg.channel_id, dalao[mt() % size(dalao)]));
-            }
-            else if (v[0] == "草" || s.find("笑死") != -1
-                || (s.find("w") != -1 && s.find("a") == -1 && s.find("t") == -1 && s.find("e") == -1 && s.find("s") == -1
-                    && s.find("l") == -1 && s.find("d") == -1 && s.find("i") == -1 && s.find("m") == -1 && s.find("o") == -1
-                    && s.find("p") == -1 && s.find("y") == -1)) {
-                bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
-            }
-            else if(s.find("kusa") != -1) {
-                bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
-                }
-            else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1
-                || v[0] == "gay" || s.find("甲") != -1
-                || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1) || v[0] == "超給") {
-                bot.message_create(message(event.msg.channel_id, gay[mt() % size(gay)]));
-            }
-            else if (s.find("fbi") != -1 || s.find("ㄌㄌㄎ") != -1 || s.find("FBI") != -1) {
-                bot.message_create(message(event.msg.channel_id, fbi[mt() % size(fbi)]));
-            }
-            else if (s.find("大") != -1 && s.find("奶") != -1) {
-                bot.message_create(message(event.msg.channel_id, boobs[mt() % size(boobs)]));
-            }
-            else if (s.find("哇草原") != -1) {
-                bot.message_create(message(event.msg.channel_id, "https://imgur.com/yyplIYP"));
-            }
-            else if (v[0] == "圖") {
-                bot.message_create(message(event.msg.channel_id, arkcr[mt() % size(arkcr)]));
-            }
-            else if (v[0] == "瓜" || v[0] == "吃瓜") {
-                bot.message_create(message(event.msg.channel_id, "https://imgur.com/E4EWNsw"));
-            }
-            else if (v[0] == "bonk" || v[0] == "不可以瑟瑟" || v[0] == "不可以色色") {
-                bot.message_create(message(event.msg.channel_id, "<a:emoji_23:1008963509431840838>"));
-            }
-            else if ((s.find("JR") != -1 || s.find("jr") != -1) && s.find("時刻") != -1) {
-                bot.message_create(message(event.msg.channel_id, jrtime));
-            }
-            else if (s.find("tsuna") != -1 || v[0] == "<:pte_lemon:986265384992772166>" || s.find("三小") != -1) {
-                bot.message_create(message(event.msg.channel_id, wat[mt() % size(wat)]));
-            }
             //抽卡相關程式碼
             else if (v[0] == "抽" || v[0] == "gacha" || v[0] == "抽卡") {
                 while (tkuse == token[0]) {
@@ -274,6 +301,7 @@ int main() {
                 message msg(event.msg.channel_id, txt);
                 bot.message_create(msg.set_reference(event.msg.id));
             }
+
             //素材查詢程式碼
             else if (v[0] == "素材" || v[0] == "fgo素材") {
                 bool find = FALSE;
@@ -289,7 +317,8 @@ int main() {
                     bot.message_create(msg.set_reference(event.msg.id));
                 }
             }
-            //想瑟瑟程式碼
+
+            //會被抓去瑟瑟程式碼
             else if (tkuse == token[1] && s.find("老女人") != -1) {
                 if (s.find("屁") != -1 || s.find("趴") != -1 || s.find("口") != -1 ||
                     s.find("脫") != -1 || s.find("露") != -1 || s.find("奶") != -1 ||
@@ -309,6 +338,7 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, cspre[(mt() % size(cspre))]));
                 }
             }
+
             //embed程式碼
             else if (s == "!creator") {
                 /* create the embed */
@@ -349,7 +379,7 @@ int main() {
                     set_description("優木雪菜我婆！").
                     set_thumbnail("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                     add_field(
-                        "可用斜線指令",
+                        "可用斜線程式碼",
                         "new waifu \ncattie \nark charactors \nbruh"
                     ).
                     add_field(
@@ -400,6 +430,7 @@ int main() {
                 /* reply with the created embed */
                 bot.message_create(message(event.msg.channel_id, embed).set_reference(event.msg.id));
             }
+
             //做不好的按鈕程式碼
             else if (s == "!button") {
                 /* Create a message containing an action row, and a button within the action row. */

@@ -12,7 +12,12 @@ string mjuse = "功能 => 中文指令 => 英文指令 => 中文辨識字元 => 
 4. 清空等待序列 => 清空等待 => mjclear => 空、待 => mjc\n\
 辨識字元的意思是，只要有包含這些字詞就可以觸發功能";
 
-//所有字串陣列
+//所有頻道id陣列
+long long memech[2]{
+    966729542800658442,  //cf公會群梗圖頻
+    988815328375078973,  //科學班梗圖頻
+};
+//所有發圖字串陣列
 string arkcr[124] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1092538926687858828/1680551962912.jpg",
     "https://media.discordapp.net/attachments/968693698206519356/1092538926914359466/1680551964443.jpg?width=1050&height=735",
@@ -233,7 +238,7 @@ string truee[10] = {
     "https://imgur.com/UfxHpPJ",
     "https://imgur.com/1K6NV3s"
 };
-string gay[46] = {
+string gay[47] = {
     "https://imgur.com/33maruM",
     "https://imgur.com/zk5mVtC",
     "https://imgur.com/BhvOl22",
@@ -280,6 +285,7 @@ string gay[46] = {
     "https://imgur.com/q8q7pRP",
     "https://imgur.com/LwA7mq9",  //  45
     "https://imgur.com/q84vbFq",
+    "https://imgur.com/f7VfrKs",
 };
 string wat[24]{
     "https://imgur.com/Uz1ZWqo",
