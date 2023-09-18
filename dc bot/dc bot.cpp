@@ -127,9 +127,6 @@ int main() {
             else if (s.find("婆") != -1) {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/NzDj4b3"));
             }
-            else if (s.find("哇草原") != -1) {
-                bot.message_create(message(event.msg.channel_id, "https://imgur.com/yyplIYP"));
-            }
             else if (s.find("吃") != -1 || s.find("瓜") != -1) {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/E4EWNsw"));
             }
@@ -165,6 +162,9 @@ int main() {
             //用隔壁陣列發圖的程式碼
             else if (v[0] == "圖") {
                 bot.message_create(message(event.msg.channel_id, arkcr[mt() % size(arkcr)]));
+            }
+            else if (s.find("哇草原") != -1) {
+                bot.message_create(message(event.msg.channel_id, genshin[mt() % size(genshin)]));
             }
             else if (s.find("歐") != -1 && s.find("歐貝爾") == -1 && s.find("歐虧") == -1) {
                 bot.message_create(message(event.msg.channel_id, europe[mt() % size(europe)]));

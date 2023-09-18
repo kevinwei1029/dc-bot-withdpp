@@ -17,6 +17,7 @@ long long memech[2]{
     966729542800658442,  //cf公會群梗圖頻
     988815328375078973,  //科學班梗圖頻
 };
+
 //所有發圖字串陣列
 string arkcr[124] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1092538926687858828/1680551962912.jpg",
@@ -144,6 +145,10 @@ string arkcr[124] = {
     "https://www.pixiv.net/artworks/81170525",
     "https://www.pixiv.net/artworks/80293330",
     "https://www.pixiv.net/artworks/95993983"  //  125
+};
+string genshin[2] = {
+    "https://imgur.com/yyplIYP",
+    "https://imgur.com/LVm8mtN",
 };
 string dalao[20] = {
     "https://imgur.com/hUQibPF",
@@ -287,7 +292,7 @@ string gay[47] = {
     "https://imgur.com/q84vbFq",
     "https://imgur.com/f7VfrKs",
 };
-string wat[24]{
+string wat[25]{
     "https://imgur.com/Uz1ZWqo",
     "https://imgur.com/OUvENhb",
     "https://imgur.com/WRdAmE3",
@@ -312,6 +317,7 @@ string wat[24]{
     "https://imgur.com/d4ArtMd",
     "https://imgur.com/HFPzNla",
     "https://imgur.com/92sac2o",
+    "https://imgur.com/VIpxfyk",  //  25
 };
 string ksexre[11] = {
     "我能理解你的疲憊。\n這段時間裡持久的戰鬥累積的壓力，令你躁動的生理需求超出了你所能忍耐的水平。",
