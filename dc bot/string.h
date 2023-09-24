@@ -293,7 +293,7 @@ string gay[47] = {
     "https://imgur.com/q84vbFq",
     "https://imgur.com/f7VfrKs",
 };
-string wat[25]{
+string wat[26]{
     "https://imgur.com/Uz1ZWqo",
     "https://imgur.com/OUvENhb",
     "https://imgur.com/WRdAmE3",
@@ -319,6 +319,7 @@ string wat[25]{
     "https://imgur.com/HFPzNla",
     "https://imgur.com/92sac2o",
     "https://imgur.com/VIpxfyk",  //  25
+    "https://imgur.com/s5RCnpz",
 };
 string ksexre[11] = {
     "我能理解你的疲憊。\n這段時間裡持久的戰鬥累積的壓力，令你躁動的生理需求超出了你所能忍耐的水平。",
