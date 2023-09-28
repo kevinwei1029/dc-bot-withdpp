@@ -70,7 +70,7 @@ int main() {
         }
         //拆訊息
 
-        if (au != "1121384376991752234" && size(event.msg.content) < 150 && sta[0] == 1 && event.msg.channel_id != 1031559558793007114) {  //判斷是否進行比對
+        if (au != "1092497000945160324" && size(event.msg.content) < 150 && sta[0] == 1 && event.msg.channel_id != 1031559558793007114) {  //判斷是否進行比對
             //cout << "enter reading loop" << endl;
             mt19937 mt(time(nullptr));
 
