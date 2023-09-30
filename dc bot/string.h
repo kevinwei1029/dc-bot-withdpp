@@ -245,7 +245,7 @@ string truee[10] = {
     "https://imgur.com/UfxHpPJ",
     "https://imgur.com/1K6NV3s"
 };
-string gay[47] = {
+string gay[60] = {
     "https://imgur.com/33maruM",
     "https://imgur.com/zk5mVtC",
     "https://imgur.com/BhvOl22",
@@ -293,6 +293,19 @@ string gay[47] = {
     "https://imgur.com/LwA7mq9",  //  45
     "https://imgur.com/q84vbFq",
     "https://imgur.com/f7VfrKs",
+    "https://imgur.com/TKdyBlJ",
+    "https://imgur.com/KKY0rRs",
+    "https://imgur.com/PK3ZmRV",  //  50
+    "https://imgur.com/cN82MSp",
+    "https://imgur.com/PZmIH5R",
+    "https://imgur.com/EQFDZNT",
+    "https://imgur.com/MzzSofm",
+    "https://imgur.com/d3lppuu",  //  55
+    "https://imgur.com/Vyi5cOd",
+    "https://imgur.com/LJqOe6C",
+    "https://imgur.com/arqiQiY",
+    "https://imgur.com/QMJNp80",
+    "https://imgur.com/9orI0tl",  //  60
 };
 string wat[26]{
     "https://imgur.com/Uz1ZWqo",
