@@ -118,7 +118,7 @@ int main() {
             else if (s.find("婆") != -1) {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/NzDj4b3"));
             }
-            else if (s.find("吃") != -1 || s.find("瓜") != -1) {
+            else if (s.find("瓜") != -1) {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/E4EWNsw"));
             }
             else if ((s.find("JR") != -1 || s.find("jr") != -1) && s.find("時刻") != -1) {
