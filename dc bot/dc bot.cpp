@@ -109,29 +109,17 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, "好我先去休息了").set_reference(event.msg.id));
                 sta[0] = 0;
             }
-            else if (s.find("椰子") != -1) {
-                bot.message_create(message(event.msg.channel_id, "自己寫啊\n又不是不會打扣").set_reference(event.msg.id));
-            }
             else if (v[0] == "董") {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
             }
-            else if (v[0] == "對不起") {
-                bot.message_create(message(event.msg.channel_id, "HCN兌Pu玘\nhttps://imgur.com/VzEccll"));
-            }
             else if (s.find("機") != -1 && (s.find("連結") != -1)) {
                 bot.message_create(message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
-            }
-            else if (v[0] == "fga") {
-                bot.message_create(message(event.msg.channel_id, "https://play.google.com/store/apps/details?id=io.github.fate_grand_automata"));
             }
             else if (s.find("婆") != -1) {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/NzDj4b3"));
             }
             else if (s.find("吃") != -1 || s.find("瓜") != -1) {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/E4EWNsw"));
-            }
-            else if (v[0] == "bonk" || v[0] == "不可以瑟瑟" || v[0] == "不可以色色") {
-                bot.message_create(message(event.msg.channel_id, "<a:emoji_23:1008963509431840838>"));
             }
             else if ((s.find("JR") != -1 || s.find("jr") != -1) && s.find("時刻") != -1) {
                 bot.message_create(message(event.msg.channel_id, jrtime));
@@ -262,6 +250,35 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, arkgacha(v[2])));
                 else
                     bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));
+            }
+            else if (s == "!gacha") {
+                bot.message_create(
+                    message(event.msg.channel_id, "主人要抽什麼50抽呢？")
+                    .add_component(
+                        component().add_component(
+                            component().set_label("fgo").
+                            set_type(cot_button).
+                            set_style(cos_danger).
+                            set_id("fgoga")
+                        )
+                    )
+                    .add_component(
+                        component().add_component(
+                            component().set_label("明日方舟").
+                            set_type(cot_button).
+                            set_style(cos_danger).
+                            set_id("arkga")
+                        )
+                    )
+                    .add_component(
+                        component().add_component(
+                            component().set_label("公主連結").
+                            set_type(cot_button).
+                            set_style(cos_danger).
+                            set_id("pcrga")
+                        )
+                    )
+                );
             }
             else if (v[0] == "抽到有") {
 
@@ -474,8 +491,16 @@ int main() {
     //When a user clicks your button, the on_button_click event will fire, containing the custom_id you defined in your button.
     bot.on_button_click([&bot](const button_click_t & event) {
         // Button clicks are still interactions, and must be replied to in some form to prevent the "this interaction has failed" message from Discord to the user.
-        event.reply(/*"You clicked " + */event.custom_id);
-        });
+        //
+        if (event.custom_id == "fgoga") 
+            event.reply(fgogacha("50"));
+        else if (event.custom_id == "arkga")
+            event.reply(arkgacha("50"));
+        else if (event.custom_id == "pcrga")
+            event.reply(pcrgacha("50"));
+        else
+            event.reply(event.custom_id);
+    });
 
     bot.start(st_wait);
     return 0;
