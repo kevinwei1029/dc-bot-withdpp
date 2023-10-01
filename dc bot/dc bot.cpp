@@ -124,7 +124,7 @@ int main() {
             else if ((s.find("JR") != -1 || s.find("jr") != -1) && s.find("時刻") != -1) {
                 bot.message_create(message(event.msg.channel_id, jrtime));
             }
-            else if (v[0].find("巧") != -1 && v[0].find("轉") != -1) {
+            else if (v[0].find("轉") != -1) {
                 if (v[1] == "梗圖") {
                     for (int i = 0; i < size(memech); i++) {
                         while (memech[i] != event.msg.channel_id) {
@@ -276,6 +276,27 @@ int main() {
                             set_type(cot_button).
                             set_style(cos_danger).
                             set_id("pcrga")
+                        )
+                    )
+                );
+            }
+            else if (s == "!getgacha") {
+                bot.message_create(
+                    message(event.msg.channel_id, "主人要抽什麼遊戲抽到有呢？")
+                    .add_component(
+                        component().add_component(
+                            component().set_label("fgo").
+                            set_type(cot_button).
+                            set_style(cos_danger).
+                            set_id("fgogega")
+                        )
+                    )
+                    .add_component(
+                        component().add_component(
+                            component().set_label("公主連結").
+                            set_type(cot_button).
+                            set_style(cos_danger).
+                            set_id("pcrgega")
                         )
                     )
                 );
@@ -491,13 +512,17 @@ int main() {
     //When a user clicks your button, the on_button_click event will fire, containing the custom_id you defined in your button.
     bot.on_button_click([&bot](const button_click_t & event) {
         // Button clicks are still interactions, and must be replied to in some form to prevent the "this interaction has failed" message from Discord to the user.
-        //
-        if (event.custom_id == "fgoga") 
-            event.reply(fgogacha("50"));
+        string gatimes = "50";
+        if (event.custom_id == "fgoga")
+            event.reply(fgogacha(gatimes));
         else if (event.custom_id == "arkga")
-            event.reply(arkgacha("50"));
+            event.reply(arkgacha(gatimes));
         else if (event.custom_id == "pcrga")
-            event.reply(pcrgacha("50"));
+            event.reply(pcrgacha(gatimes));
+        else if (event.custom_id == "fgogega")
+            event.reply(fgoget());
+        else if (event.custom_id == "pcrgega")
+            event.reply(pcrget());
         else
             event.reply(event.custom_id);
     });
