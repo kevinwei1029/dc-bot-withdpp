@@ -251,9 +251,10 @@ int main() {
                 else
                     bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));
             }
-            else if (s == "!gacha") {
+            else if (v[0] == "!gacha") {
+                gatimes = v[1];
                 bot.message_create(
-                    message(event.msg.channel_id, "主人要抽什麼50抽呢？")
+                    message(event.msg.channel_id, "主人要抽什麼 " + v[1] + " 抽呢？")
                     .add_component(
                         component().add_component(
                             component().set_label("fgo").
@@ -512,7 +513,6 @@ int main() {
     //When a user clicks your button, the on_button_click event will fire, containing the custom_id you defined in your button.
     bot.on_button_click([&bot](const button_click_t & event) {
         // Button clicks are still interactions, and must be replied to in some form to prevent the "this interaction has failed" message from Discord to the user.
-        string gatimes = "50";
         if (event.custom_id == "fgoga")
             event.reply(fgogacha(gatimes));
         else if (event.custom_id == "arkga")

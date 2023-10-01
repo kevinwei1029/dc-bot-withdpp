@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
 
-string tkuse, txt, au, token[2] = { "" };
+string tkuse, txt, au, gatimes, token[2] = { "" };
 string jrtime = "https://www.eki-net.com/Personal/Top/Index\n\
 https://www.jreast.co.jp/tickets/\n\
 https://ekitan.com/timetable/railway/line/5000";
