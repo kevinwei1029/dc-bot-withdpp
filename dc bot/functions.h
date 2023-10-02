@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿#include <bits/stdc++.h>ostream>
 using namespace std;
 
 //自定義抽卡函式

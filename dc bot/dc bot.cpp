@@ -1,10 +1,7 @@
 ﻿//#define _CRT_SECURE_NO_DEPRECATE
-#include <iostream>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 #include <dpp/dpp.h>
 #include <random>
-#include <fstream>
 #include "functions.h"  //存放自訂函式
 #include "string.h"  //存放陣列字串
 
