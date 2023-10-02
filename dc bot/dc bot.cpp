@@ -5,7 +5,6 @@
 #include <dpp/dpp.h>
 #include <random>
 #include <fstream>
-#include <ctime>
 #include "functions.h"  //存放自訂函式
 #include "string.h"  //存放陣列字串
 
@@ -17,9 +16,10 @@ int sta[2] = { 1, 1 };
 vector<string> mwl;  //  mwl = majhong wating list
 
 int main() {
-    ifstream in;
-    in.open("token.txt");
-    in >> token[0] >> token[1]; //[0]為ショコラ [1]為女僕凱爾希
+    ifstream tkin;
+    tkin.open("token.txt");
+    tkin >> token[0] >> token[1]; //[0]為ショコラ [1]為女僕凱爾希
+    tkin.close();
     tkuse = token[0];
     cluster bot(tkuse, i_default_intents | i_message_content);
 
@@ -56,7 +56,7 @@ int main() {
         }); //使用斜線指令
     
     bot.on_message_create([&bot](const message_create_t& event) {
-        string s = event.msg.content;
+        s = event.msg.content;
         au = to_string(event.msg.author.id);
         vector<string> v;
         while (v.size() < 10) {
@@ -333,9 +333,7 @@ int main() {
                 bot.message_create(msg.set_reference(event.msg.id));
             }
             else if (v[0] == "抽卡說明") {
-                txt = "抽卡\n目前支援fgo、明日方舟與公主連結\nfgo與公主連結支援抽到有功能（有保底）\n\n\
-抽卡功能使用公式\n抽(這裡用中文或半形英文打遊戲名稱) (這裡用半形數字打抽數)\n\n\
-抽卡公式說明\n抽字為觸發功能必要、也可輸入gacha一詞代替\n三個區段間請用半形空格隔開\n遊戲名稱可打pcr、fgo、ark、公連、方舟、居歐\n最後請打抽數";
+                txt = "目前支援fgo、明日方舟與公主連結\nfgo與公主連結支援抽到有功能（有保底）\n輸入「!gacha (抽數)」即會出現選項";
                 message msg(event.msg.channel_id, txt);
                 bot.message_create(msg.set_reference(event.msg.id));
             }
@@ -513,18 +511,19 @@ int main() {
     //When a user clicks your button, the on_button_click event will fire, containing the custom_id you defined in your button.
     bot.on_button_click([&bot](const button_click_t & event) {
         // Button clicks are still interactions, and must be replied to in some form to prevent the "this interaction has failed" message from Discord to the user.
-        if (event.custom_id == "fgoga")
+        s = event.custom_id;
+        if (s == "fgoga")
             event.reply(fgogacha(gatimes));
-        else if (event.custom_id == "arkga")
+        else if (s == "arkga")
             event.reply(arkgacha(gatimes));
-        else if (event.custom_id == "pcrga")
+        else if (s == "pcrga")
             event.reply(pcrgacha(gatimes));
-        else if (event.custom_id == "fgogega")
+        else if (s == "fgogega")
             event.reply(fgoget());
-        else if (event.custom_id == "pcrgega")
+        else if (s == "pcrgega")
             event.reply(pcrget());
         else
-            event.reply(event.custom_id);
+            event.reply(s);
     });
 
     bot.start(st_wait);

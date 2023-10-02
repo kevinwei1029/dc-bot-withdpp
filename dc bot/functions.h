@@ -197,5 +197,4 @@ string mjnre(int size) {
         return "奇怪的vector長度出現了，快叫我老木過來看";
     }
 };
-
 //只是看行數自爽用

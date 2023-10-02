@@ -1,8 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
 
-string tkuse, txt, au, gatimes, token[2] = { "" };
-string jrtime = "https://www.eki-net.com/Personal/Top/Index\n\
+string tkuse, txt, au, s, gatimes, token[2], jrtime = "https://www.eki-net.com/Personal/Top/Index\n\
 https://www.jreast.co.jp/tickets/\n\
 https://ekitan.com/timetable/railway/line/5000";
 string mjuse = "功能 => 中文指令 => 英文指令 => 中文辨識字元 => 英文辨識字元\n\n\
