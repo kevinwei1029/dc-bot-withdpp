@@ -82,8 +82,8 @@ int main() {
             //有限本人用的程式碼
             if (v[0] == "test") {
                 if (au == "681076728465981450"){
-                    //bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
-                    bot.message_create(message(memech[0], "https://cdn.discordapp.com/attachments/897882122772164648/1153276789657960518/image.png"));
+                    bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
+                    //bot.message_create(message(memech[0], to_string(event.msg.guild_id)));
                 }
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
