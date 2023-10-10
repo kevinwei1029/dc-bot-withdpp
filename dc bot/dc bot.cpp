@@ -109,7 +109,7 @@ int main() {
             else if (v[0] == "董") {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
             }
-            else if (s.find("機") != -1 && (s.find("連結") != -1)) {
+            else if (s.find("機器人") != -1 && (s.find("連結") != -1)) {
                 bot.message_create(message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
             }
             else if (s.find("婆") != -1) {
