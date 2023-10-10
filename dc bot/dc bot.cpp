@@ -2,15 +2,13 @@
 #include <bits/stdc++.h>
 #include <dpp/dpp.h>
 #include <random>
+#include <Windows.h>
 #include "functions.h"  //存放自訂函式
 #include "string.h"  //存放陣列字串
 
 using namespace std;
 using namespace dpp;
 using json = nlohmann::json;
-
-int sta[2] = { 1, 1 };
-vector<string> mwl;  //  mwl = majhong wating list
 
 int main() {
     ifstream tkin;
@@ -95,8 +93,20 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
             else if (v[0] == "關機") {
-                if (au == "681076728465981450")
+                if (au == "681076728465981450") {
+                    bot.message_create(message(event.msg.channel_id, "機器人將於五秒後關機"));
+                    Sleep(5000);
+                    /*time_t now = time(0);
+                    cgt = now;  //  cgt = command given time
+                    int gttimes = 0;
+                    do {
+                        time_t now = time(0);
+                        pt = now - cgt;
+                        gttimes++;
+                    } while (pt < 5);
+                    cout << gttimes;*/
                     exit(0);
+                }
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
