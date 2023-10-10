@@ -143,6 +143,9 @@ int main() {
             else if (v[0] == "^jm") {
                 bot.message_create(message(event.msg.channel_id, "https://jmcomic.me/photo/" + v[1]).set_reference(event.msg.id));
             }
+            else if (v[0] == "^w") {
+                bot.message_create(message(event.msg.channel_id, "https://www.wnacg.com/photos-index-aid-" + v[1] + ".html").set_reference(event.msg.id));
+            }
 
             //用隔壁陣列發圖的程式碼
             else if (v[0] == "圖") {
@@ -166,7 +169,7 @@ int main() {
             else if (v[0] == "草" || s.find("笑死") != -1
                 || (s.find("w") != -1 && s.find("a") == -1 && s.find("t") == -1 && s.find("e") == -1 && s.find("s") == -1
                     && s.find("l") == -1 && s.find("d") == -1 && s.find("i") == -1 && s.find("m") == -1 && s.find("o") == -1
-                    && s.find("p") == -1 && s.find("y") == -1)) {
+                    && s.find("p") == -1 && s.find("y") == -1 && s.find("^") == -1)) {
                 bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
             }
             else if(s.find("kusa") != -1) {
@@ -392,8 +395,7 @@ int main() {
                     ).
                     add_field(
                         "Bnag Dream It's MyGO!!!!!超好看",
-                        "Bnag Dream It's MyGO!!!!!超好看\n\
-                         Bnag Dream It's MyGO!!!!!超好看"
+                        "Bnag Dream It's MyGO!!!!!超好看\nBnag Dream It's MyGO!!!!!超好看"
                     ).
                     set_image("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                     set_footer(dpp::embed_footer().set_text("我好喜歡小浠").set_icon("https://cdn.discordapp.com/attachments/981585424017420378/1126716388157964338/Mizuki_.png")).
@@ -417,11 +419,11 @@ int main() {
                     ).
                     add_field(
                         "! 指令",
-                        "help \ncreator \nbutton"
+                        "help \ncreator \nbutton \ngacha \ngetgacha"
                     ).
                     add_field(
                         "^ 指令",
-                        "支援n站、jm車號，以及pixiv圖片編號（8~9碼）"
+                        "支援n站、jm、w站車號，以及pixiv圖片編號（8~9碼）"
                     ).
                     add_field(
                         "抽卡",
