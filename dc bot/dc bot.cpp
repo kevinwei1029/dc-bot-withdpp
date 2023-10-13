@@ -185,8 +185,7 @@ int main() {
             else if(s.find("kusa") != -1) {
                 bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
                 }
-            else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1
-                || v[0] == "gay" || s.find("甲") != -1
+            else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1 || v[0] == "gay" || s.find("甲") != -1
                 || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1) || v[0] == "超給") {
                 bot.message_create(message(event.msg.channel_id, gay[mt() % size(gay)]));
             }
@@ -517,14 +516,12 @@ int main() {
             }
         }
         else if (cgt != 0) {
-
-            clock_t starttm = clock();
             time_t now = time(0);
             tm lctm{};
             localtime_s(&lctm, &now);
 
             pt = now - cgt;
-            if (pt > 3600) {
+            if (pt > 1800) {
                 mwl.clear();
                 cgt = 0;
                 bot.message_create(message(966724745708052520, "等待過久、麻將等待序列已清空"));
