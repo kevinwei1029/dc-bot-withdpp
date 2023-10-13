@@ -524,7 +524,7 @@ int main() {
             localtime_s(&lctm, &now);
 
             pt = now - cgt;
-            if (pt > 36) {
+            if (pt > 3600) {
                 mwl.clear();
                 cgt = 0;
                 bot.message_create(message(966724745708052520, "等待過久、麻將等待序列已清空"));
