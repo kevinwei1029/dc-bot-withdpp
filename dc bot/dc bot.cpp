@@ -216,6 +216,7 @@ int main() {
                 }
                 bot.message_create(message(event.msg.channel_id, mjnre(mwl.size())));
                 sta[1] = 1;
+                cgt = now;
             }
             else if ((s.find("人") != -1 && s.find("待") != -1) || s.find("mjl") != -1) {
                 bot.message_create(message(event.msg.channel_id, mjnre(mwl.size())).set_reference(event.msg.id));
@@ -239,10 +240,10 @@ int main() {
             }
             else if ((s.find("空") != -1 && s.find("待") != -1) || s.find("mjc") != -1) {
                 mwl.clear();
+                cgt = 0;
                 bot.message_create(message(event.msg.channel_id, "等待序列已清空").set_reference(event.msg.id));
             }
             else if ((s.find("功") != -1 && s.find("待") != -1) || s.find("mjf") != -1) {
-                mwl.clear();
                 bot.message_create(message(event.msg.channel_id, mjuse).set_reference(event.msg.id));
             }
 
@@ -513,6 +514,20 @@ int main() {
             }
             else if (s.find("狀態") != -1) {
                 bot.message_create(message(event.msg.channel_id, "sta[0] = " + to_string(sta[0])).set_reference(event.msg.id));
+            }
+        }
+        else if (cgt != 0) {
+
+            clock_t starttm = clock();
+            time_t now = time(0);
+            tm lctm{};
+            localtime_s(&lctm, &now);
+
+            pt = now - cgt;
+            if (pt > 36) {
+                mwl.clear();
+                cgt = 0;
+                bot.message_create(message(966724745708052520, "等待過久、麻將等待序列已清空"));
             }
         }
     });

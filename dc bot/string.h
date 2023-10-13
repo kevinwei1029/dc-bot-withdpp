@@ -13,7 +13,7 @@ string mjuse = "功能 => 中文指令 => 英文指令 => 中文辨識字元 => 
 
 int sta[2] = { 1, 1 };
 vector<string> mwl;  //  mwl = majhong wating list
-//long cgt, pt;  //  pt = passed time
+int cgt, pt;  //  pt = passed time
 
 //所有頻道id陣列
 long long memech[2]{
