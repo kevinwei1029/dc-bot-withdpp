@@ -3,6 +3,8 @@ using namespace std;
 
 //自定義抽卡函式
 string pcrgacha(string times) {
+    if (times.size() < 4)
+        return "主人的...數字...好大...\n巧克力～啊！～快要壞掉了......";
     int pcrga[3] = { 0 };
     mt19937 mt(time(nullptr));
 
@@ -28,6 +30,8 @@ string pcrgacha(string times) {
         + to_string(pcrga[1]) + "張金卡 <:pcr2:1117798436427804754>\n" + to_string(pcrga[0]) + "張彩卡 <:pcr3:1117798715957194923>\n");
 }
 string fgogacha(string times) {
+    if (times.size() < 4)
+        return "主人的...數字...好大...\n巧克力～啊！～快要壞掉了......";
     int fgoga[3] = { 0 };
     mt19937 mt(time(nullptr));
 
@@ -53,6 +57,8 @@ string fgogacha(string times) {
         + to_string(fgoga[1]) + "張金卡<:fgo_K2:1107145363795746977>\n" + to_string(fgoga[0]) + "張彩卡<:fgo_K1:1107145268681519114>\n");
 }
 string arkgacha(string times) {
+    if (times.size() < 4)
+        return "主人的...數字...好大...\n巧克力～啊！～快要壞掉了......";
     mt19937 mt(time(nullptr));
     int arkga[4] = { 0 };
 

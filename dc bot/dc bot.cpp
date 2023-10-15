@@ -255,11 +255,11 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡").set_reference(event.msg.id));
                     break;
                 }
-                if ((v[1] == "pcr" || v[1] == "公連" || v[1] == "PCR") && (v[2].size() < 4))
+                if ((v[1] == "pcr" || v[1] == "公連" || v[1] == "PCR"))
                     bot.message_create(message(event.msg.channel_id, pcrgacha(v[2])));
-                else if ((v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO") && (v[2].size() < 4))
+                else if ((v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO"))
                     bot.message_create(message(event.msg.channel_id, fgogacha(v[2])));
-                else if ((v[1] == "ark" || v[1] == "方舟" || v[1] == "ARK") && (v[2].size() < 4))
+                else if ((v[1] == "ark" || v[1] == "方舟" || v[1] == "ARK"))
                     bot.message_create(message(event.msg.channel_id, arkgacha(v[2])));
                 else
                     bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));
