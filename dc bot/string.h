@@ -22,132 +22,144 @@ long long memech[2]{
 };
 
 //所有發圖字串陣列
-string arkcr[124] = {
+string arkcr[137] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1092538926687858828/1680551962912.jpg",
     "https://media.discordapp.net/attachments/968693698206519356/1092538926914359466/1680551964443.jpg?width=1050&height=735",
     "https://cdn.discordapp.com/attachments/968693698206519356/1092709412789030972/16051910383634.png",
-    "https://www.pixiv.net/artworks/70027330",
-    "https://www.pixiv.net/artworks/96878578",  // 5
-    "https://www.pixiv.net/artworks/106295232" ,
-    "https://www.pixiv.net/artworks/100877791" ,
-    "https://www.pixiv.net/artworks/106192093" ,
-    "https://www.pixiv.net/artworks/106416803" ,
-    "https://www.pixiv.net/artworks/100508530" ,  // 10
-    "https://www.pixiv.net/artworks/98878276" ,
-    "https://www.pixiv.net/artworks/71238969" ,
-    "https://www.pixiv.net/artworks/90495379" ,
-    "https://www.pixiv.net/artworks/89517369" ,
-    "https://www.pixiv.net/artworks/67090381" ,  // 15
-    "https://www.pixiv.net/artworks/91937298",
-    "https://www.pixiv.net/artworks/74751807",
-    "https://www.pixiv.net/artworks/81213258",
-    "https://www.pixiv.net/artworks/85062679",
-    "https://www.pixiv.net/artworks/110582149",  //  20
-    "https://www.pixiv.net/artworks/74871383",
-    "https://www.pixiv.net/artworks/79067802",
-    "https://www.pixiv.net/artworks/79640496",
-    "https://www.pixiv.net/artworks/101872504",
-    "https://www.pixiv.net/artworks/105525478",  // 25
-    "https://www.pixiv.net/artworks/103486827",
-    "https://www.pixiv.net/artworks/105829323",
-    "https://www.pixiv.net/artworks/101933810",
-    "https://www.pixiv.net/artworks/104753423",
-    "https://www.pixiv.net/artworks/99347539",  // 30
-    "https://www.pixiv.net/artworks/83439562",
-    "https://www.pixiv.net/artworks/93266233",
-    "https://www.pixiv.net/artworks/91879173",
-    "https://www.pixiv.net/artworks/103866984",
-    "https://www.pixiv.net/artworks/101028272",  // 35
-    "https://www.pixiv.net/artworks/102634213",
-    "https://www.pixiv.net/artworks/79405727",
-    "https://www.pixiv.net/artworks/105116769",
-    "https://www.pixiv.net/artworks/101872743",
-    "https://www.pixiv.net/artworks/104348996",  // 40
-    "https://www.pixiv.net/artworks/91809487",
-    "https://www.pixiv.net/artworks/97693106",
-    "https://www.pixiv.net/artworks/87451043",
-    "https://www.pixiv.net/artworks/105844530",
-    "https://www.pixiv.net/artworks/75387374",  // 45
-    "https://www.pixiv.net/artworks/82169692",
-    "https://www.pixiv.net/artworks/106220663",
-    "https://www.pixiv.net/artworks/101931248",
-    "https://www.pixiv.net/artworks/93447113",
-    "https://www.pixiv.net/artworks/107951126",  // 50
-    "https://www.pixiv.net/artworks/86343437",
-    "https://www.pixiv.net/artworks/89266819",
-    "https://www.pixiv.net/artworks/106803939",
-    "https://www.pixiv.net/artworks/79779657",
-    "https://www.pixiv.net/artworks/74751807",  // 55
-    "https://www.pixiv.net/artworks/101923676",
-    "https://www.pixiv.net/artworks/87692502",
-    "https://www.pixiv.net/artworks/84329196",
-    "https://www.pixiv.net/artworks/77323551",
-    "https://www.pixiv.net/artworks/77208163",  //  60
-    "https://www.pixiv.net/artworks/85353549",
-    "https://www.pixiv.net/artworks/86053423",
-    "https://www.pixiv.net/artworks/86037415",
-    "https://www.pixiv.net/artworks/79258674",
-    "https://www.pixiv.net/artworks/82160090"  //  65
-    "https://www.pixiv.net/artworks/108413770",
-    "https://www.pixiv.net/artworks/108018284",
-    "https://www.pixiv.net/artworks/109092104",
-    "https://www.pixiv.net/artworks/107234037",
-    "https://www.pixiv.net/artworks/105353416",  //  70
-    "https://www.pixiv.net/artworks/105353416",
-    "https://www.pixiv.net/artworks/102890589",
-    "https://www.pixiv.net/artworks/98795930",
-    "https://www.pixiv.net/artworks/98849187",
-    "https://www.pixiv.net/artworks/98650893",  //  75
-    "https://www.pixiv.net/artworks/108372225",
-    "https://www.pixiv.net/artworks/107330774",
-    "https://www.pixiv.net/artworks/108345276",
-    "https://www.pixiv.net/artworks/109181283",
-    "https://www.pixiv.net/artworks/98898181",  //  80
-    "https://www.pixiv.net/artworks/109192813",
-    "https://www.pixiv.net/artworks/109157386",
-    "https://www.pixiv.net/artworks/101702064",
-    "https://www.pixiv.net/artworks/107121238",
-    "https://www.pixiv.net/artworks/106968058",  //  85
-    "https://www.pixiv.net/artworks/106179650",
-    "https://www.pixiv.net/artworks/91342692",
-    "https://www.pixiv.net/artworks/110712914",
-    "https://www.pixiv.net/artworks/100535122",
-    "https://www.pixiv.net/artworks/98475526",  //  90
-    "https://www.pixiv.net/artworks/110664627",
-    "https://www.pixiv.net/artworks/102913001",
-    "https://www.pixiv.net/artworks/109607317",
-    "https://www.pixiv.net/artworks/95699940",
-    "https://www.pixiv.net/artworks/110582149",  //  95
-    "https://www.pixiv.net/artworks/110597319",
-    "https://www.pixiv.net/artworks/107439143",
-    "https://www.pixiv.net/artworks/95534968",
-    "https://www.pixiv.net/artworks/110008745",
-    "https://www.pixiv.net/artworks/109898769",  //  100
-    "https://www.pixiv.net/artworks/110597319",
-    "https://www.pixiv.net/artworks/109740570",
-    "https://www.pixiv.net/artworks/110161097",
-    "https://www.pixiv.net/artworks/101262774",
-    "https://www.pixiv.net/artworks/105168923",  //  105
-    "https://www.pixiv.net/artworks/109607317",
-    "https://www.pixiv.net/artworks/99638814",
-    "https://www.pixiv.net/artworks/109826719",
-    "https://www.pixiv.net/artworks/110484344",
-    "https://www.pixiv.net/artworks/106334195",  //  110
-    "https://www.pixiv.net/artworks/106884972",
-    "https://www.pixiv.net/artworks/90436390",
-    "https://www.pixiv.net/artworks/103936727",
-    "https://www.pixiv.net/artworks/105257460",
-    "https://www.pixiv.net/artworks/102117373",  //  115
-    "https://www.pixiv.net/artworks/89401257",
-    "https://www.pixiv.net/artworks/101416704",
-    "https://www.pixiv.net/artworks/109104100",
-    "https://www.pixiv.net/artworks/108492583",
-    "https://www.pixiv.net/artworks/98738304",  //  120
-    "https://www.pixiv.net/artworks/110710689",
-    "https://www.pixiv.net/artworks/106907485",
-    "https://www.pixiv.net/artworks/81170525",
-    "https://www.pixiv.net/artworks/80293330",
-    "https://www.pixiv.net/artworks/95993983"  //  125
+    "70027330",
+    "96878578",  // 5
+    "106295232",
+    "100877791",
+    "106192093",
+    "106416803",
+    "100508530",  // 10
+    "98878276",
+    "71238969",
+    "90495379",
+    "89517369",
+    "67090381",  // 15
+    "91937298",
+    "74751807",
+    "81213258",
+    "85062679",
+    "110582149",  //  20
+    "74871383",
+    "79067802",
+    "79640496",
+    "101872504",
+    "105525478",  // 25
+    "103486827",
+    "105829323",
+    "101933810",
+    "104753423",
+    "99347539",  // 30
+    "83439562",
+    "93266233",
+    "91879173",
+    "103866984",
+    "101028272",  // 35
+    "102634213",
+    "79405727",
+    "105116769",
+    "101872743",
+    "104348996",  // 40
+    "91809487",
+    "97693106",
+    "87451043",
+    "105844530",
+    "75387374",  // 45
+    "82169692",
+    "106220663",
+    "101931248",
+    "93447113",
+    "107951126",  // 50
+    "86343437",
+    "89266819",
+    "106803939",
+    "79779657",
+    "74751807",  // 55
+    "101923676",
+    "87692502",
+    "84329196",
+    "77323551",
+    "77208163",  //  60
+    "85353549",
+    "86053423",
+    "86037415",
+    "79258674",
+    "82160090"  //  65
+    "108413770",
+    "108018284",
+    "109092104",
+    "107234037",
+    "105353416",  //  70
+    "105353416",
+    "102890589",
+    "98795930",
+    "98849187",
+    "98650893",  //  75
+    "108372225",
+    "107330774",
+    "108345276",
+    "109181283",
+    "98898181",  //  80
+    "109192813",
+    "109157386",
+    "101702064",
+    "107121238",
+    "106968058",  //  85
+    "106179650",
+    "91342692",
+    "110712914",
+    "100535122",
+    "98475526",  //  90
+    "110664627",
+    "102913001",
+    "109607317",
+    "95699940",
+    "110582149",  //  95
+    "110597319",
+    "107439143",
+    "95534968",
+    "110008745",
+    "109898769",  //  100
+    "110597319",
+    "109740570",
+    "110161097",
+    "101262774",
+    "105168923",  //  105
+    "109607317",
+    "99638814",
+    "109826719",
+    "110484344",
+    "106334195",  //  110
+    "106884972",
+    "90436390",
+    "103936727",
+    "105257460",
+    "102117373",  //  115
+    "89401257",
+    "101416704",
+    "109104100",
+    "108492583",
+    "98738304",  //  120
+    "110710689",
+    "106907485",
+    "81170525",
+    "80293330",
+    "95993983"  //  125
+    "112338470",
+    "112551761",
+    "111725759",
+    "111839375",
+    "112388368",  //  130
+    "111758468",
+    "111581670",
+    "109943265",
+    "109942785",
+    "110540423",  //  135
+    "110963491",
+    "111371221",
 };
 string genshin[2] = {
     "https://imgur.com/yyplIYP",
