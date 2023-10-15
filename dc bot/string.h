@@ -417,6 +417,19 @@ string boobs[10] = {
     "https://imgur.com/O9Lqwkc",
     "https://imgur.com/igTwwD1",  //  10
 };
+string mygo[11] = {
+    "https://imgur.com/zKdIa48",
+    "https://imgur.com/9gVtSAM",
+    "https://imgur.com/5arqdoh",
+    "https://imgur.com/80edijR",
+    "https://imgur.com/vOhrSWo",  //  5
+    "https://imgur.com/2iHIXfG",
+    "https://imgur.com/ekPKhvZ",
+    "https://imgur.com/miTeIOv",
+    "https://imgur.com/pVBpomu",
+    "https://imgur.com/n7FkGpJ",  //  10
+    "https://imgur.com/Z0d05fh",
+};
 string mat[132][2] = {
 {"連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
 {"表單連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},

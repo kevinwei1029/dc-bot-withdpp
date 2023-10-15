@@ -198,6 +198,9 @@ int main() {
             else if (s.find("tsuna") != -1 || v[0] == "<:pte_lemon:986265384992772166>" || s.find("三小") != -1) {
                 bot.message_create(message(event.msg.channel_id, wat[mt() % size(wat)]));
             }
+            else if (s.find("mygo") != -1 || s.find("買夠") != -1 || s.find("MyGO") != -1) {
+                bot.message_create(message(event.msg.channel_id, mygo[mt() % size(mygo)]));
+            }
 
             //雀魂等待序列程式碼
             else if ((s.find("雀") != -1 && s.find("待") != -1) || s.find("mjw") != -1) {
