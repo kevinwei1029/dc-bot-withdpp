@@ -251,10 +251,11 @@ int main() {
 
             //抽卡相關程式碼
             else if (v[0] == "抽" || v[0] == "gacha" || v[0] == "抽卡") {
-                while (tkuse == token[0]) {
+                if (stoi(v[2]) > 1000)
+                    return "主人的...數字...好大...\n巧克力～啊！～快要壞掉了......";
+                else if (tkuse == token[0])
                     bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡").set_reference(event.msg.id));
-                    break;
-                }
+                
                 if ((v[1] == "pcr" || v[1] == "公連" || v[1] == "PCR"))
                     bot.message_create(message(event.msg.channel_id, pcrgacha(v[2])));
                 else if ((v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO"))
@@ -265,34 +266,38 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));
             }
             else if (v[0] == "!gacha") {
-                gatimes = v[1];
-                bot.message_create(
-                    message(event.msg.channel_id, "主人要抽什麼 " + v[1] + " 抽呢？")
-                    .add_component(
-                        component().add_component(
-                            component().set_label("fgo").
-                            set_type(cot_button).
-                            set_style(cos_danger).
-                            set_id("fgoga")
+                if (stoi(v[1]) > 1000)
+                    return "主人的...數字...好大...\n巧克力～啊！～快要壞掉了......";
+                else {
+                    gatimes = v[1];
+                    bot.message_create(
+                        message(event.msg.channel_id, "主人要抽什麼 " + v[1] + " 抽呢？")
+                        .add_component(
+                            component().add_component(
+                                component().set_label("fgo").
+                                set_type(cot_button).
+                                set_style(cos_danger).
+                                set_id("fgoga")
+                            )
                         )
-                    )
-                    .add_component(
-                        component().add_component(
-                            component().set_label("明日方舟").
-                            set_type(cot_button).
-                            set_style(cos_danger).
-                            set_id("arkga")
+                        .add_component(
+                            component().add_component(
+                                component().set_label("明日方舟").
+                                set_type(cot_button).
+                                set_style(cos_danger).
+                                set_id("arkga")
+                            )
                         )
-                    )
-                    .add_component(
-                        component().add_component(
-                            component().set_label("公主連結").
-                            set_type(cot_button).
-                            set_style(cos_danger).
-                            set_id("pcrga")
+                        .add_component(
+                            component().add_component(
+                                component().set_label("公主連結").
+                                set_type(cot_button).
+                                set_style(cos_danger).
+                                set_id("pcrga")
+                            )
                         )
-                    )
-                );
+                    );
+                }
             }
             else if (s == "!getgacha") {
                 bot.message_create(
@@ -316,11 +321,8 @@ int main() {
                 );
             }
             else if (v[0] == "抽到有") {
-
-                while (tkuse == token[0]) {
+                if (tkuse == token[0]) 
                     bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡").set_reference(event.msg.id));
-                    break;
-                }
 
                 if (v[1] == "pcr" || v[1] == "公連" || v[1] == "PCR")
                     bot.message_create(message(event.msg.channel_id, pcrget()));
