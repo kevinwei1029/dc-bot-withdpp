@@ -20,7 +20,7 @@ int main() {
 
     bot.on_log(utility::cout_logger());
 
-    bot.on_slashcommand([](const slashcommand_t& event) {
+    /*bot.on_slashcommand([](const slashcommand_t& event) {
         mt19937 mt(time(nullptr));
 
         if (event.command.get_command_name() == "cuttie")
@@ -31,16 +31,37 @@ int main() {
             event.reply("https://cdn.discordapp.com/attachments/933710044917288963/1092725740195295252/9k.png");
         else if (event.command.get_command_name() == "ark charaters")
             event.reply(arkcr[mt() % size(arkcr)]);
-        }); //使用斜線指令
+        });*/
+    bot.on_user_context_menu([](const dpp::user_context_menu_t& event) {
+        mt19937 mt(time(nullptr));
+        /* check if the context menu name is High Five */
+        if (event.command.get_command_name() == "high five") {
+            dpp::user user = event.get_user(); // the user who the command has been issued on
+            dpp::user author = event.command.get_issuing_user(); // the user who clicked on the context menu
+            event.reply(author.get_mention() + " slapped " + user.get_mention());
+        }
+        else if (event.command.get_command_name() == "cuttie")
+            event.reply("https://cdn.discordapp.com/attachments/1091776372168474665/1121819763593711777/SPOILER_1565.jpg");
+        else if (event.command.get_command_name() == "cattie")
+            event.reply("https://cdn.discordapp.com/attachments/973282252186349588/1083963031077265528/IMG_6734.jpg");
+        else if (event.command.get_command_name() == "bruh")
+            event.reply("https://cdn.discordapp.com/attachments/933710044917288963/1092725740195295252/9k.png");
+        else if (event.command.get_command_name() == "ark charaters")
+            event.reply(arkcr[mt() % size(arkcr)]);
+        });
+    //使用斜線指令
     bot.on_ready([&bot](const ready_t& event) {
-        bot.set_presence(presence(ps_online, at_game, "games!"));
-
         if (run_once<struct register_bot_commands>()) {
-            bot.set_presence(presence(presence_status::ps_online, activity_type::at_game, "with " + std::to_string(get_guild_cache()->count()) + " guilds!"));
-            // Create a timer that runs every 120 seconds, that sets the status
+            slashcommand command;
+            command.set_name("High Five")
+                .set_application_id(bot.me.id)
+                .set_type(dpp::ctxm_user);
+            bot.guild_command_create(command, 966718811216683109); //Replace this with the guild id you want
+
+            bot.set_presence(presence(presence_status::ps_online, activity_type::at_game, "with " + to_string(get_guild_cache()->count()) + " guilds!"));
             bot.start_timer([&bot](const timer& timer) {
-                bot.set_presence(presence(presence_status::ps_online, activity_type::at_game, "with " + std::to_string(get_guild_cache()->count()) + " guilds!"));
-            }, 120);
+                bot.set_presence(presence(presence_status::ps_online, activity_type::at_game, "with " + to_string(get_guild_cache()->count()) + " guilds!"));
+            }, 120);  // Create a timer that runs every 120 seconds, that sets the status
 
             bot.global_command_create(
                 slashcommand("cuttie", "it'll send pics", bot.me.id)
@@ -56,7 +77,7 @@ int main() {
             );
         }
         }); //註冊斜線指令
-    
+
     bot.on_message_create([&bot](const message_create_t& event) {
         s = event.msg.content;
         au = to_string(event.msg.author.id);
@@ -216,7 +237,11 @@ int main() {
                 }
                 bot.message_create(message(event.msg.channel_id, mjnre(mwl.size())));
                 sta[1] = 1;
-                cgt = now;
+
+                bot.start_timer([&bot](const timer& timer) {
+                    mwl.clear();
+                    bot.message_create(message(966724745708052520, "等待過久、麻將等待序列已清空"));
+                }, 3600);
             }
             else if ((s.find("人") != -1 && s.find("待") != -1) || s.find("mjl") != -1) {
                 bot.message_create(message(event.msg.channel_id, mjnre(mwl.size())).set_reference(event.msg.id));
@@ -240,7 +265,6 @@ int main() {
             }
             else if ((s.find("空") != -1 && s.find("待") != -1) || s.find("mjc") != -1) {
                 mwl.clear();
-                cgt = 0;
                 bot.message_create(message(event.msg.channel_id, "等待序列已清空").set_reference(event.msg.id));
             }
             else if ((s.find("功") != -1 && s.find("待") != -1) || s.find("mjf") != -1) {
@@ -492,14 +516,15 @@ int main() {
                 message m(event.msg.channel_id, "this text has a select menu");
                 m.add_component(
                     component().add_component(
-                        component().set_type(cot_selectmenu).
+                        component().
+                        set_type(cot_selectmenu).
                         set_placeholder("Pick something").
                         add_select_option(select_option("label1", "value1", "description1").set_emoji(u8"😄")).
                         add_select_option(select_option("label2", "value2", "description2").set_emoji(u8"🙂")).
                         set_id("myselid")
                     )
                 );
-                bot.message_create(m);
+                event.reply(m);
             }
         }
         else if (au == "681076728465981450" && sta[0] == 0) {
@@ -509,18 +534,6 @@ int main() {
             }
             else if (s.find("狀態") != -1) {
                 bot.message_create(message(event.msg.channel_id, "sta[0] = " + to_string(sta[0])).set_reference(event.msg.id));
-            }
-        }
-        else if (cgt != 0) {
-            time_t now = time(0);
-            tm lctm{};
-            localtime_s(&lctm, &now);
-
-            pt = now - cgt;
-            if (pt > 1800) {
-                mwl.clear();
-                cgt = 0;
-                bot.message_create(message(966724745708052520, "等待過久、麻將等待序列已清空"));
             }
         }
     });
