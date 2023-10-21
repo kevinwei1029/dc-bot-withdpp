@@ -31,10 +31,17 @@ int main() {
             event.reply("https://cdn.discordapp.com/attachments/933710044917288963/1092725740195295252/9k.png");
         else if (event.command.get_command_name() == "ark charaters")
             event.reply(arkcr[mt() % size(arkcr)]);
-        }); //註冊斜線指令
+        }); //使用斜線指令
     bot.on_ready([&bot](const ready_t& event) {
+        bot.set_presence(presence(ps_online, at_game, "games!"));
 
-        if (dpp::run_once<struct register_bot_commands>()) {
+        if (run_once<struct register_bot_commands>()) {
+            bot.set_presence(presence(presence_status::ps_online, activity_type::at_game, "with " + std::to_string(get_guild_cache()->count()) + " guilds!"));
+            // Create a timer that runs every 120 seconds, that sets the status
+            bot.start_timer([&bot](const timer& timer) {
+                bot.set_presence(presence(presence_status::ps_online, activity_type::at_game, "with " + std::to_string(get_guild_cache()->count()) + " guilds!"));
+            }, 120);
+
             bot.global_command_create(
                 slashcommand("cuttie", "it'll send pics", bot.me.id)
             );
@@ -48,7 +55,7 @@ int main() {
                 slashcommand("ark charaters", "it'll send pics", bot.me.id)
             );
         }
-        }); //使用斜線指令
+        }); //註冊斜線指令
     
     bot.on_message_create([&bot](const message_create_t& event) {
         s = event.msg.content;
@@ -94,17 +101,8 @@ int main() {
             }
             else if (v[0] == "關機") {
                 if (au == "681076728465981450") {
-                    bot.message_create(message(event.msg.channel_id, "機器人將於五秒後關機"));
-                    Sleep(5000);
-                    /*time_t now = time(0);
-                    cgt = now;  //  cgt = command given time
-                    int gttimes = 0;
-                    do {
-                        time_t now = time(0);
-                        pt = now - cgt;
-                        gttimes++;
-                    } while (pt < 5);
-                    cout << gttimes;*/
+                    bot.message_create(message(event.msg.channel_id, "機器人將於三秒後關機"));
+                    Sleep(3000);
                     exit(0);
                 }
                 else
@@ -116,7 +114,7 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, "好我先去休息了").set_reference(event.msg.id));
                 sta[0] = 0;
             }
-            else if (v[0] == "董") {
+            else if (s == "董") {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
             }
             else if (s.find("機器人") != -1 && (s.find("連結") != -1)) {
@@ -393,11 +391,11 @@ int main() {
             //embed程式碼
             else if (s == "!creator") {
                 /* create the embed */
-                dpp::embed embed = dpp::embed().
-                    set_color(colors::sti_blue).
+                embed embed = dpp::embed().
+                    set_color(colors::scarlet_red).
                     set_title("CREATOR").
                     set_url("https://github.com/kevinwei1029").
-                    set_author("anime.photos.tw", "https://www.instagram.com/anime.photos.tw/", "https://cdn.discordapp.com/attachments/968693698206519356/1126715809511768176/1eaeade800d23f2c.png").
+                    set_author("anime.photos.tw", "https://www.instagram.com/anime.photos.tw/", "https://imgur.com/mYfhOY7").
                     set_description("優木雪菜我婆！").
                     set_thumbnail("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                     add_field(
@@ -409,11 +407,11 @@ int main() {
                         "https://github.com/kevinwei1029/dc-bot-withdpp"
                     ).
                     add_field(
-                        "Bnag Dream It's MyGO!!!!!超好看",
-                        "Bnag Dream It's MyGO!!!!!超好看\nBnag Dream It's MyGO!!!!!超好看"
+                        "木棉花竟然要代理虹團OVA木棉花我大哥",
+                        "木棉花竟然要代理虹團OVA木棉花我大哥\n木棉花竟然要代理虹團OVA木棉花我大哥"
                     ).
                     set_image("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
-                    set_footer(dpp::embed_footer().set_text("我好喜歡小浠").set_icon("https://cdn.discordapp.com/attachments/981585424017420378/1126716388157964338/Mizuki_.png")).
+                    set_footer(embed_footer().set_text("我好喜歡小雪菜").set_icon("https://imgur.com/mYfhOY7")).
                     set_timestamp(time(0));
 
                 //reply with the created embed
@@ -421,11 +419,11 @@ int main() {
             }
             else if (s == "!help" || s.find("!function") != -1) {
                 /* create the embed */
-                dpp::embed embed = dpp::embed().
+                embed embed = dpp::embed().
                     set_color(colors::sti_blue).
                     set_title("FUNCTIONS").
                     set_url("https://github.com/kevinwei1029").
-                    set_author("anime.photos.tw", "https://www.instagram.com/anime.photos.tw/", "https://cdn.discordapp.com/attachments/968693698206519356/1126715809511768176/1eaeade800d23f2c.png").
+                    set_author("anime.photos.tw", "https://www.instagram.com/anime.photos.tw/", "https://imgur.com/mYfhOY7").
                     set_description("優木雪菜我婆！").
                     set_thumbnail("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
                     add_field(
@@ -446,14 +444,7 @@ int main() {
                     ).
                     add_field(
                         "抽卡功能使用公式",
-                        "抽 (遊戲名稱、中文或半形英文) (抽數、半形數字)"
-                    ).
-                    add_field(
-                        "抽卡公式說明",
-                        "抽字為觸發功能必要、也可輸入gacha代替\n\
-                         三個區段間請用半形空格隔開\n\
-                         遊戲名稱可用pcr、ark、fgo、公連、方舟、居歐\n\
-                         最後打抽數"
+                        "!gacha （抽數、半形數字）"
                     ).
                     add_field(
                         "fgo素材掉落關卡查詢",
@@ -466,7 +457,7 @@ int main() {
                     add_field(
                         "雀魂待機序列",
                         "單獨發「雀魂等待」\n機器人會把你各位加到一個序列中\n\
-                         單獨發「等待人數」\n機器人會告訴你現在有多少人在等待開局\n\
+                         單獨發「等待人數」\n機器人會告訴你現在有哪些人跟多少人在等待開局\n\
                          單獨發「退出等待」\n機器人會把你移出等待序列"
                     ).
                     add_field(
@@ -474,7 +465,7 @@ int main() {
                         "2023/8/25"
                     ).
                     set_image("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
-                    set_footer(dpp::embed_footer().set_text("我好喜歡小浠").set_icon("https://cdn.discordapp.com/attachments/981585424017420378/1126716388157964338/Mizuki_.png")).
+                    set_footer(embed_footer().set_text("我好喜歡小浠").set_icon("https://imgur.com/mYfhOY7")).
                     set_timestamp(time(0));
 
                 /* reply with the created embed */
@@ -549,7 +540,7 @@ int main() {
         else if (s == "pcrgega")
             event.reply(pcrget());
         else
-            event.reply(s);
+            event.reply("You send a invalid custom id : " + s);
     });
 
     bot.start(st_wait);
