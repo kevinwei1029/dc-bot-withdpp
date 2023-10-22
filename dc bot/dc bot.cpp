@@ -41,11 +41,11 @@ int main() {
             event.reply(author.get_mention() + " slapped " + user.get_mention());
         }
         else if (event.command.get_command_name() == "cuttie")
-            event.reply("https://cdn.discordapp.com/attachments/1091776372168474665/1121819763593711777/SPOILER_1565.jpg");
+            event.reply("https://imgur.com/aVtILpp");
         else if (event.command.get_command_name() == "cattie")
-            event.reply("https://cdn.discordapp.com/attachments/973282252186349588/1083963031077265528/IMG_6734.jpg");
+            event.reply("https://imgur.com/aVtILpp");
         else if (event.command.get_command_name() == "bruh")
-            event.reply("https://cdn.discordapp.com/attachments/933710044917288963/1092725740195295252/9k.png");
+            event.reply("https://imgur.com/ucwb6HY");
         else if (event.command.get_command_name() == "ark charaters")
             event.reply(arkcr[mt() % size(arkcr)]);
         });
@@ -61,7 +61,7 @@ int main() {
             bot.set_presence(presence(presence_status::ps_online, activity_type::at_game, "with " + to_string(get_guild_cache()->count()) + " guilds!"));
             bot.start_timer([&bot](const timer& timer) {
                 bot.set_presence(presence(presence_status::ps_online, activity_type::at_game, "with " + to_string(get_guild_cache()->count()) + " guilds!"));
-            }, 120);  // Create a timer that runs every 120 seconds, that sets the status
+            }, 60);  // Create a timer that runs every 120 seconds, that sets the status
 
             bot.global_command_create(
                 slashcommand("cuttie", "it'll send pics", bot.me.id)
