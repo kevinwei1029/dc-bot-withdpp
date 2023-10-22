@@ -58,9 +58,9 @@ int main() {
                 .set_type(dpp::ctxm_user);
             bot.guild_command_create(command, 966718811216683109); //Replace this with the guild id you want
 
-            bot.set_presence(presence(presence_status::ps_online, activity_type::at_game, "with " + to_string(get_guild_cache()->count()) + " guilds!"));
+            bot.set_presence(presence(presence_status::ps_online, activity_type::at_listening, "來自 " + to_string(get_guild_cache()->count()) + " 個伺服器的指令"));
             bot.start_timer([&bot](const timer& timer) {
-                bot.set_presence(presence(presence_status::ps_online, activity_type::at_game, "with " + to_string(get_guild_cache()->count()) + " guilds!"));
+                bot.set_presence(presence(presence_status::ps_online, activity_type::at_listening, "來自 " + to_string(get_guild_cache()->count()) + " 個伺服器的指令"));
             }, 60);  // Create a timer that runs every 120 seconds, that sets the status
 
             bot.global_command_create(
@@ -239,8 +239,10 @@ int main() {
                 sta[1] = 1;
 
                 bot.start_timer([&bot](const timer& timer) {
-                    mwl.clear();
-                    bot.message_create(message(966724745708052520, "等待過久、麻將等待序列已清空"));
+                    if (mwl.size() != NULL) {
+                        mwl.clear();
+                        bot.message_create(message(966724745708052520, "等待過久、麻將等待序列已清空"));
+                    }
                 }, 3600);
             }
             else if ((s.find("人") != -1 && s.find("待") != -1) || s.find("mjl") != -1) {
