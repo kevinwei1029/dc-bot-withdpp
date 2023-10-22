@@ -243,6 +243,8 @@ int main() {
                         mwl.clear();
                         bot.message_create(message(966724745708052520, "等待過久、麻將等待序列已清空"));
                     }
+                    else 
+                        bot.message_create(message(968693698206519356, "主人、序列好像已經清空了、但您曾囑咐我每次都要報告、所以我還是出現在這裡說一聲了！"));
                 }, 3600);
             }
             else if ((s.find("人") != -1 && s.find("待") != -1) || s.find("mjl") != -1) {
