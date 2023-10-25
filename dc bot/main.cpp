@@ -234,7 +234,7 @@ int main() {
                     else
                         bot.stop_timer(timer1);
                     //bot.message_create(message(968693698206519356, "主人、序列好像已經清空了、但您曾囑咐我每次都要報告、所以我還是出現在這裡說一聲了！"));
-                }, 5);//1800);
+                }, 1800);
             }
             else if ((s.find("人") != -1 && s.find("待") != -1) || s.find("mjl") != -1) {
                 bot.message_create(message(event.msg.channel_id, mjnre(mwl.size())).set_reference(event.msg.id));
