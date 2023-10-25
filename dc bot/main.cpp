@@ -20,21 +20,9 @@ int main() {
 
     bot.on_log(utility::cout_logger());
 
-    /*bot.on_slashcommand([](const slashcommand_t& event) {
-        mt19937 mt(time(nullptr));
-
-        if (event.command.get_command_name() == "cuttie")
-            event.reply("https://cdn.discordapp.com/attachments/1091776372168474665/1121819763593711777/SPOILER_1565.jpg");
-        else if (event.command.get_command_name() == "cattie")
-            event.reply("https://cdn.discordapp.com/attachments/973282252186349588/1083963031077265528/IMG_6734.jpg");
-        else if (event.command.get_command_name() == "bruh")
-            event.reply("https://cdn.discordapp.com/attachments/933710044917288963/1092725740195295252/9k.png");
-        else if (event.command.get_command_name() == "ark charaters")
-            event.reply(arkcr[mt() % size(arkcr)]);
-        });*/
     bot.on_user_context_menu([](const dpp::user_context_menu_t& event) {
         mt19937 mt(time(nullptr));
-        /* check if the context menu name is High Five */
+        // check if the context menu name is High Five
         if (event.command.get_command_name() == "high five") {
             dpp::user user = event.get_user(); // the user who the command has been issued on
             dpp::user author = event.command.get_issuing_user(); // the user who clicked on the context menu
@@ -48,8 +36,7 @@ int main() {
             event.reply("https://imgur.com/ucwb6HY");
         else if (event.command.get_command_name() == "ark charaters")
             event.reply(arkcr[mt() % size(arkcr)]);
-        });
-    //使用斜線指令
+        });  //使用斜線指令
     bot.on_ready([&bot](const ready_t& event) {
         if (run_once<struct register_bot_commands>()) {
             slashcommand command;
@@ -76,7 +63,7 @@ int main() {
                 slashcommand("ark charaters", "it'll send pics", bot.me.id)
             );
         }
-        }); //註冊斜線指令
+        }); //setup & 註冊斜線指令
 
     bot.on_message_create([&bot](const message_create_t& event) {
         s = event.msg.content;
