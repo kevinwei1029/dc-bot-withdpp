@@ -210,29 +210,31 @@ int main() {
 
             //雀魂等待序列程式碼
             else if ((s.find("雀") != -1 && s.find("待") != -1) || s.find("mjw") != -1) {
+                ch = event.msg.channel_id;
                 for (auto it = mwl.begin(); it != mwl.end(); ++it) {
                     if (*it == au) {
-                        bot.message_create(message(event.msg.channel_id, "你已在等待開局序列中").set_reference(event.msg.id));
+                        bot.message_create(message(ch, "你已在等待開局序列中").set_reference(event.msg.id));
                         sta[1] = 0;
                         break;
                     }
                 }
                 if (sta[1] == 1) {
-                    bot.message_create(message(event.msg.channel_id, "等待區人數+1").set_reference(event.msg.id));
+                    bot.message_create(message(ch, "等待區人數+1").set_reference(event.msg.id));
                     mwl.push_back(au);
-                    bot.message_create(message(event.msg.channel_id, "https://imgur.com/o2BP09j"));
+                    bot.message_create(message(ch, "https://imgur.com/o2BP09j"));
                 }
-                bot.message_create(message(event.msg.channel_id, mjnre(mwl.size())));
+                bot.message_create(message(ch, mjnre(mwl.size())));
                 sta[1] = 1;
 
-                bot.start_timer([&bot](const timer& timer) {
+                bot.start_timer([&bot](const timer& timer1) {
                     if (mwl.size() != NULL) {
                         mwl.clear();
-                        bot.message_create(message(966724745708052520, "等待過久、麻將等待序列已清空"));
+                        bot.message_create(message(ch, "等待過久、麻將等待序列已清空"));
                     }
-                    else 
-                        bot.message_create(message(968693698206519356, "主人、序列好像已經清空了、但您曾囑咐我每次都要報告、所以我還是出現在這裡說一聲了！"));
-                }, 1800);
+                    else
+                        bot.stop_timer(timer1);
+                    //bot.message_create(message(968693698206519356, "主人、序列好像已經清空了、但您曾囑咐我每次都要報告、所以我還是出現在這裡說一聲了！"));
+                }, 5);//1800);
             }
             else if ((s.find("人") != -1 && s.find("待") != -1) || s.find("mjl") != -1) {
                 bot.message_create(message(event.msg.channel_id, mjnre(mwl.size())).set_reference(event.msg.id));
