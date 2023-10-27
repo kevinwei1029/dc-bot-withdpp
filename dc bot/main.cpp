@@ -370,15 +370,15 @@ int main() {
 
             //素材查詢程式碼
             else if (v[0] == "素材" || v[0] == "fgo素材") {
-                bool find = FALSE;
+                sta[1] = FALSE;
                 for (int i = 0; i < size(mat); i++) {
                     while (v[1] == mat[i][0]) {
                         bot.message_create(message(event.msg.channel_id, "```" + mat[i][1] + "```").set_reference(event.msg.id));
-                        find = TRUE;
+                        sta[1] = TRUE;
                         break;
                     }
                 }
-                if (find == FALSE) {
+                if (sta[1] == FALSE) {
                     message msg(event.msg.channel_id, qre(tkuse, token[0], token[1]));
                     bot.message_create(msg.set_reference(event.msg.id));
                 }
