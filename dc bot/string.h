@@ -12,7 +12,7 @@ string mjuse = "功能 => 中文指令 => 英文指令 => 中文辨識字元 => 
 4. 清空等待序列 => 清空等待 => mjclear => 空、待 => mjc\n\
 辨識字元的意思是，只要有包含這些字詞就可以觸發功能";
 
-int sta[2] = { 1, 1 };
+int sta[3] = { 1, 1 ,1 };
 vector<string> mwl;  //  mwl = majhong wating list
 int cgt, pt;  //  pt = passed time
 
@@ -20,6 +20,10 @@ int cgt, pt;  //  pt = passed time
 long long memech[2]{
     966729542800658442,  //cf公會群梗圖頻
     988815328375078973,  //科學班梗圖頻
+};
+long long mainch[2]{
+    1091776372168474665,
+    988814917459116042
 };
 
 //所有發圖字串陣列

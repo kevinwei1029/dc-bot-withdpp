@@ -80,6 +80,11 @@ int main() {
         }
         //拆訊息
 
+        if (sta[2] == 1) {
+            bot.message_create(message(1091776372168474665, "今天是主人值得紀念的生日呢！\n請讓我在此對主人獻上最誠摯的祝福！\n\n但巧克力沒有什麼好給主人的...\n阿，那就把自己當成禮物好了，主人一定會很開心的！"));
+            sta[2] = 0;
+        }
+
         if (au != "1092497000945160324" && size(event.msg.content) < 150 && sta[0] == 1 && event.msg.channel_id != 1031559558793007114) {  //判斷是否進行比對
             //cout << "enter reading loop" << endl;
             mt19937 mt(time(nullptr));
