@@ -1,4 +1,5 @@
 ﻿#include <bits/stdc++.h>
+#include <dpp/dpp.h>
 using namespace std;
 
 //自定義抽卡函式

@@ -3,7 +3,7 @@
 #include <dpp/dpp.h>
 #include <random>
 #include <Windows.h>
-#include "functions.h"  //存放自訂函式
+#include "functions.cpp"  //存放自訂函式
 #include "string.h"  //存放陣列字串
 
 using namespace std;
@@ -80,12 +80,7 @@ int main() {
         }
         //拆訊息
 
-      /*if (sta[2] == 1) {
-            bot.message_create(message(1091776372168474665, "今天是主人值得紀念的生日呢！\n請讓我在此對主人獻上最誠摯的祝福！\n\n但巧克力沒有什麼好給主人的...\n阿，那就把自己當成禮物好了，主人一定會很開心的！"));
-            sta[2] = 0;
-        }*/
-
-        if (au != "1092497000945160324" && size(event.msg.content) < 150 && sta[0] == 1 && event.msg.channel_id != 1031559558793007114) {  //判斷是否進行比對
+        if (au != "1092497000945160324" && size(event.msg.content) < 150 && sta[0] == 1) {  //判斷是否進行比對
             //cout << "enter reading loop" << endl;
             mt19937 mt(time(nullptr));
 
@@ -123,9 +118,34 @@ int main() {
             }
 
             //其他的程式碼
-            else if (s.find("休息") != -1 && au == "681076728465981450") {
-                bot.message_create(message(event.msg.channel_id, "好我先去休息了").set_reference(event.msg.id));
-                sta[0] = 0;
+            else if (s == "!rest") {
+                bot.message_create(
+                    message(event.msg.channel_id, "主人要讓巧克力休息多久呢？")
+                    .add_component(
+                        component().add_component(
+                            component().set_label("30分鐘").
+                            set_type(cot_button).
+                            set_style(cos_primary).
+                            set_id("rest30m")
+                        )
+                    )
+                    .add_component(
+                        component().add_component(
+                            component().set_label("1小時").
+                            set_type(cot_button).
+                            set_style(cos_secondary).
+                            set_id("rest1h")
+                        )
+                    )
+                    .add_component(
+                        component().add_component(
+                            component().set_label("直到再次喚醒").
+                            set_type(cot_button).
+                            set_style(cos_danger).
+                            set_id("resttc")  //  resttc = rest till call
+                        )
+                    )
+                );
             }
             else if (s == "董") {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
@@ -525,7 +545,7 @@ int main() {
                 event.reply(m);
             }
         }
-        else if (au == "681076728465981450" && sta[0] == 0) {
+        else if (sta[0] == 0) {
             if (s.find("起來") != -1) {
                 sta[0] = 1;
                 bot.message_create(message(event.msg.channel_id, "好的，我回來了").set_reference(event.msg.id));
@@ -533,6 +553,9 @@ int main() {
             else if (s.find("狀態") != -1) {
                 bot.message_create(message(event.msg.channel_id, "sta[0] = " + to_string(sta[0])).set_reference(event.msg.id));
             }
+        }
+        else if (s == "狀態" && sta[0] == 2) {
+            bot.message_create(message(event.msg.channel_id, "巧克力正在有計時的休息").set_reference(event.msg.id));
         }
     });
 
@@ -550,6 +573,33 @@ int main() {
             event.reply(fgoget());
         else if (s == "pcrgega")
             event.reply(pcrget());
+        else if (s.find("rest") != -1) {
+            sta[0] = 2;
+
+            if (s == "rest30m") {
+                event.reply("那我先去休息30分鐘了");
+                bot.start_timer([&bot](const timer& rest) {
+                    sta[0] = 1;
+                    bot.message_create(message(968693698206519356, "休息時間結束了，我回來了！"));
+                    bot.stop_timer(rest);
+                }, 10);  //  測試中設為十秒
+            }
+            else if (s == "rest1h") {
+                event.reply("那我先去休息1小時了");
+                bot.start_timer([&bot](const timer& rest) {
+                    sta[0] = 1;
+                    bot.message_create(message(968693698206519356, "休息時間結束了，我回來了！"));
+                    bot.stop_timer(rest);
+                }, 3600);
+            }
+            else if (s == "resttc") {
+                event.reply("那我先去休息了");
+                sta[0] = 0;
+            }
+            else {
+                event.reply("You send a invalid custom id : " + s);
+            }
+        }
         else
             event.reply("You send a invalid custom id : " + s);
     });

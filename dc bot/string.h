@@ -259,7 +259,7 @@ string kusa[18] = {
     "https://imgur.com/kkZs7Uv",
     "https://imgur.com/bVSi1G7"
 };
-string truee[10] = {
+string truee[11] = {
     "https://imgur.com/GGvgJiZ",
     "https://imgur.com/N6sLTa2",
     "https://imgur.com/5iGBT7f",
@@ -269,7 +269,8 @@ string truee[10] = {
     "https://imgur.com/Clv4BdA",
     "https://imgur.com/IBkAlTX",
     "https://imgur.com/UfxHpPJ",
-    "https://imgur.com/1K6NV3s"
+    "https://imgur.com/1K6NV3s",  //  10
+    "https://imgur.com/a5GMc0e",
 };
 string gay[60] = {
     "https://imgur.com/33maruM",

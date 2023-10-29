@@ -23,7 +23,7 @@
     <Text Include="token.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions.h">
+    <ClInclude Include="functions.cpp">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="string.h">

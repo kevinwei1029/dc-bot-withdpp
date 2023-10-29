@@ -140,7 +140,7 @@
     <Text Include="token.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions.h" />
+    <ClInclude Include="functions.cpp" />
     <ClInclude Include="string.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
