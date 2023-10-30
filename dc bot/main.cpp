@@ -582,7 +582,7 @@ int main() {
                     sta[0] = 1;
                     bot.message_create(message(968693698206519356, "休息時間結束了，我回來了！"));
                     bot.stop_timer(rest);
-                }, 10);  //  測試中設為十秒
+                }, 1800);  //  測試中設為十秒
             }
             else if (s == "rest1h") {
                 event.reply("那我先去休息1小時了");
