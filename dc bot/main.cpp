@@ -173,6 +173,9 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, "已經轉傳到其他頻道了！"));
                 }
             }
+            else if (s.find("檸檬") != -1 && to_string(event.msg.channel_id) == "966724745708052520") {
+                bot.message_create(message(966724745708052520, "https://imgur.com/0T1ZxAF"));
+            }
 
             //發車的程式碼
             else if (v[0] == "^n") {
