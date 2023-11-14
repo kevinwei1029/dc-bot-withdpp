@@ -1,5 +1,6 @@
 ﻿#include <bits/stdc++.h>
 #include <dpp/dpp.h>
+#include "string.h"  //存放陣列字串
 using namespace std;
 
 //自定義抽卡函式

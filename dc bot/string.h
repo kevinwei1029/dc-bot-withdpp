@@ -1,4 +1,5 @@
 ﻿#include <bits/stdc++.h>
+#include <stdio.h>
 using namespace std;
 
 string tkuse, txt, au, s, gatimes, token[2], jrtime = "https://www.eki-net.com/Personal/Top/Index\n\

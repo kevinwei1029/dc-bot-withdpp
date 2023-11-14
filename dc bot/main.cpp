@@ -4,7 +4,6 @@
 #include <random>
 #include <Windows.h>
 #include "functions.cpp"  //存放自訂函式
-#include "string.h"  //存放陣列字串
 
 using namespace std;
 using namespace dpp;
@@ -112,6 +111,15 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, "機器人將於三秒後關機"));
                     Sleep(3000);
                     exit(0);
+                }
+                else
+                    bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
+            }
+            else if (v[0] == "cmd") {
+                if (au == "681076728465981450") {
+                    s = s.substr(4);
+                    txt = WinExec(s.c_str(), SW_SHOWNORMAL);
+                    bot.message_create(message(event.msg.channel_id, txt));
                 }
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
