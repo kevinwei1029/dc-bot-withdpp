@@ -70,27 +70,21 @@ int main() {
         vector<string> v;
         while (v.size() < 10) {
             v.push_back(s.substr(0, s.find(" ")));
-            s = s.substr(s.find(" ") + 1, s.length());
-
-            if (s.find(" ") == 1) {
-                v.push_back(s);
-                break;
-            }
+            s = s.substr(s.find(" ") + 1);
         }
+        s = event.msg.content;
         //拆訊息
 
-        if (au != "1092497000945160324" && size(event.msg.content) < 150 && sta[0] == 1) {  //判斷是否進行比對
-            //cout << "enter reading loop" << endl;
-            mt19937 mt(time(nullptr));
+        mt19937 mt(time(nullptr));
 
-            clock_t starttm = clock();
-            time_t now = time(0);
-            tm lctm{};
-            localtime_s(&lctm, &now);
+        clock_t starttm = clock();
+        time_t now = time(0);
+        tm lctm{};
+        localtime_s(&lctm, &now);
 
-            s = event.msg.content;
+        if (au != "1092497000945160324" && size(event.msg.content) < 150 && sta[0] == 1) {
             //bot.message_create(message(968693698206519356, "我讀到的你的訊息字串長為 " + to_string(size(s))));
-
+            
             //有限本人用的程式碼
             if (v[0] == "test") {
                 if (au == "681076728465981450"){
@@ -119,6 +113,7 @@ int main() {
                 if (au == "681076728465981450") {
                     s = s.substr(4);
                     txt = WinExec(s.c_str(), SW_SHOWNORMAL);
+                    //txt = CreateProcess(s.c_str(), SW_SHOWNORMAL);
                     bot.message_create(message(event.msg.channel_id, txt));
                 }
                 else
