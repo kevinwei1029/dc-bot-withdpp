@@ -3,7 +3,7 @@
 #include <dpp/dpp.h>
 #include <random>
 #include <Windows.h>
-#include "functions.cpp"  //存放自訂函式
+#include "functions.h"  //存放自訂函式
 
 using namespace std;
 using namespace dpp;
