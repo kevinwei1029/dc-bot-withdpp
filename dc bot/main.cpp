@@ -82,12 +82,6 @@ int main() {
         tm lctm{};
         localtime_s(&lctm, &now);
 
-        if (lctm.tm_mon == 11){
-                for (int i = 0; i < 4; i++) {
-                    bot.message_create(message(mainch[i], "https://youtu.be/dQ_d_VKrFgM?feature=shared"));
-                }
-        }
-
         if (au != "1092497000945160324" && size(event.msg.content) < 150 && sta[0] == 1) {
             //bot.message_create(message(968693698206519356, "我讀到的你的訊息字串長為 " + to_string(size(s))));
             
