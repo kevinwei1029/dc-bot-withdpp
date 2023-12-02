@@ -109,6 +109,8 @@ int main() {
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
+
+            //cmd程式碼
             else if (v[0] == "cmd") {
                 if (au == "681076728465981450") {
                     s = s.substr(4);
@@ -116,8 +118,24 @@ int main() {
                     //txt = CreateProcess(s.c_str(), SW_SHOWNORMAL);
                     bot.message_create(message(event.msg.channel_id, txt));
                 }
-                else
-                    bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
+                else {
+                    cc.push_back( s.substr(4) );
+                    bot.message_create(message(event.msg.channel_id, "Your cmd command is waiting for apporval."));
+                }
+                    //bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
+            }
+            else if ((v[0] == "granted") || (v[0] == "deny") && cc[0] != "") {
+                if (v[0] == "granted") {
+                    bot.message_create(message(event.msg.channel_id, "guest cmd command is been conducting : \n" + cc[0]));
+                    WinExec(cc[0].c_str(), SW_SHOWNORMAL);
+                }
+                cc.erase(cc.begin());
+                if (cc[0] != "") {
+                    bot.message_create(message(event.msg.channel_id, "There still have some guest cmd command waiting for your approval :\n"));
+                    for (auto it = cc.begin(); it != cc.end(); it++) {
+                        bot.message_create(message(event.msg.channel_id, *it + "\n"));
+                    }
+                }
             }
 
             //其他的程式碼
