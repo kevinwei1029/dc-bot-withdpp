@@ -4,6 +4,7 @@
 #include <random>
 #include <Windows.h>
 #include "functions.h"  //存放自訂函式
+#define tid = 968693698206519356
 
 using namespace std;
 using namespace dpp;
@@ -83,7 +84,7 @@ int main() {
         localtime_s(&lctm, &now);
 
         if (au != "1092497000945160324" && size(event.msg.content) < 150 && sta[0] == 1) {
-            //bot.message_create(message(968693698206519356, "我讀到的你的訊息字串長為 " + to_string(size(s))));
+            //bot.message_create(message(tid, "我讀到的你的訊息字串長為 " + to_string(size(s))));
             
             //有限本人用的程式碼
             if (v[0] == "test") {
@@ -129,12 +130,17 @@ int main() {
                     bot.message_create(message(event.msg.channel_id, "Guest cmd command is been conducting : \n" + cc[0]));
                     txt = WinExec(cc[0].c_str(), SW_SHOWNORMAL);
                     bot.message_create(message(event.msg.channel_id, txt));
+                    cc.erase(cc.begin());
                 }
-                cc.erase(cc.begin());
+                else if (v[0] == "deny") {
+                    bot.message_create(message(event.msg.channel_id, "Guest cmd command is not allowed to conduct"));
+                    cc.erase(cc.begin());
+                }
+
                 if (cc[0] != "") {
-                    bot.message_create(message(event.msg.channel_id, "There still have some guest cmd command waiting for your approval :\n"));
+                    bot.message_create(message(968693698206519356, "There still have some guest cmd command waiting for your approval :\n"));
                     for (auto it = cc.begin(); it != cc.end(); it++) {
-                        bot.message_create(message(event.msg.channel_id, *it + "\n"));
+                        bot.message_create(message(968693698206519356, *it + "\n"));
                     }
                 }
             }
@@ -283,7 +289,7 @@ int main() {
                     }
                     else
                         bot.stop_timer(timer1);
-                    //bot.message_create(message(968693698206519356, "主人、序列好像已經清空了、但您曾囑咐我每次都要報告、所以我還是出現在這裡說一聲了！"));
+                    //bot.message_create(message(tid, "主人、序列好像已經清空了、但您曾囑咐我每次都要報告、所以我還是出現在這裡說一聲了！"));
                 }, 1800);
             }
             else if ((s.find("人") != -1 && s.find("待") != -1) || s.find("mjl") != -1) {
