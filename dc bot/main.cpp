@@ -127,7 +127,8 @@ int main() {
             else if ((v[0] == "granted") || (v[0] == "deny") && cc[0] != "") {
                 if (v[0] == "granted") {
                     bot.message_create(message(event.msg.channel_id, "Guest cmd command is been conducting : \n" + cc[0]));
-                    WinExec(cc[0].c_str(), SW_SHOWNORMAL);
+                    txt = WinExec(cc[0].c_str(), SW_SHOWNORMAL);
+                    bot.message_create(message(event.msg.channel_id, txt));
                 }
                 cc.erase(cc.begin());
                 if (cc[0] != "") {
