@@ -414,7 +414,7 @@ string nazi[9] = {
     "https://imgur.com/4jwzdqd",
     "https://imgur.com/50vT4IU",
 };
-string boobs[10] = {
+string boobs[11] = {
     "https://imgur.com/vZODCIO",
     "https://imgur.com/98Vakee",
     "https://imgur.com/Vf5WBPx",
@@ -425,6 +425,7 @@ string boobs[10] = {
     "https://imgur.com/0XzWnRg",
     "https://imgur.com/O9Lqwkc",
     "https://imgur.com/igTwwD1",  //  10
+    "https://imgur.com/DZkk9qf",
 };
 string mygo[11] = {
     "https://imgur.com/zKdIa48",
