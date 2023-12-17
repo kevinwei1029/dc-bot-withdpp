@@ -1,7 +1,6 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include "string.h"
 
-int x = 0, y = 0, sta = 1;
+int x = 0, y = 0;
 
 class Sudoku {
 
@@ -27,7 +26,7 @@ public:
     bool ise;  //  if sudoku end
 
     //  construct a cool ending output
-    string cgl[9] = {
+    string cgl[8] = {
 "                                         __      __      __  _             __\n\
   _________  ____  ____ __________ _____/ /_  __/ /___ _/ /_(_)___  ____  / /\n\
  / ___/ __ \\/ __ \\/ __ `/ ___/ __ `/ __  / / / / / __ `/ __/ / __ \\/ __ \\/ / \n\
@@ -75,14 +74,6 @@ _  ___ / __ \\_  __ \\_  __ `/_  ___ / __ `/  __  /_  / / /_  / _  __ `/ __/_  /
                  / ____ /                                                                       \n\
 ",  //  an ascii art
 "\
- ¢i¢i¢i¢i¢i¢iùß ¢i¢i¢i¢i¢i¢iùß ¢i¢i¢iùß   ¢i¢iùß ¢i¢i¢i¢i¢i¢iùß ¢i¢i¢i¢i¢i¢iùß  ¢i¢i¢i¢i¢iùß ¢i¢i¢i¢i¢i¢iùß ¢i¢iùß   ¢i¢iùß¢i¢iùß      ¢i¢i¢i¢i¢iùß ¢i¢i¢i¢i¢i¢i¢i¢iùß¢i¢iùß ¢i¢i¢i¢i¢i¢iùß ¢i¢i¢iùß   ¢i¢iùß¢i¢iùß\n\
-¢i¢iùÝùùùùùùùùùå¢i¢iùÝùùùùùù¢i¢iùß¢i¢i¢i¢iùß  ¢i¢iùø¢i¢iùÝùùùùùùùùùå ¢i¢iùÝùùùù¢i¢iùß¢i¢iùÝùùùù¢i¢iùß¢i¢iùÝùùùù¢i¢iùß¢i¢iùø   ¢i¢iùø¢i¢iùø     ¢i¢iùÝùùùù¢i¢iùßùãùùùù¢i¢iùÝùùùùùå¢i¢iùø¢i¢iùÝùùùùùù¢i¢iùß¢i¢i¢i¢iùß  ¢i¢iùø¢i¢iùø\n\
-¢i¢iùø     ¢i¢iùø   ¢i¢iùø¢i¢iùÝ¢i¢iùß ¢i¢iùø¢i¢iùø  ¢i¢i¢iùß¢i¢i¢i¢i¢i¢iùÝùå¢i¢i¢i¢i¢i¢i¢iùø¢i¢iùø  ¢i¢iùø¢i¢iùø   ¢i¢iùø¢i¢iùø     ¢i¢i¢i¢i¢i¢i¢iùø   ¢i¢iùø   ¢i¢iùø¢i¢iùø   ¢i¢iùø¢i¢iùÝ¢i¢iùß ¢i¢iùø¢i¢iùø\n\
-¢i¢iùø     ¢i¢iùø   ¢i¢iùø¢i¢iùøùã¢i¢iùß¢i¢iùø¢i¢iùø   ¢i¢iùø¢i¢iùÝùùùù¢i¢iùß¢i¢iùÝùùùù¢i¢iùø¢i¢iùø  ¢i¢iùø¢i¢iùø   ¢i¢iùø¢i¢iùø     ¢i¢iùÝùùùù¢i¢iùø   ¢i¢iùø   ¢i¢iùø¢i¢iùø   ¢i¢iùø¢i¢iùøùã¢i¢iùß¢i¢iùøùãùùùå\n\
-ùã¢i¢i¢i¢i¢i¢iùßùã¢i¢i¢i¢i¢i¢iùÝùå¢i¢iùø ùã¢i¢i¢i¢iùøùã¢i¢i¢i¢i¢i¢iùÝùå¢i¢iùø  ¢i¢iùø¢i¢iùø  ¢i¢iùø¢i¢i¢i¢i¢i¢iùÝùåùã¢i¢i¢i¢i¢i¢iùÝùå¢i¢i¢i¢i¢i¢i¢iùß¢i¢iùø  ¢i¢iùø   ¢i¢iùø   ¢i¢iùøùã¢i¢i¢i¢i¢i¢iùÝùå¢i¢iùø ùã¢i¢i¢i¢iùø¢i¢iùß\n\
- ùãùùùùùùùùùùùå ùãùùùùùùùùùùùå ùãùùùå  ùãùùùùùùùå ùãùùùùùùùùùùùå ùãùùùå  ùãùùùåùãùùùå  ùãùùùåùãùùùùùùùùùùùå  ùãùùùùùùùùùùùå ùãùùùùùùùùùùùùùåùãùùùå  ùãùùùå   ùãùùùå   ùãùùùå ùãùùùùùùùùùùùå ùãùùùå  ùãùùùùùùùåùãùùùå\n\
-",  //  an ascii art
-"\
  ¢i¢i¢i¢i¢i¢i  ¢i¢i¢i¢i¢i¢i  ¢i¢i¢i    ¢i¢i  ¢i¢i¢i¢i¢i¢i  ¢i¢i¢i¢i¢i¢i   ¢i¢i¢i¢i¢i  ¢i¢i¢i¢i¢i¢i  ¢i¢i    ¢i¢i ¢i¢i       ¢i¢i¢i¢i¢i  ¢i¢i¢i¢i¢i¢i¢i¢i ¢i¢i  ¢i¢i¢i¢i¢i¢i  ¢i¢i¢i    ¢i¢i ¢i¢i\n\
 ¢i¢i      ¢i¢i    ¢i¢i ¢i¢i¢i¢i   ¢i¢i ¢i¢i       ¢i¢i   ¢i¢i ¢i¢i   ¢i¢i ¢i¢i   ¢i¢i ¢i¢i    ¢i¢i ¢i¢i      ¢i¢i   ¢i¢i    ¢i¢i    ¢i¢i ¢i¢i    ¢i¢i ¢i¢i¢i¢i   ¢i¢i ¢i¢i\n\
 ¢i¢i      ¢i¢i    ¢i¢i ¢i¢i ¢i¢i  ¢i¢i ¢i¢i   ¢i¢i¢i ¢i¢i¢i¢i¢i¢i  ¢i¢i¢i¢i¢i¢i¢i ¢i¢i   ¢i¢i ¢i¢i    ¢i¢i ¢i¢i      ¢i¢i¢i¢i¢i¢i¢i    ¢i¢i    ¢i¢i ¢i¢i    ¢i¢i ¢i¢i ¢i¢i  ¢i¢i ¢i¢i\n\
@@ -107,13 +98,12 @@ Yb      Yb   dP 88 Y88 Yb  \"88 88\"Yb   dP__Yb   8I  dY Y8   8P 88.o    dP__Yb 
     };
 
     //  Constructor
-    Sudoku(int N, int K, int color)
+    Sudoku(int N, int K)
     {
         aht = bc = c = 0;
 
         this->N = N;
         this->K = K;
-        this->c = color;
 
         mat = new int* [N];
         ans = new int* [N];
@@ -316,17 +306,8 @@ Yb      Yb   dP 88 Y88 Yb  \"88 88\"Yb   dP__Yb   8I  dY Y8   8P 88.o    dP__Yb 
     //  print something vertical
     void ptv(int n, char a) {
         for (int i = 0; i < ((n + 1) * (n + 1) + 2 * n * n); i++) {  //  i < n+1 + (n+1)*n + 2*n*n
-            if (a == '-')
-            {
-                SetColor(13);
-                cout << a;
-            }
-            else
-            {
-                cout << a;
-            }
+            cout << a;
         }
-        SetColor();
         cout << '\n';
     };
 
@@ -334,25 +315,18 @@ Yb      Yb   dP 88 Y88 Yb  \"88 88\"Yb   dP__Yb   8I  dY Y8   8P 88.o    dP__Yb 
     void ptb(int n, string s) {
         if (s.size() > ((n + 1) * (n + 1) + 2 * n * n - 2))
         {
-            SetColor(13);
             cout << '|';
-            SetColor(14);
             cout << s << endl;
-            SetColor();
         }
         else
         {
             int bw = ((n + 1) * (n + 1) + 2 * n * n - 2) - s.size();
-            SetColor(13);
             cout << "|";
-            SetColor(14);
             cout << s;
             for (int i = 0; i < bw; i++) {
                 cout << " ";
             }
-            SetColor(13);
             cout << "|\n";
-            SetColor();
         }
     };
 
@@ -360,9 +334,7 @@ Yb      Yb   dP 88 Y88 Yb  \"88 88\"Yb   dP__Yb   8I  dY Y8   8P 88.o    dP__Yb 
     void ptc() {
         time_t now = time(0);
         mt19937 mt(time(nullptr));
-        SetColor(236);
         cout << '\n' << cgl[mt() % size(cgl)] << "\nYou completed a " << N << " * " << N << " Sudoku with " << now - clk << " seconds and " << aht << " hints.\n";
-        SetColor();
         cout << '\n';
 
         for (int i = 0; i < N; i++) {
@@ -416,24 +388,8 @@ Yb      Yb   dP 88 Y88 Yb  \"88 88\"Yb   dP__Yb   8I  dY Y8   8P 88.o    dP__Yb 
 
         //  print the sudoku pattern
         for (int i = 0; i < N; i++) {
-            SetColor(13);
             cout << "|";
             for (int j = 0; j < N; j++) {
-                //  select which color can be used
-                SetColor(c);
-                if (i == x && j == y)
-                {
-                    SetColor(11);  //  where mouse is
-                }
-                else if (res[i][j] == ans[i][j] && res[i][j] != 0)
-                {
-                    SetColor(10);  //  correct answer
-                }
-                else if (res[i][j] != ans[i][j] && res[i][j] != 0)
-                {
-                    SetColor(12);  //  wrong answer
-                }
-
                 //  check if sudocu is completed
                 if (res[i][j] + mat[i][j] != ans[i][j])
                 {
@@ -450,13 +406,10 @@ Yb      Yb   dP 88 Y88 Yb  \"88 88\"Yb   dP__Yb   8I  dY Y8   8P 88.o    dP__Yb 
                 {
                     cout << setw(3) << mat[i][j] + res[i][j];
                 }
-                SetColor();
 
                 //  check if print a separate line
                 if (j % n == n - 1) {
-                    SetColor(13);
                     cout << " |";
-                    SetColor();
                 }
             }
             cout << endl;
@@ -484,41 +437,6 @@ Yb      Yb   dP 88 Y88 Yb  \"88 88\"Yb   dP__Yb   8I  dY Y8   8P 88.o    dP__Yb 
         {
             this->ptc();
         }
-    };
-
-    //  set the color of output
-    //  refrence website : https://blog.wildsky.cc/posts/c-code-note
-    void SetColor(int color = 7) {
-        HANDLE hConsole;
-        hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-        SetConsoleTextAttribute(hConsole, color);
-    }
-
-    //  allow user to choose color used in the game
-    int chc() {
-        c = 16;
-        cout << '\n';
-        while (c < 256) {
-            for (int i = 0; i < 16; i++) {
-                if (c < 256) {
-                    SetColor(c);
-                    cout << "<" << setw(3) << c++ << ">";
-                    SetColor();
-                }
-                else
-                {
-                    break;
-                }
-            }
-            cout << '\n';
-        }
-        cout << "choose a color to show number in the following Sudoku from the chart above,\n\or ";
-        SetColor(79);
-        cout << "input 7";
-        SetColor();
-        cout << " to use basic color (press enter to sent your reply) : ";
-        cin >> c;
-        return c;
     };
 
     //  check if n belongs numbers to fill in
@@ -554,11 +472,9 @@ Yb      Yb   dP 88 Y88 Yb  \"88 88\"Yb   dP__Yb   8I  dY Y8   8P 88.o    dP__Yb 
     void cz() {
         if (!this->mbw.empty())
         {
-            //mbw.top().ix;
             x = mbw.top().ix;
             y = mbw.top().jy;
             this->res[x][y] = 0;
-            //this->res[x][y] = mbw.top().in;
             struct move tem;
             tem.ix = mbw.top().ix;
             tem.jy = mbw.top().jy;

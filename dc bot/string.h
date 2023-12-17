@@ -30,9 +30,10 @@ string mjuse = "功能 => 中文指令 => 英文指令 => 中文辨識字元 => 
 4. 清空等待序列 => 清空等待 => mjclear => 空、待 => mjc\n\
 辨識字元的意思是，只要有包含這些字詞就可以觸發功能";
 
-int sta[3] = { 1, 1 ,1 };
+int sta[3] = { 1, 1, 1}, N = 0, K = 0;
 vector<string> cc;  //  cc = cmd commmands
 vector<string> mwl;  //  mwl = majhong wating list
+vector<string> v;
 int cgt, pt;  //  pt = passed time
 
 //所有頻道id陣列

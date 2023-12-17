@@ -63,7 +63,7 @@ int main() {
     bot.on_message_create([&bot](const message_create_t& event) {
         s = event.msg.content;
         au = to_string(event.msg.author.id);
-        vector<string> v;
+        v.clear();
         while (v.size() < 10) {
             v.push_back(s.substr(0, s.find(" ")));
             s = s.substr(s.find(" ") + 1);
@@ -169,6 +169,25 @@ int main() {
                         )
                     )
                 );
+            }
+            else if (v[0] == "數獨" || v[0] == "sudoku") {
+                N = K = 0;
+                bool isen = true;
+                if (v[1] == "2" || v[1] == "3" || v[1] == "4") N = stoi(v[1]) * stoi(v[1]);
+                else isen = false;
+
+                if (v[2] == "t" || N != 0) K = 2;
+                else if (v[2] == "e" || N != 0) K = 0.5 * N;
+                else if (v[2] == "m" || N != 0) K = 0.6 * N;
+                else if (v[2] == "h" || N != 0) K = 0.75 * N;
+                else isen = false;
+
+                if (isen) {
+                    sta[0] = 3;
+                    txt = "";
+                    Sudoku* sudoku = new Sudoku(4, 2);
+                }
+                else bot.message_create(message(event.msg.channel_id, "ERROR !\nEnter again"));
             }
             else if (s == "董") {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
@@ -574,18 +593,24 @@ int main() {
                 event.reply(m);
             }
         }
-        else if (sta[0] == 0) {
+        else if (sta[0] != 1) {
             if (s.find("起來") != -1) {
                 sta[0] = 1;
                 bot.message_create(message(event.msg.channel_id, "好的，我回來了").set_reference(event.msg.id));
+            }
+            else if (s.find("狀態") != -1 || sta[0] == 0) {
+                bot.message_create(message(event.msg.channel_id, "巧克力正在等待被喚醒的休息").set_reference(event.msg.id));
+            }
+            else if (s.find("狀態") != -1 || sta[0] == 2) {
+                bot.message_create(message(event.msg.channel_id, "巧克力正在有計時的休息").set_reference(event.msg.id));
             }
             else if (s.find("狀態") != -1) {
                 bot.message_create(message(event.msg.channel_id, "sta[0] = " + to_string(sta[0])).set_reference(event.msg.id));
             }
         }
-        else if (s == "狀態" && sta[0] == 2) {
-            bot.message_create(message(event.msg.channel_id, "巧克力正在有計時的休息").set_reference(event.msg.id));
+        else if (sta[0] == 3) {
         }
+        else bot.message_create(message(event.msg.channel_id, "巧克力也不知道你是怎麼跑到這裡來的，大bug快點回報給主人吧！"));
     });
 
     //When a user clicks your button, the on_button_click event will fire, containing the custom_id you defined in your button.

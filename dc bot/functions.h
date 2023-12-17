@@ -1,4 +1,4 @@
-﻿#include "string.h"  //存放陣列字串
+﻿#include "sudoku.h"  //存放陣列字串
 
 //自定義抽卡函式
 string pcrgacha(string times) {
