@@ -1,5 +1,17 @@
-﻿#include <bits/stdc++.h>
+﻿//#include <bits/stdc++.h>
+#include <algorithm>
+#include <ctime>
+#include <dpp/dpp.h>
+#include <fstream>
+#include <iostream>
+#include <map>
+#include <queue>
+#include <random>
+#include <stack>
 #include <stdio.h>
+#include <string>
+#include <vector>
+#include <Windows.h>
 using namespace std;
 
 string tkuse, txt, au, s, gatimes, token[2], jrtime = "https://www.eki-net.com/Personal/Top/Index\n\

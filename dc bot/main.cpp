@@ -1,12 +1,7 @@
 ﻿//#define _CRT_SECURE_NO_DEPRECATE
-#include <bits/stdc++.h>
-#include <dpp/dpp.h>
-#include <random>
-#include <Windows.h>
 #include "functions.h"  //存放自訂函式
 #define tid = 968693698206519356
 
-using namespace std;
 using namespace dpp;
 using json = nlohmann::json;
 
@@ -190,7 +185,7 @@ int main() {
             else if ((s.find("JR") != -1 || s.find("jr") != -1) && s.find("時刻") != -1) {
                 bot.message_create(message(event.msg.channel_id, jrtime));
             }
-            else if (v[0].find("轉") != -1) {
+            /*else if (v[0].find("轉") != -1) {
                 if (v[1] == "梗圖") {
                     for (int i = 0; i < size(memech); i++) {
                         while (memech[i] != event.msg.channel_id) {
@@ -200,7 +195,7 @@ int main() {
                     }
                     bot.message_create(message(event.msg.channel_id, "已經轉傳到其他頻道了！"));
                 }
-            }
+            }*/
             else if (s.find("檸檬") != -1 && to_string(event.msg.channel_id) == "966724745708052520") {
                 bot.message_create(message(966724745708052520, "https://imgur.com/0T1ZxAF"));
             }
@@ -247,7 +242,7 @@ int main() {
             else if(s.find("kusa") != -1) {
                 bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
                 }
-            else if (s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1 || v[0] == "gay" || s.find("甲") != -1
+            else if (v[0] == "gay" || s.find("甲") != -1  //  s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1 || 
                 || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1) || v[0] == "超給") {
                 bot.message_create(message(event.msg.channel_id, gay[mt() % size(gay)]));
             }
@@ -553,7 +548,8 @@ int main() {
                         component().add_component(
                             component().set_label("Click me!").
                             set_type(cot_button).
-                            set_emoji(u8"😄").
+                            set_emoji("😄").
+                            //set_emoji(u8"😄").
                             set_style(cos_danger).
                             set_id("你媽死了")
                         )
@@ -568,8 +564,10 @@ int main() {
                         component().
                         set_type(cot_selectmenu).
                         set_placeholder("Pick something").
-                        add_select_option(select_option("label1", "value1", "description1").set_emoji(u8"😄")).
-                        add_select_option(select_option("label2", "value2", "description2").set_emoji(u8"🙂")).
+                        //add_select_option(select_option("label1", "value1", "description1").set_emoji(u8"😄")).
+                        //add_select_option(select_option("label2", "value2", "description2").set_emoji(u8"🙂")).
+                        add_select_option(select_option("label1", "value1", "description1").set_emoji("😄")).
+                        add_select_option(select_option("label2", "value2", "description2").set_emoji("🙂")).
                         set_id("myselid")
                     )
                 );
