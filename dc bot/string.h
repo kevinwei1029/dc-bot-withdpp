@@ -261,7 +261,7 @@ string fbi[28] = {
     "https://imgur.com/5I4uFpR",
     "https://imgur.com/n1YoBKc",
 };
-string kusa[18] = {
+string kusa[19] = {
     "https://imgur.com/7t35JNT",
     "https://imgur.com/TxP9fcI",
     "https://imgur.com/i7r8tKl",
@@ -279,7 +279,7 @@ string kusa[18] = {
     "https://imgur.com/yP0kmFE",  //  15
     "https://imgur.com/BHyj0zZ",
     "https://imgur.com/kkZs7Uv",
-    "https://imgur.com/bVSi1G7"
+    "https://imgur.com/bVSi1G7",
 };
 string truee[11] = {
     "https://imgur.com/GGvgJiZ",

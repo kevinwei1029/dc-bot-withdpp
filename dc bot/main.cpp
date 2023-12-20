@@ -337,7 +337,7 @@ int main() {
             //抽卡相關程式碼
             else if (v[0] == "抽" || v[0] == "gacha" || v[0] == "抽卡") {
                 if (stoi(v[2]) > 1000)
-                    return "主人的...數字...好大...\n巧克力～啊！～快要壞掉了......";
+                    bot.message_create(message(event.msg.channel_id, "主人的...數字...好大...\n巧克力～啊！～快要壞掉了......").set_reference(event.msg.id));
                 else if (tkuse == token[0])
                     bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡").set_reference(event.msg.id));
                 
@@ -608,9 +608,7 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, "sta[0] = " + to_string(sta[0])).set_reference(event.msg.id));
             }
         }
-        else if (sta[0] == 3) {
-        }
-        else bot.message_create(message(event.msg.channel_id, "巧克力也不知道你是怎麼跑到這裡來的，大bug快點回報給主人吧！"));
+        //else bot.message_create(message(event.msg.channel_id, "巧克力也不知道你是怎麼跑到這裡來的，大bug快點回報給主人吧！"));
     });
 
     //When a user clicks your button, the on_button_click event will fire, containing the custom_id you defined in your button.
