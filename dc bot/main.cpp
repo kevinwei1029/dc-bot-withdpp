@@ -5,6 +5,8 @@
 using namespace dpp;
 using json = nlohmann::json;
 
+Gacha gacha;
+
 int main() {
     ifstream tkin;
     tkin.open("token.txt");
@@ -70,8 +72,6 @@ int main() {
         }
         s = event.msg.content;
         //拆訊息
-
-        mt19937 mt(time(nullptr));
 
         clock_t starttm = clock();
         time_t now = time(0);
@@ -139,6 +139,27 @@ int main() {
                     }
                 }
             }
+            
+            //數獨程式碼
+            else if (v[0] == "數獨" || v[0] == "sudoku") {
+                N = K = 0;
+                bool isen = true;
+                if (v[1] == "2" || v[1] == "3" || v[1] == "4") N = stoi(v[1]) * stoi(v[1]);
+                else isen = false;
+
+                if (v[2] == "t" || N != 0) K = 2;
+                else if (v[2] == "e" || N != 0) K = 0.5 * N;
+                else if (v[2] == "m" || N != 0) K = 0.6 * N;
+                else if (v[2] == "h" || N != 0) K = 0.75 * N;
+                else isen = false;
+
+                if (isen) {
+                    sta[0] = 3;
+                    txt = "";
+                    Sudoku* sudoku = new Sudoku(4, 2);
+                }
+                else bot.message_create(message(event.msg.channel_id, "ERROR !\nEnter again"));
+            }
 
             //其他的程式碼
             else if (s == "!rest") {
@@ -169,25 +190,6 @@ int main() {
                         )
                     )
                 );
-            }
-            else if (v[0] == "數獨" || v[0] == "sudoku") {
-                N = K = 0;
-                bool isen = true;
-                if (v[1] == "2" || v[1] == "3" || v[1] == "4") N = stoi(v[1]) * stoi(v[1]);
-                else isen = false;
-
-                if (v[2] == "t" || N != 0) K = 2;
-                else if (v[2] == "e" || N != 0) K = 0.5 * N;
-                else if (v[2] == "m" || N != 0) K = 0.6 * N;
-                else if (v[2] == "h" || N != 0) K = 0.75 * N;
-                else isen = false;
-
-                if (isen) {
-                    sta[0] = 3;
-                    txt = "";
-                    Sudoku* sudoku = new Sudoku(4, 2);
-                }
-                else bot.message_create(message(event.msg.channel_id, "ERROR !\nEnter again"));
             }
             else if (s == "董") {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
@@ -336,11 +338,13 @@ int main() {
 
             //抽卡相關程式碼
             else if (v[0] == "抽" || v[0] == "gacha" || v[0] == "抽卡") {
-                if (stoi(v[2]) > 1000)
+                bot.message_create(message(event.msg.channel_id, gacha.ga(v[1], v[2])));
+                
+                /*if (stoi(v[2]) > 1000)
                     bot.message_create(message(event.msg.channel_id, "主人的...數字...好大...\n巧克力～啊！～快要壞掉了......").set_reference(event.msg.id));
                 else if (tkuse == token[0])
-                    bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡").set_reference(event.msg.id));
-                
+                    bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡"));
+                    
                 if ((v[1] == "pcr" || v[1] == "公連" || v[1] == "PCR"))
                     bot.message_create(message(event.msg.channel_id, pcrgacha(v[2])));
                 else if ((v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO"))
@@ -348,11 +352,11 @@ int main() {
                 else if ((v[1] == "ark" || v[1] == "方舟" || v[1] == "ARK"))
                     bot.message_create(message(event.msg.channel_id, arkgacha(v[2])));
                 else
-                    bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));
+                    bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));*/
             }
             else if (v[0] == "!gacha") {
                 if (stoi(v[1]) > 1000)
-                    return "主人的...數字...好大...\n巧克力～啊！～快要壞掉了......";
+                    bot.message_create(message(event.msg.channel_id, "主人的...數字...好大...\n巧克力～啊！～快要壞掉了......"));
                 else {
                     gatimes = v[1];
                     bot.message_create(
@@ -406,15 +410,13 @@ int main() {
                 );
             }
             else if (v[0] == "抽到有") {
-                if (tkuse == token[0]) 
-                    bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡").set_reference(event.msg.id));
-
-                if (v[1] == "pcr" || v[1] == "公連" || v[1] == "PCR")
+                bot.message_create(message(event.msg.channel_id, gacha.get(v[1])));
+                /*if (v[1] == "pcr" || v[1] == "公連" || v[1] == "PCR")
                     bot.message_create(message(event.msg.channel_id, pcrget()));
                 else if (v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO")
                     bot.message_create(message(event.msg.channel_id, fgoget()));
                 else
-                    bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));
+                    bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));*/
             }
             else if (v[0] == "機率" || v[0] == "抽卡機率") {
                 if (v[1] == "pcr" || v[1] == "公連")
@@ -615,11 +617,11 @@ int main() {
     bot.on_button_click([&bot](const button_click_t & event) {
         s = event.custom_id;
         if (s == "fgoga")
-            event.reply(fgogacha(gatimes));
+            event.reply( gacha.ga("fgo", gatimes) );
         else if (s == "arkga")
-            event.reply(arkgacha(gatimes));
+            event.reply(gacha.ga("ark", gatimes));
         else if (s == "pcrga")
-            event.reply(pcrgacha(gatimes));
+            event.reply(gacha.ga("pcr", gatimes));
         else if (s == "fgogega")
             event.reply(fgoget());
         else if (s == "pcrgega")

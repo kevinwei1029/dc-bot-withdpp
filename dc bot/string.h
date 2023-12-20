@@ -36,6 +36,8 @@ vector<string> mwl;  //  mwl = majhong wating list
 vector<string> v;
 int cgt, pt;  //  pt = passed time
 
+mt19937 mt(time(nullptr));
+
 //所有頻道id陣列
 long long memech[2]{
     966729542800658442,  //cf公會群梗圖頻
