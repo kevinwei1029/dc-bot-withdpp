@@ -132,7 +132,7 @@ int main() {
                     cc.erase(cc.begin());
                 }
 
-                if (cc[0] != "") {
+                if (cc.size() != 0) {
                     bot.message_create(message(968693698206519356, "There still have some guest cmd command waiting for your approval :\n"));
                     for (auto it = cc.begin(); it != cc.end(); it++) {
                         bot.message_create(message(968693698206519356, *it + "\n"));
