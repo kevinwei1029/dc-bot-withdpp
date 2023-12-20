@@ -1,147 +1,4 @@
-﻿#include "sudoku.h"  //存放陣列字串
-
-//自定義抽卡函式  ->  後來寫成class
-/*string pcrgacha(string times) {
-    int pcrga[3] = { 0 };
-    mt19937 mt(time(nullptr));
-
-    for (int k = 0; k < stoi(times); k++) {
-        int r = mt() % 33;
-
-        switch (r) {
-        case 27:
-            pcrga[0]++;
-            break;
-
-        case 15: case 9: case 31:
-            pcrga[1]++;
-            break;
-
-        default:
-            pcrga[2]++;
-            break;
-        }
-    }
-
-    return ("一共抽到了：\n" + to_string(pcrga[2]) + "張銀卡 <:pcr1:1117798654548377641>\n"
-        + to_string(pcrga[1]) + "張金卡 <:pcr2:1117798436427804754>\n" + to_string(pcrga[0]) + "張彩卡 <:pcr3:1117798715957194923>\n");
-}
-string fgogacha(string times) {
-    int fgoga[3] = { 0 };
-    mt19937 mt(time(nullptr));
-
-    for (int k = 0; k < stoi(times); k++) {
-        int r = mt() % 100;
-
-        switch (r) {
-        case 47:
-            fgoga[0]++;
-            break;
-
-        case 85: case 98: case 6:
-            fgoga[1]++;
-            break;
-
-        default:
-            fgoga[2]++;
-            break;
-        }
-    }
-
-    return ("先說，我沒有保底\n\n一共抽到了：\n" + to_string(fgoga[2]) + "張銀卡<:fgo_K3:1107145411724054532>\n"
-        + to_string(fgoga[1]) + "張金卡<:fgo_K2:1107145363795746977>\n" + to_string(fgoga[0]) + "張彩卡<:fgo_K1:1107145268681519114>\n");
-}
-string arkgacha(string times) {
-    mt19937 mt(time(nullptr));
-    int arkga[4] = { 0 };
-
-    for (int i = 0; i < stoi(times); i++) {
-        int r = mt() % 50;
-
-        switch (r) {
-        case 27:  //六星
-            arkga[0]++;
-            break;
-
-        case 35: case 43: case 15: case 1:  //五星
-            arkga[1]++;
-            break;
-
-        case 5: case 29: case 45: case 18: case 20: case 3: case 26: case 48: case 32: case 40: case 39: case 16: case 8: case 21: case 4:  //四星
-            arkga[2]++;
-            break;
-
-        default:  //三星
-            arkga[3]++;
-            break;
-        }
-    }
-
-    return ("先說，我沒有保底\n\n一共抽到了：\n" + to_string(arkga[3]) + "張三星<:ark3:1107953947353808947>\n"
-        + to_string(arkga[2]) + "張四星<:ark4:1107953907377901579>\n" + to_string(arkga[1]) + "張五星<:ark5:1107953865602637824>\n"
-        + to_string(arkga[0]) + "張六星<:ark6:1107953803057188905>\n");
-}
-string pcrget() {
-    int pcrga[3] = { 0 };
-    int k = 0;
-    mt19937 mt(time(nullptr));
-
-    while (pcrga[0] == 0 && k < 199) {
-        int r = mt() % 33;
-
-        switch (r) {
-        case 27:
-            pcrga[0]++;
-            break;
-
-        case 15: case 9: case 31:
-            pcrga[1]++;
-            break;
-
-        default:
-            pcrga[2]++;
-            break;
-        }
-        k++;
-    }
-
-    if (k < 199)
-        return ("一共抽了" + to_string(k) + "抽\n一共抽到了：\n" + to_string(pcrga[2]) + "張銀卡<:pcr1:1117798654548377641>\n"
-            + to_string(pcrga[1]) + "張金卡<:pcr2:1117798436427804754>\n1張彩卡<:pcr3:1117798715957194923>\n");
-    else
-        return ("so sad你保底了\n\n一共抽了200抽\n一共抽到了：\n" + to_string(pcrga[2]) + "張銀卡<:pcr1:1117798654548377641>\n"
-            + to_string(pcrga[1]) + "張金卡<:pcr2:1117798436427804754>\n");
-}
-string fgoget() {
-    int fgoga[3] = { 0 };
-    int k = 0;
-    mt19937 mt(time(nullptr));
-
-    while (fgoga[0] == 0 && k < 329) {
-        int r = mt() % 100;
-        switch (r) {
-        case 47:
-            fgoga[0]++;
-            break;
-
-        case 85: case 98: case 6:
-            fgoga[1]++;
-            break;
-
-        default:
-            fgoga[2]++;
-            break;
-        }
-        k++;
-    }
-
-    if (k < 329)
-        return ("一共抽了" + to_string(k) + "抽\n一共抽到了：\n" + to_string(fgoga[2]) + "張銀卡<:fgo_K3:1107145411724054532>\n"
-            + to_string(fgoga[1]) + "張金卡<:fgo_K2:1107145363795746977>\n1張彩卡<:fgo_K1:1107145268681519114>\n");
-    else
-        return ("so sad你保底了\n\n一共抽了330抽\n一共抽到了：\n" + to_string(fgoga[2]) + "張銀卡<:fgo_K3:1107145411724054532>\n"
-            + to_string(fgoga[1]) + "張金卡<:fgo_K2:1107145363795746977>");
-}*/
+﻿#include "sudoku.h"
 
 //自定義函式
 string qre(string tkusing, string tk0, string tk1) {
@@ -184,6 +41,7 @@ string mjnre(int size) {
 class Gacha {
 
 private:
+
     const float pcrgp = 0.03, pcrsp = 0.1, fgogp = 0.01, fgosp = 0.03, arkrp = 0.02, arkgp = 0.08, arksp = 0.3;
     float rp = 0.0, gp = 0.0, sp = 0.0;
     int ts = 0;
@@ -219,17 +77,17 @@ private:
     
     string reply(string g){
         if ((g == "pcr" || g == "公連" || g == "PCR")) {
-            return ("抽了" + to_string(ts) + "抽\n共計抽到：\n" + to_string(res[3]) + "張銀卡 <:pcr1:1117798654548377641>\n"
-                + to_string(res[2]) + "張金卡 <:pcr2:1117798436427804754>\n" + to_string(res[1]) + "張彩卡 <:pcr3:1117798715957194923>\n");
+            return ("抽了**" + to_string(ts) + "**抽\n共計抽到：\n**" + to_string(res[3]) + "**張銀卡 <:pcr1:1117798654548377641>\n**"
+                + to_string(res[2]) + "**張金卡 <:pcr2:1117798436427804754>\n**" + to_string(res[1]) + "**張彩卡 <:pcr3:1117798715957194923>\n");
         }
         else if ((g == "fgo" || g == "居歐" || g == "FGO")) {
-            return ("抽了" + to_string(ts) + "抽\n共計抽到：\n" + to_string(res[3]) + "張銀卡<:fgo_K3:1107145411724054532>\n"
-                + to_string(res[2]) + "張金卡<:fgo_K2:1107145363795746977>\n" + to_string(res[1]) + "張彩卡<:fgo_K1:1107145268681519114>\n");
+            return ("抽了**" + to_string(ts) + "**抽\n共計抽到：\n**" + to_string(res[3]) + "**張銀卡<:fgo_K3:1107145411724054532>\n**"
+                + to_string(res[2]) + "**張金卡<:fgo_K2:1107145363795746977>\n**" + to_string(res[1]) + "**張彩卡<:fgo_K1:1107145268681519114>\n");
         }
         else if ((g == "ark" || g == "方舟" || g == "ARK")) {
-            return ("抽了" + to_string(ts) + "抽\n共計抽到：\n" + to_string(res[3]) + "張三星<:ark3:1107953947353808947>\n"
-                + to_string(res[2]) + "張四星<:ark4:1107953907377901579>\n" + to_string(res[1]) + "張五星<:ark5:1107953865602637824>\n"
-                + to_string(res[0]) + "張六星<:ark6:1107953803057188905>\n");
+            return ("抽了**" + to_string(ts) + "**抽\n共計抽到：\n**" + to_string(res[3]) + "**張三星<:ark3:1107953947353808947>\n**"
+                + to_string(res[2]) + "**張四星<:ark4:1107953907377901579>\n**" + to_string(res[1]) + "**張五星<:ark5:1107953865602637824>\n"
+                + to_string(res[0]) + "**張六星<:ark6:1107953803057188905>\n");
         }
         else
             return "巧克力不知道你在說什麼欸～";
@@ -266,9 +124,9 @@ public:
                 ts++;
                 this->rp = this->rp + 0.02;
             }
-            return ("抽了" + to_string(ts) + "抽\n共計抽到：\n" + to_string(res[3]) + "張三星<:ark3:1107953947353808947>\n"
-                + to_string(res[2]) + "張四星<:ark4:1107953907377901579>\n" + to_string(res[1]) + "張五星<:ark5:1107953865602637824>\n"
-                + to_string(res[0]) + "張六星<:ark6:1107953803057188905>\n\n出貨當下彩率 = " + to_string(rp));
+            return ("抽了**" + to_string(ts) + "**抽\n共計抽到：\n**" + to_string(res[3]) + "**張三星<:ark3:1107953947353808947>\n**"
+                + to_string(res[2]) + "**張四星<:ark4:1107953907377901579>\n**" + to_string(res[1]) + "**張五星<:ark5:1107953865602637824>\n**"
+                + to_string(res[0]) + "**張六星<:ark6:1107953803057188905>\n\n出貨當下彩率 = " + to_string(rp));
         }
         else if (gp = 0.03) {  //  公連
             while (!res[1] && ts < 200) {
@@ -276,8 +134,8 @@ public:
                 ts++;
             }
             if (!res[1]) {
-                return ("so sad你保底了\n\n抽到了：\n" + to_string(res[3]) + "張銀卡<:pcr1:1117798654548377641>\n"
-                    + to_string(res[2]) + "張金卡<:pcr2:1117798436427804754>\n");
+                return ("so sad你保底了\n\n抽到了：\n**" + to_string(res[3]) + "**張銀卡<:pcr1:1117798654548377641>\n**"
+                    + to_string(res[2]) + "**張金卡<:pcr2:1117798436427804754>\n");
             }
         }
         else if (gp = 0.01) {  //  fgo
@@ -286,8 +144,8 @@ public:
                 ts++;
             }
             if (!res[1]) {
-                return ("so sad你保底了\n\n抽到了：\n" + to_string(res[3]) + "張銀卡<:fgo_K3:1107145411724054532>\n"
-                    + to_string(res[2]) + "張金卡<:fgo_K2:1107145363795746977>");
+                return ("so sad你保底了\n\n抽到了：\n**" + to_string(res[3]) + "**張銀卡<:fgo_K3:1107145411724054532>\n**"
+                    + to_string(res[2]) + "**張金卡<:fgo_K2:1107145363795746977>");
             }
         }
 

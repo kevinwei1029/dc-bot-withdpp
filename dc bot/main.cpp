@@ -96,7 +96,7 @@ int main() {
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
-            else if (v[0] == "關機") {
+            else if (s == "關機" || s == "sd") {
                 if (au == "681076728465981450") {
                     bot.message_create(message(event.msg.channel_id, "機器人將於三秒後關機"));
                     Sleep(3000);
@@ -401,6 +401,14 @@ int main() {
                     )
                     .add_component(
                         component().add_component(
+                            component().set_label("明日方舟").
+                            set_type(cot_button).
+                            set_style(cos_danger).
+                            set_id("arkgega")
+                        )
+                    )
+                    .add_component(
+                        component().add_component(
                             component().set_label("公主連結").
                             set_type(cot_button).
                             set_style(cos_danger).
@@ -626,6 +634,8 @@ int main() {
             event.reply( gacha.get("fgo"));
         else if (s == "pcrgega")
             event.reply( gacha.get("pcr"));
+        else if (s == "arkgega")
+            event.reply(gacha.get("ark"));
         else if (s.find("rest") != -1) {
             sta[0] = 2;
 
