@@ -623,9 +623,9 @@ int main() {
         else if (s == "pcrga")
             event.reply(gacha.ga("pcr", gatimes));
         else if (s == "fgogega")
-            event.reply(fgoget());
+            event.reply( gacha.get("fgo"));
         else if (s == "pcrgega")
-            event.reply(pcrget());
+            event.reply( gacha.get("pcr"));
         else if (s.find("rest") != -1) {
             sta[0] = 2;
 

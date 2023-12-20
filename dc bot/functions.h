@@ -1,6 +1,6 @@
 ﻿#include "sudoku.h"  //存放陣列字串
 
-//自定義抽卡函式
+//自定義抽卡函式  ->  後來寫成class
 /*string pcrgacha(string times) {
     int pcrga[3] = { 0 };
     mt19937 mt(time(nullptr));
@@ -80,7 +80,7 @@ string arkgacha(string times) {
     return ("先說，我沒有保底\n\n一共抽到了：\n" + to_string(arkga[3]) + "張三星<:ark3:1107953947353808947>\n"
         + to_string(arkga[2]) + "張四星<:ark4:1107953907377901579>\n" + to_string(arkga[1]) + "張五星<:ark5:1107953865602637824>\n"
         + to_string(arkga[0]) + "張六星<:ark6:1107953803057188905>\n");
-}*/
+}
 string pcrget() {
     int pcrga[3] = { 0 };
     int k = 0;
@@ -141,7 +141,7 @@ string fgoget() {
     else
         return ("so sad你保底了\n\n一共抽了330抽\n一共抽到了：\n" + to_string(fgoga[2]) + "張銀卡<:fgo_K3:1107145411724054532>\n"
             + to_string(fgoga[1]) + "張金卡<:fgo_K2:1107145363795746977>");
-}
+}*/
 
 //自定義函式
 string qre(string tkusing, string tk0, string tk1) {
@@ -180,7 +180,6 @@ string mjnre(int size) {
         return "奇怪的vector長度出現了，快叫我老木過來看";
     }
 };
-//只是看行數自爽用
 
 class Gacha {
 
@@ -258,7 +257,18 @@ public:
         if (txt != "") return txt;
         
         if (rp != 0) {  //  方舟
-
+            while (!res[0] && ts < 50) {
+                this->ga1();
+                ts++;
+            }
+            while (!res[0]) {
+                this->ga1();
+                ts++;
+                this->rp = this->rp + 0.02;
+            }
+            return ("抽了" + to_string(ts) + "抽\n共計抽到：\n" + to_string(res[3]) + "張三星<:ark3:1107953947353808947>\n"
+                + to_string(res[2]) + "張四星<:ark4:1107953907377901579>\n" + to_string(res[1]) + "張五星<:ark5:1107953865602637824>\n"
+                + to_string(res[0]) + "張六星<:ark6:1107953803057188905>\n\n出貨當下彩率 = " + to_string(rp));
         }
         else if (gp = 0.03) {  //  公連
             while (!res[1] && ts < 200) {
@@ -284,3 +294,4 @@ public:
         return this->reply(game);
     }
 };
+//只是看行數自爽用
