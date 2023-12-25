@@ -45,7 +45,7 @@ int main() {
             bot.set_presence(presence(presence_status::ps_online, activity_type::at_listening, "來自 " + to_string(get_guild_cache()->count()) + " 個伺服器的指令"));
             bot.start_timer([&bot](const timer& timer) {
                 bot.set_presence(presence(presence_status::ps_online, activity_type::at_listening, "來自 " + to_string(get_guild_cache()->count()) + " 個伺服器的指令"));
-            }, 60);  // Create a timer that runs every 120 seconds, that sets the status
+            }, 60);  // Create a timer that runs every 60 seconds, that sets the status
 
             bot.global_command_create(
                 slashcommand("cuttie", "it'll send pics", bot.me.id)
@@ -219,6 +219,9 @@ int main() {
             }*/
             else if (s.find("檸檬") != -1 && to_string(event.msg.channel_id) == "966724745708052520") {
                 bot.message_create(message(966724745708052520, "https://imgur.com/0T1ZxAF"));
+            }
+            else if (s.find("聖誕快樂") != -1) {
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/JYyKXU2"));
             }
 
             //發車的程式碼
