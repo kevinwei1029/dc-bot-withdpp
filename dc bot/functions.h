@@ -159,15 +159,34 @@ public:
         for (int i = 0; i < 10; i++) {
             *(p + i) = 0;
         }
-        for (int i = 0; i < 100; i++) {
-            num = mt() % 100 + 1;
+        for (int i = 0; i < 500; i++) {
+            num = mt() % 100;
             *(p + (num / 10)) += 1;
         }
-        txt = "在100次試驗裡面：\n";
+        txt = "在500次試驗裡面：\n";
         for (int i = 10; i < 101; i += 10) {
             txt += to_string(i - 9) + " ~ " + to_string(i) + "出現了 " + to_string(*(p + (i / 10 - 1))) + " 次、\n";
         }
         delete [] p;
+        return txt;
+    }
+
+    string rdt(string times) {
+        txt = "";
+        int* p = new int[10];
+        int num;
+        for (int i = 0; i < 10; i++) {
+            *(p + i) = 0;
+        }
+        for (int i = 0; i < stoi(times); i++) {
+            num = mt() % 100;
+            *(p + (num / 10)) += 1;
+        }
+        txt = "在" + times + "次試驗裡面：\n";
+        for (int i = 10; i < 101; i += 10) {
+            txt += to_string(i - 9) + " ~ " + to_string(i) + "出現了 " + to_string(*(p + (i / 10 - 1))) + " 次、\n";
+        }
+        delete[] p;
         return txt;
     }
 };
