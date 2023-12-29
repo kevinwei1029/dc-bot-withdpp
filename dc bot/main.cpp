@@ -442,7 +442,7 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, txt).set_reference(event.msg.id));
             }
             else if (v[0] == "亂數測試") {
-                message msg(event.msg.channel_id, to_string(mt()));
+                message msg(event.msg.channel_id, gacha.rdt());
                 bot.message_create(msg.set_reference(event.msg.id));
             }
             else if (v[0] == "抽卡說明") {

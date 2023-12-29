@@ -151,5 +151,24 @@ public:
 
         return this->reply(game);
     }
+
+    string rdt() {
+        txt = "";
+        int* p = new int[10];
+        int num;
+        for (int i = 0; i < 10; i++) {
+            *(p + i) = 0;
+        }
+        for (int i = 0; i < 100; i++) {
+            num = mt() % 100 + 1;
+            *(p + (num / 10)) += 1;
+        }
+        txt = "在100次試驗裡面：\n";
+        for (int i = 10; i < 101; i += 10) {
+            txt += to_string(i - 9) + " ~ " + to_string(i) + "出現了 " + to_string(*(p + (i / 10 - 1))) + " 次、\n";
+        }
+        delete [] p;
+        return txt;
+    }
 };
 //只是看行數自爽用
