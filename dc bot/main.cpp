@@ -1,6 +1,7 @@
 ﻿//#define _CRT_SECURE_NO_DEPRECATE
 #include "functions.h"  //存放自訂函式
 #define tid = 968693698206519356
+#define utc_area 8
 
 using namespace dpp;
 using json = nlohmann::json;
@@ -73,10 +74,10 @@ int main() {
         s = event.msg.content;
         //拆訊息
 
-        clock_t starttm = clock();
-        time_t now = time(0);
-        tm lctm{};
-        localtime_s(&lctm, &now);
+        struct tm local;
+        localtime_s(&local, &event.msg.sent);
+        local.tm_hour += utc_area;
+        local.tm_hour = local.tm_hour % 24;
 
         if (au != "1092497000945160324" && size(event.msg.content) < 150 && sta[0] == 1) {
             //bot.message_create(message(tid, "我讀到的你的訊息字串長為 " + to_string(size(s))));
@@ -92,7 +93,7 @@ int main() {
             }
             else if (v[0] == "test1") {
                 if (au == "681076728465981450")
-                    bot.message_create(message(event.msg.channel_id, "已經" + to_string(lctm.tm_hour) + "點了，主人要早點去睡覺喔！"));
+                    bot.message_create(message(event.msg.channel_id, "已經" + to_string(local.tm_hour) + "點了，主人要早點去睡覺喔！"));
                 else
                     bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
             }
@@ -141,7 +142,7 @@ int main() {
             }
             
             //數獨程式碼
-            else if (v[0] == "數獨" || v[0] == "sudoku") {
+            /*else if (v[0] == "數獨" || v[0] == "sudoku") {
                 N = K = 0;
                 bool isen = true;
                 if (v[1] == "2" || v[1] == "3" || v[1] == "4") N = stoi(v[1]) * stoi(v[1]);
@@ -159,8 +160,8 @@ int main() {
                     Sudoku* sudoku = new Sudoku(4, 2);
                 }
                 else bot.message_create(message(event.msg.channel_id, "ERROR !\nEnter again"));
-            }
-
+            }*/
+            
             //其他的程式碼
             else if (s == "!rest") {
                 bot.message_create(
@@ -222,6 +223,9 @@ int main() {
             }
             else if (s.find("聖誕快樂") != -1) {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/JYyKXU2"));
+            }
+            else if (event.msg.mention_everyone) {
+                bot.message_create(message(event.msg.channel_id, "https://imgur.com/dBzNTzQ"));
             }
 
             //發車的程式碼
