@@ -170,6 +170,7 @@ public:
             txt += to_string(i - 9) + " ~ " + to_string(i) + "出現了 " + to_string(*(p + (i / 10 - 1))) + " 次、\n";
         }
         delete [] p;
+        txt.pop_back();
         return txt;
     }
 
