@@ -69,7 +69,6 @@ int main() {
         s = event.msg.content;
         //拆訊息
 
-        struct tm local;
         localtime_s(&local, &event.msg.sent);
         local.tm_hour += utc_area;
         local.tm_hour = local.tm_hour % 24;
@@ -135,27 +134,6 @@ int main() {
                     }
                 }
             }
-            
-            //數獨程式碼
-            /*else if (v[0] == "數獨" || v[0] == "sudoku") {
-                N = K = 0;
-                bool isen = true;
-                if (v[1] == "2" || v[1] == "3" || v[1] == "4") N = stoi(v[1]) * stoi(v[1]);
-                else isen = false;
-
-                if (v[2] == "t" || N != 0) K = 2;
-                else if (v[2] == "e" || N != 0) K = 0.5 * N;
-                else if (v[2] == "m" || N != 0) K = 0.6 * N;
-                else if (v[2] == "h" || N != 0) K = 0.75 * N;
-                else isen = false;
-
-                if (isen) {
-                    sta[0] = 3;
-                    txt = "";
-                    Sudoku* sudoku = new Sudoku(4, 2);
-                }
-                else bot.message_create(message(event.msg.channel_id, "ERROR !\nEnter again"));
-            }*/
             
             //其他的程式碼
             else if (s == "!rest") {
