@@ -12,9 +12,9 @@ Acceed senbai;
 int main() {
     ifstream tkin;
     tkin.open("token.txt");
-    tkin >> token[0] >> token[1]; //[0]為ショコラ [1]為女僕凱爾希
+    tkin >> token[0] >> token[1]; //  [0]為ショコラ [1]為女僕凱爾希
     tkin.close();
-    tkuse = token[0];
+    tkuse = token[0];  //  [1]已被踢出
     cluster bot(tkuse, i_default_intents | i_message_content);
 
     bot.on_log(utility::cout_logger());
@@ -34,7 +34,7 @@ int main() {
             event.reply("https://imgur.com/ucwb6HY");
         else if (event.command.get_command_name() == "ark charaters")
             event.reply(arkcr[mt() % size(arkcr)]);
-        });  //使用斜線指令
+        });  //  使用斜線指令
     bot.on_ready([&bot](const ready_t& event) {
         if (run_once<struct register_bot_commands>()) {
 
@@ -66,6 +66,7 @@ int main() {
             v.push_back(s.substr(0, s.find(" ")));
             s = s.substr(s.find(" ") + 1);
         }
+        v.push_back(s);
         s = event.msg.content;
         //拆訊息
 
@@ -322,20 +323,6 @@ int main() {
             //抽卡相關程式碼
             else if (v[0] == "抽" || v[0] == "gacha" || v[0] == "抽卡") {
                 bot.message_create(message(event.msg.channel_id, gacha.ga(v[1], v[2])));
-                
-                /*if (stoi(v[2]) > 1000)
-                    bot.message_create(message(event.msg.channel_id, "主人的...數字...好大...\n巧克力～啊！～快要壞掉了......").set_reference(event.msg.id));
-                else if (tkuse == token[0])
-                    bot.message_create(message(event.msg.channel_id, "好的主人幫您抽卡"));
-                    
-                if ((v[1] == "pcr" || v[1] == "公連" || v[1] == "PCR"))
-                    bot.message_create(message(event.msg.channel_id, pcrgacha(v[2])));
-                else if ((v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO"))
-                    bot.message_create(message(event.msg.channel_id, fgogacha(v[2])));
-                else if ((v[1] == "ark" || v[1] == "方舟" || v[1] == "ARK"))
-                    bot.message_create(message(event.msg.channel_id, arkgacha(v[2])));
-                else
-                    bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));*/
             }
             else if (v[0] == "!gacha") {
                 if (stoi(v[1]) > 1000)

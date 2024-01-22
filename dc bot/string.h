@@ -19,16 +19,17 @@
 #include <Windows.h>
 using namespace std;
 
-string tkuse, txt, au, s, gatimes, token[2], jrtime = "https://www.eki-net.com/Personal/Top/Index\n\
-https://www.jreast.co.jp/tickets/\n\
-https://ekitan.com/timetable/railway/line/5000";
+string tkuse, txt, au, s, gatimes, token[2];
 long long ch;
-string mjuse = "功能 => 中文指令 => 英文指令 => 中文辨識字元 => 英文辨識字元\n\n\
+const string mjuse = "功能 => 中文指令 => 英文指令 => 中文辨識字元 => 英文辨識字元\n\n\
 1. 加入等待序列 => 雀魂等待 => mjwaiting => 雀、待 => mjw\n\
 2. 查看等待序列 => 等待人數 => mjlist => 人、待 => mjl\n\
 3. 退出等待序列 => 退出等待 => mjquit => 退、待 => mjq\n\
 4. 清空等待序列 => 清空等待 => mjclear => 空、待 => mjc\n\
 辨識字元的意思是，只要有包含這些字詞就可以觸發功能";
+const string jrtime = "https://www.eki-net.com/Personal/Top/Index\n\
+https://www.jreast.co.jp/tickets/\n\
+https://ekitan.com/timetable/railway/line/5000";
 
 int sta[3] = { 1, 1, 1}, N = 0, K = 0;
 vector<string> cc;  //  cc = cmd commmands
@@ -41,11 +42,11 @@ mt19937 mt(time(nullptr));
 struct tm local;
 
 //所有頻道id陣列
-long long memech[2]{
+const long long memech[2]{
     966729542800658442,  //cf公會群梗圖頻
     988815328375078973,  //科學班梗圖頻
 };
-long long mainch[4]{
+const long long mainch[4]{
     1091776372168474665,  //  1091776372168474665
     920334460082356254,  //  
     1174936069960126515,
@@ -53,7 +54,7 @@ long long mainch[4]{
 };
 
 //所有發圖字串陣列
-string arkcr[137] = {
+const string arkcr[137] = {
     "https://cdn.discordapp.com/attachments/968693698206519356/1092538926687858828/1680551962912.jpg",
     "https://media.discordapp.net/attachments/968693698206519356/1092538926914359466/1680551964443.jpg?width=1050&height=735",
     "https://cdn.discordapp.com/attachments/968693698206519356/1092709412789030972/16051910383634.png",
@@ -192,11 +193,11 @@ string arkcr[137] = {
     "110963491",
     "111371221",
 };
-string genshin[2] = {
+const string genshin[2] = {
     "https://imgur.com/yyplIYP",
     "https://imgur.com/LVm8mtN",
 };
-string dalao[20] = {
+const string dalao[20] = {
     "https://imgur.com/hUQibPF",
     "https://imgur.com/XufO0dC",
     "https://imgur.com/cQzMQPO",
@@ -218,7 +219,7 @@ string dalao[20] = {
     "https://imgur.com/wgUZ8HO",
     "https://imgur.com/3FHXsvL",  //  20
 };
-string europe[10] = {
+const string europe[10] = {
     "我沒差啊\n你們都這樣\n我習慣了阿\n\n\
 你們在曬的時候有考慮過我的感受嗎？\n沒有阿\n從以前到現在一直以來都沒有阿\n\n\
 阿我就是非洲阿\n什麼幾抽寶幾\n我現在都不在意了\n就連那個未持有\n我現在都已經懶得理他了\n\n\
@@ -235,7 +236,7 @@ string europe[10] = {
     "https://imgur.com/b8R5npH",
     "https://imgur.com/Hy3AgYl"
 };
-string fbi[28] = {
+const string fbi[28] = {
     "https://imgur.com/8G9kPNg",
     "https://imgur.com/zUGMmNw",
     "https://imgur.com/B2jRZjU",
@@ -265,7 +266,7 @@ string fbi[28] = {
     "https://imgur.com/5I4uFpR",
     "https://imgur.com/n1YoBKc",
 };
-string kusa[19] = {
+const string kusa[19] = {
     "https://imgur.com/7t35JNT",
     "https://imgur.com/TxP9fcI",
     "https://imgur.com/i7r8tKl",
@@ -285,7 +286,7 @@ string kusa[19] = {
     "https://imgur.com/kkZs7Uv",
     "https://imgur.com/bVSi1G7",
 };
-string truee[11] = {
+const string truee[11] = {
     "https://imgur.com/GGvgJiZ",
     "https://imgur.com/N6sLTa2",
     "https://imgur.com/5iGBT7f",
@@ -298,7 +299,7 @@ string truee[11] = {
     "https://imgur.com/1K6NV3s",  //  10
     "https://imgur.com/a5GMc0e",
 };
-string gay[60] = {
+const string gay[60] = {
     "https://imgur.com/33maruM",
     "https://imgur.com/zk5mVtC",
     "https://imgur.com/BhvOl22",
@@ -360,7 +361,7 @@ string gay[60] = {
     "https://imgur.com/QMJNp80",
     "https://imgur.com/9orI0tl",  //  60
 };
-string wat[26]{
+const string wat[26]{
     "https://imgur.com/Uz1ZWqo",
     "https://imgur.com/OUvENhb",
     "https://imgur.com/WRdAmE3",
@@ -388,7 +389,7 @@ string wat[26]{
     "https://imgur.com/VIpxfyk",  //  25
     "https://imgur.com/s5RCnpz",
 };
-string ksexre[11] = {
+const string ksexre[11] = {
     "我能理解你的疲憊。\n這段時間裡持久的戰鬥累積的壓力，令你躁動的生理需求超出了你所能忍耐的水平。",
     "奇怪，我理應不會被源石技藝帶來的任何錯覺干擾。",
     "......\n看來你的生命跡象與意識狀態尚不穩定。經過稍早的理學檢查，我已大致推斷出導致現狀的原因。",
@@ -406,7 +407,7 @@ string ksexre[11] = {
 你有更重要的事情去做，而我微不足道。",  //  10
     "https://cdn.discordapp.com/attachments/966729542800658442/1134840733002629160/received_1043911593721873.jpg"
 };
-string cstre[11] = {
+const string cstre[11] = {
     "你看，チョコラ的下面都已經濕一片了喔？",
     "好的主人，就在這裡吧？",
     "チョコラ...只要一想到主人...身體都躁動了起來....",
@@ -419,14 +420,14 @@ string cstre[11] = {
     "主人，光看是不行的喔？",  //  10
     "才剛看了我淫蕩的臉就發情成這樣嗎？"
 };
-string cspre[5] = {
+const string cspre[5] = {
     "https://cdn.discordapp.com/attachments/1135513819565797457/1135513859474595951/image.png",
     "https://cdn.discordapp.com/attachments/1135513819565797457/1135514219597537301/image.png",
     "https://cdn.discordapp.com/attachments/1135513819565797457/1135514457477501018/image.png",
     "https://cdn.discordapp.com/attachments/1135513819565797457/1135515139743948861/image.png",
     "https://cdn.discordapp.com/attachments/1135513819565797457/1135515227094519928/image.png",  //  5
 };
-string nazi[9] = {
+const string nazi[9] = {
     "https://imgur.com/11XKQcu",
     "https://imgur.com/PEbwSv0",
     "https://imgur.com/R8j3yCx",
@@ -437,7 +438,7 @@ string nazi[9] = {
     "https://imgur.com/4jwzdqd",
     "https://imgur.com/50vT4IU",
 };
-string boobs[11] = {
+const string boobs[11] = {
     "https://imgur.com/vZODCIO",
     "https://imgur.com/98Vakee",
     "https://imgur.com/Vf5WBPx",
@@ -450,7 +451,7 @@ string boobs[11] = {
     "https://imgur.com/igTwwD1",  //  10
     "https://imgur.com/DZkk9qf",
 };
-string mygo[11] = {
+const string mygo[11] = {
     "https://imgur.com/zKdIa48",
     "https://imgur.com/9gVtSAM",
     "https://imgur.com/5arqdoh",
@@ -463,7 +464,7 @@ string mygo[11] = {
     "https://imgur.com/n7FkGpJ",  //  10
     "https://imgur.com/Z0d05fh",
 };
-string mat[132][2] = {
+const string mat[132][2] = {
 {"連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
 {"表單連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
 {"功能", "輸入「素材 素材名稱」(暱稱及全名都可以)"},
