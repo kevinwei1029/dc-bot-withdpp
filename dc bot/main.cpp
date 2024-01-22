@@ -7,6 +7,7 @@ using namespace dpp;
 using json = nlohmann::json;
 
 Gacha gacha;
+Acceed senbai;
 
 int main() {
     ifstream tkin;
@@ -19,7 +20,6 @@ int main() {
     bot.on_log(utility::cout_logger());
 
     bot.on_user_context_menu([](const dpp::user_context_menu_t& event) {
-        mt19937 mt(time(nullptr));
         // check if the context menu name is High Five
         if (event.command.get_command_name() == "high five") {
             dpp::user user = event.get_user(); // the user who the command has been issued on
@@ -37,11 +37,6 @@ int main() {
         });  //使用斜線指令
     bot.on_ready([&bot](const ready_t& event) {
         if (run_once<struct register_bot_commands>()) {
-            slashcommand command;
-            command.set_name("High Five")
-                .set_application_id(bot.me.id)
-                .set_type(dpp::ctxm_user);
-            bot.guild_command_create(command, 966718811216683109); //Replace this with the guild id you want
 
             bot.set_presence(presence(presence_status::ps_online, activity_type::at_listening, "來自 " + to_string(get_guild_cache()->count()) + " 個伺服器的指令"));
             bot.start_timer([&bot](const timer& timer) {
@@ -226,6 +221,9 @@ int main() {
             }
             else if (event.msg.mention_everyone) {
                 bot.message_create(message(event.msg.channel_id, "https://imgur.com/dBzNTzQ"));
+            }
+            else if (v[0] == "論證") {
+                bot.message_create(message(event.msg.channel_id, senbai.rep(stoi(v[1]))));
             }
 
             //發車的程式碼
