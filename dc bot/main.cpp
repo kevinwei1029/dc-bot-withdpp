@@ -3,9 +3,6 @@
 #define tid = 968693698206519356
 #define utc_area 8
 
-using namespace dpp;
-using json = nlohmann::json;
-
 Gacha gacha;
 Acceed senbai;
 
@@ -76,13 +73,20 @@ int main() {
 
         react_collector* r = nullptr;
 
-        if (au != "1092497000945160324" && size(event.msg.content) < 150 && sta[0] == 1) {
+        if (au == "1092497000945160324") {
+            ofstream jsonfile("mesdata.json");
+            json mesdata = event.msg.build_json(true, true);
+            jsonfile << setw(4) << mesdata << endl;
+            jsonfile.close();
+        }
+        else if (size(event.msg.content) < 150 && sta[0] == 1) {
             //bot.message_create(message(tid, "我讀到的你的訊息字串長為 " + to_string(size(s))));
             
             //有限本人用的程式碼
             if (v[0] == "test") {
                 if (au == "681076728465981450"){
                     bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
+                    //bot.message_delete(1204017417005563905, 968693698206519356);
                     //bot.message_create(message(memech[0], to_string(event.msg.guild_id)));
                 }
                 else
@@ -207,13 +211,20 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, senbai.rep(stoi(v[1]))));
             }
             else if (s == "刪我" || s == "delete me") {
-                // 獲取收到的訊息
-                const dpp::snowflake ch_id = event.msg.channel_id, ms_id = event.msg.id;
-
+                // 獲取收到的訊息 
+                dpp::message dmsg;
+                dmsg.channel_id = event.msg.channel_id; // 替換為要發送訊息的頻道 ID
+                dmsg.content = "Hello from Discord++ (DPP)!\nThis is a delete test.";
+                //Deletemes* ptr = new Deletemes(dmsg);
+                bot.message_create(dmsg);
+                Sleep(5000);
+                //co_await(bot.message_create(dmsg));
+                
+                dpp::message delete_msg = dmsg;
                 // 刪除訊息
-                bot.message_delete(ch_id, ms_id);
-                bot.message_create(message(event.msg.channel_id, "已經照您的要求刪掉了\nchannel id : " + to_string(ch_id)
-                    + "\nmsg id : " + to_string(ms_id)));
+                bot.message_delete(delete_msg.id, delete_msg.channel_id);
+                bot.message_create(message(event.msg.channel_id, "已經照您的要求刪掉了\nchannel id : " + to_string(delete_msg.channel_id)
+                    + "\nmsg id : " + to_string(delete_msg.id)));
             }
             else if (s == "ed") {
                 bot.message_create(message(event.msg.channel_id, "edit test"));
@@ -232,7 +243,10 @@ int main() {
                     }
                 });
             }
-            else if (s == "json") {
+            else if (s.find("json") != -1) {
+                json jsonmes = event.msg.build_json(true, true);
+                string jsmesdump = jsonmes.dump();
+                bot.message_create(message(event.msg.channel_id, jsmesdump));
             }
 
             else if (event.msg.content == "c!" && r == nullptr) {

@@ -771,4 +771,63 @@ public:
         }
     }
 };
+
+/*
+class Deletemes : public dpp::cluster {
+private:
+
+    dpp::snowflake ch_id, mes_id;
+
+public:
+    Deletemes(dpp::message mes) {
+        mes_id = mes.id;
+        ch_id = mes.channel_id;
+        message_create(mes);
+    }
+};
+*/
+
+class Decodejson {
+private:
+    string json_str, content;
+    dpp::snowflake ch_id, ms_id;
+
+public:
+
+    Decodejson(dpp::message mes) {
+        json jsonmes = mes.build_json(true, true);
+        json_str = jsonmes.dump();
+        json parsed_json = json::parse(json_str);
+        this->ch_id = to_string(parsed_json["channel_id"]);
+        this->ms_id = to_string(parsed_json["id"]);
+        this->content = parsed_json["content"];
+    }
+
+    Decodejson(string json_str) {
+        json parsed_json = json::parse(json_str);
+        this->ch_id = to_string(parsed_json["channel_id"]);
+        this->ms_id = to_string(parsed_json["id"]);
+        this->content = parsed_json["content"];
+    }
+
+    dpp::snowflake getchid() {
+        return ch_id;
+    }
+
+    dpp::snowflake getmsid() {
+        return ms_id;
+    }
+
+    dpp::snowflake getchid(string s) {
+        return to_string(ch_id);
+    }
+
+    dpp::snowflake getmsid(string s) {
+        return to_string(ms_id);
+    }
+
+    string getcont() {
+        return content;
+    }
+};
 //只是看行數自爽用

@@ -18,6 +18,8 @@
 #include <vector>
 #include <Windows.h>
 using namespace std;
+using namespace dpp;
+using json = nlohmann::json;
 
 string tkuse, txt, au, s, gatimes, token[2];
 long long ch;
