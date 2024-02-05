@@ -810,6 +810,16 @@ public:
         this->content = parsed_json["content"];
     }
 
+    Decodejson() {
+        ifstream jsonin("mesdata.json");
+        if (jsonin.fail()) {
+            cout << "No Json File.";
+        }
+        else {
+            json data = json::parse(jsonin);
+        }
+    }
+
     dpp::snowflake getchid() {
         return ch_id;
     }

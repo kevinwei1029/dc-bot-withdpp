@@ -211,6 +211,8 @@ int main() {
                 bot.message_create(message(event.msg.channel_id, senbai.rep(stoi(v[1]))));
             }
             else if (s == "刪我" || s == "delete me") {
+                bot.message_delete(event.msg.id, event.msg.channel_id);
+                /*
                 // 獲取收到的訊息 
                 dpp::message dmsg;
                 dmsg.channel_id = event.msg.channel_id; // 替換為要發送訊息的頻道 ID
@@ -224,7 +226,7 @@ int main() {
                 // 刪除訊息
                 bot.message_delete(delete_msg.id, delete_msg.channel_id);
                 bot.message_create(message(event.msg.channel_id, "已經照您的要求刪掉了\nchannel id : " + to_string(delete_msg.channel_id)
-                    + "\nmsg id : " + to_string(delete_msg.id)));
+                    + "\nmsg id : " + to_string(delete_msg.id)));*/
             }
             else if (s == "ed") {
                 bot.message_create(message(event.msg.channel_id, "edit test"));
