@@ -755,4 +755,20 @@ public:
         return yjp(num) + "\n論證完畢（喜";
     }
 };
+
+class react_collector : public dpp::reaction_collector {
+public:
+    /* Collector will run for 20 seconds */
+    react_collector(dpp::cluster* cl, dpp::snowflake id) : dpp::reaction_collector(cl, 20, id) { }
+
+    /* Override the "completed" event and then output the number of collected reactions as a message. */
+    virtual void completed(const std::vector<dpp::collected_reaction>& list) override {
+        if (list.size()) {
+            owner->message_create(dpp::message(list[0].react_channel->id, "I collected " + std::to_string(list.size()) + " reactions!"));
+        }
+        else {
+            owner->message_create(dpp::message("... I got nothin'."));
+        }
+    }
+};
 //只是看行數自爽用

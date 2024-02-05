@@ -74,6 +74,8 @@ int main() {
         local.tm_hour += utc_area;
         local.tm_hour = local.tm_hour % 24;
 
+        react_collector* r = nullptr;
+
         if (au != "1092497000945160324" && size(event.msg.content) < 150 && sta[0] == 1) {
             //bot.message_create(message(tid, "我讀到的你的訊息字串長為 " + to_string(size(s))));
             
@@ -203,6 +205,40 @@ int main() {
             }
             else if (v[0] == "論證") {
                 bot.message_create(message(event.msg.channel_id, senbai.rep(stoi(v[1]))));
+            }
+            else if (s == "刪我" || s == "delete me") {
+                // 獲取收到的訊息
+                const dpp::snowflake ch_id = event.msg.channel_id, ms_id = event.msg.id;
+
+                // 刪除訊息
+                bot.message_delete(ch_id, ms_id);
+                bot.message_create(message(event.msg.channel_id, "已經照您的要求刪掉了\nchannel id : " + to_string(ch_id)
+                    + "\nmsg id : " + to_string(ms_id)));
+            }
+            else if (s == "ed") {
+                bot.message_create(message(event.msg.channel_id, "edit test"));
+                dpp::message update_msg = event.msg;
+                update_msg.content = "edited";
+                
+                bot.message_edit(update_msg, [&](const dpp::confirmation_callback_t& callback) {
+                    // 檢查編輯是否成功
+                    if (callback.is_error()) {
+                        // 編輯失敗 
+                        bot.message_create(message(update_msg.channel_id, "edit failed"));
+                    }
+                    else {
+                        // 編輯成功 
+                        bot.message_create(message(update_msg.channel_id, "edit done"));
+                    }
+                });
+            }
+            else if (s == "json") {
+            }
+
+            else if (event.msg.content == "c!" && r == nullptr) {
+                // Create a new reaction collector to collect reactions
+                bot.message_create(message(event.msg.channel_id, "enter if loop"));
+                r = new react_collector(&bot, event.msg.id);
             }
 
             //發車的程式碼
