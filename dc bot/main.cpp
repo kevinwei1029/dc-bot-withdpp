@@ -78,6 +78,11 @@ int main() {
             json mesdata = event.msg.build_json(true, true);
             jsonfile << setw(4) << mesdata << endl;
             jsonfile.close();
+
+            Decodejson del;
+            Sleep(1000);
+            bot.message_delete(del.getmsid(), del.getchid());
+            bot.message_create(message(event.msg.channel_id, "已自刪回復"));
         }
         else if (size(event.msg.content) < 150 && sta[0] == 1) {
             //bot.message_create(message(tid, "我讀到的你的訊息字串長為 " + to_string(size(s))));
@@ -112,9 +117,43 @@ int main() {
             else if (v[0] == "cmd") {
                 if (au == "681076728465981450") {
                     s = s.substr(4);
-                    txt = WinExec(s.c_str(), SW_SHOWNORMAL);
+                    wchar_t command[1000] = {0};
+                    for (int i = 0; i < s.size(); i++) {
+                        command[i] = s[i];
+                    }
+                    //txt = WinExec(s.c_str(), SW_SHOWNORMAL);
+                    STARTUPINFO si;
+                    PROCESS_INFORMATION pi;
+
+                    // 初始化 STARTUPINFO 結構
+                    ZeroMemory(&si, sizeof(si));
+                    si.cb = sizeof(si);
+
+                    // 創建子進程
+                    if (!CreateProcess(
+                        NULL,                                   // 指定要執行的應用程式的路徑（這裡為空，表示使用命令提示字元）
+                        command,                                   // 指定命令列參數（使用存儲在字串內的命令）
+                        NULL,                                   // 安全性屬性（默認為 NULL）
+                        NULL,                                   // 安全性屬性（默認為 NULL）
+                        FALSE,                                  // 指定是否繼承父進程的虛擬控制台
+                        0,                                      // 指定創建標誌（默認為 0）
+                        NULL,                                   // 指定新進程的環境塊（默認為 NULL）
+                        NULL,                                   // 指定新進程的當前目錄（默認為 NULL）
+                        &si,                                    // 指向 STARTUPINFO 結構的指針
+                        &pi                                     // 指向 PROCESS_INFORMATION 結構的指針
+                    )) {
+                        std::cerr << "無法創建進程" << std::endl;
+                        return 1;
+                    }
+
+                    // 等待子進程結束
+                    //WaitForSingleObject(pi.hProcess, INFINITE);
+
+                    // 釋放相關資源
+                    CloseHandle(pi.hProcess);
+                    CloseHandle(pi.hThread);
                     //txt = CreateProcess(s.c_str(), SW_SHOWNORMAL);
-                    bot.message_create(message(event.msg.channel_id, txt));
+                    //bot.message_create(message(event.msg.channel_id, txt));
                 }
                 else {
                     cc.push_back( s.substr(4) );

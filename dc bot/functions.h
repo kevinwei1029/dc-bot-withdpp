@@ -798,15 +798,15 @@ public:
         json jsonmes = mes.build_json(true, true);
         json_str = jsonmes.dump();
         json parsed_json = json::parse(json_str);
-        this->ch_id = to_string(parsed_json["channel_id"]);
-        this->ms_id = to_string(parsed_json["id"]);
+        this->ch_id = uint64_t(parsed_json["channel_id"]);
+        this->ms_id = uint64_t(parsed_json["id"]);
         this->content = parsed_json["content"];
     }
 
     Decodejson(string json_str) {
         json parsed_json = json::parse(json_str);
-        this->ch_id = to_string(parsed_json["channel_id"]);
-        this->ms_id = to_string(parsed_json["id"]);
+        this->ch_id = uint64_t(parsed_json["channel_id"]);
+        this->ms_id = uint64_t(parsed_json["id"]);
         this->content = parsed_json["content"];
     }
 
@@ -818,6 +818,8 @@ public:
         else {
             json data = json::parse(jsonin);
             //cout << data;
+            this->ch_id = uint64_t(data["channel_id"]);
+            this->ms_id = uint64_t(data["id"]);
         }
     }
 
