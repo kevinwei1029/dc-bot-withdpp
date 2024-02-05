@@ -39,6 +39,43 @@ string mjnre(int size) {
         return "奇怪的vector長度出現了，快叫我老木過來看";
     }
 };
+void cmd(string s) {
+    wchar_t command[1000] = { 0 };
+    for (int i = 0; i < s.size(); i++) {
+        command[i] = s[i];
+    }
+    //txt = WinExec(s.c_str(), SW_SHOWNORMAL);
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+
+    // 初始化 STARTUPINFO 結構
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+
+    // 創建子進程
+    if (!CreateProcess(
+        NULL,                                   // 指定要執行的應用程式的路徑（這裡為空，表示使用命令提示字元）
+        command,                                   // 指定命令列參數（使用存儲在字串內的命令）
+        NULL,                                   // 安全性屬性（默認為 NULL）
+        NULL,                                   // 安全性屬性（默認為 NULL）
+        FALSE,                                  // 指定是否繼承父進程的虛擬控制台
+        0,                                      // 指定創建標誌（默認為 0）
+        NULL,                                   // 指定新進程的環境塊（默認為 NULL）
+        NULL,                                   // 指定新進程的當前目錄（默認為 NULL）
+        &si,                                    // 指向 STARTUPINFO 結構的指針
+        &pi                                     // 指向 PROCESS_INFORMATION 結構的指針
+    )) {
+        std::cerr << "無法創建進程" << std::endl;
+    }
+
+    // 等待子進程結束
+    //WaitForSingleObject(pi.hProcess, INFINITE);
+
+    // 釋放相關資源
+    CloseHandle(pi.hProcess);
+    CloseHandle(pi.hThread);
+
+}
 
 class Gacha {
 
