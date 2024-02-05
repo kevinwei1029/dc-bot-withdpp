@@ -6,6 +6,7 @@
 # add by myself
 token.txt
 mesdata.json
+usermesdata.json
 
 # User-specific files
 *.rsuser

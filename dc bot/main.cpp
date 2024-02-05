@@ -141,6 +141,53 @@ int main() {
                     }
                 }
             }
+
+            //用到json程式碼
+            else if (s.find("刪我") != -1 || s == "delete me") {
+                bot.message_delete(event.msg.id, event.msg.channel_id);
+                /*
+                // 獲取收到的訊息 
+                dpp::message dmsg;
+                dmsg.channel_id = event.msg.channel_id; // 替換為要發送訊息的頻道 ID
+                dmsg.content = "Hello from Discord++ (DPP)!\nThis is a delete test.";
+                //Deletemes* ptr = new Deletemes(dmsg);
+                bot.message_create(dmsg);
+                Sleep(5000);
+                //co_await(bot.message_create(dmsg));
+                
+                dpp::message delete_msg = dmsg;
+                // 刪除訊息
+                bot.message_delete(delete_msg.id, delete_msg.channel_id);
+                bot.message_create(message(event.msg.channel_id, "已經照您的要求刪掉了\nchannel id : " + to_string(delete_msg.channel_id)
+                    + "\nmsg id : " + to_string(delete_msg.id)));*/
+            }
+            else if (s == "ed") {
+                bot.message_create(message(event.msg.channel_id, "edit test"));
+                dpp::message update_msg = event.msg;
+                update_msg.content = "edited";
+                
+                bot.message_edit(update_msg, [&](const dpp::confirmation_callback_t& callback) {
+                    // 檢查編輯是否成功
+                    if (callback.is_error()) {
+                        // 編輯失敗 
+                        bot.message_create(message(update_msg.channel_id, "edit failed"));
+                    }
+                    else {
+                        // 編輯成功 
+                        bot.message_create(message(update_msg.channel_id, "edit done"));
+                    }
+                });
+            }
+            else if (s.find("json") != -1) {
+                json jsonmes = event.msg.build_json(true, true);
+                string jsmesdump = jsonmes.dump();
+                bot.message_create(message(event.msg.channel_id, jsmesdump));
+
+                ofstream jsonfile("usermesdata.json");
+                json mesdata = event.msg.build_json(true, true);
+                jsonfile << setw(4) << mesdata << endl;
+                jsonfile.close();
+            }
             
             //其他的程式碼
             else if (s == "!rest") {
@@ -209,46 +256,6 @@ int main() {
             }
             else if (v[0] == "論證") {
                 bot.message_create(message(event.msg.channel_id, senbai.rep(stoi(v[1]))));
-            }
-            else if (s == "刪我" || s == "delete me") {
-                bot.message_delete(event.msg.id, event.msg.channel_id);
-                /*
-                // 獲取收到的訊息 
-                dpp::message dmsg;
-                dmsg.channel_id = event.msg.channel_id; // 替換為要發送訊息的頻道 ID
-                dmsg.content = "Hello from Discord++ (DPP)!\nThis is a delete test.";
-                //Deletemes* ptr = new Deletemes(dmsg);
-                bot.message_create(dmsg);
-                Sleep(5000);
-                //co_await(bot.message_create(dmsg));
-                
-                dpp::message delete_msg = dmsg;
-                // 刪除訊息
-                bot.message_delete(delete_msg.id, delete_msg.channel_id);
-                bot.message_create(message(event.msg.channel_id, "已經照您的要求刪掉了\nchannel id : " + to_string(delete_msg.channel_id)
-                    + "\nmsg id : " + to_string(delete_msg.id)));*/
-            }
-            else if (s == "ed") {
-                bot.message_create(message(event.msg.channel_id, "edit test"));
-                dpp::message update_msg = event.msg;
-                update_msg.content = "edited";
-                
-                bot.message_edit(update_msg, [&](const dpp::confirmation_callback_t& callback) {
-                    // 檢查編輯是否成功
-                    if (callback.is_error()) {
-                        // 編輯失敗 
-                        bot.message_create(message(update_msg.channel_id, "edit failed"));
-                    }
-                    else {
-                        // 編輯成功 
-                        bot.message_create(message(update_msg.channel_id, "edit done"));
-                    }
-                });
-            }
-            else if (s.find("json") != -1) {
-                json jsonmes = event.msg.build_json(true, true);
-                string jsmesdump = jsonmes.dump();
-                bot.message_create(message(event.msg.channel_id, jsmesdump));
             }
 
             else if (event.msg.content == "c!" && r == nullptr) {
