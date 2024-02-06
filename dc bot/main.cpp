@@ -171,6 +171,7 @@ int main() {
                 //cerr << "message id = " << del->getmsid() << "\nchannel id = " << del->getchid() << "\ncontent = " << del->getcont();
                 bot.message_delete(del->getmsid(), del->getchid());
                 bot.message_create(message(event.msg.channel_id, "已自刪"));
+                delete del;
             }
             else if (s == "ed") {
                 //bot.message_create(message(event.msg.channel_id, "edit test"));
@@ -708,6 +709,13 @@ int main() {
         }
         else
             event.reply("You send a invalid custom id : " + s);
+
+        Decodejson* del = new Decodejson;
+        if (del->getcont().find("共計抽到") != -1) {
+            //cerr << "message id = " << del->getmsid() << "\nchannel id = " << del->getchid() << "\ncontent = " << del->getcont();
+            bot.message_delete(del->getmsid(), del->getchid());
+        }
+        delete del;
     });
 
     bot.start(st_wait);
