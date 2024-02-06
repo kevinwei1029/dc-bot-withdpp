@@ -75,14 +75,15 @@ int main() {
 
         if (au == "1092497000945160324") {
             ofstream jsonfile("mesdata.json");
-            json mesdata = event.msg.build_json(true, true);
-            jsonfile << setw(4) << mesdata << endl;
+            //json mesdata = event.msg.build_json(true, true);
+            jsonfile << event.msg.build_json(true, true) << endl;
             jsonfile.close();
-
-            Decodejson del;
+            /*
+            Decodejson *del = new Decodejson;
             Sleep(1000);
-            bot.message_delete(del.getmsid(), del.getchid());
+            bot.message_delete(del->getmsid(), del->getchid());
             bot.message_create(message(event.msg.channel_id, "已自刪回復"));
+            delete del;*/
         }
         else if (size(event.msg.content) < 150 && sta[0] == 1) {
             //bot.message_create(message(tid, "我讀到的你的訊息字串長為 " + to_string(size(s))));
@@ -164,6 +165,12 @@ int main() {
                 bot.message_delete(delete_msg.id, delete_msg.channel_id);
                 bot.message_create(message(event.msg.channel_id, "已經照您的要求刪掉了\nchannel id : " + to_string(delete_msg.channel_id)
                     + "\nmsg id : " + to_string(delete_msg.id)));*/
+            }
+            else if (s.find("自刪") != -1) {
+                Decodejson* del = new Decodejson;
+                //cerr << "message id = " << del->getmsid() << "\nchannel id = " << del->getchid() << "\ncontent = " << del->getcont();
+                bot.message_delete(del->getmsid(), del->getchid());
+                bot.message_create(message(event.msg.channel_id, "已自刪"));
             }
             else if (s == "ed") {
                 //bot.message_create(message(event.msg.channel_id, "edit test"));

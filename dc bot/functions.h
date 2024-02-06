@@ -830,18 +830,15 @@ private:
     dpp::snowflake ch_id, ms_id;
 
     void setvalue(json parsed_json) {
-        this->ms_id = snowflake(const uint64_t(parsed_json["channel_id"]));
-        this->ms_id = snowflake(const uint64_t(parsed_json["id"]));
+        this->ch_id = snowflake(parsed_json["channel_id"]);
+        this->ms_id = snowflake(parsed_json["id"]);
         this->content = parsed_json["content"];
     }
 
 public:
 
     Decodejson(dpp::message mes) {
-        json jsonmes = mes.build_json(true, true);
-        json_str = jsonmes.dump();
-
-        setvalue(jsonmes);
+        setvalue(mes.build_json(true, true));
     }
 
     Decodejson(string json_str) {
