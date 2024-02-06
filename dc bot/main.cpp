@@ -166,9 +166,12 @@ int main() {
                     + "\nmsg id : " + to_string(delete_msg.id)));*/
             }
             else if (s == "ed") {
-                bot.message_create(message(event.msg.channel_id, "edit test"));
+                //bot.message_create(message(event.msg.channel_id, "edit test"));
                 dpp::message update_msg = event.msg;
                 update_msg.content = "edited";
+                Decodejson* lastmes = new Decodejson;
+                update_msg.id = lastmes->getmsid();
+                delete lastmes;
                 
                 bot.message_edit(update_msg, [&](const dpp::confirmation_callback_t& callback) {
                     // 檢查編輯是否成功

@@ -829,22 +829,23 @@ private:
     string json_str, content;
     dpp::snowflake ch_id, ms_id;
 
+    void setvalue(json parsed_json) {
+        this->ms_id = snowflake(const uint64_t(parsed_json["channel_id"]));
+        this->ms_id = snowflake(const uint64_t(parsed_json["id"]));
+        this->content = parsed_json["content"];
+    }
+
 public:
 
     Decodejson(dpp::message mes) {
         json jsonmes = mes.build_json(true, true);
         json_str = jsonmes.dump();
-        json parsed_json = json::parse(json_str);
-        this->ch_id = uint64_t(parsed_json["channel_id"]);
-        this->ms_id = uint64_t(parsed_json["id"]);
-        this->content = parsed_json["content"];
+
+        setvalue(jsonmes);
     }
 
     Decodejson(string json_str) {
-        json parsed_json = json::parse(json_str);
-        this->ch_id = uint64_t(parsed_json["channel_id"]);
-        this->ms_id = uint64_t(parsed_json["id"]);
-        this->content = parsed_json["content"];
+        setvalue(json::parse(json_str));
     }
 
     Decodejson() {
@@ -853,10 +854,8 @@ public:
             cout << "No Json File.";
         }
         else {
-            json data = json::parse(jsonin);
+            setvalue(json::parse(jsonin));
             //cout << data;
-            this->ch_id = uint64_t(data["channel_id"]);
-            this->ms_id = uint64_t(data["id"]);
         }
     }
 
