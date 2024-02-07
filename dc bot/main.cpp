@@ -78,12 +78,6 @@ int main() {
             //json mesdata = event.msg.build_json(true, true);
             jsonfile << event.msg.build_json(true, true) << endl;
             jsonfile.close();
-            /*
-            Decodejson *del = new Decodejson;
-            Sleep(1000);
-            bot.message_delete(del->getms(), del->getch());
-            bot.message_create(message(event.msg.channel_id, "已自刪回復"));
-            delete del;*/
         }
         else if (size(event.msg.content) < 150 && sta[0] == 1) {
             //bot.message_create(message(tid, "我讀到的你的訊息字串長為 " + to_string(size(s))));
@@ -363,7 +357,7 @@ int main() {
                     mwl.push_back(au);
                     bot.message_create(message(ch, "https://imgur.com/o2BP09j"));
                 }
-                bot.message_create(message(ch, mjnre(mwl.size())));
+                bot.message_create(message(ch, majong_number_reply(mwl.size())));
                 sta[1] = 1;
 
                 bot.start_timer([&bot](const timer& timer1) {
@@ -377,7 +371,7 @@ int main() {
                 }, 1800);
             }
             else if ((s.find("人") != -1 && s.find("待") != -1) || s.find("mjl") != -1) {
-                bot.message_create(message(event.msg.channel_id, mjnre(mwl.size())).set_reference(event.msg.id));
+                bot.message_create(message(event.msg.channel_id, majong_number_reply(mwl.size())).set_reference(event.msg.id));
                 for (auto it = mwl.begin(); it != mwl.end(); ++it) {
                     bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(*it)));
                 }
@@ -478,7 +472,7 @@ int main() {
                 else if (v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO")
                     bot.message_create(message(event.msg.channel_id, fgoget()));
                 else
-                    bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])));*/
+                    bot.message_create(message(event.msg.channel_id, error_reply(tkuse, token[0], token[1])));*/
             }
             else if (v[0] == "機率" || v[0] == "抽卡機率") {
                 if (v[1] == "pcr" || v[1] == "公連")
@@ -488,7 +482,7 @@ int main() {
                 else if (v[1] == "ark" || v[1] == "方舟")
                     txt = "六星<:ark6:1107953803057188905> 2%\n五星<:ark5:1107953865602637824> 8%\n四星<:ark4:1107953907377901579> 30%\n三星<:ark3:1107953947353808947> 60%\n\n不要問我為什麼用狙信物，我絕對沒有對某隻六星狙有特別的偏好";
                 else
-                    bot.message_create(message(event.msg.channel_id, qre(tkuse, token[0], token[1])).set_reference(event.msg.id));
+                    bot.message_create(message(event.msg.channel_id, error_reply(tkuse, token[0], token[1])).set_reference(event.msg.id));
 
                 bot.message_create(message(event.msg.channel_id, txt).set_reference(event.msg.id));
             }
@@ -513,7 +507,7 @@ int main() {
                     }
                 }
                 if (sta[1] == FALSE) {
-                    message msg(event.msg.channel_id, qre(tkuse, token[0], token[1]));
+                    message msg(event.msg.channel_id, error_reply(tkuse, token[0], token[1]));
                     bot.message_create(msg.set_reference(event.msg.id));
                 }
             }
