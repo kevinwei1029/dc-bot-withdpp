@@ -87,7 +87,7 @@ int main() {
         }
         else if (size(event.msg.content) < 150 && sta[0] == 1) {
             //bot.message_create(message(tid, "我讀到的你的訊息字串長為 " + to_string(size(s))));
-            bot.message_create(message(event.msg.channel_id, "我讀到你的訊息為" + event.msg.content + "\ns = " + s));
+            //bot.message_create(message(event.msg.channel_id, "我讀到你的訊息為" + event.msg.content + "\ns = " + s));
 
             //有限本人用的程式碼
             if (v[0] == "test") {
@@ -203,7 +203,7 @@ int main() {
                 jsonfile << setw(4) << mesdata << endl;
                 jsonfile.close();
             }
-            else if (s == "刪他") {
+            else if (s.find("刪他") != -1) {
                 Decodejson* ref = new Decodejson(event.msg.build_json(true, true));
                 if (ref->getrefms().empty() || ref->getrefch().empty()) {
                     bot.message_create(message(event.msg.channel_id, "你沒有回覆訊息喔？"));
