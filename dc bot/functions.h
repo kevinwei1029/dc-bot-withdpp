@@ -867,15 +867,16 @@ json example 2:
 */
 
 private:
-    string json_str, content;
+    string json_str, content, username;
     dpp::snowflake ch_id, ms_id, ref_ch_id, ref_ms_id;
     json ref;
 
-    void setvalue(json parsed_json) {
-        this->ch_id = snowflake(parsed_json["channel_id"]);
-        this->ms_id = snowflake(parsed_json["id"]);
-        this->content = parsed_json["content"];
-        this->ref = parsed_json["message_reference"];
+    void setvalue(json mes) {
+        this->ch_id = snowflake(mes["channel_id"]);
+        this->ms_id = snowflake(mes["id"]);
+        this->content = mes["content"];
+        this->username = mes["username"];
+        this->ref = mes["message_reference"];
         if (!ref.empty()) {
             this->ref_ch_id = snowflake(ref["channel_id"]);
             this->ref_ms_id = snowflake(ref["message_id"]);
@@ -933,6 +934,10 @@ public:
 
     string getcont() {
         return content;
+    }
+
+    string getusr() {
+        return username;
     }
 };
 //只是看行數自爽用

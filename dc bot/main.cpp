@@ -144,27 +144,11 @@ int main() {
             //用到json程式碼
             else if (s.find("刪我") != -1 || s == "delete me") {
                 bot.message_delete(event.msg.id, event.msg.channel_id);
-                /*
-                // 獲取收到的訊息 
-                dpp::message dmsg;
-                dmsg.channel_id = event.msg.channel_id; // 替換為要發送訊息的頻道 ID
-                dmsg.content = "Hello from Discord++ (DPP)!\nThis is a delete test.";
-                //Deletemes* ptr = new Deletemes(dmsg);
-                bot.message_create(dmsg);
-                Sleep(5000);
-                //co_await(bot.message_create(dmsg));
-                
-                dpp::message delete_msg = dmsg;
-                // 刪除訊息
-                bot.message_delete(delete_msg.id, delete_msg.channel_id);
-                bot.message_create(message(event.msg.channel_id, "已經照您的要求刪掉了\nchannel id : " + to_string(delete_msg.channel_id)
-                    + "\nmsg id : " + to_string(delete_msg.id)));*/
             }
             else if (s.find("自刪") != -1) {
                 Decodejson* del = new Decodejson;
                 //cerr << "message id = " << del->getms() << "\nchannel id = " << del->getch() << "\ncontent = " << del->getcont();
                 bot.message_delete(del->getms(), del->getch());
-                bot.message_create(message(event.msg.channel_id, "已自刪"));
                 delete del;
             }
             else if (s == "ed") {
@@ -178,12 +162,12 @@ int main() {
                 bot.message_edit(update_msg, [&](const dpp::confirmation_callback_t& callback) {
                     // 檢查編輯是否成功
                     if (callback.is_error()) {
-                        // 編輯失敗 
-                        bot.message_create(message(update_msg.channel_id, "edit failed"));
+                        // 編輯失敗 bot.message_create(message(update_msg.channel_id, ));
+                        event.reply("edit failed");
                     }
                     else {
-                        // 編輯成功 
-                        bot.message_create(message(update_msg.channel_id, "edit done"));
+                        // 編輯成功 bot.message_create(message(update_msg.channel_id, "edit done"));
+                        event.reply("edit done");
                     }
                 });
             }
@@ -299,47 +283,47 @@ int main() {
 
             //用隔壁陣列發圖的程式碼
             else if (v[0] == "圖") {
-                bot.message_create(message(event.msg.channel_id, arkcr[mt() % size(arkcr)]));
+                event.reply(arkcr[mt() % size(arkcr)]);
             }
             else if (s.find("哇草原") != -1) {
-                bot.message_create(message(event.msg.channel_id, genshin[mt() % size(genshin)]));
+                event.reply(genshin[mt() % size(genshin)]);
             }
             else if (s.find("歐") != -1 && s.find("歐貝爾") == -1 && s.find("歐虧") == -1) {
-                bot.message_create(message(event.msg.channel_id, europe[mt() % size(europe)]));
+                event.reply(europe[mt() % size(europe)]);
             }
             else if (s.find("確實") != -1 || v[0] == "雀食") {
-                bot.message_create(message(event.msg.channel_id, truee[mt() % size(truee)]));
+                event.reply(truee[mt() % size(truee)]);
             }
             else if ((s.find("猶") != -1 && s.find("猶豫") == -1) || v[0] == "德意") {
-                bot.message_create(message(event.msg.channel_id, nazi[mt() % size(nazi)]));
+                event.reply(nazi[mt() % size(nazi)]);
             }
             else if (s.find("lao") != -1 || s.find("佬") != -1) {
-                bot.message_create(message(event.msg.channel_id, dalao[mt() % size(dalao)]));
+                event.reply(dalao[mt() % size(dalao)]);
             }
             else if (v[0] == "草" || s.find("笑死") != -1
                 || (s.find("w") != -1 && s.find("a") == -1 && s.find("t") == -1 && s.find("e") == -1 && s.find("s") == -1
                     && s.find("l") == -1 && s.find("d") == -1 && s.find("i") == -1 && s.find("m") == -1 && s.find("o") == -1
                     && s.find("p") == -1 && s.find("y") == -1 && s.find("^") == -1)) {
-                bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
+                event.reply(kusa[mt() % size(kusa)]);
             }
             else if(s.find("kusa") != -1) {
-                bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
-                }
+                event.reply(kusa[mt() % size(kusa)]);
+            }
             else if (v[0] == "gay" || s.find("甲") != -1 || s.find("🏳️‍🌈") != -1 || s.find("🈸") != -1 
                 || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1) || v[0] == "超給") {
-                bot.message_create(message(event.msg.channel_id, gay[mt() % size(gay)]));
+                event.reply(gay[mt() % size(gay)]);
             }
             else if (s.find("fbi") != -1 || s.find("ㄌㄌㄎ") != -1 || s.find("FBI") != -1) {
-                bot.message_create(message(event.msg.channel_id, fbi[mt() % size(fbi)]));
+                event.reply(fbi[mt() % size(fbi)]);
             }
             else if (s.find("大") != -1 && s.find("奶") != -1) {
-                bot.message_create(message(event.msg.channel_id, boobs[mt() % size(boobs)]));
+                event.reply(boobs[mt() % size(boobs)]);
             }
             else if (s.find("tsuna") != -1 || v[0] == "<:pte_lemon:986265384992772166>" || s.find("三小") != -1) {
-                bot.message_create(message(event.msg.channel_id, wat[mt() % size(wat)]));
+                event.reply(wat[mt() % size(wat)]);
             }
             else if (s.find("mygo") != -1 || s.find("買夠") != -1 || s.find("MyGO") != -1) {
-                bot.message_create(message(event.msg.channel_id, mygo[mt() % size(mygo)]));
+                event.reply(mygo[mt() % size(mygo)]);
             }
 
             //雀魂等待序列程式碼
