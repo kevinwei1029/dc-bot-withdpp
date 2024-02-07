@@ -667,6 +667,12 @@ int main() {
 
     //When a user clicks your button, the on_button_click event will fire, containing the custom_id you defined in your button.
     bot.on_button_click([&bot](const button_click_t & event) {
+        Decodejson* del = new Decodejson;
+        if (del->getcont().find("共計抽到") != -1) {
+            //cerr << "message id = " << del->getmsid() << "\nchannel id = " << del->getchid() << "\ncontent = " << del->getcont();
+            bot.message_delete(del->getmsid(), del->getchid());
+        }
+        delete del;
         s = event.custom_id;
         if (s == "fgoga")
             event.reply( gacha.ga("fgo", gatimes) );
@@ -709,13 +715,6 @@ int main() {
         }
         else
             event.reply("You send a invalid custom id : " + s);
-
-        Decodejson* del = new Decodejson;
-        if (del->getcont().find("共計抽到") != -1) {
-            //cerr << "message id = " << del->getmsid() << "\nchannel id = " << del->getchid() << "\ncontent = " << del->getcont();
-            bot.message_delete(del->getmsid(), del->getchid());
-        }
-        delete del;
     });
 
     bot.start(st_wait);
