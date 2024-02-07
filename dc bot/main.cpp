@@ -81,18 +81,18 @@ int main() {
             /*
             Decodejson *del = new Decodejson;
             Sleep(1000);
-            bot.message_delete(del->getmsid(), del->getchid());
+            bot.message_delete(del->getms(), del->getch());
             bot.message_create(message(event.msg.channel_id, "已自刪回復"));
             delete del;*/
         }
         else if (size(event.msg.content) < 150 && sta[0] == 1) {
             //bot.message_create(message(tid, "我讀到的你的訊息字串長為 " + to_string(size(s))));
-            
+            bot.message_create(message(event.msg.channel_id, "我讀到你的訊息為" + event.msg.content + "\ns = " + s));
+
             //有限本人用的程式碼
             if (v[0] == "test") {
                 if (au == "681076728465981450"){
                     bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
-                    //bot.message_delete(1204017417005563905, 968693698206519356);
                     //bot.message_create(message(memech[0], to_string(event.msg.guild_id)));
                 }
                 else
@@ -168,8 +168,8 @@ int main() {
             }
             else if (s.find("自刪") != -1) {
                 Decodejson* del = new Decodejson;
-                //cerr << "message id = " << del->getmsid() << "\nchannel id = " << del->getchid() << "\ncontent = " << del->getcont();
-                bot.message_delete(del->getmsid(), del->getchid());
+                //cerr << "message id = " << del->getms() << "\nchannel id = " << del->getch() << "\ncontent = " << del->getcont();
+                bot.message_delete(del->getms(), del->getch());
                 bot.message_create(message(event.msg.channel_id, "已自刪"));
                 delete del;
             }
@@ -178,7 +178,7 @@ int main() {
                 dpp::message update_msg = event.msg;
                 update_msg.content = "edited";
                 Decodejson* lastmes = new Decodejson;
-                update_msg.id = lastmes->getmsid();
+                update_msg.id = lastmes->getms();
                 delete lastmes;
                 
                 bot.message_edit(update_msg, [&](const dpp::confirmation_callback_t& callback) {
@@ -202,6 +202,16 @@ int main() {
                 json mesdata = event.msg.build_json(true, true);
                 jsonfile << setw(4) << mesdata << endl;
                 jsonfile.close();
+            }
+            else if (s == "刪他") {
+                Decodejson* ref = new Decodejson(event.msg.build_json(true, true));
+                if (ref->getrefms().empty() || ref->getrefch().empty()) {
+                    bot.message_create(message(event.msg.channel_id, "你沒有回覆訊息喔？"));
+                }
+                else {
+                    bot.message_delete(ref->getrefms(), ref->getrefch());
+                }
+                delete ref;
             }
             
             //其他的程式碼
@@ -321,7 +331,7 @@ int main() {
             else if(s.find("kusa") != -1) {
                 bot.message_create(message(event.msg.channel_id, kusa[mt() % size(kusa)]));
                 }
-            else if (v[0] == "gay" || s.find("甲") != -1  //  s.find(u8"🏳️‍🌈") != -1 || s.find(u8"🈸") != -1 || 
+            else if (v[0] == "gay" || s.find("甲") != -1 || s.find("🏳️‍🌈") != -1 || s.find("🈸") != -1 
                 || v[0] == "給" || (s.find("是給") != -1 && s.find("倒是") == -1) || v[0] == "超給") {
                 bot.message_create(message(event.msg.channel_id, gay[mt() % size(gay)]));
             }
@@ -669,8 +679,8 @@ int main() {
     bot.on_button_click([&bot](const button_click_t & event) {
         Decodejson* del = new Decodejson;
         if (del->getcont().find("共計抽到") != -1) {
-            //cerr << "message id = " << del->getmsid() << "\nchannel id = " << del->getchid() << "\ncontent = " << del->getcont();
-            bot.message_delete(del->getmsid(), del->getchid());
+            //cerr << "message id = " << del->getms() << "\nchannel id = " << del->getch() << "\ncontent = " << del->getcont();
+            bot.message_delete(del->getms(), del->getch());
         }
         delete del;
         s = event.custom_id;

@@ -827,18 +827,28 @@ public:
 class Decodejson {
 private:
     string json_str, content;
-    dpp::snowflake ch_id, ms_id;
+    dpp::snowflake ch_id, ms_id, ref_ch_id, ref_ms_id;
+    json ref;
 
     void setvalue(json parsed_json) {
         this->ch_id = snowflake(parsed_json["channel_id"]);
         this->ms_id = snowflake(parsed_json["id"]);
         this->content = parsed_json["content"];
+        this->ref = parsed_json["message_reference"];
+        if (!ref.empty()) {
+            this->ref_ch_id = snowflake(ref["channel_id"]);
+            this->ref_ms_id = snowflake(ref["message_id"]);
+        }        
     }
 
 public:
 
     Decodejson(dpp::message mes) {
         setvalue(mes.build_json(true, true));
+    }
+
+    Decodejson(json mes) {
+        setvalue(mes);
     }
 
     Decodejson(string json_str) {
@@ -856,21 +866,29 @@ public:
         }
     }
 
-    dpp::snowflake getchid() {
+    dpp::snowflake getch() {
         return ch_id;
     }
 
-    dpp::snowflake getmsid() {
+    dpp::snowflake getms() {
         return ms_id;
     }
 
-    dpp::snowflake getchid(string s) {
+    dpp::snowflake getrefch() {
+        return ref_ch_id;
+    }
+
+    dpp::snowflake getrefms() {
+        return ref_ms_id;
+    }
+    /*
+    dpp::snowflake getch(string s) {
         return to_string(ch_id);
     }
 
-    dpp::snowflake getmsid(string s) {
+    dpp::snowflake getms(string s) {
         return to_string(ms_id);
-    }
+    }*/
 
     string getcont() {
         return content;
