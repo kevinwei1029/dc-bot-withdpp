@@ -809,22 +809,65 @@ public:
     }
 };
 
+class Decodejson {
+//  json examples
 /*
-class Deletemes : public dpp::cluster {
-private:
+json example 1:
+{
+  "allowed_mentions":{"parse":[]},
+  "attachments":[],
+  "channel_id":"968693698206519356",
+  "components":[],
+  "content":"json",
+  "embeds":[],
+  "flags":0,
+  "id":"1204067276119212072",
+  "message_reference":
+    {"channel_id":"968693698206519356",
+    "fail_if_not_exists":false,
+    "guild_id":"966718811216683109",
+    "message_id":"1204023173826220093"},
+  "nonce":"1204067278279147520",
+  "tts":false,
+  "type":19,
+  "username":"grand_african"
+}
 
-    dpp::snowflake ch_id, mes_id;
 
-public:
-    Deletemes(dpp::message mes) {
-        mes_id = mes.id;
-        ch_id = mes.channel_id;
-        message_create(mes);
-    }
-};
+json example 2:
+"{
+  "allowed_mentions":
+    {
+      "parse":[]
+    },
+   "attachments":
+    [{
+      "ephemeral":false,
+      "filename":"mygo_1.gif",
+      "id":"1204021998192431185",
+      "size":382340,
+      "url":"mygo_1.gif"
+    },
+    {
+      "ephemeral":false,
+      "filename":"P2.pdf",
+      "id":"1204021998712258620",
+      "size":4984081,
+      "url":"P2.pdf"}
+    ],
+    "channel_id":"968693698206519356",
+    "components":[],
+    "content":"json\n@ショコラ @冠位非洲人 @我的美竹蘭怎麼可能是+9",
+    "embeds":[],
+    "flags":0,
+    "id":"1204021999043747870",
+    "nonce":"1204021986854961152",
+    "tts":false,
+    "type":0,
+    "username":"grand_african"
+}"
 */
 
-class Decodejson {
 private:
     string json_str, content;
     dpp::snowflake ch_id, ms_id, ref_ch_id, ref_ms_id;

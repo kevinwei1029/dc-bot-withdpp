@@ -174,12 +174,12 @@ int main() {
                 delete del;
             }
             else if (s == "ed") {
-                //bot.message_create(message(event.msg.channel_id, "edit test"));
-                dpp::message update_msg = event.msg;
+                Decodejson* edit = new Decodejson;
+                dpp::message update_msg;
                 update_msg.content = "edited";
-                Decodejson* lastmes = new Decodejson;
-                update_msg.id = lastmes->getms();
-                delete lastmes;
+                update_msg.id = edit->getms();
+                update_msg.channel_id = edit->getch();
+                delete edit;
                 
                 bot.message_edit(update_msg, [&](const dpp::confirmation_callback_t& callback) {
                     // 檢查編輯是否成功
