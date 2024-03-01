@@ -880,7 +880,7 @@ private:
         if (!ref.empty()) {
             this->ref_ch_id = snowflake(ref["channel_id"]);
             this->ref_ms_id = snowflake(ref["message_id"]);
-        }        
+        }
     }
 
 public:
@@ -939,5 +939,17 @@ public:
     string getusr() {
         return username;
     }
+};
+
+class MyCluster : public dpp::cluster {
+public:
+    MyCluster(const std::string &token) : dpp::cluster(token) {
+        cout << "ckp2\n";
+    }
+
+    void botout(dpp::snowflake id, const std::string &s) {
+        cout << "ckp3\n";
+        this->message_create(dpp::message(id, s));
+    };
 };
 //只是看行數自爽用
