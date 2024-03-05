@@ -87,9 +87,12 @@ int main() {
             if (v[0] == "test") {
                 if (au == "681076728465981450"){
                     cout << "ckp1\n";
+                    /*MyCluster* mes = new MyCluster();
                     MyCluster* mes = new MyCluster(to_string(event.msg.channel_id));
                     mes->botout(event.msg.channel_id, "botout test");
-                    //bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
+                    mes->botout("botout test");
+                    delete mes;*/
+                    bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
                     //bot.message_create(message(memech[0], to_string(event.msg.guild_id)));
                 }
                 else
@@ -194,7 +197,7 @@ int main() {
                 }
                 delete ref;
             }
-            
+
             //其他的程式碼
             else if (s == "!rest") {
                 bot.message_create(
