@@ -270,27 +270,29 @@ int main() {
 			else if (v[0] == "mygo") {
 				ifstream fin("./mygo/namelist.txt");
 				if (fin.fail()) {
-					bot.message_create(message(event.msg.channel_id, "Open File Error."));
-				}
-				else if (v[1].size() < 2) {
-					bot.message_create(message(event.msg.channel_id, "請給我長一點的關鍵字！"));
+					bot.message_create(message(event.msg.channel_id, "找不到namelist"));
 				}
 				else {
 					message msg(event.msg.channel_id, "");
 					string fn;
 					int i = 1, times = 0;
 					while (getline(fin, fn)) {
-						if (fn.find(v[1]) != -1) {
+						if (fn.find(v[1]) != -1 && times <= 9) {
 							string ft = fn.substr(fn.find("."));
 							msg.add_file("mygo" + ft, dpp::utility::read_file("./mygo/" + to_string(i) + ft));
 							times++;
 						}
+						else if (times > 9) {
+							msg.content = "找到了超過10個檔案，僅顯示前10個";
+						}
 						i++;
 					}
-					msg.content = "找到了" + to_string(times) + "個檔案";
+					if (msg.content == "") {
+						msg.content = "找到了" + to_string(times) + "個檔案";
+					}
 					event.reply(msg);
+					fin.close();
 				}
-				fin.close();
 			}
 
 			else if (event.msg.content == "c!" && r == nullptr) {
