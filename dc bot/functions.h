@@ -37,6 +37,7 @@ string majong_number_reply(int size) {
 		return "奇怪的vector長度出現了，快叫我老木過來看";
 	}
 };
+/*
 void cmd(string s) {
 	wchar_t command[1000] = { 0 };
 	for (int i = 0; i < s.size(); i++) {
@@ -73,7 +74,7 @@ void cmd(string s) {
 	CloseHandle(pi.hProcess);
 	CloseHandle(pi.hThread);
 
-}
+}*/
 
 class Gacha {
 

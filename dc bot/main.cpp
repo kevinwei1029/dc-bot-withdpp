@@ -115,6 +115,7 @@ int main() {
 			}
 
 			//cmd程式碼
+			/*
 			else if (v[0] == "cmd") {
 				if (au == "681076728465981450") {
 					cmd(s.substr(4));
@@ -145,7 +146,7 @@ int main() {
 						bot.message_create(message(968693698206519356, *it + "\n"));
 					}
 				}
-			}
+			}*/
 
 			//用到json程式碼
 			else if (s.find("刪我") != -1 || s == "delete me") {
@@ -621,8 +622,12 @@ int main() {
 						 單獨發「退出等待」\n機器人會把你移出等待序列"
 					).
 					add_field(
+						"mygo 梗圖支援",
+						"輸入「mygo+(空格)+關鍵字」就會跳出對應梗圖"
+					).
+					add_field(
 						"最後更新日期",
-						"2023/8/25"
+						"2024/5/15"
 					).
 					set_image("https://i.idol.st/u/card/art/2x/841UR-Yuki-Setsuna-Oh-My-Gosh-Magician-of-the-Fiery-Flame-sqt9AE.png").
 					set_footer(embed_footer().set_text("我好喜歡小浠").set_icon("https://imgur.com/mYfhOY7")).
