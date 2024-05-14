@@ -267,6 +267,11 @@ int main() {
 			else if (v[0] == "論證") {
 				bot.message_create(message(event.msg.channel_id, senbai.rep(stoi(v[1]))));
 			}
+			else if (v[0] == "mygo" && v[1] == "投稿") {
+				ofstream fout("./mygo/namelist.txt", ios::app);
+				fout << v[2] << endl;
+				fout.close();
+			}
 			else if (v[0] == "mygo") {
 				ifstream fin("./mygo/namelist.txt");
 				if (fin.fail()) {
@@ -625,7 +630,8 @@ int main() {
 					).
 					add_field(
 						"mygo 梗圖支援",
-						"輸入「mygo+(空格)+關鍵字」就會跳出對應梗圖"
+						"輸入「mygo+(空格)+關鍵字」就會跳出對應梗圖\n\
+						 輸入「mygo+(空格)+投稿+(空格)+圖片連結」即可投稿"
 					).
 					add_field(
 						"最後更新日期",
