@@ -53,7 +53,7 @@ void cmd(string s) {
 	// 創建子進程
 	if (!CreateProcess(
 		NULL,                                   // 指定要執行的應用程式的路徑（這裡為空，表示使用命令提示字元）
-		command,                                   // 指定命令列參數（使用存儲在字串內的命令）
+		command,                                // 指定命令列參數（使用存儲在字串內的命令）
 		NULL,                                   // 安全性屬性（默認為 NULL）
 		NULL,                                   // 安全性屬性（默認為 NULL）
 		FALSE,                                  // 指定是否繼承父進程的虛擬控制台
