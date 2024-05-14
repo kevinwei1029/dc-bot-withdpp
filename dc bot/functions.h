@@ -237,7 +237,7 @@ private:
 	vector<pair<int, string>> yaju;
 
 	string yjp(int num) {
-		if (num > 10000000) return "數字太大了\n扼啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊";
+		if (num > 1000000) return "數字太大了\n扼啊啊啊啊啊啊啊啊<:beast:1022000730183323700>";
 		bool ism = false;
 		string equ;
 
