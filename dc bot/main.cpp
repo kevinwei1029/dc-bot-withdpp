@@ -278,25 +278,37 @@ int main() {
 					bot.message_create(message(event.msg.channel_id, "找不到namelist"));
 				}
 				else {
-					message msg(event.msg.channel_id, "");
-					string fn;
-					int i = 1, times = 0;
-					while (getline(fin, fn)) {
-						if (fn.find(v[1]) != -1 && times <= 9) {
-							string ft = fn.substr(fn.find("."));
-							msg.add_file("mygo" + ft, dpp::utility::read_file("./mygo/" + to_string(i) + ft));
-							times++;
-						}
-						else if (times > 9) {
-							msg.content = "找到了超過10個檔案，僅顯示前10個";
-						}
-						i++;
+					if (v[1] == "ap" && au == "681076728465981450") {
+						fin.close();
+						ofstream fout;
+						fout.open("./mygo/namelist.txt", ios::app);
+						fout << v[2] << endl;
+						fout.close();
+						bot.message_create(message(event.msg.channel_id, "已新增"));
 					}
-					if (msg.content == "") {
-						msg.content = "找到了" + to_string(times) + "個檔案";
-					}
-					event.reply(msg);
-					fin.close();
+					else {
+						for (int i = 0; i < v[1].size(); i++) {
+							v[1][i] = tolower(v[1][i]);
+						}
+						message msg(event.msg.channel_id, "");
+						string fn;
+						int i = 1, times = 0;
+						while (getline(fin, fn)) {
+							if (fn.find(v[1]) != -1 && times <= 9) {
+								string ft = fn.substr(fn.find("."));
+								msg.add_file("mygo" + ft, dpp::utility::read_file("./mygo/" + to_string(i) + ft));
+								times++;
+							}
+							else if (times > 9) {
+								msg.content = "找到了超過10個檔案，僅顯示前10個";
+							}
+							i++;
+						}
+						if (msg.content == "") {
+							msg.content = "找到了" + to_string(times) + "個檔案";
+						}
+						event.reply(msg);
+						fin.close();}
 				}
 			}
 
