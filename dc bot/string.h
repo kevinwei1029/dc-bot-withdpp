@@ -466,11 +466,12 @@ const string mygo[11] = {
     "https://imgur.com/n7FkGpJ",  //  10
     "https://imgur.com/Z0d05fh",
 };
-const string mat[132][2] = {
+string mat[133][2] = {
 {"連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
 {"表單連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
 {"功能", "輸入「素材 素材名稱」(暱稱及全名都可以)"},
 {"功能介紹", "輸入「素材 素材名稱」(暱稱及全名都可以)"},
+{"help", "輸入「素材 素材名稱」(暱稱及全名都可以)"},
 {"英雄之證", "1-3 海盜船 (同時缺虛影之塵就去 1-5 夏洛特)"},
 {"黨證", "1-3 海盜船 (同時缺虛影之塵就去 1-5 夏洛特)"},
 {"凶骨", "冬木 X-G (X-C也行，單件期望AP較低但要打較多場，X-D也是同理)"},

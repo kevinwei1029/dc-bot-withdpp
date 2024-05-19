@@ -286,6 +286,25 @@ int main() {
 						fout.close();
 						bot.message_create(message(event.msg.channel_id, "已新增"));
 					}
+					else if (v[1] == "namelist") {
+						message msg(event.msg.channel_id, "check it!");
+						msg.add_file("namelist.txt", dpp::utility::read_file("./mygo/namelist.txt"));
+						event.reply(msg);
+					}
+					/*
+					else if (v[1] == "抽" || v[1] == "random") {
+						vector<string> namelist;
+						string fn;
+						message msg(event.msg.channel_id, "");
+						while (getline(fin, fn)) {
+							namelist.push_back(fn);
+						}
+						fin.close();
+						int no = mt() % namelist.size();
+						string ft = namelist[no].substr(fn.find("."));
+						msg.add_file("mygo" + ft, "./mygo/" + to_string(no) + ft);
+						event.reply(msg);
+					}*/
 					else {
 						for (int i = 0; i < v[1].size(); i++) {
 							v[1][i] = tolower(v[1][i]);
