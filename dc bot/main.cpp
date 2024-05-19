@@ -521,12 +521,6 @@ int main() {
 			}
 			else if (v[0] == "抽到有") {
 				bot.message_create(message(event.msg.channel_id, gacha.get(v[1])));
-				/*if (v[1] == "pcr" || v[1] == "公連" || v[1] == "PCR")
-					bot.message_create(message(event.msg.channel_id, pcrget()));
-				else if (v[1] == "fgo" || v[1] == "居歐" || v[1] == "FGO")
-					bot.message_create(message(event.msg.channel_id, fgoget()));
-				else
-					bot.message_create(message(event.msg.channel_id, error_reply(tkuse, token[0], token[1])));*/
 			}
 			else if (v[0] == "機率" || v[0] == "抽卡機率") {
 				if (v[1] == "pcr" || v[1] == "公連")

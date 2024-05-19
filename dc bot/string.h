@@ -466,7 +466,7 @@ const string mygo[11] = {
     "https://imgur.com/n7FkGpJ",  //  10
     "https://imgur.com/Z0d05fh",
 };
-string mat[133][2] = {
+const string mat[133][2] = {
 {"連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
 {"表單連結", "https://docs.google.com/spreadsheets/d/1UudjnUd6xCg5dIJ8dLm2E9BT3p_qIm0biXk_J3eH0mg/edit?usp=sharing"},
 {"功能", "輸入「素材 素材名稱」(暱稱及全名都可以)"},
