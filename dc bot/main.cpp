@@ -195,6 +195,7 @@ int main() {
 				}
 				else {
 					bot.message_delete(ref->getrefms(), ref->getrefch());
+					bot.message_delete(event.msg.id, event.msg.channel_id);
 				}
 				delete ref;
 			}
