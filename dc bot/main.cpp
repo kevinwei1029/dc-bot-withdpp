@@ -86,7 +86,6 @@ int main() {
 			//有限本人用的程式碼
 			if (v[0] == "test") {
 				if (au == "681076728465981450"){
-					cout << "ckp1\n";
 					/*MyCluster* mes = new MyCluster();
 					MyCluster* mes = new MyCluster(to_string(event.msg.channel_id));
 					mes->botout(event.msg.channel_id, "botout test");
