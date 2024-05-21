@@ -244,7 +244,7 @@ private:
 		if (num < 0) {
 			equ += "-(";
 			ism = true;
-			num = num * -1;
+			num *= -1;
 		}
 
 		if (num > 114514 * 2) {
