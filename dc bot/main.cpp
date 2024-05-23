@@ -103,6 +103,26 @@ int main() {
 				else
 					bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
 			}
+			/*
+			else if (v[0] == "go") {
+				if (au == "681076728465981450") {
+					ifstream fin("h.txt");
+					if (fin.fail()) {
+						bot.message_create(message(event.msg.channel_id, "找不到 h.txt"));
+					}
+					else {
+						string *h = new string;
+						while (getline(fin, *h)) {
+							bot.message_create(message(event.msg.channel_id, *h));
+							Sleep(1000);
+						}
+						delete h;
+						fin.close();
+					}
+				}
+				else
+					bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
+			}*/
 			else if (s == "關機" || s == "sd") {
 				if (au == "681076728465981450") {
 					bot.message_create(message(event.msg.channel_id, "機器人將於三秒後關機"));
