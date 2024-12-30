@@ -32,40 +32,6 @@ int main() {
 			event.reply("https://imgur.com/ucwb6HY");
 		else if (event.command.get_command_name() == "ark charaters")
 			event.reply(arkcr[mt() % size(arkcr)]);
-		else if (event.command.get_command_name() == "pm") {
-			dpp::snowflake user;
-
-			// If no user specified, set to command author
-			if (event.get_parameter("user").index() == 0) {
-				user = event.command.get_issuing_user().id;
-			}
-			else {
-				// Otherwise, set to specified user
-				user = std::get<dpp::snowflake>(event.get_parameter("user"));
-			}
-
-			// Send a message to the user
-			bot.direct_message_create(user, dpp::message("Here's a private message!"), [event, user](const dpp::confirmation_callback_t& callback) {
-				// Handle errors
-				if (callback.is_error()) {
-					if (user == event.command.get_issuing_user().id) {
-						event.reply(dpp::message("I couldn't send you a message.").set_flags(dpp::m_ephemeral));
-					}
-					else {
-						event.reply(dpp::message("I couldn't send a message to that user. Please check that is a valid user!").set_flags(dpp::m_ephemeral));
-					}
-					return;
-				}
-
-				// Confirm message sent
-				if (user == event.command.get_issuing_user().id) {
-					event.reply(dpp::message("I've sent you a private message.").set_flags(dpp::m_ephemeral));
-				}
-				else {
-					event.reply(dpp::message("I've sent a message to that user.").set_flags(dpp::m_ephemeral));
-				}
-			});
-		}
 	});  //  使用斜線指令
 	
 	bot.on_ready([&bot](const ready_t& event) {
@@ -167,6 +133,12 @@ int main() {
 				}
 				else
 					bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
+			}
+			else if (s == "pm") {
+				dpp::snowflake user(au);
+
+				// Send a message to the user
+				bot.direct_message_create(user, dpp::message("Here's a private message!"));
 			}
 
 			//cmd程式碼
