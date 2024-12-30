@@ -5,6 +5,7 @@
 
 Gacha gacha;
 Acceed senbai;
+Kahoot kahoot;
 
 int main() {
 	ifstream tkin;
@@ -31,7 +32,42 @@ int main() {
 			event.reply("https://imgur.com/ucwb6HY");
 		else if (event.command.get_command_name() == "ark charaters")
 			event.reply(arkcr[mt() % size(arkcr)]);
-		});  //  使用斜線指令
+		else if (event.command.get_command_name() == "pm") {
+			dpp::snowflake user;
+
+			// If no user specified, set to command author
+			if (event.get_parameter("user").index() == 0) {
+				user = event.command.get_issuing_user().id;
+			}
+			else {
+				// Otherwise, set to specified user
+				user = std::get<dpp::snowflake>(event.get_parameter("user"));
+			}
+
+			// Send a message to the user
+			bot.direct_message_create(user, dpp::message("Here's a private message!"), [event, user](const dpp::confirmation_callback_t& callback) {
+				// Handle errors
+				if (callback.is_error()) {
+					if (user == event.command.get_issuing_user().id) {
+						event.reply(dpp::message("I couldn't send you a message.").set_flags(dpp::m_ephemeral));
+					}
+					else {
+						event.reply(dpp::message("I couldn't send a message to that user. Please check that is a valid user!").set_flags(dpp::m_ephemeral));
+					}
+					return;
+				}
+
+				// Confirm message sent
+				if (user == event.command.get_issuing_user().id) {
+					event.reply(dpp::message("I've sent you a private message.").set_flags(dpp::m_ephemeral));
+				}
+				else {
+					event.reply(dpp::message("I've sent a message to that user.").set_flags(dpp::m_ephemeral));
+				}
+			});
+		}
+	});  //  使用斜線指令
+	
 	bot.on_ready([&bot](const ready_t& event) {
 		if (run_once<struct register_bot_commands>()) {
 
@@ -91,7 +127,7 @@ int main() {
 					mes->botout(event.msg.channel_id, "botout test");
 					mes->botout("botout test");
 					delete mes;*/
-					bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au)));
+					bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au) + " 主人請問有什麼吩咐？"));
 					//bot.message_create(message(memech[0], to_string(event.msg.guild_id)));
 				}
 				else
@@ -185,17 +221,7 @@ int main() {
 				update_msg.channel_id = edit->getch();
 				delete edit;
 				
-				bot.message_edit(update_msg, [&](const dpp::confirmation_callback_t& callback) {
-					// 檢查編輯是否成功
-					if (callback.is_error()) {
-						// 編輯失敗 bot.message_create(message(update_msg.channel_id, ));
-						event.reply("edit failed");
-					}
-					else {
-						// 編輯成功 bot.message_create(message(update_msg.channel_id, "edit done"));
-						event.reply("edit done");
-					}
-				});
+				bot.message_edit(update_msg);
 			}
 			else if (s.find("json") != -1) {
 				json jsonmes = event.msg.build_json(true, true);
@@ -217,6 +243,63 @@ int main() {
 					bot.message_delete(event.msg.id, event.msg.channel_id);
 				}
 				delete ref;
+			}
+
+			//Kahoot程式碼
+			else if (s.find("JOIN") != -1) {
+				Decodejson* kahootjson = new Decodejson(event.msg.build_json(true, true));
+				txt = kahoot.join(kahootjson->getusr(), au);
+				bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au) + txt).set_reference(event.msg.id));
+				delete kahootjson;
+			}
+			else if (s.find("SETQUE") != -1) {
+				//SETQUE quenum weight
+				if (au != "681076728465981450") txt = "這指令是開發者專屬的，只有他可以用";
+				else if (kahoot.getsta() != 0 && kahoot.getsta() != 2) txt = "現在不是設定題目的時候喔！";
+				else txt = kahoot.setque(s);
+				bot.message_create(message(event.msg.channel_id, txt).set_reference(event.msg.id));
+			}
+			else if (s.find("ANS") != -1) {
+				Decodejson* kahootjson = new Decodejson(event.msg.build_json(true, true));
+				bot.message_delete(event.msg.id, event.msg.channel_id);
+				if (kahoot.getsta() != 1) txt = "現在不是回答的時候喔！";
+				else {
+					regex pattern(R"(^ANS \|\|(\w+)\|\|$)");
+					smatch match;
+					if (regex_match(s, match, pattern)) {
+						// 如果格式正確，提取答案部分
+						txt = kahoot.answering(kahootjson->getusr(), match[1]);
+					}
+					else {
+						// 格式錯誤，輸出錯誤訊息
+						txt =  "：Input does not match the required format `ANS ||答案||`.\n";
+					}
+				}
+				delete kahootjson;
+				bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au) + txt));
+			}
+			else if (s.find("CAN") != -1) {
+				//CAN ans total
+				if (au != "681076728465981450") txt = "這指令是開發者專屬的，只有他可以用";
+				else if (kahoot.getsta() != 1) txt = "現在不是設定答案的時候喔！";
+				else txt = kahoot.checkans(v[1]);
+				bot.message_create(message(event.msg.channel_id, txt).set_reference(event.msg.id));
+			}
+			else if (s.find("ADD") != -1) {
+				if (au != "681076728465981450") txt = "這指令是開發者專屬的，只有他可以用";
+				else if (kahoot.getuid(stoi(v[1])) == "") txt = "找不到這個使用者";
+				else if (kahoot.getsta() != 2 && kahoot.getsta() != 3) txt = "現在不是加分的時候喔！";
+				else txt = kahoot.addpoint(stoi(v[1]), stoi(v[2]));
+				bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au) + txt + event.msg.author.get_mention(kahoot.getuid(stoi(v[1])))));
+			}
+			else if (s.find("END") != -1) {
+				if (au != "681076728465981450") txt = "這指令是開發者專屬的，只有他可以用";
+				else if (kahoot.getsta() != 2) txt = "現在不是結束的時候喔！";
+				else txt = kahoot.finalscore();
+				bot.message_create(message(event.msg.channel_id, txt).set_reference(event.msg.id));
+			}
+			else if (s.find("Kahoot") != -1) {
+				bot.message_create(message(event.msg.channel_id, "https://kahoot.it/").set_reference(event.msg.id));
 			}
 
 			//其他的程式碼
@@ -249,9 +332,6 @@ int main() {
 					)
 				);
 			}
-			else if (s == "董") {
-				bot.message_create(message(event.msg.channel_id, "https://imgur.com/bLRrdO4"));
-			}
 			else if (s.find("機器人") != -1 && (s.find("連結") != -1)) {
 				bot.message_create(message(event.msg.channel_id, "https://github.com/kevinwei1029/dc-bot-withdpp").set_reference(event.msg.id));
 			}
@@ -260,9 +340,6 @@ int main() {
 			}
 			else if (s.find("瓜") != -1) {
 				bot.message_create(message(event.msg.channel_id, "https://imgur.com/E4EWNsw"));
-			}
-			else if ((s.find("JR") != -1 || s.find("jr") != -1) && s.find("時刻") != -1) {
-				bot.message_create(message(event.msg.channel_id, jrtime));
 			}
 			/*else if (v[0].find("轉") != -1) {
 				if (v[1] == "梗圖") {
@@ -275,9 +352,6 @@ int main() {
 					bot.message_create(message(event.msg.channel_id, "已經轉傳到其他頻道了！"));
 				}
 			}*/
-			else if (s.find("檸檬") != -1 && to_string(event.msg.channel_id) == "966724745708052520") {
-				bot.message_create(message(966724745708052520, "https://imgur.com/0T1ZxAF"));
-			}
 			else if (s.find("聖誕快樂") != -1) {
 				bot.message_create(message(event.msg.channel_id, "https://imgur.com/JYyKXU2"));
 			}
@@ -372,6 +446,7 @@ int main() {
 			}
 
 			//用隔壁陣列發圖的程式碼
+			/*
 			else if (v[0] == "圖") {
 				event.reply(arkcr[mt() % size(arkcr)]);
 			}
@@ -415,6 +490,7 @@ int main() {
 			else if (s.find("mygo") != -1 || s.find("買夠") != -1 || s.find("MyGO") != -1) {
 				event.reply(mygo[mt() % size(mygo)]);
 			}
+			*/
 
 			//雀魂等待序列程式碼
 			else if ((s.find("雀") != -1 && s.find("待") != -1) || s.find("mjw") != -1) {

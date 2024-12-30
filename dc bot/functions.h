@@ -37,6 +37,20 @@ string majong_number_reply(int size) {
 		return "奇怪的vector長度出現了，快叫我老木過來看";
 	}
 };
+bool canConvertToInt(const std::string& str) {
+	try {
+		stoi(str); // 嘗試轉換字串為整數
+		return true;    // 成功轉換
+	}
+	catch (const std::invalid_argument&) {
+		// 如果拋出 invalid_argument，表示字串不包含有效數字
+		return false;
+	}
+	catch (const std::out_of_range&) {
+		// 如果拋出 out_of_range，表示數字超出了 int 的範圍
+		return false;
+	}
+}
 /*
 void cmd(string s) {
 	wchar_t command[1000] = { 0 };
@@ -963,5 +977,195 @@ public:
 		message_create(dpp::message(968693698206519356, s));
 	};
 
+};
+
+class Kahoot
+{
+private:
+	struct Data
+	{
+		string name;
+		string uid;
+		float score;
+		string ans[100];
+		Data(string n, string id) : name(n), uid(id), score(0) {}
+	};
+	vector<Data> players;
+	string reply = "", correctans = "";
+	int quenum = 0, weight = 0;
+	
+	enum status
+	{
+		joining,
+		playing,
+		checking,
+		end
+	};
+	int sta = joining;
+
+	ofstream resout;
+
+	void toUpperCase(std::string& str) {
+		for (char& c : str) {
+			c = (c >= 'a' && c <= 'z') ? (c - 'a' + 'A') : c; // 手動轉換小寫到大寫
+		}
+	}
+
+	bool parseSetque(const std::string& input) {
+		// 定義正則表達式：匹配 "SETQUE 題號 分數"
+		regex pattern(R"(SETQUE\s+(\d+)\s+(\d+))");
+		smatch match;
+
+		// 使用正則表達式進行匹配
+		if (regex_match(input, match, pattern)) {
+			// 提取題號和分數
+			if (stoi(match[1]) <= 0 || stoi(match[2]) <= 0) {
+				reply = "題號或配分不能為負！請重新設定。\n";
+				return false;
+			}
+			else if (quenum >= stoi(match[1])) {
+				reply = "題號不能小於前一題！請重新設定。\n";
+				return false;
+			}
+			else if (stoi(match[1]) >= 100) {
+				reply = "題號不能大於100！請重新設定\n";
+				return false;
+			}
+			quenum = stoi(match[1]); // 第一個捕獲組 (題號)
+			weight = stoi(match[2]); // 第二個捕獲組 (分數)
+			return true;
+		}
+
+		// 格式不匹配
+		reply = "請依 `SETQUE 題號 分數` 格式輸入。\n";
+		return false;
+	}
+
+	string floatToString(float value) {
+		string result = to_string(value);
+		// 移除尾隨零
+		result.erase(result.find_last_not_of('0') + 1, string::npos);
+		// 如果最後是小數點，也移除
+		if (result.back() == '.') {
+			result.pop_back();
+		}
+		return result;
+	}
+
+public:
+
+	int getsta()
+	{
+		return sta;
+	}
+
+	string getuid(string name)
+	{
+		for (int i = 0; i < players.size(); i++)
+		{
+			if (players[i].name == name) return players[i].uid;
+		}
+		return "";
+	}
+
+	string getuid(int num)
+	{
+		if (num > players.size()) return "";
+		return players[num - 1].uid;
+	}
+
+	string join(string name, string uid)
+	{
+		for (int i = 0; i < players.size(); i++)
+		{
+			if (players[i].name == name)
+			{
+				reply = " 已在遊戲內。編號：" + to_string(i + 1) + '\n';
+				return reply;
+			}
+		}
+		Data newplayer(name, uid);
+		players.push_back(newplayer);
+		reply = " 成功加入遊戲。編號：" + to_string(players.size()) + '\n';
+		return reply;
+	}
+
+	string setque(string command)
+	{
+		if (parseSetque(command)) {
+			reply = "題號：" + to_string(quenum) + "、配分：" + to_string(weight) + "分。\n請開始作答。\n";
+			sta = playing;
+			return reply;
+		}
+		else {
+			return reply;
+		}
+	}
+
+	string answering(string name, string ans)
+	{
+		for (int i = 0; i < players.size(); i++)
+		{
+			if (players[i].name == name)
+			{
+				if (players[i].ans[quenum] != "") reply = " 更改了他的答案。\n";
+				else reply = " 已作答。\n";
+				toUpperCase(ans);
+				players[i].ans[quenum] = ans;
+				return reply;
+			}
+		}
+		reply = " 尚未進入遊戲中。\n";
+		return reply;
+	}
+
+	string checkans(string ans)
+	{
+		sta = checking;
+		correctans = ans;
+		resout.open("result.txt");
+		int add = 0;
+		reply = "正確答案是：" + ans + "。\n";
+		for (int i = 0; i < players.size(); i++)
+		{
+			resout << setw(20) << players[i].name << " " << setw(20) << players[i].uid << " " << setw(3) << players[i].score << " ";
+			for (int j = 0; j <= quenum; j++)
+			{
+				resout << '|' << setw(3) << players[i].ans[j] << "|";
+			}
+
+			if (players[i].ans[quenum] == ans) add = weight;
+			else add = 0;
+			players[i].score += add;
+			reply += players[i].name + " got " + to_string(add) + " points in this question and has " + floatToString(players[i].score) + " points totally.\n";
+		}
+		resout.close();
+		return reply;
+	}
+
+	string addpoint(int num, int points) {
+		if (players[num - 1].score + points > 0) {
+			players[num - 1].score += points;
+			return " add " + to_string(points) + " points to ";
+		}
+		else {
+			return " can't have negative points to ";
+		}
+	}
+
+	string finalscore()
+	{
+		sta = end;
+		resout.open("finalresult.txt");
+		sort(players.begin(), players.end(), [](Data a, Data b) {return a.score > b.score; });
+		reply = "The final score is:\n";
+		for (int i = 0; i < players.size(); i++)
+		{
+			reply += players[i].name + " got " + to_string(players[i].score) + " points.\n";
+		}
+		resout << reply;
+		resout.close();
+		return reply;
+	}
 };
 //只是看行數自爽用

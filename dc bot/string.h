@@ -6,11 +6,13 @@
 #include <ctime>
 #include <deque>
 #include <dpp/dpp.h>
+#include <exception>
 #include <fstream>
 #include <iostream> 
 #include <map>
 #include <queue>
 #include <random>
+#include <regex>
 #include <set>
 #include <stack>
 #include <stdio.h>
