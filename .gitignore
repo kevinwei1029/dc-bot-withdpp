@@ -11,6 +11,7 @@ gachamesdata.json
 dc bot/mygo/
 *.txt
 *.json
+*.dll
 
 # User-specific files
 *.rsuser
