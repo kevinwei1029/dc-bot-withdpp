@@ -12,8 +12,7 @@ int main() {
 	tkin.open("token.txt");
 	tkin >> token[0] >> token[1]; //  [0]為ショコラ [1]為女僕凱爾希
 	tkin.close();
-	tkuse = token[0];  //  [1]已被踢出
-	cluster bot(tkuse, i_default_intents | i_message_content);
+	cluster bot(token[0], i_default_intents | i_message_content);
 
 	bot.on_log(utility::cout_logger());
 
@@ -40,7 +39,7 @@ int main() {
 			bot.set_presence(presence(presence_status::ps_online, activity_type::at_listening, "來自 " + to_string(get_guild_cache()->count()) + " 個伺服器的指令"));
 			bot.start_timer([&bot](const timer& timer) {
 				bot.set_presence(presence(presence_status::ps_online, activity_type::at_listening, "來自 " + to_string(get_guild_cache()->count()) + " 個伺服器的指令"));
-			}, 60);  // Create a timer that runs every 60 seconds, that sets the status
+			}, 600);  // Create a timer that runs every 600 seconds, that sets the status
 
 			bot.global_command_create(
 				slashcommand("cuttie", "it'll send pics", bot.me.id)
@@ -77,8 +76,8 @@ int main() {
 
 		if (au == "1092497000945160324") {
 			ofstream jsonfile("mesdata.json");
-			//json mesdata = event.msg.build_json(true, true);
-			jsonfile << event.msg.build_json(true, true) << endl;
+			//json mesdata = event.msg.build_json(true);
+			jsonfile << event.msg.build_json(true) << endl;
 			jsonfile.close();
 		}
 		else if (size(event.msg.content) < 150 && sta[0] == 1) {
@@ -125,7 +124,7 @@ int main() {
 				else
 					bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
 			}*/
-			else if (s == "關機" || s == "sd") {
+			else if (s == "關機" || s == "off") {
 				if (au == "681076728465981450") {
 					bot.message_create(message(event.msg.channel_id, "機器人將於三秒後關機"));
 					Sleep(3000);
@@ -134,11 +133,21 @@ int main() {
 				else
 					bot.message_create(message(event.msg.channel_id, "這指令是開發者專屬的，只有他可以用"));
 			}
+			else if (s == "sd") {
+				bot.message_create(message(event.msg.channel_id, "機器人將於三秒後休眠，使用wake指令可再度喚醒。"));
+				Sleep(3000);
+				bot.shutdown();
+			}
+			else if (s == "wake") {
+				bot.start();
+				Sleep(1000);
+				bot.message_create(message(event.msg.channel_id, "機器人已恢復運作。"));
+			}
 			else if (s == "pm") {
-				dpp::snowflake user(au);
+				snowflake user(au);
 
 				// Send a message to the user
-				bot.direct_message_create(user, dpp::message("Here's a private message!"));
+				bot.direct_message_create(user, message("Here's a private message!"));
 			}
 
 			//cmd程式碼
@@ -196,17 +205,17 @@ int main() {
 				bot.message_edit(update_msg);
 			}
 			else if (s.find("json") != -1) {
-				json jsonmes = event.msg.build_json(true, true);
+				json jsonmes = event.msg.build_json(true);
 				string jsmesdump = jsonmes.dump();
 				bot.message_create(message(event.msg.channel_id, jsmesdump));
 
 				ofstream jsonfile("usermesdata.json");
-				json mesdata = event.msg.build_json(true, true);
+				json mesdata = event.msg.build_json(true);
 				jsonfile << setw(4) << mesdata << endl;
 				jsonfile.close();
 			}
 			else if (s.find("刪他") != -1) {
-				Decodejson* ref = new Decodejson(event.msg.build_json(true, true));
+				Decodejson* ref = new Decodejson(event.msg.build_json(true));
 				if (ref->getrefms().empty() || ref->getrefch().empty()) {
 					bot.message_create(message(event.msg.channel_id, "你沒有回覆訊息喔？"));
 				}
@@ -219,9 +228,10 @@ int main() {
 
 			//Kahoot程式碼
 			else if (s.find("JOIN") != -1) {
-				Decodejson* kahootjson = new Decodejson(event.msg.build_json(true, true));
+				Decodejson* kahootjson = new Decodejson(event.msg.build_json(true));
 				txt = kahoot.join(kahootjson->getusr(), au);
 				bot.message_create(message(event.msg.channel_id, event.msg.author.get_mention(au) + txt).set_reference(event.msg.id));
+				bot.direct_message_create(snowflake(au), message("你已經加入了遊戲，請等待題目發布，並在此作答。"));
 				delete kahootjson;
 			}
 			else if (s.find("SETQUE") != -1) {
@@ -232,7 +242,7 @@ int main() {
 				bot.message_create(message(event.msg.channel_id, txt).set_reference(event.msg.id));
 			}
 			else if (s.find("ANS") != -1) {
-				Decodejson* kahootjson = new Decodejson(event.msg.build_json(true, true));
+				Decodejson* kahootjson = new Decodejson(event.msg.build_json(true));
 				bot.message_delete(event.msg.id, event.msg.channel_id);
 				if (kahoot.getsta() != 1) txt = "現在不是回答的時候喔！";
 				else {
@@ -331,7 +341,7 @@ int main() {
 				bot.message_create(message(event.msg.channel_id, "https://imgur.com/dBzNTzQ"));
 			}
 			else if (v[0] == "論證") {
-				bot.message_create(message(event.msg.channel_id, senbai.rep(stoi(v[1]))));
+				bot.message_create(message(event.msg.channel_id, v[1] + " = " + senbai.rep(stoi(v[1])) + "\n論證完畢（喜"));
 			}
 			else if (v[0] == "mygo" && v[1] == "投稿") {
 				ofstream fout("./mygo/namelist.txt", ios::app);

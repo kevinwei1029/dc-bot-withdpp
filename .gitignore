@@ -9,6 +9,8 @@ mesdata.json
 usermesdata.json
 gachamesdata.json
 dc bot/mygo/
+*.txt
+*.json
 
 # User-specific files
 *.rsuser
